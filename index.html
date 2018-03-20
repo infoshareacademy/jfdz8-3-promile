@@ -15,23 +15,45 @@
     </head>
 <body>
 
-    <header>
+    <header id="home">
         <div>
-            <nav>
-
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li class="navigation-item"><a href="#home">Strona główna</a></li>
+                    <li class="navigation-item"><a href="#features">Nasza aplikacja</a></li>
+                    <li class="navigation-item"><a href="#add-info">Dodatkowe informacje</a></li>
+                    <li class="navigation-item"><a href="#form">Zgłoś się</a></li>
+                    <li class="navigation-item"><a href="#team">Zespół</a></li>
+                    <li class="navigation-item"><a href="#contact">Kontakt</a></li>
+                </ul>
             </nav>
         </div>
-
     </header>
     <main>
         <section class="section" id="features"></section>
         <section class="section" id="add-info"></section>
-        <section class="section" id="form"></section>
+        <section class="section" id="form">
+            <h2>Zapisz się na premierę aplikacji!</h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, saepe?</h3>
+            <div>
+                <form>
+                    <label>
+                        Podaj swój adres email
+                        <input type="email" placeholder="Twój email">
+                    </label>
+                    <button type="submit"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie</button>
+                </form>
+            </div>
+
+
+
+        </section>
         <section class="section" id="team"></section>
     </main>
-    <footer>
+    <footer id="contact">
         <div>
             <p>Nasz footer</p>
+            <address>Gdańsk</address>
         </div>
     </footer>
 
