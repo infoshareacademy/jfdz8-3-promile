@@ -1,6 +1,44 @@
-/*
-
 * {
-    border: solid 1px red;
+    outline: 1px red solid;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+}
+
+#features {
+    display: inline-block;
+    width: 100vw;
+    z-index: 1;
 
 }
+
+.feature-items {
+    width: 25%;
+    float: left;
+}
+
+.features-icon-container {
+    padding-top: 10px;
+    text-align: center;
+    width: 25vw;
+    float: left;
+}
+
+.features-items-description {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+}
+
+#add-info {
+    position: relative;
+    float: left;
+}
+
+#form #team{
+    position: relative;
+}
+
