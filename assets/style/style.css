@@ -1,6 +1,24 @@
-/*
-
 * {
-    border: solid 1px red;
+    box-sizing: border-box;
+}
 
+.navigation {
+    position: fixed;
+    background-color: cornflowerblue;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.navigation-item {
+    display: inline-block;
+    list-style: none;
+    padding: 15px;
+    background: antiquewhite;
+
+}
+
+.navigation-list a {
+    text-decoration: none;
 }
