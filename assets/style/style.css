@@ -27,8 +27,9 @@ h2 {
 }
 
 .features-items-description {
+    padding: 2px;
     position: relative;
-    width: 100%;
+    width: 90%;
     text-align: center;
 
 }
@@ -40,5 +41,22 @@ h2 {
 
 #form #team{
     position: relative;
+}
+
+/* ICONS */
+.fa-js {
+    color: #f4be41;
+}
+
+.fa-react {
+    color: #42f4eb;
+}
+
+.fa-angular {
+    color: #d10c16;
+}
+
+.fa-node-js {
+    color: #67d60c;
 }
 
