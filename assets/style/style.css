@@ -1,6 +1,40 @@
-/*
 
 * {
-    border: solid 1px red;
+    /*border: solid 1px red;*/
 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    padding-top: 100px;
+    height: 100vh;
+    background: #292929;
+    background-image: url("../images/hero-background-city.jpg");
+    background-attachment: fixed;
+    background-position: 0,0;
+
+}
+
+.hero-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.hero-title {
+    text-align: center;
+}
+
+.cta-buttons {
+    text-align: center;
 }
