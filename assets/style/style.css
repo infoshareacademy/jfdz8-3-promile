@@ -1,3 +1,52 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 * {
     box-sizing: border-box;
     /*border: 1px solid red;*/
@@ -6,17 +55,11 @@
 
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-
-}
 .topbar{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-
 }
 
 .logo {
@@ -36,7 +79,7 @@ html, body {
     line-height: 70px;
     background: cornflowerblue;
     text-align: center;
-    margin: 0;
+    list-style: none;
 }
 
 .navigation-list-item a {
@@ -47,21 +90,21 @@ html, body {
     flex: 1;
 }
 
+.navigation-list-item.hover {
+    transition: 0.3s linear;
+}
 
 .navigation-list-item.hover:hover {
     background: ghostwhite;
-    transition: 0.5s;
 }
+
+
 
 .section#form {
     padding-top: 50px;
     background-color: cornflowerblue;
     text-align: center;
     color: #454545;
-}
-.section-form {
-    margin: 0 auto;
-    text-align: center;
 }
 
 .hero {
@@ -70,7 +113,53 @@ html, body {
     background-image: url("https://akwarium.gdynia.pl/wp-content/uploads/2017/01/MIR_0942.jpg");
     background-size: cover;
     background-attachment: fixed;
-    }
+}
+
+#form h2 {
+    font-size: 45px;
+    padding: 20px;
+}
+
+#form h3 {
+    font-size: 38px;
+    padding: 20px;
+}
+
+.section-form {
+    padding-bottom: 15px;
+
+}
+
+.section-form h3 {
+    font-size: 30px;
+}
+
+input {
+    display: block;
+    margin: 20px auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+input:hover {
+    background: #ccc;
+    transition: 1s;
+}
+.submit {
+    margin: 15px auto;
+    display: block;
+    background: #B6C2D9;
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 5%;
+    transition: 0.3s linear;
+}
+
+.submit:hover {
+    background: #98B9AB;
+}
+
 
 .clearfix::after {
     content:"";
