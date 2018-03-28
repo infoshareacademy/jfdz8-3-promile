@@ -51,7 +51,7 @@ table {
     box-sizing: border-box;
     /*border: 1px solid red;*/
     color: #454545;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 
 }
 
@@ -64,8 +64,8 @@ table {
 
 .logo {
     width: 100px;
-    background: cornflowerblue;
-    border: 5px solid cornflowerblue;
+    background: #A6B9CD;
+    border: 5px solid #A6B9CD;
     border-radius: 50%;
 }
 
@@ -77,9 +77,10 @@ table {
     flex: 1;
     height: 70px;
     line-height: 70px;
-    background: cornflowerblue;
+    background: #A6B9CD;
     text-align: center;
     list-style: none;
+    font-family: "Open Sans";
 }
 
 .navigation-list-item a {
@@ -99,14 +100,6 @@ table {
 }
 
 
-
-.section#form {
-    padding-top: 50px;
-    background-color: cornflowerblue;
-    text-align: center;
-    color: #454545;
-}
-
 .hero {
     padding-top: 100px;
     height: 100vh;
@@ -115,19 +108,27 @@ table {
     background-attachment: fixed;
 }
 
-#form h2 {
-    font-size: 45px;
-    padding: 20px;
+.form {
+    padding-top: 50px;
+    background-color: #a6b9cd;
+    text-align: center;
+    color: #454545;
 }
 
-#form h3 {
-    font-size: 38px;
-    padding: 20px;
-}
 
 .section-form {
     padding-bottom: 15px;
 
+}
+
+.form h2 {
+    font-size: 45px;
+    padding: 20px;
+}
+
+.form h3 {
+    font-size: 38px;
+    padding: 20px;
 }
 
 .section-form h3 {
@@ -159,7 +160,6 @@ input:hover {
 .submit:hover {
     background: #98B9AB;
 }
-
 
 .clearfix::after {
     content:"";
