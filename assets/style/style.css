@@ -64,20 +64,54 @@ body {
     background-color: #fefefe;
 }
 
-.section {
-    line-height: 1.4;
-}
-
 h2 {
     text-align: center;
     padding: 25px;
 }
 
+input {
+    display: block;
+    margin: 20px auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+input:hover {
+    background: #ccc;
+    transition: 1s;
+}
+
+.hero {
+    padding-top: 100px;
+    height: 100vh;
+    background: #292929;
+    background-image: url("../images/1261534_Sopot-o-wschodzie-slonca.jpg");
+    background-attachment: fixed;
+    background-position: 0,0;
+}
+
+.hero-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.hero-title {
+    text-align: center;
+}
+
+.cta-buttons {
+    text-align: center;
+}
+
+
 .section {
     line-height: 1.4;
 }
 
-#features {
+.section-features {
     display: inline-block;
     width: 100vw;
     z-index: 1;
@@ -87,10 +121,6 @@ h2 {
 .feature-items {
     width: 25%;
     float: left;
-}
-{
-
-
 }
 
 .topbar{
@@ -144,7 +174,6 @@ h2 {
     color: #454545;
 }
 
-
 .section-form {
     padding-bottom: 15px;
 }
@@ -161,18 +190,6 @@ h2 {
 
 .section-form h3 {
     font-size: 30px;
-}
-
-input {
-    display: block;
-    margin: 20px auto;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-
-input:hover {
-    background: #ccc;
-    transition: 1s;
 }
 
 .submit {
@@ -233,31 +250,3 @@ input:hover {
 .fa-node-js {
     color: #67d60c;
 }
-
-
-.hero {
-    padding-top: 100px;
-    height: 100vh;
-    background: #292929;
-    background-image: url("../images/1261534_Sopot-o-wschodzie-slonca.jpg");
-    background-attachment: fixed;
-    background-position: 0,0;
-
-}
-
-.hero-content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-}
-
-.hero-title {
-    text-align: center;
-}
-
-.cta-buttons {
-    text-align: center;
-}
-
