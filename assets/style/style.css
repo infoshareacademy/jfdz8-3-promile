@@ -52,6 +52,9 @@ table {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    /*border: 1px solid red;*/
+    color: #454545;
+    font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -80,10 +83,8 @@ h2 {
     width: 25%;
     float: left;
 }
-    box-sizing: border-box;
-    /*border: 1px solid red;*/
-    color: #454545;
-    font-family: "Open Sans", sans-serif;
+{
+
 
 }
 
@@ -191,9 +192,10 @@ input:hover {
 }
 
 .clearfix::after {
-    content:"";
+    content: "";
     clear: both;
     display: block;
+}
 
 .features-icon-container {
     padding-top: 10px;
