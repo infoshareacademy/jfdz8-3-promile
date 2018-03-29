@@ -1,6 +1,98 @@
-/*
 
 * {
-    border: solid 1px red;
+    /*outline: 1px red solid;*/
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #454545;
+    background-color: #fefefe;
+}
+
+.section {
+    line-height: 1.4;
+}
+
+h2 {
+    text-align: center;
+    padding: 25px;
+}
+
+#features {
+    display: inline-block;
+    width: 100vw;
+    z-index: 1;
+    padding: 50px;
+}
+
+.feature-items {
+    width: 25%;
+    float: left;
+}
+
+.features-icon-container {
+    padding-top: 10px;
+    text-align: center;
+    width: 25%;
+    float: left;
+}
+
+.features-items-description {
+    padding: 2px;
+    position: relative;
+    width: 90%;
+    text-align: center;
 
 }
+
+/* ICONS */
+.fa-js {
+    color: #f4be41;
+}
+
+.fa-react {
+    color: #42f4eb;
+}
+
+.fa-angular {
+    color: #d10c16;
+}
+
+.fa-node-js {
+    color: #67d60c;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    padding-top: 100px;
+    height: 100vh;
+    background: #292929;
+    background-image: url("../images/1261534_Sopot-o-wschodzie-slonca.jpg");
+    background-attachment: fixed;
+    background-position: 0,0;
+
+}
+
+.hero-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.hero-title {
+    text-align: center;
+}
+
+.cta-buttons {
+    text-align: center;
+}
+
