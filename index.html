@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>3ventCity</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <meta name="description" content="Aplikacja do wyszukiwania wydarzeń w Trójmieście">
     <meta name="author" content="Bartosz Zawada - Bartosz Frąckiewicz - Michał Muszyński">
     <meta name="keywords" content="wydarzenia, it, gdańsk, gdynia, sopot">
     <link rel="stylesheet" href="assets/style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
             integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
             crossorigin="anonymous">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </head>
 <body>
-    <header id="home">
-        <div>
+    <header id="anchor-home">
+        <div class="topbar clearfix">
             <nav class="navigation">
                 <ul class="navigation-list">
-                    <li class="navigation-item"><a href="#home">Strona główna</a></li>
-                    <li class="navigation-item"><a href="#features">Nasza aplikacja</a></li>
-                    <li class="navigation-item"><a href="#add-info">Dodatkowe informacje</a></li>
-                    <li class="navigation-item"><a href="#form">Zgłoś się</a></li>
-                    <li class="navigation-item"><a href="#team">Zespół</a></li>
-                    <li class="navigation-item"><a href="#contact">Kontakt</a></li>
+                    <li class="navigation-list-item hover"><a href="#anchor-home">Strona główna</a></li>
+                    <li class="navigation-list-item hover"><a href="#features">Nasza aplikacja</a></li>
+                    <li class="navigation-list-item hover"><a href="#add-info">Dodatkowe informacje</a></li>
+                    <li class="navigation-list-item"><img src="assets/LOGO1.png" class="logo" alt="page logo"></li>
+                    <li class="navigation-list-item hover"><a href="#anchor-form">Zgłoś się</a></li>
+                    <li class="navigation-list-item hover"><a href="#team">Zespół</a></li>
+                    <li class="navigation-list-item hover"><a href="#anchor-contact">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,7 +45,7 @@
         </div>
     </header>
     <main class="container">
-        <section class="section" id="features">
+        <section class="section features" id="features">
             <div class="features-items">
                 <h2>Poszerz swoje możliwości</h2>
                 <div class="features-icon-container">
@@ -142,16 +147,16 @@
                 </div>
             </div>
         </section>
-        <section class="section" id="form">
-            <h1>Zapisz się na premierę aplikacji!</h1>
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, saepe?</h2>
-            <div>
-                <form>
-                    <label>
-                        Podaj swój adres email
-                        <input type="email" placeholder="Twój email">
-                    </label>
-                    <button type="submit"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie</button>
+        <section class="form" id="anchor-form">
+            <h2>Zapisz się na premierę aplikacji!</h2>
+            <h3>Dowiedz się kiedy startujemy!</h3>
+            <span><span class="far fa-envelope fa-8x"></span></span>
+            <div class="section-form">
+                <form action="https://formspree.io/m.muszy@gmail.com" method="POST">
+                    <h3>Podaj adres email i czekaj na sygnał!</h3>
+                    <input type="text" placeholder="Twoje imię" name="_replyto">
+                    <input type="email" placeholder="Twój email">
+                    <button class="submit" value="Send"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie</button>
                 </form>
             </div>
         </section>
@@ -176,7 +181,7 @@
             </div>
         </section>
     </main>
-    <footer id="contact">
+    <footer class="contact" id="anchor-contact">
         <div>
             <p>Nasz footer</p>
             <address>Gdańsk</address>
