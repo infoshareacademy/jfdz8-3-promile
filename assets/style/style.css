@@ -47,15 +47,6 @@ h2 {
 
 }
 
-#add-info {
-    position: relative;
-    float: left;
-}
-
-#form #team{
-    position: relative;
-}
-
 /* ICONS */
 .fa-js {
     color: #f4be41;
