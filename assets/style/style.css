@@ -48,7 +48,6 @@ table {
 }
 
 * {
-    /*outline: 1px red solid;*/
     box-sizing: border-box;
 }
 
@@ -246,7 +245,13 @@ input:hover {
 }
 
 .add-info-item {
-    margin: 10px;
+    margin: 25px;
+}
+
+
+.add-info-item h4 {
+    display: block;
+    font-weight: bold;
 }
 
 .row::after {
