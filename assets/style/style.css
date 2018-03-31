@@ -217,7 +217,7 @@ input:hover {
 }
 
 .features-items-description {
-    padding: 10px;
+    padding: auto;
     position: relative;
     width: 90%;
     text-align: center;
@@ -239,8 +239,8 @@ input:hover {
 
 
 .add-info-column {
-    margin: 50px;
-    width: 40%;
+    padding: 50px;
+    width: 50%;
     float: left;
 }
 
