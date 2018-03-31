@@ -275,3 +275,6 @@ input:hover {
     color: #67d60c;
 }
 
+.fa-map, .fa-map-marker-alt, .fa-bell, .fa-child, .fa-calendar-alt, .fa-comment-alt {
+    color: #82a9d2;
+}
