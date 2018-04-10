@@ -208,36 +208,46 @@ h2 {
 .section-features {
     display: flex;
     flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.feature-items {
-    width: 25%;
-    float: left;
+.features-item {
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    width: 100%;
+    text-align: center;
 }
+
+
 
 .features-icon-container {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-    width: 25%;
-    float: left;
+    display: flex;
+    flex-grow:1;
+    justify-content: center;
+    align-content: center;
 }
 
 .features-items-description {
-    padding: auto;
-    position: relative;
-    width: 90%;
+    padding: 5%;
     text-align: center;
-    display: inline-block;
+    font-size: 1em;
     z-index: 1;
 }
 
 .section-features-header, .add-info-header {
     font-size: 24px;
+    text-align: center;
     }
 
 .features-item-header, .section-features-header, .add-info-header {
     font-weight: 700;
+    text-align: center;
 }
 
 .features-item-header {
