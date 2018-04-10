@@ -99,44 +99,57 @@ h2 {
     top: 0;
     left: 0;
     right: 0;
-    z-index:3;
-}
-
-.logo {
-    width: 100px;
-    background: #a6b9cd;
-    border: 5px solid #a6b9cd;
-    border-radius: 50%;
+    z-index: 5;
 }
 
 .navigation-list {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.navigation-list.hide {
+    display : none;
+    transition: 1s linear;
 }
 
-.navigation-list-item {
+.navigation-list-item.hover {
+    padding: 10px;
     flex: 1;
-    height: 70px;
-    line-height: 70px;
     background: #a6b9cd;
-    text-align: center;
     list-style: none;
     font-family: "Open Sans", sans-serif;
 }
 
-.navigation-list-item a {
-    text-decoration: none;
+.center-logo {
+    display: none;
 }
 
-.navigation-list-item .logo {
-    flex: 1;
+.navigation-list-item a {
+    color: #363636;
+    text-decoration: none;
+    font-size: 1em;
 }
 
 .navigation-list-item.hover {
-    transition: 0.3s linear;
+    transition: 0.1s linear;
 }
 
 .navigation-list-item.hover:hover {
-    background: ghostwhite;
+    background: #f8f8ff;
+}
+
+.hamburger-container {
+    text-align: center;
+    font-size: 2em;
+    background-color: #a6b9cd;
+}
+
+.hamburger {
+    color: #363636;
+}
+
+.hamburger:hover {
+    cursor: pointer;
 }
 
 .form {
@@ -283,4 +296,51 @@ h2 {
 
 .fa-map, .fa-map-marker-alt, .fa-bell, .fa-child, .fa-calendar-alt, .fa-comment-alt {
     color: #82a9d2;
+}
+
+@media screen and (min-width: 968px) {
+    .hamburger-container {
+        display: none;
+    }
+
+    .navigation-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+        line-height: 70px;
+        height: 70px;
+        white-space: nowrap;
+    }
+
+    .navigation-list.hide {
+        display: flex;
+    }
+
+    .navigation-list-item {
+        flex: 1;
+        background: #a6b9cd;
+        list-style: none;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .navigation-list-item a {
+        text-decoration: none;
+        font-size: 1em;
+    }
+
+    .center-logo {
+        padding: 0;
+        display: unset;
+        flex: 1;
+        width: 100px;
+        background: #a6b9cd;
+        border: 5px solid #a6b9cd;
+        border-radius: 50%;
+    }
+
+    .navigation-list-item.hover {
+        padding: 0;
+        transition: 0.3s linear;
+    }
 }
