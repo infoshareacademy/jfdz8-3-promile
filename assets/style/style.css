@@ -255,9 +255,9 @@ h2 {
 }
 
 .section-add-info {
-    display: flex;
-    flex-grow:1;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-grow:1;*/
+    /*flex-direction: column;*/
 }
 
 .add-info__column {
