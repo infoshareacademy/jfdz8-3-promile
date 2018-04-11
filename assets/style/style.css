@@ -63,14 +63,8 @@ h2 {
     padding: 25px;
 }
 
-input {
-    display: block;
-    margin: 20px auto;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
 
-input:hover {
+.section-form input:hover {
     background: #ccc;
     transition: 1s;
 }
@@ -89,7 +83,7 @@ input:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: 1;
 }
 
 .hero-title {
@@ -105,50 +99,63 @@ input:hover {
     top: 0;
     left: 0;
     right: 0;
-}
-
-.logo {
-    width: 100px;
-    background: #a6b9cd;
-    border: 5px solid #a6b9cd;
-    border-radius: 50%;
+    z-index: 5;
 }
 
 .navigation-list {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.navigation-list.hide {
+    display : none;
+    transition: 1s linear;
 }
 
-.navigation-list-item {
+.navigation-list-item.hover {
+    padding: 10px;
     flex: 1;
-    height: 70px;
-    line-height: 70px;
     background: #a6b9cd;
-    text-align: center;
     list-style: none;
     font-family: "Open Sans", sans-serif;
 }
 
-.navigation-list-item a {
-    text-decoration: none;
+.center-logo {
+    display: none;
 }
 
-.navigation-list-item .logo {
-    flex: 1;
+.navigation-list-item a {
+    color: #363636;
+    text-decoration: none;
+    font-size: 1em;
 }
 
 .navigation-list-item.hover {
-    transition: 0.3s linear;
+    transition: 0.1s linear;
 }
 
 .navigation-list-item.hover:hover {
-    background: ghostwhite;
+    background: #f8f8ff;
+}
+
+.hamburger-container {
+    text-align: center;
+    font-size: 2em;
+    background-color: #a6b9cd;
+}
+
+.hamburger {
+    color: #363636;
+}
+
+.hamburger:hover {
+    cursor: pointer;
 }
 
 .form {
     padding-top: 50px;
     background-color: #a6b9cd;
     text-align: center;
-    color: #454545;
 }
 
 .section-form {
@@ -167,6 +174,13 @@ input:hover {
 
 .section-form h3 {
     font-size: 30px;
+}
+
+.form-data {
+    display: block;
+    margin: 20px auto;
+    padding: 5px;
+    border: 1px solid #ccc;
 }
 
 .submit {
@@ -199,7 +213,6 @@ input:hover {
 .section-features {
     display: inline-block;
     width: 100vw;
-    z-index: 1;
     padding: 50px;
 }
 
@@ -222,6 +235,7 @@ input:hover {
     width: 90%;
     text-align: center;
     display: inline-block;
+    z-index: 1;
 }
 
 .section-features-header, .add-info-header {
@@ -284,6 +298,7 @@ input:hover {
     color: #82a9d2;
 }
 
+
 .team{
     padding: 15px;
 }
@@ -330,4 +345,51 @@ input:hover {
     content: "";
     clear: both;
     display: block;
+=======
+@media screen and (min-width: 968px) {
+    .hamburger-container {
+        display: none;
+    }
+
+    .navigation-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+        line-height: 70px;
+        height: 70px;
+        white-space: nowrap;
+    }
+
+    .navigation-list.hide {
+        display: flex;
+    }
+
+    .navigation-list-item {
+        flex: 1;
+        background: #a6b9cd;
+        list-style: none;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .navigation-list-item a {
+        text-decoration: none;
+        font-size: 1em;
+    }
+
+    .center-logo {
+        padding: 0;
+        display: unset;
+        flex: 1;
+        width: 100px;
+        background: #a6b9cd;
+        border: 5px solid #a6b9cd;
+        border-radius: 50%;
+    }
+
+    .navigation-list-item.hover {
+        padding: 0;
+        transition: 0.3s linear;
+    }
+
 }

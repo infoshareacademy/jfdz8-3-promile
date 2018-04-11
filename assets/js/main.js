@@ -4,3 +4,10 @@ $(document).on('click', 'a[href^="#"]', function (event) {
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 1400);
 });
+
+$(document).ready(function(){
+    $(".hamburger").on('click', function(event) {
+        event.preventDefault();
+        $(".navigation-list").toggleClass('hide');
+    });
+});
