@@ -337,7 +337,8 @@ h2 {
     content: "";
     clear: both;
     display: block;
-=======
+}
+
 @media screen and (min-width: 968px) {
     .hamburger-container {
         display: none;
