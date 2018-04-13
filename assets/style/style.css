@@ -71,7 +71,6 @@ h2 {
 
 .main-container {
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
     height: 100%;
     padding: 1.5% 2.5%;
@@ -255,9 +254,7 @@ h2 {
 }
 
 .section-add-info {
-    /*display: flex;*/
-    /*flex-grow:1;*/
-    /*flex-direction: column;*/
+
 }
 
 .add-info__column {
