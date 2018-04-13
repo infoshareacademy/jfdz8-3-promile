@@ -71,7 +71,6 @@ h2 {
 
 .main-container {
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
     height: 100%;
     padding: 1.5% 2.5%;
@@ -264,7 +263,11 @@ h2 {
 
 .add-info__item {
     font-size: 1em;
-    padding: 1%;
+    padding: 3.5%;
+}
+
+.add-info__item span {
+    text-align: left;
 }
 
 .add-info__item h4 {
