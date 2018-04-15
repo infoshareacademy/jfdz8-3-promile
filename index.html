@@ -20,11 +20,14 @@
     <header id="anchor-home">
         <div class="topbar clearfix">
             <nav class="navigation">
-                <ul class="navigation-list">
+                <div class="hamburger-container">
+                    <a href="#" class="hamburger"><span class="fas fa-bars"></span></a>
+                </div>
+                <ul class="navigation-list hide">
                     <li class="navigation-list-item hover"><a href="#anchor-home">Strona główna</a></li>
                     <li class="navigation-list-item hover"><a href="#features">Nasza aplikacja</a></li>
                     <li class="navigation-list-item hover"><a href="#add-info">Dodatkowe informacje</a></li>
-                    <li class="navigation-list-item"><img src="assets/LOGO1.png" class="logo" alt="page logo"></li>
+                    <li class="navigation-list-item"><img src="assets/LOGO1.png" class="center-logo" alt="page logo"></li>
                     <li class="navigation-list-item hover"><a href="#anchor-form">Zgłoś się</a></li>
                     <li class="navigation-list-item hover"><a href="#team">Zespół</a></li>
                     <li class="navigation-list-item hover"><a href="#anchor-contact">Kontakt</a></li>
@@ -46,41 +49,51 @@
     </header>
     <main>
         <section class="section-features" id="features">
-            <div class="features-items">
-                <h2 class="section-features-header">Poszerz swoje możliwości</h2>
-                <div class="features-icon-container">
-                    <span class="fab fa-js fa-4x"></span>
+            <div class="section-features__header">
+                <h2 class="section-features__header">Poszerz swoje możliwości</h2>
+            </div>
+            <div class="features-item__container">
+                <div class="features-item">
+                    <div class="features-icon-container">
+                        <span class="fab fa-js fa-4x"></span>
+                    </div>
                     <h3 class="features-item-header">Najlepsze wydarzenia</h3>
-                    <span class="features-items-description">
-                             Bo te najgorsze znajdziesz gdzieś indziej.
+                    <span class="features-items__description">
+                        Bo te najgorsze znajdziesz gdzieś indziej.
                     </span>
                 </div>
-                <div class="features-icon-container">
-                    <span class="fab fa-react fa-4x"></span>
+                <div class="features-item">
+                    <div class="features-icon-container">
+                        <span class="fab fa-react fa-4x"></span>
+                    </div>
                     <h3 class="features-item-header">Mapa wydarzeń</h3>
-                    <span class="features-items-description">
+                    <span class="features-items__description">
                         <q>Jeżeli nie wiesz, dokąd chcesz iść, nie ma znaczenia, którą drogą pójdziesz...</q>
                     </span>
                 </div>
-                <div class="features-icon-container">
-                    <span class="fab fa-angular fa-4x"></span>
+                <div class="features-item">
+                    <div class="features-icon-container">
+                        <span class="fab fa-angular fa-4x"></span>
+                    </div>
                     <h3 class="features-item-header">Kalendarz wydarzeń</h3>
-                    <span class="features-items-description">
+                    <span class="features-items__description">
                         Wiadomo, pamięć już nie taka jak kiedyś! A najgorzej to zapomnieć wypić...
                     </span>
                 </div>
-                <div class="features-icon-container">
-                    <span class="fab fa-node-js fa-4x"></span>
+                <div class="features-item">
+                    <div class="features-icon-container">
+                        <span class="fab fa-node-js fa-4x"></span>
+                    </div>
                     <h3 class="features-item-header">Dodawaj nowe wydarzenia</h3>
-                    <span class="features-items-description">
+                    <span class="features-items__description">
                         Wiesz coś o czymś? Podziel się tym dodając wydarzenie.
                     </span>
                 </div>
             </div>
         </section>
         <section class="section-add-info" id="add-info">
-            <h2 class="add-info-header">Nie uwierzysz, ale znajdziesz u nas również:</h2>
-            <div class="add-info-column row">
+            <h2 class="add-info__header">Nie uwierzysz, ale znajdziesz u nas również:</h2>
+            <div class="add-info__column row">
                     <div class="add-info-item">
                             <span class="far fa-map fa-2x"></span>
                         <h4>Mapa wydarzeń!</h4>
@@ -107,7 +120,7 @@
                             </span>
                     </div>
                 </div>
-            <div class="add-info-column row">
+            <div class="add-info__column row">
                     <div class="add-info-item">
                             <span class="fas fa-child fa-2x"></span>
                             <h4>Buduj sieć kontaktów!</h4>
@@ -144,29 +157,44 @@
             <div class="section-form">
                 <form action="https://formspree.io/m.muszy@gmail.com" method="POST">
                     <h3>Podaj adres email i czekaj na sygnał!</h3>
-                    <input type="text" placeholder="Twoje imię" name="_replyto">
-                    <input type="email" placeholder="Twój email">
+                    <input class="form-data" type="text" placeholder="Twoje imię" name="_replyto">
+                    <input class="form-data" type="email" placeholder="Twój email">
                     <button class="submit" value="Send"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie</button>
                 </form>
             </div>
         </section>
-        <section class="section" id="team">
+        <section class="team">
             <div class="team-info">
-                <div class="teammate">
-                    <img src="" alt="" class="team-photo">
-                    <p></p>
-                    <a href="" class="team-link"></a>
-                    <div class="icon"></div>
+                <h3 class="team-text">Nasz zespół:</h3>
+                <div class="team-person">
+                    <img src="assets/images/teammate.png" alt="team" class="team-photo">
+                    <span class="team-name">Bartosz Zawada</span>
+                    <a href="https://github.com/bartzaw" class="team-link"></a>
+                    <div class="icon-social">
+                        <span class="fab fa-facebook"></span>
+                        <span class="fab fa-linkedin"></span>
+                        <span class="fab fa-twitter-square"></span>
+                    </div>
                 </div>
-                <div class="teammate"><img src="" alt="" class="team-photo">
-                    <p></p>
-                    <a href="" class="team-link"></a>
-                    <div class="icon"></div>
+                <div class="team-person">
+                    <img src="assets/images/teammate.png" alt="team" class="team-photo">
+                    <span class="team-name">Michał Muszyński</span>
+                    <a href="https://github.com/icelandico" class="team-link"></a>
+                    <div class="icon-social">
+                        <span class="fab fa-facebook"></span>
+                        <span class="fab fa-linkedin"></span>
+                        <span class="fab fa-twitter-square"></span>
+                    </div>
                 </div>
-                <div class="teammate"><img src="" alt="" class="team-photo">
-                    <p></p>
-                    <a href="" class="team-link"></a>
-                    <div class="icon"></div>
+                <div class="team-person">
+                    <img src="assets/images/teammate.png" alt="team" class="team-photo">
+                    <span class="team-name">Bartosz Frąckiewicz</span>
+                    <a href="https://github.com/Decomplosed" class="team-link"></a>
+                    <div class="icon-social">
+                        <span class="fab fa-facebook"></span>
+                        <span class="fab fa-linkedin"></span>
+                        <span class="fab fa-twitter-square"></span>
+                    </div>
                 </div>
             </div>
         </section>
