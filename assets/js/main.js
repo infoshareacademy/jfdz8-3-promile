@@ -10,6 +10,7 @@ $(function() {
         $page.animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, scrollDuration);
+        toggleMenu(event);
     }
 
     function toggleMenu(event) {
