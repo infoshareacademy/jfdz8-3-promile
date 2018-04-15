@@ -11,8 +11,10 @@ $(document).ready(function(){
         $(".navigation-list").toggleClass('hide');
     });
 });
-
+/*
 $('.carousel').carousel({
     interval: 4000,
     pause: false
 });
+
+*/

@@ -111,10 +111,12 @@ h2 {
 .carousel-inner
  {
     height: 100%;
+    -webkit-filter: blur(3px);
 }
 
 .hero-content{
     position: absolute;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -124,6 +126,33 @@ h2 {
 
 .hero-title {
     text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hero-title h1{
+    font-size: 3.5em;
+    padding-bottom: 40px;
+}
+
+.hero-title h2{
+    font-size: 2em;
+    padding: 0;
+}
+
+.hero-button{
+    margin-top: 30px;
+    height: 60px;
+    width: 300px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: 2px solid #ffffff;
+    cursor:pointer;
+    overflow: hidden;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .cta-buttons {
