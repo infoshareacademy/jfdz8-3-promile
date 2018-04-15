@@ -10,7 +10,10 @@ $(function() {
         $page.animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, scrollDuration);
-        toggleMenu(event);
+        if ($(window).width() < 968) {
+            toggleMenu(event)
+        }
+
     }
 
     function toggleMenu(event) {
