@@ -81,12 +81,36 @@ h2 {
 }
 
 .hero {
-    padding-top: 100px;
+    padding-top: 70px;
     height: 100vh;
     background: #292929;
-    background-image: url("../images/1261534_Sopot-o-wschodzie-slonca.jpg");
-    background-attachment: fixed;
-    background-position: 0,0;
+    /*background-attachment: fixed;*/
+    /*background-position: 0,0;*/
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel-item:nth-child(1) {
+    background-image: url(https://images2.alphacoders.com/437/437450.jpg);
+}
+
+.carousel-item:nth-child(2) {
+    background-image: url(https://i.nocimg.pl/img/zdj_hd/d7/884/18-gdynia-sea-towers-gdynia.jpg);
+}
+
+.carousel-item:nth-child(3) {
+    background-image: url(http://nexpertis.pl/wp-content/uploads/sopot2.png);
+}
+
+.carousel,
+.carousel-inner
+ {
+    height: 100%;
 }
 
 .hero-content{

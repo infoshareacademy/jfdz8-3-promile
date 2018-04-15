@@ -7,14 +7,9 @@
     <meta name="description" content="Aplikacja do wyszukiwania wydarzeń w Trójmieście">
     <meta name="author" content="Bartosz Zawada - Bartosz Frąckiewicz - Michał Muszyński">
     <meta name="keywords" content="wydarzenia, it, gdańsk, gdynia, sopot">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-            crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
 </head>
 <body>
     <header id="anchor-home">
@@ -35,7 +30,24 @@
             </nav>
         </div>
         <div class="hero">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"></div>
+                    <div class="carousel-item"></div>
+                    <div class="carousel-item"></div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
             <div class="hero-content">
+
+
                 <div class="hero-title">
                     <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
                     <h2>Lorem ipsum dolor sit amet</h2>
@@ -205,5 +217,12 @@
             <address>Gdańsk</address>
         </div>
     </footer>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+            crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
