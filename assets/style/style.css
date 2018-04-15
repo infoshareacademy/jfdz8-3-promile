@@ -71,13 +71,14 @@ h2 {
 
 .main-container {
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
     height: 100%;
     padding: 1.5% 2.5%;
 }
 
 .section-features, .section-add-info, .section-form {
-    padding: 3%;
+    padding: 2%;
 }
 
 .hero {
@@ -254,21 +255,23 @@ h2 {
 }
 
 .section-add-info {
-
+    display: flex;
+    flex-grow:1;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
-.add-info__column {
-    width: 50%;
-    float: left;
+.add-info__item {
+    font-size: 1em;
+    padding: 1%;
 }
 
-.add-info-item {
-    padding: 2.5%;
+.add-info__item h4 {
+    color: #82a9d2;
+    font-weight: 700;
 }
 
-.clear {
-    clear: both;
-}
 /* ICONS */
 .fa-js {
     color: #f4be41;
@@ -288,55 +291,7 @@ h2 {
 
 .fa-map, .fa-map-marker-alt, .fa-bell, .fa-child, .fa-calendar-alt, .fa-comment-alt {
     color: #82a9d2;
-}
-
-
-.team{
-    padding: 15px;
-}
-
-.team-text{
-    font-size: 30px;
-    text-align: center;
-    padding: 25px;
-}
-
-.team-person {
-    top: 10px;
-    display: inline-block;
-    padding: 15px;
-    text-align: center;
-    position: relative;
-    width: 33%;
-    float: left;
-}
-
-.team-name{
-    top: 30px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.team-photo{
-    width: 30%;
-    height: 30%;
-    border-radius: 50%;
-    float: left;
-}
-
-.icon-social{
-    padding-top: 10px;
-}
-
-.fa-facebook, .fa-linkedin, .fa-twitter-square{
-    font-size: 2em;
-
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: block;
+    font-weight: 700;
 }
 
 @media screen and (min-width: 968px) {
@@ -389,5 +344,11 @@ h2 {
         flex-direction: row;
         display: flex;
     }
+
+    .add-info__container {
+        flex-direction: row;
+        display: flex;
+    }
+
 
 }
