@@ -173,6 +173,7 @@ h2 {
     padding-bottom: 15px;
     display: flex;
     flex: 1;
+    justify-content: center;
 }
 
 .form h2 {
