@@ -114,13 +114,9 @@ h2 {
 }
 
 .navigation-list {
-    display: flex;
+    display : none;
     flex-direction: column;
     text-align: center;
-}
-.navigation-list.hide {
-    display : none;
-    transition: 1s linear;
 }
 
 .navigation-list-item.hover {
@@ -317,17 +313,12 @@ h2 {
     }
 
     .navigation-list {
-        display: flex;
+        display: flex !important;
         flex-direction: row;
         justify-content: space-between;
-        text-align: center;
         line-height: 70px;
         height: 70px;
         white-space: nowrap;
-    }
-
-    .navigation-list.hide {
-        display: flex;
     }
 
     .navigation-list-item {
