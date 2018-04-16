@@ -245,8 +245,8 @@ h2 {
 }
 
 .section-features__header, .add-info__header {
-    font-size: 24px;
     padding: 2%;
+    font-size: 2rem;
     }
 
 .features-item-header, .section-features__header, .add-info__header {
@@ -258,13 +258,17 @@ h2 {
     display: flex;
     flex-grow:1;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
+}
+
+.add-info__container {
+    justify-content: center;
 }
 
 .add-info__item {
     font-size: 1em;
     padding: 3.5%;
+    justify-content: center;
 }
 
 .add-info__item span {
@@ -274,6 +278,15 @@ h2 {
 .add-info__item h4 {
     color: #82a9d2;
     font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+}
+
+.add-info__box {
+    padding: 1rem 3rem;
 }
 
 /* ICONS */
@@ -354,5 +367,8 @@ h2 {
         display: flex;
     }
 
+    .add-info__column {
+        max-width: 50%;
+    }
 
 }
