@@ -242,7 +242,7 @@ h2 {
 
 .section-features__header, .add-info__header {
     padding: 2%;
-    font-size: 2rem;
+    font-size: 2em;
     }
 
 .features-item-header, .section-features__header, .add-info__header {
@@ -274,15 +274,15 @@ h2 {
 .add-info__item h4 {
     color: #82a9d2;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0, 0, 255,.175);
+    box-shadow: 0 1em 3em rgba(0, 0, 255,.175);
 }
 
 .add-info__box {
-    padding: 1rem 3rem;
+    padding: 1em 3em;
 }
 
 /* ICONS */
