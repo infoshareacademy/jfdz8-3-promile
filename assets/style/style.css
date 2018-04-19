@@ -76,8 +76,10 @@ h2 {
     padding: 1.5% 2.5%;
 }
 
-.section-features, .section-add-info, .section-form {
+.section-features, .section-add-info, .section-form, .footer {
     padding: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .hero {
@@ -283,6 +285,23 @@ h2 {
 
 .add-info__box {
     padding: 1rem 3rem;
+}
+
+.footer {
+    display: flex;
+    background: #2f4a6f;
+    color: #FFF;
+
+}
+
+.footer > div {
+    flex-grow: 1;
+    display: flex;
+    padding: 2%;
+}
+
+.footer-address {
+    flex-direction: column;
 }
 
 /* ICONS */
