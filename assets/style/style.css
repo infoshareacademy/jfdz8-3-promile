@@ -304,6 +304,13 @@ h2 {
     flex-direction: column;
 }
 
+.footer-social {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
 /* ICONS */
 .fa-js {
     color: #f4be41;
