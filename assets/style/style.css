@@ -83,7 +83,7 @@ input:hover {
 }
 
 .section-features, .section-add-info, .section-form {
-    padding: 3%;
+    padding: 2%;
 }
 
 .hero {
@@ -248,8 +248,8 @@ input:hover {
 }
 
 .section-features__header, .add-info__header {
-    font-size: 24px;
     padding: 2%;
+    font-size: 2rem;
     }
 
 .features-item-header, .section-features__header, .add-info__header {
@@ -258,21 +258,40 @@ input:hover {
 }
 
 .section-add-info {
-
+    display: flex;
+    flex-grow:1;
+    flex-direction: column;
+    text-align: center;
 }
 
-.add-info__column {
-    width: 50%;
-    float: left;
+.add-info__container {
+    justify-content: center;
 }
 
-.add-info-item {
-    padding: 2.5%;
+.add-info__item {
+    font-size: 1em;
+    padding: 3.5%;
+    justify-content: center;
 }
 
-.clear {
-    clear: both;
+.add-info__item span {
+    text-align: left;
 }
+
+.add-info__item h4 {
+    color: #82a9d2;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 255,.175);
+}
+
+.add-info__box {
+    padding: 1rem 3rem;
+}
+
 /* ICONS */
 .fa-js {
     color: #f4be41;
@@ -292,55 +311,7 @@ input:hover {
 
 .fa-map, .fa-map-marker-alt, .fa-bell, .fa-child, .fa-calendar-alt, .fa-comment-alt {
     color: #82a9d2;
-}
-
-
-.team{
-    padding: 15px;
-}
-
-.team-text{
-    font-size: 30px;
-    text-align: center;
-    padding: 25px;
-}
-
-.team-person {
-    top: 10px;
-    display: inline-block;
-    padding: 15px;
-    text-align: center;
-    position: relative;
-    width: 33%;
-    float: left;
-}
-
-.team-name{
-    top: 30px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.team-photo{
-    width: 30%;
-    height: 30%;
-    border-radius: 50%;
-    float: left;
-}
-
-.icon-social{
-    padding-top: 10px;
-}
-
-.fa-facebook, .fa-linkedin, .fa-twitter-square{
-    font-size: 2em;
-
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: block;
+    font-weight: 700;
 }
 
 @media screen and (min-width: 968px) {
@@ -387,6 +358,15 @@ input:hover {
     .features-item__container {
         flex-direction: row;
         display: flex;
+    }
+
+    .add-info__container {
+        flex-direction: row;
+        display: flex;
+    }
+
+    .add-info__column {
+        max-width: 50%;
     }
 
 }
