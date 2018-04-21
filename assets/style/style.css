@@ -121,38 +121,67 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    font-family: 'Cinzel', serif;
+    font-family: 'Raleway', sans-serif;
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 250px;
+    border-top: 3px solid #ffffff;
+    padding-top: 250px;
 }
 
 .hero-title {
     text-align: center;
     color: #fff;
-    font-weight: bold;
 }
 
 .hero-title h1{
-    font-size: 3.5em;
-    padding-bottom: 40px;
+    font-size: 8em;
+    padding-bottom: 30px;
+    font-weight: bold;
 }
 
 .hero-title h2{
-    font-size: 2em;
-    padding: 0;
+    font-size: 4em;
+    padding-bottom: 40px;
 }
 
 .hero-button{
-    margin-top: 30px;
-    height: 60px;
-    width: 300px;
+    margin-top: 60px;
+    height: 80px;
+    width: 400px;
     background-color: Transparent;
     background-repeat:no-repeat;
-    border: 2px solid #ffffff;
+    border: 3px solid #ffffff;
     cursor:pointer;
     overflow: hidden;
-    color: #ffffff;
-    font-size: 30px;
+    border-radius: 20px;
+}
+
+.hero-button{
+    transition: 0.1s linear;
+    text-decoration: none;
+    font-size: 2.5em;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    border-radius: 5px;
+}
+
+.hero-button:hover{
+    text-decoration: none;
+    background: #ffffff;
+    color: #000000;
+}
+
+.hero-button a{
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+.hero-button a:hover{
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
 
 .cta-buttons {
