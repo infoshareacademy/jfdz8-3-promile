@@ -267,10 +267,14 @@ h2 {
     font-size: 1em;
     padding: 3.5%;
     justify-content: center;
+    height: 33%;
 }
 
 .add-info__item span {
-    text-align: left;
+    text-align: center;
+    font-size: 1em;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .add-info__item h4 {
@@ -432,6 +436,12 @@ h2 {
 
     .add-info__column {
         max-width: 50%;
+    }
+
+    .add-info__box {
+        font-size: 1em;
+        padding: 1.5em 1em;
+        height: 65%;
     }
 
     .footer {
