@@ -63,18 +63,6 @@ h2 {
     padding: 25px;
 }
 
-input {
-    display: block;
-    margin: 20px auto;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-
-input:hover {
-    background: #ccc;
-    transition: 1s;
-}
-
 .main-container {
     display: flex;
     flex-direction: column;
@@ -184,7 +172,6 @@ input:hover {
 .form--animate {
     animation: move 1s ;
     animation-iteration-count: 3;
-
 }
 
 @keyframes move {
@@ -205,7 +192,6 @@ input:hover {
     }
 }
 
-
 .form h2 {
     font-size: 45px;
 }
@@ -224,6 +210,11 @@ input:hover {
     padding: 5px;
     border: 1px solid #ccc;
     transition: 0.3s linear;
+}
+
+.form-data:hover {
+    background: #ccc;
+    transition: 1s;
 }
 
 .submit {
