@@ -394,6 +394,24 @@ input:hover {
     font-weight: 700;
 }
 
+#mapid {
+    max-width: 335px;
+    min-width: 160px;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid #5792ff;
+    box-shadow: 5px 5px 5px #363636
+}
+
+.leaflet-container .leaflet-control-attribution {
+    margin-bottom: 1rem;
+    margin-right: 1.5rem;
+}
+
+.leaflet-top {
+    top: 33%;
+}
+
 @media screen and (min-width: 968px) {
     .hamburger-container {
         display: none;

@@ -23,5 +23,15 @@ $(function() {
 
     $(document).on('click', 'a[href^="#"]', scrollPage);
     $hamburger.on('click', toggleMenu);
+
+    var mymap = L.map('mapid').setView([54.40315833, 18.56952222], 16);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+
+    var marker = L.marker([54.40315833, 18.56952222]).addTo(mymap);
+
+    marker.bindPopup("<b>Hello user!</b><br>We are InfoShare Academy").openPopup();
 });
 
