@@ -63,17 +63,6 @@ h2 {
     padding: 25px;
 }
 
-input {
-    display: block;
-    margin: 20px auto;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-
-input:hover {
-    background: #ccc;
-    transition: 1s;
-}
 
 .main-container {
     display: flex;
@@ -174,6 +163,42 @@ input:hover {
     color: #454545;
 }
 
+.form__info {
+    padding-top: 0;
+    padding-bottom: 15px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.form__icon {
+    padding: 30px;
+}
+
+.form--animate {
+    animation: move 1s ;
+    animation-iteration-count: 3;
+}
+
+@keyframes move {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+
 .section-form {
     padding-bottom: 15px;
     display: flex;
@@ -200,6 +225,10 @@ input:hover {
     margin: 20px auto;
     padding: 5px;
     border: 1px solid #ccc;
+}
+.form-data:hover {
+    background: #ccc;
+    transition: 1s;
 }
 
 .submit {
