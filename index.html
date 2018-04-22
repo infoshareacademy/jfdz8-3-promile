@@ -7,14 +7,9 @@
     <meta name="description" content="Aplikacja do wyszukiwania wydarzeń w Trójmieście">
     <meta name="author" content="Bartosz Zawada - Bartosz Frąckiewicz - Michał Muszyński">
     <meta name="keywords" content="wydarzenia, it, gdańsk, gdynia, sopot">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-            integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-            crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
 </head>
 <body>
     <header id="anchor-home">
@@ -23,7 +18,7 @@
                 <div class="hamburger-container">
                     <a href="#" class="hamburger"><span class="fas fa-bars"></span></a>
                 </div>
-                <ul class="navigation-list hide">
+                <ul class="navigation-list">
                     <li class="navigation-list-item hover"><a href="#anchor-home">Strona główna</a></li>
                     <li class="navigation-list-item hover"><a href="#features">Nasza aplikacja</a></li>
                     <li class="navigation-list-item hover"><a href="#add-info">Dodatkowe informacje</a></li>
@@ -47,7 +42,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="main-container">
         <section class="section-features" id="features">
             <div class="section-features__header">
                 <h2 class="section-features__header">Poszerz swoje możliwości</h2>
@@ -55,106 +50,131 @@
             <div class="features-item__container">
                 <div class="features-item">
                     <div class="features-icon-container">
-                        <span class="fab fa-js fa-4x"></span>
+                        <span class="fab fa-js fa-8x"></span>
                     </div>
                     <h3 class="features-item-header">Najlepsze wydarzenia</h3>
-                    <span class="features-items__description">
-                        Bo te najgorsze znajdziesz gdzieś indziej.
-                    </span>
+                    <div class="features-item__description">
+                        <span>
+                            Bo te najgorsze znajdziesz gdzieś indziej.
+                        </span>
+                    </div>
                 </div>
                 <div class="features-item">
                     <div class="features-icon-container">
-                        <span class="fab fa-react fa-4x"></span>
+                        <span class="fab fa-react fa-8x"></span>
                     </div>
                     <h3 class="features-item-header">Mapa wydarzeń</h3>
-                    <span class="features-items__description">
-                        <q>Jeżeli nie wiesz, dokąd chcesz iść, nie ma znaczenia, którą drogą pójdziesz...</q>
-                    </span>
+                    <div class="features-item__description">
+                        <span>
+                            <q>Jeżeli nie wiesz, dokąd chcesz iść, nie ma znaczenia, którą drogą pójdziesz...</q>
+                        </span>
+                    </div>
                 </div>
                 <div class="features-item">
                     <div class="features-icon-container">
-                        <span class="fab fa-angular fa-4x"></span>
+                        <span class="fab fa-angular fa-8x"></span>
                     </div>
                     <h3 class="features-item-header">Kalendarz wydarzeń</h3>
-                    <span class="features-items__description">
-                        Wiadomo, pamięć już nie taka jak kiedyś! A najgorzej to zapomnieć wypić...
-                    </span>
+                    <div class="features-item__description">
+                        <span>
+                            Wiadomo, pamięć już nie taka jak kiedyś! A najgorzej to zapomnieć wypić...
+                        </span>
+                    </div>
                 </div>
                 <div class="features-item">
                     <div class="features-icon-container">
-                        <span class="fab fa-node-js fa-4x"></span>
+                        <span class="fab fa-node-js fa-8x"></span>
                     </div>
                     <h3 class="features-item-header">Dodawaj nowe wydarzenia</h3>
-                    <span class="features-items__description">
-                        Wiesz coś o czymś? Podziel się tym dodając wydarzenie.
-                    </span>
+                    <div class="features-item__description">
+                        <span>
+                            Wiesz coś o czymś? Podziel się tym dodając wydarzenie.
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="section-add-info" id="add-info">
-            <h2 class="add-info__header">Nie uwierzysz, ale znajdziesz u nas również:</h2>
-            <div class="add-info__column row">
-                    <div class="add-info-item">
-                            <span class="far fa-map fa-2x"></span>
+            <div class="add-info__header">
+                <h2>Nie uwierzysz, ale znajdziesz u nas również:</h2>
+            </div>
+            <div class="add-info__container">
+                <div class="add-info__column">
+                    <div class="add-info__item">
+                        <span class="far fa-map fa-2x"></span>
                         <h4>Mapa wydarzeń!</h4>
+                        <div class="shadow-lg add-info__box">
                             <span>
                                 Przejrzysta mapa, na której sprawdzisz wszystkie interesujące wydarzenia w Trójmieście.
                                 Informacje kontaktowe, daty i opis wydarzenia. Wszystko czego możesz potrzebować!
                             </span>
+                        </div>
                     </div>
-                    <div class="add-info-item">
-                            <span class="fas fa-map-marker-alt fa-2x"></span>
-                            <h4>Sprawdź czy jesteś blisko!</h4>
+                    <div class="add-info__item">
+                        <span class="fas fa-map-marker-alt fa-2x"></span>
+                        <h4>Sprawdź czy jesteś blisko!</h4>
+                        <div class="shadow-lg add-info__box">
                             <span>
                                 Masz wolną chwilę? Zastanawiasz się czy w sąsiedztwie dzieje się coś interesującego?
                                 Nasza mapa wskaże Ci najbliższe wydarzenia!
                             </span>
+                        </div>
                     </div>
-                    <div class="add-info-item">
-                            <span class="far fa-bell fa-2x"></span>
-                            <h4>Powiadomienia o nadchodzących wydarzeniach!</h4>
+                    <div class="add-info__item">
+                        <span class="far fa-bell fa-2x"></span>
+                        <h4>Powiadomienia o nadchodzących wydarzeniach!</h4>
+                        <div class="shadow-lg add-info__box">
                             <span>
                                 W fabryce wciąż za dużo pracy? Szef zrzędzi, żona dzwoni, a pies szczeka?
                                 Łatwo zapomnieć o <strong>naprawdę</strong> ważnych sprawach.
                                 Z naszymi powiadomieniami nigdy nie zapomniesz o nadchodzącym wydarzeniu!
                             </span>
+                        </div>
                     </div>
                 </div>
-            <div class="add-info__column row">
-                    <div class="add-info-item">
-                            <span class="fas fa-child fa-2x"></span>
-                            <h4>Buduj sieć kontaktów!</h4>
+                <div class="add-info__column">
+                    <div class="add-info__item">
+                        <span class="fas fa-child fa-2x"></span>
+                        <h4>Buduj sieć kontaktów!</h4>
+                        <div class="shadow-lg add-info__box">
                             <span>
                                 Networking kojarzy Ci się z nudnymi ludźmi, mówiącymi o nudnych rzeczach? Nigdy więcej!
                                 Każde z wydarzeń, które znajdziesz na Naszej mapie to okazja do
                                 poznania swojego przyszłego szefa!
                             </span>
+                        </div>
                     </div>
-                    <div class="add-info-item">
-                            <span class="far fa-calendar-alt fa-2x"></span>
+                    <div class="add-info__item">
+                        <span class="far fa-calendar-alt fa-2x"></span>
                         <h4>Nie zapomniaj o żadnym wydarzeniu!</h4>
+                        <div class="shadow-lg add-info__box">
                             <span>
                                 Dodałeś wydarzenie do kalendarza, ale zwoje nie działają już jak kiedyś?
                                 Nie bój nic, przypomniemy Ci o nim zanim zjedzą całą pizzę! Albo tuż po.
                             </span>
+                        </div>
                     </div>
-                    <div class="add-info-item">
-                            <span class="far fa-comment-alt fa-2x"></span>
+                    <div class="add-info__item">
+                        <span class="far fa-comment-alt fa-2x"></span>
                         <h4>Dziel się opinią!</h4>
+                        <div class="shadow-lg add-info__box">
                             <span>
                                 Chcesz Nam nawrzucać? Śmiało! Obiecujemy umieścić Twoją opinię
                                 w specjalnym folderze. Chyba,że przez FB, albo Twittera,
                                 tam nie mamy jeszcze folderu.
                             </span>
+                        </div>
                     </div>
                 </div>
-            <div class="clear"></div>
+            </div>
         </section>
         <section class="form" id="anchor-form">
             <h2>Zapisz się na premierę aplikacji!</h2>
             <h3>Dowiedz się kiedy startujemy!</h3>
-            <span><span class="far fa-envelope fa-8x"></span></span>
-            <div class="section-form">
+            <div class="form__icon">
+                <span><span class="far fa-envelope fa-8x"></span></span>
+            </div>
+            <div class="form__info">
                 <form action="https://formspree.io/m.muszy@gmail.com" method="POST">
                     <h3>Podaj adres email i czekaj na sygnał!</h3>
                     <input class="form-data" type="text" placeholder="Twoje imię">
@@ -199,11 +219,62 @@
             </div>
         </section>
     </main>
-    <footer class="contact" id="anchor-contact">
-        <div>
-            <p>Nasz footer</p>
-            <address>Gdańsk</address>
+    <footer class="footer" id="anchor-contact">
+        <div class="footer-index">
+            <h4 class="footer-header">Jeszcze raz?</h4>
+            <ul class="footer-index-list">
+                <li class="footer-index-list-item"><a href="#anchor-home">Strona główna</a></li>
+                <li class="footer-index-list-item"><a href="#features">Nasza aplikacja</a></li>
+                <li class="footer-index-list-item"><a href="#add-info">Dodatkowe informacje</a></li>
+                <li class="footer-index-list-item"><a href="#anchor-form">Zgłoś się</a></li>
+                <li class="footer-index-list-item"><a href="#team">Zespół</a></li>
+                <li class="footer-index-list-item"><a href="#anchor-contact">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="footer-address">
+            <h4 class="footer-header">Łap kontakt:</h4>
+            <address>
+                <p>
+                    <span class="far fa-building fa-1x"></span>
+                    Olivia Business Centre al. Grunwaldzka 472B, 80-309 Gdańsk
+                </p>
+            </address>
+            <address>
+                <p>
+                    <span class="fas fa-phone-square"></span>
+                    + 48 58 525-xx-xx
+                </p>
+            </address>
+            <address>
+                <p>
+                    <span class="fas fa-at"></span>
+                    trespromiles@infoshare.pl
+                </p>
+            </address>
+        </div>
+        <div class="footer-additional">
+            <h4 class="footer-header">Złap nas na:</h4>
+            <div class="footer-social">
+                <a href="https://www.facebook.com"><span class="fab fa-facebook-square fa-5x"></span></a>
+                <a href="https://www.twitter.com"><span class="fab fa-twitter-square fa-5x"></span></a>
+                <a href="https://www.instagram.com"><span class="fab fa-instagram fa-5x"></span></a>
+            </div>
+            <div class="copy-info">
+                <p>Copyright <span class="far fa-copyright"></span> TresPromiles 2018</p>
+            </div>
+        </div>
+        <div class="footer-map__container">
+            <div class="footer-map">
+                <!--MAP TO BE ADDED BY MM-->
+            </div>
         </div>
     </footer>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+        integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
