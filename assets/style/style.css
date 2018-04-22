@@ -341,7 +341,7 @@ h2 {
     flex-direction: column;
 }
 
-.footer > div {
+.footer-element {
     display: flex;
     flex:1;
     margin: 5px;
@@ -371,6 +371,10 @@ h2 {
     flex-direction: column;
 }
 
+.footer-map__container {
+    height: 300px;
+}
+
 .footer-map {
     height: 280px;
     width: 280px;
@@ -386,10 +390,15 @@ h2 {
 .footer-social {
     color: #a6b9cd;
     padding-top: 10px;
+    align-self: center;
 }
 
 .copy-info {
     font-size: 0.8em;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    background: rgba(47, 74, 110,0.9);
 }
 
 /* ICONS */
@@ -509,6 +518,10 @@ h2 {
 
     .footer > div {
         height: 100%;
+    }
+
+    .footer-social {
+        align-self: left;
     }
 }
 
