@@ -63,7 +63,6 @@ h2 {
     padding: 25px;
 }
 
-
 .main-container {
     display: flex;
     flex-direction: column;
@@ -140,6 +139,7 @@ h2 {
 
 .navigation-list-item.hover:hover {
     background: #f8f8ff;
+    font-size: 1.1rem;
 }
 
 .hamburger-container {
@@ -157,10 +157,12 @@ h2 {
 }
 
 .form {
-    padding-top: 50px;
+    padding-top: 4rem;
     background-color: #a6b9cd;
     text-align: center;
     color: #454545;
+    width: 100%;
+    overflow: hidden;
 }
 
 .form__info {
@@ -172,28 +174,21 @@ h2 {
 }
 
 .form--animate {
-    animation: move 1s ;
-    animation-iteration-count: 3;
+    transition: transform 1.5s ease-in-out;
+    transform: rotate(360deg) scale(1.2);
 }
 
-@keyframes move {
-    10%, 90% {
-        transform: translate3d(-1px, 0, 0);
-    }
-
-    20%, 80% {
-        transform: translate3d(2px, 0, 0);
-    }
-
-    30%, 50%, 70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-
-    40%, 60% {
-        transform: translate3d(4px, 0, 0);
-    }
+.typewrite {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s steps(100, end);
 }
 
+@keyframes typing {
+    from {width: 0}
+    to {width: 100%}
+}
 
 .section-form {
     padding-bottom: 15px;
@@ -221,10 +216,10 @@ h2 {
     margin: 20px auto;
     padding: 5px;
     border: 1px solid #ccc;
+    transition: 0.5s linear;
 }
 .form-data:hover {
     background: #ccc;
-    transition: 1s;
 }
 
 .submit {
