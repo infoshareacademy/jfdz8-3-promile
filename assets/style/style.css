@@ -64,11 +64,6 @@ h2 {
 }
 
 
-.section-form input:hover {
-    background: #ccc;
-    transition: 1s;
-}
-
 .main-container {
     display: flex;
     flex-direction: column;
@@ -96,7 +91,7 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 0;
 }
 
 .hero-title {
@@ -165,7 +160,44 @@ h2 {
     padding-top: 50px;
     background-color: #a6b9cd;
     text-align: center;
+    color: #454545;
 }
+
+.form__info {
+    padding-top: 0;
+    padding-bottom: 15px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.form__icon {
+    padding: 30px;
+}
+
+.form--animate {
+    animation: move 1s ;
+    animation-iteration-count: 3;
+}
+
+@keyframes move {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
 
 .section-form {
     padding-bottom: 15px;
@@ -193,6 +225,10 @@ h2 {
     margin: 20px auto;
     padding: 5px;
     border: 1px solid #ccc;
+}
+.form-data:hover {
+    background: #ccc;
+    transition: 1s;
 }
 
 .submit {
