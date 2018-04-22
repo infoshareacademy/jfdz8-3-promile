@@ -22,7 +22,9 @@ $(function() {
     }
 
     $(window).on('scroll', (function () {
-        if ($(window).scrollTop() >= $(document).height() - $(window).height() - 500) {
+
+        if ($(window).scrollTop() >= $('#anchor-form').offset().top - 200) {
+            $(window).scrollTop();
             $('.form__icon').toggleClass('form--animate');
         }
     }));
