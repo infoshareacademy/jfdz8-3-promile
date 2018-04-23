@@ -157,11 +157,10 @@ h2 {
 }
 
 .form {
-    padding-top: 4rem;
+    padding-top: 50px;
     background-color: #a6b9cd;
     text-align: center;
     color: #454545;
-    width: 100%;
     overflow: hidden;
 }
 
@@ -198,17 +197,17 @@ h2 {
 }
 
 .form h2 {
-    font-size: 45px;
-    padding: 20px;
+    font-size: 30px;
+    padding: 10px;
 }
 
 .form h3 {
-    font-size: 38px;
-    padding: 20px;
+    font-size: 20px;
+    padding: 10px;
 }
 
 .section-form h3 {
-    font-size: 30px;
+    font-size: 15px;
 }
 
 .form-data {
