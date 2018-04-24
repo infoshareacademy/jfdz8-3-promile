@@ -68,7 +68,6 @@ h2 {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 1.5% 2.5%;
 }
 
 .section-features, .section-add-info, .section-form {
@@ -80,7 +79,6 @@ h2 {
 .hero {
     padding-top: 100px;
     height: 100vh;
-    background: #292929;
     background-image: url("../images/1261534_Sopot-o-wschodzie-slonca.jpg");
     background-attachment: fixed;
     background-position: 0,0;
@@ -119,9 +117,17 @@ h2 {
 .navigation-list-item.hover {
     padding: 10px;
     flex: 1;
-    background: #a6b9cd;
+    background: #2F527F;
     list-style: none;
     font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    transition: 0.1s linear;
+}
+
+.navigation-list-item.hover:hover {
+    background: #fefefe;
+    color: #2F527F;
+    font-weight: bold;
 }
 
 .center-logo {
@@ -129,27 +135,24 @@ h2 {
 }
 
 .navigation-list-item a {
-    color: #363636;
+    color: #fefefe;
     text-decoration: none;
     font-size: 1em;
 }
 
-.navigation-list-item.hover {
-    transition: 0.1s linear;
-}
-
-.navigation-list-item.hover:hover {
-    background: #f8f8ff;
+.navigation-list-item:hover a {
+    color: #2F527F;
+    font-weight: bold;
 }
 
 .hamburger-container {
     text-align: center;
     font-size: 2em;
-    background-color: #a6b9cd;
+    background-color: #2F527F;
 }
 
 .hamburger {
-    color: #363636;
+    color: #ABCFFF;
 }
 
 .hamburger:hover {
@@ -158,7 +161,7 @@ h2 {
 
 .form {
     padding-top: 50px;
-    background-color: #a6b9cd;
+    background: #ABCFFF;
     text-align: center;
     color: #454545;
 }
@@ -309,14 +312,13 @@ h2 {
 .add-info__item span {
     text-align: center;
     font-size: 1em;
-    word-wrap: break-word;
-    overflow: hidden;
 }
 
 .add-info__item h4 {
-    color: #82a9d2;
+    color: #5EA3FF;;
     font-weight: 700;
     font-size: 1.5em;
+    padding-bottom: 20px;
 }
 
 .shadow-lg {
@@ -329,12 +331,13 @@ h2 {
 
 .footer {
     display: block;
-    background: rgba(47, 74, 110, 0.8);
+    background: #89A6CC;
     color: #FFF;
     width: 100%;
     height: 100%;
     padding: 2%;
     flex-direction: column;
+    box-shadow: 0 -2em 3em rgba(47, 82, 255,.175);
 }
 
 .footer-element {
@@ -391,10 +394,10 @@ h2 {
 
 .copy-info {
     font-size: 0.8em;
-    height: 100%;
+    height: 150%;
     color: #fff;
     text-align: center;
-    background: rgba(47, 74, 110,0.9);
+    background: #2F527F;
 }
 
 /* ICONS */
@@ -416,16 +419,16 @@ h2 {
 
 .fa-facebook-square, .fa-twitter-square, .fa-instagram  {
     color: #a6b9cd;
-    opacity: 0.15;
+    opacity: 0.5;
 }
 
 .fa-facebook-square:hover, .fa-twitter-square:hover, .fa-instagram:hover   {
+    color: #2F527F;
     opacity: 1.0;
 }
 
 .fa-map, .fa-map-marker-alt, .fa-bell, .fa-child, .fa-calendar-alt, .fa-comment-alt {
-    color: #82a9d2;
-    font-weight: 700;
+    color: #5EA3FF;
 }
 
 #mapid {
@@ -462,7 +465,7 @@ h2 {
 
     .navigation-list-item {
         flex: 1;
-        background: #a6b9cd;
+        background: #2F527F;
         list-style: none;
         font-family: "Open Sans", sans-serif;
     }
