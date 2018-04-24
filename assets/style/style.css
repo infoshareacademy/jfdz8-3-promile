@@ -121,6 +121,13 @@ h2 {
     list-style: none;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
+    transition: 0.1s linear;
+}
+
+.navigation-list-item.hover:hover {
+    background: #fefefe;
+    color: #2F527F;
+    font-weight: bold;
 }
 
 .center-logo {
@@ -135,16 +142,7 @@ h2 {
 
 .navigation-list-item:hover a {
     color: #2F527F;
-    background: #fefefe;
     font-weight: bold;
-}
-
-.navigation-list-item.hover {
-    transition: 0.1s linear;
-}
-
-.navigation-list-item.hover:hover {
-    background: #fefefe;
 }
 
 .hamburger-container {
