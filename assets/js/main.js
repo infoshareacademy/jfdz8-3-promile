@@ -2,7 +2,8 @@ $(function() {
     var $navigationList = $('.navigation-list');
     var $hamburger = $('.hamburger');
     var $page = $('html, body');
-    var $icon = $('.form__icon')
+    var $icon = $('.form__icon');
+    var $txt_form = $('.form__hidden');
 
     function scrollPage(event) {
         event.preventDefault();
@@ -22,15 +23,20 @@ $(function() {
     }
 
     $(window).on('scroll', (function () {
-
-        if ($(window).scrollTop() >= $('#anchor-form').offset().top - 200) {
-            $(window).scrollTop();
-            $('.form__icon').toggleClass('form--animate');
-        }
+            if ($(window).scrollTop() >= $('#anchor-form').offset().top - 150) {
+                $(window).scrollTop();
+                $icon.addClass('form--animate');
+                    setTimeout(function() {
+                        $txt_form.html('Dbamy o Twoje dane lepiej niż Facebook');
+                        $txt_form.addClass('typewrite');
+                    }, 2000)
+            }
     }));
 
     $(document).on('click', 'a[href^="#"]', scrollPage);
     $hamburger.on('click', toggleMenu);
+
+    /* Map Script */
 
     var mymap = L.map('mapid').setView([54.40315833, 18.56952222], 16);
 
@@ -39,7 +45,6 @@ $(function() {
     }).addTo(mymap);
 
     var marker = L.marker([54.40315833, 18.56952222]).addTo(mymap);
-
-    marker.bindPopup("<b>Hello user!</b><br>We are InfoShare Academy").openPopup();
+    marker.bindPopup("<b>Witaj!</b><br>Tu InfoShare Academy").openPopup();
 });
 
