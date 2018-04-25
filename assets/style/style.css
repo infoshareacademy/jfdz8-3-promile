@@ -70,7 +70,7 @@ h2 {
 }
 
 .section-features, .section-add-info, .section-form {
-    padding: 2%;
+    padding: 2% 2% 5% 2%;
     margin-left: 2%;
     margin-right: 2%;
 }
@@ -272,7 +272,7 @@ h2 {
 
 .section-features__header, .add-info__header {
     padding: 2%;
-    font-size: 2rem;
+    font-size: 42px;
     }
 
 .features-item-header {
@@ -319,7 +319,8 @@ h2 {
 }
 
 .add-info__box {
-    padding: 1em 3em;
+    padding: 3em 3em;
+    border: 2px solid #5EA3FF;
 }
 
 .footer {
@@ -330,7 +331,6 @@ h2 {
     height: 100%;
     padding: 2%;
     flex-direction: column;
-    box-shadow: 0 -2em 3em rgba(47, 82, 255,.175);
 }
 
 .footer-element {
