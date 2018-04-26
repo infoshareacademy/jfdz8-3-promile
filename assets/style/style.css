@@ -70,9 +70,10 @@ h2 {
 }
 
 .section-features, .section-add-info, .section-form {
-    padding: 2%;
+    padding: 2% 2% 5% 2%;
     margin-left: 2%;
     margin-right: 2%;
+    height: 100%;
 }
 
 .hero {
@@ -272,7 +273,7 @@ h2 {
 
 .section-features__header, .add-info__header {
     padding: 2%;
-    font-size: 2rem;
+    font-size: 42px;
     }
 
 .features-item-header {
@@ -299,7 +300,6 @@ h2 {
     font-size: 1em;
     padding: 3.5%;
     justify-content: center;
-    height: 33%;
 }
 
 .add-info__item span {
@@ -311,15 +311,20 @@ h2 {
     color: #5EA3FF;;
     font-weight: 700;
     font-size: 1.5em;
-    padding-bottom: 20px;
-}
-
-.shadow-lg {
-    box-shadow: 0 1em 3em rgba(0, 0, 255,.175);
+    padding-bottom: 5px;
 }
 
 .add-info__box {
-    padding: 1em 3em;
+    padding: 2em 2em;
+    margin-bottom: 20px;
+}
+
+.img-container {
+    margin-bottom: 30px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer {
@@ -330,7 +335,6 @@ h2 {
     height: 100%;
     padding: 2%;
     flex-direction: column;
-    box-shadow: 0 -2em 3em rgba(47, 82, 255,.175);
 }
 
 .footer-element {
@@ -498,9 +502,19 @@ h2 {
     }
 
     .add-info__box {
-        font-size: 1em;
-        padding: 1.5em 1em;
-        height: 65%;
+        padding: 1em 1em;
+        height: 100%;
+        width: 80%;
+    }
+
+    .add-info__item {
+        display: flex;
+    }
+    .img-container {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .footer {
