@@ -356,6 +356,7 @@ h2 {
     .add-info__container {
         flex-direction: row;
         display: flex;
+        flex-direction: row;
     }
 
     .add-info__column {
@@ -366,7 +367,8 @@ h2 {
 
 .team-info{
     display: flex;
-    flex-grow: 1;
+    width: 80vw;
+    margin: 0 auto;
 }
 
 .team-text-container{
@@ -375,4 +377,41 @@ h2 {
     margin-bottom: 2em;
     font-size: 2rem;
     font-weight: 700;
+}
+
+.team-photo{
+    border-radius: 50%;
+    height: 300px;
+}
+
+.team-member{
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+}
+
+.team-member h2{
+    font-size: 2em;
+}
+
+.fa-facebook{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.fa-linkedin{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.fa-twitter-square{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.team-member-container h1{
+    font-size: 1em;
+    padding: 25px;
+    
 }
