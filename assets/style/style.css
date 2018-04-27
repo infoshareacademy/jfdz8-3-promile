@@ -80,6 +80,57 @@ h2 {
     padding: 3%;
 }
 
+.hero{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    animation-name: bg-change;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bg-change{
+    0% {background-image: url('http://www.burjdubaiskyscraper.com/2010/04/BK0511.jpg');}
+    33% {background-image: url('https://www.yosemitehikes.com/images/wallpaper/yosemitehikes.com-bridalveil-winter-1200x800.jpg');}
+    66% {background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7e/Cicada_BroodXIII_1200x800.jpg');}
+    100% {background-image: url('http://www.burjdubaiskyscraper.com/2010/04/BK0511.jpg');}
+}
+
+.hero-button{
+    text-shadow: 1px 1px 2px #0a0a0a;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 10vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin: 0 auto;
+    text-decoration: none;
+    border: 3px solid white;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button:hover{
+    text-shadow: 1px 1px 2px #0a0a0a;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 10vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin: 0 auto;
+    text-decoration: none;
+    border: 3px solid white;
+    border-radius: 20px;
+    color: black;
+    background: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
 
 
 .cta-buttons {
