@@ -101,7 +101,7 @@ h2 {
 .hero-button{
     text-shadow: 1px 1px 2px #0a0a0a;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 10vw;
+    width: 14vw;
     padding-top: 10px;
     padding-bottom: 10px;
     display: inline-block;
@@ -112,12 +112,13 @@ h2 {
     color: white;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
 }
 
-.button:hover{
+.hero-button:hover{
     text-shadow: 1px 1px 2px #0a0a0a;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 10vw;
+    width: 14vw;
     padding-top: 10px;
     padding-bottom: 10px;
     display: inline-block;
@@ -129,9 +130,26 @@ h2 {
     background: white;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
 }
 
+.hero-content{
+    padding-top: 30vh;
+    text-shadow: 1px 1px 2px #0a0a0a;
+    font-family: 'Roboto', sans-serif;
+}
 
+.hero-title{
+    margin-bottom: 10vh;
+}
+
+.hero-content h1{
+    font-size: 6rem;
+}
+
+.hero-content h2{
+    font-size: 4rem;
+}
 
 .cta-buttons {
     text-align: center;
