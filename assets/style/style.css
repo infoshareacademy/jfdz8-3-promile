@@ -363,3 +363,12 @@ h2 {
     }
 
 }
+
+
+.team-text-container{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 2rem;
+    font-weight: 700;
+}
