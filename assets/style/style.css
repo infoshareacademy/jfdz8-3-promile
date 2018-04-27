@@ -84,7 +84,7 @@ h2 {
     width: 100vw;
     height: 100vh;
     text-align: center;
-    color: white;
+    color: #f8f8ff;
     background-size: cover;
     animation-name: bg-change;
     animation-duration: 15s;
@@ -99,38 +99,40 @@ h2 {
 }
 
 .hero-button{
+    text-transform: uppercase;
     text-shadow: 1px 1px 2px #0a0a0a;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 20rem;
+    width: 14em;
     padding-top: 10px;
     padding-bottom: 10px;
     display: inline-block;
     margin: 0 auto;
     text-decoration: none;
-    border: 3px solid white;
+    border: 3px solid #f8f8ff;
     border-radius: 20px;
-    color: white;
+    color: #f8f8ff;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 .hero-button:hover{
+    text-transform: uppercase;
     text-shadow: 1px 1px 2px #0a0a0a;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 20rem;
+    width: 14em;
     padding-top: 10px;
     padding-bottom: 10px;
     display: inline-block;
     margin: 0 auto;
     text-decoration: none;
-    border: 3px solid white;
+    border: 3px solid #f8f8ff;
     border-radius: 20px;
-    color: black;
-    background: white;
+    color: #0a0a0a;
+    background: #f8f8ff;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 .hero-content{
@@ -144,11 +146,12 @@ h2 {
 }
 
 .hero-content h1{
-    font-size: 6rem;
+    font-size: 6em;
+    text-transform: uppercase;
 }
 
 .hero-content h2{
-    font-size: 4rem;
+    font-size: 4em;
 }
 
 .triangle-container{
@@ -156,7 +159,7 @@ h2 {
 }
 
 .triangle {
-    border: solid white;
+    border: solid #f8f8ff;
     border-width: 0 2px 2px 0;
     display: inline-block;
     margin-top: 20px;
