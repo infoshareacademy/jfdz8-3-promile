@@ -364,6 +364,10 @@ h2 {
 
 }
 
+.team-info{
+    display: flex;
+    flex-grow: 1;
+}
 
 .team-text-container{
     text-align: center;
