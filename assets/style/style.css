@@ -413,16 +413,29 @@ h2 {
 .team-member-container h1{
     font-size: 1em;
     padding: 25px;
+}
 
+.team-member-container h2{
+    border-bottom: 1px solid #000000;
 }
 
 .team-member-container a{
     text-decoration: none;
     text-transform: uppercase;
     color: #000000;
-    font-size: 1em
+    font-size: 1em;
 }
 
 .icon-social{
-    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #000000;
+}
+
+.team-member-container{
+    opacity: 0;
+}
+
+.team-member:hover .team-member-container{
+    opacity: 1;
+    transition: 1s;
 }
