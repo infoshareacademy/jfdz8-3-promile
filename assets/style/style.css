@@ -92,10 +92,10 @@ h2 {
 }
 
 @keyframes bg-change{
-    0% {background-image: url('http://www.burjdubaiskyscraper.com/2010/04/BK0511.jpg');}
-    33% {background-image: url('https://www.yosemitehikes.com/images/wallpaper/yosemitehikes.com-bridalveil-winter-1200x800.jpg');}
-    66% {background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7e/Cicada_BroodXIII_1200x800.jpg');}
-    100% {background-image: url('http://www.burjdubaiskyscraper.com/2010/04/BK0511.jpg');}
+    0% {background-image: url("../images/gdansk.jpg");}
+    33% {background-image: url("../images/sopot2.png");}
+    66% {background-image: url("../images/gdynia.jpg");}
+    100% {background-image: url("../images/gdansk.jpg");}
 }
 
 .hero-button{
