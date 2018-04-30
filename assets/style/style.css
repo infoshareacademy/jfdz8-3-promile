@@ -76,24 +76,113 @@ h2 {
     height: 100%;
 }
 
-.hero {
-    padding-top: 100px;
+.hero{
+    width: 100vw;
     height: 100vh;
-    background-image: url("../images/1261534_Sopot-o-wschodzie-slonca.jpg");
-    background-attachment: fixed;
-    background-position: 0,0;
+    text-align: center;
+    color: #f8f8ff;
+    background-size: cover;
+    animation-name: bg-change;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bg-change{
+    0% {background-image: url("../images/gdansk.jpg");}
+    33% {background-image: url("../images/sopot2.png");}
+    66% {background-image: url("../images/gdynia.jpg");}
+    100% {background-image: url("../images/gdansk.jpg");}
+}
+
+.hero-button{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #0a0a0a;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 14em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin: 0 auto;
+    text-decoration: none;
+    border: 3px solid #f8f8ff;
+    border-radius: 20px;
+    color: #f8f8ff;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+}
+
+.hero-button:hover{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #0a0a0a;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 14em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin: 0 auto;
+    text-decoration: none;
+    border: 3px solid #f8f8ff;
+    border-radius: 20px;
+    color: #0a0a0a;
+    background: #f8f8ff;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
 }
 
 .hero-content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+    padding-top: 30vh;
+    text-shadow: 1px 1px 2px #0a0a0a;
+    font-family: 'Roboto', sans-serif;
 }
 
-.hero-title {
-    text-align: center;
+.hero-title{
+    margin-bottom: 10vh;
+}
+
+.hero-content h1{
+    font-size: 6em;
+    text-transform: uppercase;
+}
+
+.hero-content h2{
+    font-size: 4em;
+}
+
+.triangle-container{
+    margin-top: 10vh;
+}
+
+.triangle {
+    border: solid #f8f8ff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    margin-top: 20px;
+    animation-name: triangle-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    text-shadow: 1px 1px 2px #0a0a0a;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+@keyframes triangle-animation{
+    0%   {padding-top:30px; padding-right: 30px; margin-bottom: 0px; margin-right: 0px;}
+
+    30%  {padding-top:30px; padding-right: 30px; margin-top: 50px; margin-right: 0px;}
+
+    50%  {padding-top:30px; padding-right: 30px; margin-top: 35px; margin-right: 0px;}
+
+    70%  {padding-top:30px; padding-right: 30px; margin-top: 50px; margin-right: 0px;}
+
+    90% {padding-top:30px; padding-right: 30px; margin-bottom: 0px; margin-right: 0px;}
+
+    100% {padding-top:30px; padding-right: 30px; margin-bottom: 0px; margin-right: 0px;}
+
 }
 
 .cta-buttons {
