@@ -1,13 +1,50 @@
-$(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 1400);
+$(function() {
+    var $navigationList = $('.navigation-list');
+    var $hamburger = $('.hamburger');
+    var $page = $('html, body');
+    var $icon = $('.form__icon');
+    var $txt_form = $('.form__hidden');
+
+    function scrollPage(event) {
+        event.preventDefault();
+        var scrollDuration = 1400;
+
+        $page.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, scrollDuration);
+        if ($(window).width() < 968) {
+            toggleMenu(event)
+        }
+    }
+
+    function toggleMenu(event) {
+        event.preventDefault();
+        $navigationList.slideToggle();
+    }
+
+    $(window).on('scroll', (function () {
+            if ($(window).scrollTop() >= $('#anchor-form').offset().top - 150) {
+                $(window).scrollTop();
+                $icon.addClass('form--animate');
+                    setTimeout(function() {
+                        $txt_form.html('Dbamy o Twoje dane lepiej niż Facebook');
+                        $txt_form.addClass('typewrite');
+                    }, 2000)
+            }
+    }));
+
+    $(document).on('click', 'a[href^="#"]', scrollPage);
+    $hamburger.on('click', toggleMenu);
+
+    /* Map Script */
+
+    var mymap = L.map('mapid').setView([54.40315833, 18.56952222], 16);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+
+    var marker = L.marker([54.40315833, 18.56952222]).addTo(mymap);
+    marker.bindPopup("<b>Witaj!</b><br>Tu InfoShare Academy").openPopup();
 });
 
-$(document).ready(function(){
-    $(".hamburger").on('click', function(event) {
-        event.preventDefault();
-        $(".navigation-list").toggleClass('hide');
-    });
-});
