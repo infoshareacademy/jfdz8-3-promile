@@ -27,7 +27,7 @@ $(function() {
                 $(window).scrollTop();
                 $icon.addClass('form--animate');
                     setTimeout(function() {
-                        $txt_form.html('Dbamy o Twoje dane lepiej niż Facebook');
+                        $txt_form.html('* Dbamy o Twoje dane lepiej niż Facebook');
                         $txt_form.addClass('typewrite');
                     }, 2000)
             }

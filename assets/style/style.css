@@ -250,17 +250,20 @@ h2 {
 
 .form {
     padding-top: 50px;
-    background: #ABCFFF;
+    background: #89A6CC;
     text-align: center;
     color: #454545;
     overflow: hidden;
+    font-family: "Libre Baskerville", serif;
+}
+
+.form__icon {
+    padding: 1em;
 }
 
 .form__info {
-    padding-top: 0;
-    padding-bottom: 15px;
+    padding-bottom: 0.5em;
     display: flex;
-    flex: 1;
     justify-content: center;
 }
 
@@ -273,7 +276,7 @@ h2 {
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 5s steps(100, end);
+    animation: typing 3s steps(100, end);
 }
 
 @keyframes typing {
@@ -281,42 +284,57 @@ h2 {
     to {width: 100%}
 }
 
-.section-form {
-    padding-bottom: 15px;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-}
-
 .form h2 {
-    font-size: 30px;
-    padding: 10px;
+    padding: 0;
+    font-size: 2em;
 }
 
 .form h3 {
-    font-size: 20px;
-    padding: 10px;
-}
-
-.section-form h3 {
-    font-size: 15px;
+    font-size: 1em;
+    padding: 0.5em;
 }
 
 .form-data {
     display: block;
     margin: 20px auto;
     padding: 5px;
-    border: 1px solid #ccc;
-    transition: 0.5s linear;
+    border: none;
+    border-bottom: 2px solid #515151;
+    background: none;
+    transition: 0.4s ease-in-out;
+    text-align: center;
+    width: 12em;
+    outline: none;
 }
-.form-data:hover {
-    background: #ccc;
+
+::placeholder {
+    color: #454545;
+}
+
+.form-data:hover::-webkit-input-placeholder {
+    transition: 0.5s;
+    color: #000;
+    opacity: .2
+}
+
+.form-data:focus {
+    border-bottom: 2px solid #111111;
+    width: 18em;
+}
+
+.form-data:focus::-webkit-input-placeholder {
+    color:transparent;
+}
+
+.form-data[type=text]:valid {
+    border-bottom: 2px solid #111111;
+    width: 18em;
 }
 
 .submit {
     margin: 15px auto;
     display: block;
-    background: #82a9d2;
+    background: #8fb495;
     font-size: 20px;
     padding: 15px;
     border: none;
