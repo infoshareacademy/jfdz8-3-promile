@@ -583,5 +583,17 @@ h2 {
     .footer-social {
         align-self: left;
     }
+
+    .parallax-container {
+        background: url("../images/gdansk_2.jpg");
+        min-height: 400px;
+        width: 100%;
+        position: relative;
+        opacity: 0.7;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 }
 
