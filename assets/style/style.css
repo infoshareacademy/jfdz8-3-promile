@@ -503,12 +503,12 @@ h2 {
     color: #67d60c;
 }
 
-.fa-facebook-square, .fa-twitter-square, .fa-instagram  {
+.fa-facebook-square, .fa-linkedin, .fa-instagram  {
     color: #a6b9cd;
     opacity: 0.5;
 }
 
-.fa-facebook-square:hover, .fa-twitter-square:hover, .fa-instagram:hover   {
+.fa-facebook-square:hover, .fa-linkedin:hover, .fa-instagram:hover   {
     color: #2F527F;
     opacity: 1.0;
 }
