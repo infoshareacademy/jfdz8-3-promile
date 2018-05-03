@@ -195,17 +195,19 @@
         <section id="anchor-form">
             <div class="form">
                 <h2>Zapisz się na premierę aplikacji!</h2>
-                <h3>Dowiedz się kiedy startujemy!</h3>
                 <div class="form__icon">
                     <span><span class="far fa-envelope fa-6x"></span></span>
                 </div>
                 <div class="form__info">
                     <form action="https://formspree.io/m.muszy@gmail.com" method="POST">
                         <h3>Czekaj na sygnał! Otrzymasz tylko jednego maila!</h3>
-                        <h4 class="form__hidden">&nbsp&nbsp&nbsp</h4>
-                        <input class="form-data" type="text" placeholder="Twoje imię">
-                        <input class="form-data" type="email" placeholder="Twój email" name="_replyto">
-                        <button class="submit" value="Send"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie</button>
+                        <h3 class="form__hidden">&nbsp&nbsp&nbsp</h3>
+                        <button type="button" class="show_inputs">Zgłoś się</button>
+                        <div class="form__inputs">
+                            <input class="form-data" type="text" placeholder="Twoje imię" name="name" required>
+                            <input class="form-data" type="text" placeholder="Twój email" name="_replyto" required>
+                            <button class="submit" value="Send"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie</button>
+                        </div>
                     </form>
                 </div>
             </div>
