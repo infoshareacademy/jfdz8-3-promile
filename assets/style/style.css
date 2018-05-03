@@ -599,7 +599,8 @@ h2 {
 
 .team-info{
     display: flex;
-    width: 80vw;
+    flex-direction: row;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -688,4 +689,20 @@ h2 {
     box-shadow: 1px 1px 2px black, 0 0 25px #5EA3FF, 0 0 5px #4661ff;
     filter: grayscale(0%);
     transition: 1s;
+}
+
+@media (max-width:1024px) {
+    .team-info{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .team-member-container{
+        opacity: 1;
+    }
+
+    .team-member{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
