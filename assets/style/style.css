@@ -22,7 +22,7 @@ h2 {
 }
 
 .section-features, .section-add-info, .section-form {
-    padding: 2% 2% 5% 2%;
+    padding: 2% 2% 7% 2%;
     margin-left: 2%;
     margin-right: 2%;
     height: 100%;
@@ -135,10 +135,6 @@ h2 {
 
     100% {padding-top:30px; padding-right: 30px; margin-bottom: 0px; margin-right: 0px;}
 
-}
-
-.cta-buttons {
-    text-align: center;
 }
 
 .topbar{
@@ -313,7 +309,7 @@ h2 {
 }
 
 .section-features__header, .add-info__header {
-    padding: 2%;
+    padding-bottom: 5%;
     font-size: 42px;
     }
 
@@ -404,6 +400,11 @@ h2 {
     color: #FFF
 }
 
+.footer-index-list-item a:hover {
+    font-weight: bold;
+    color: #2F527F;
+}
+
 .footer-address {
     flex-direction: column;
 }
@@ -456,15 +457,27 @@ h2 {
 }
 
 .fa-facebook-square, .fa-linkedin, .fa-instagram  {
-    color: #a6b9cd;
-    opacity: 0.5;
+    color: #2F527F;
+    opacity: 0.3;
 }
 
 .fa-facebook-square:hover, .fa-linkedin:hover, .fa-instagram:hover   {
-    color: #2F527F;
-    opacity: 1.0;
+    animation: blink 2s infinite;
 }
 
+@keyframes blink {
+    0%   { opacity: 0.5;}
+    10%  { opacity: 0.6;}
+    20% { opacity: 0.7;}
+    30% {opacity: 0.8;}
+    40% {opacity: 0.9}
+    50% {opacity: 1;}
+    60% {opacity: 0.9}
+    70% {opacity: 0.8}
+    80% {opacity: 0.7}
+    90% {opacity: 0.6}
+    100% {opacity: 0.5}
+}
 .fa-map, .fa-map-marker-alt, .fa-bell, .fa-child, .fa-calendar-alt, .fa-comment-alt {
     color: #5EA3FF;
 }
@@ -569,6 +582,18 @@ h2 {
 
     .footer-social {
         align-self: left;
+    }
+
+    .parallax-container {
+        background: url("../images/gdansk_2.jpg");
+        min-height: 400px;
+        width: 100%;
+        position: relative;
+        opacity: 0.7;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 }
 
