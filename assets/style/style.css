@@ -613,7 +613,7 @@ h2 {
 
 .team-photo{
     border-radius: 50%;
-    height: 300px;
+    margin-bottom: 20px;
 }
 
 .team-member{
@@ -623,8 +623,9 @@ h2 {
     text-align: center;
     margin-bottom: 50px;
     margin-top: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    filter: grayscale(80%);
 }
 
 .team-member h2{
@@ -652,7 +653,6 @@ h2 {
 }
 
 .team-member-container h2{
-    border-bottom: 1px solid #5EA3FF;
     text-transform: uppercase;
     font-weight: bold;
     color: #FFFFFF;
@@ -666,11 +666,11 @@ h2 {
     text-transform: uppercase;
     color: #000000;
     font-size: 1.5em;
-    margin-bottom: 10px;
 }
 
 .icon-social{
-    padding-top: 10px;
+    margin-top: 30px;
+    padding-top: 30px;
     border-top: 1px solid #5EA3FF;
 }
 
@@ -686,12 +686,6 @@ h2 {
 .team-member:hover{
     border-radius: 50px;
     box-shadow: 1px 1px 2px black, 0 0 25px #5EA3FF, 0 0 5px #4661ff;
-}
-
-.team-photo{
-    filter: grayscale(80%);
-}
-
-.team-photo:hover{
     filter: grayscale(0%);
+    transition: 1s;
 }
