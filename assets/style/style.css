@@ -704,5 +704,6 @@ h2 {
     .team-member{
         margin-left: 0px;
         margin-right: 0px;
+        filter: grayscale(0%);
     }
 }
