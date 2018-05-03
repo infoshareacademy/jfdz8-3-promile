@@ -597,3 +597,101 @@ h2 {
     }
 }
 
+.team-info{
+    display: flex;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.team-text-container{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.team-photo{
+    border-radius: 50%;
+    height: 300px;
+}
+
+.team-member{
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.team-member h2{
+    font-size: 2em;
+}
+
+.fa-facebook{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.fa-linkedin{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.fa-twitter-square{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.team-member-container h1{
+    font-size: 1em;
+    padding: 25px;
+}
+
+.team-member-container h2{
+    border-bottom: 1px solid #5EA3FF;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #5EA3FF;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.team-member-container a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.icon-social{
+    padding-top: 10px;
+    border-top: 1px solid #5EA3FF;
+}
+
+.team-member-container{
+    opacity: 0;
+}
+
+.team-member:hover .team-member-container{
+    opacity: 1;
+    transition: 1s;
+}
+
+.team-member:hover{
+    border-radius: 50px;
+    box-shadow: 1px 1px 2px black, 0 0 25px #5EA3FF, 0 0 5px #4661ff;
+}
+
+.team-photo{
+    filter: grayscale(80%);
+}
+
+.team-photo:hover{
+    filter: grayscale(0%);
+}
