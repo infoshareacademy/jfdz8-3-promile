@@ -4,6 +4,9 @@ $(function() {
     var $page = $('html, body');
     var $icon = $('.form__icon');
     var $txt_form = $('.form__hidden');
+    var $show_input = $(".show_inputs");
+    var $form_inputs = $(".form__inputs");
+
 
     function scrollPage(event) {
         event.preventDefault();
@@ -27,14 +30,20 @@ $(function() {
                 $(window).scrollTop();
                 $icon.addClass('form--animate');
                     setTimeout(function() {
-                        $txt_form.html('Dbamy o Twoje dane lepiej niż Facebook');
+                        $txt_form.html('* Dbamy o Twoje dane lepiej niż Facebook');
                         $txt_form.addClass('typewrite');
                     }, 2000)
             }
     }));
 
+    function showInputs() {
+        $form_inputs.slideToggle(1000);
+        $(this).remove();
+}
+
     $(document).on('click', 'a[href^="#"]', scrollPage);
     $hamburger.on('click', toggleMenu);
+    $show_input.on('click', showInputs);
 
     /* Map Script */
 

@@ -196,23 +196,71 @@
         <section id="anchor-form">
             <div class="form">
                 <h2>Zapisz się na premierę aplikacji!</h2>
-                <h3>Dowiedz się kiedy startujemy!</h3>
                 <div class="form__icon">
                     <span><span class="far fa-envelope fa-6x"></span></span>
                 </div>
                 <div class="form__info">
                     <form action="https://formspree.io/m.muszy@gmail.com" method="POST">
                         <h3>Czekaj na sygnał! Otrzymasz tylko jednego maila!</h3>
-                        <h4 class="form__hidden">&nbsp&nbsp&nbsp</h4>
-                        <input class="form-data" type="text" placeholder="Twoje imię">
-                        <input class="form-data" type="email" placeholder="Twój email" name="_replyto">
-                        <button class="submit" value="Send"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie</button>
+                        <h3 class="form__hidden">&nbsp&nbsp&nbsp</h3>
+                        <button type="button" class="show_inputs">Zgłoś się</button>
+                        <div class="form__inputs">
+                            <input class="form-data" type="text" placeholder="Twoje imię" name="name" required>
+                            <input class="form-data" type="text" placeholder="Twój email" name="_replyto" required>
+                            <button class="submit" value="Send"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </section>
-        <section class="team" id="team">
-
+        <section class="team">
+            <div class="team-text-container">
+                <h2 class="team-text">Poznaj zespół</h2>
+            </div>
+            <div class="team-info">
+                <div class="team-member">
+                    <img src="assets/images/team_photo/Bart_Z.jpg" alt="team" class="team-photo">
+                    <div class="team-member-container">
+                        <h2 class="team-name">Bartosz Zawada</h2>
+                        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet
+                            asperiores blanditiis corporis culpa, doloremque excepturi explicabo inventore</h1>
+                        <a href="https://github.com/bartzaw" class="team-link">Portfolio</a>
+                        <div class="icon-social">
+                            <span class="fab fa-facebook-square fa-3x"></span>
+                            <span class="fab fa-linkedin fa-3x"></span>
+                            <span class="fab fa-instagram fa-3x"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="assets/images/team_photo/Mich_M.jpg" alt="team" class="team-photo">
+                    <div class="team-member-container">
+                        <h2 class="team-name">Michał Muszyński</h2>
+                        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet
+                            asperiores blanditiis corporis culpa, doloremque excepturi explicabo inventore</h1>
+                        <a href="https://github.com/icelandico" class="team-link">Portfolio</a>
+                        <div class="icon-social">
+                            <span class="fab fa-facebook-square fa-3x"></span>
+                            <span class="fab fa-linkedin fa-3x"></span>
+                            <span class="fab fa-instagram fa-3x"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="assets/images/team_photo/Bart_F.jpg" alt="team" class="team-photo">
+                    <div class="team-member-container">
+                        <h2 class="team-name">Bartosz Frąckiewicz</h2>
+                        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet
+                            asperiores blanditiis corporis culpa, doloremque excepturi explicabo inventore</h1>
+                        <a href="https://github.com/Decomplosed" class="team-link">Portfolio</a>
+                        <div class="icon-social">
+                            <span class="fab fa-facebook-square fa-3x"></span>
+                            <span class="fab fa-linkedin fa-3x"></span>
+                            <span class="fab fa-instagram fa-3x"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer id="anchor-contact">

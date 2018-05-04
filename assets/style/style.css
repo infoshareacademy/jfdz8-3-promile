@@ -198,18 +198,25 @@ h2 {
 
 .form {
     padding-top: 50px;
-    background: #ABCFFF;
+    background: #89A6CC;
     text-align: center;
     color: #454545;
     overflow: hidden;
+    font-family: "Libre Baskerville", serif;
+}
+
+.form__icon {
+    padding: 1em;
 }
 
 .form__info {
-    padding-top: 0;
-    padding-bottom: 15px;
+    padding-bottom: 0.5em;
     display: flex;
-    flex: 1;
     justify-content: center;
+}
+
+.form__inputs {
+    display: none;
 }
 
 .form--animate {
@@ -221,7 +228,7 @@ h2 {
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 5s steps(100, end);
+    animation: typing 3s steps(100, end);
 }
 
 @keyframes typing {
@@ -229,42 +236,58 @@ h2 {
     to {width: 100%}
 }
 
-.section-form {
-    padding-bottom: 15px;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-}
-
 .form h2 {
-    font-size: 30px;
-    padding: 10px;
+    padding: 0;
+    font-size: 2em;
 }
 
 .form h3 {
-    font-size: 20px;
-    padding: 10px;
-}
-
-.section-form h3 {
-    font-size: 15px;
+    font-size: 1em;
+    padding: 0.5em;
 }
 
 .form-data {
     display: block;
     margin: 20px auto;
     padding: 5px;
-    border: 1px solid #ccc;
-    transition: 0.5s linear;
-}
-.form-data:hover {
-    background: #ccc;
+    border: none;
+    border-bottom: 2px solid #515151;
+    background: none;
+    transition: 0.4s ease-in-out;
+    text-align: center;
+    width: 12em;
+    outline: none;
+    caret-color: rgba(0,0,0,0);
 }
 
-.submit {
+::placeholder {
+    color: #454545;
+}
+
+.form-data:hover::-webkit-input-placeholder {
+    transition: 0.5s;
+    color: #000;
+    opacity: .2
+}
+
+.form-data:focus {
+    border-bottom: 2px solid #111111;
+    width: 18em;
+}
+
+.form-data:focus::-webkit-input-placeholder {
+    color:transparent;
+}
+
+.form-data[type=text]:valid {
+    border-bottom: 2px solid #111111;
+    width: 18em;
+}
+
+.submit, .show_inputs {
     margin: 15px auto;
     display: block;
-    background: #82a9d2;
+    background: #bfc5df;
     font-size: 20px;
     padding: 15px;
     border: none;
@@ -274,11 +297,11 @@ h2 {
     box-shadow: 3px 3px #5f5f5f;
 }
 
-.submit:hover {
+.submit, .show_inputs:hover {
     background: #d1d8d8;
 }
 
-.submit:active {
+.submit, .show_inputs:active {
     transform: translateY(6px);
 }
 
@@ -524,7 +547,7 @@ h2 {
 
     .navigation-list-item a {
         text-decoration: none;
-        font-size: 1em;
+        font-size: 1.5vh;
     }
 
     .center-logo {
@@ -532,8 +555,6 @@ h2 {
         display: unset;
         flex: 1;
         width: 100px;
-        background: #a6b9cd;
-        border: 5px solid #a6b9cd;
         border-radius: 50%;
     }
 
@@ -594,3 +615,114 @@ h2 {
     }
 }
 
+.team-info{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.team-text-container{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.team-photo{
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member{
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    filter: grayscale(80%);
+}
+
+.team-member h2{
+    font-size: 2em;
+}
+
+.fa-facebook{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.fa-linkedin{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.fa-twitter-square{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.team-member-container h1{
+    font-size: 1em;
+    padding: 25px;
+}
+
+.team-member-container h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #5EA3FF;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.team-member-container a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+.icon-social{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #5EA3FF;
+}
+
+.team-member-container{
+    opacity: 0;
+}
+
+.team-member:hover .team-member-container{
+    opacity: 1;
+    transition: 1s;
+}
+
+.team-member:hover{
+    background: #f3f1f8;
+    border-radius: 50px;
+    box-shadow: 1px 1px 2px black, 0 0 25px #5EA3FF, 0 0 5px #4661ff;
+    filter: grayscale(0%);
+    transition: 1s;
+}
+
+@media (max-width:1024px) {
+    .team-info{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .team-member-container{
+        opacity: 1;
+    }
+
+    .team-member{
+        margin-left: 0px;
+        margin-right: 0px;
+        filter: grayscale(0%);
+    }
+}
