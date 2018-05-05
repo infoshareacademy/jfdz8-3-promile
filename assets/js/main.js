@@ -37,7 +37,7 @@ $(function() {
     }));
 
     function showInputs() {
-        $form_inputs.slideToggle(1000);
+        $form_inputs.slideToggle();
         $(this).remove();
 }
 
