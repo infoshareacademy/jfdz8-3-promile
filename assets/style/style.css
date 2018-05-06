@@ -688,6 +688,10 @@ body {
         height: 100%;
     }
 
+    .footer-social {
+        align-self: auto;
+    }
+
     .parallax-container {
         background: center url("../images/gdansk_2.jpg") no-repeat;
         min-height: 400px;
