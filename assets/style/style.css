@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -156,7 +155,7 @@ h2 {
     flex: 1;
     background: #4f6b86;
     list-style: none;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Lato Semibold", sans-serif;
     text-transform: uppercase;
     transition: 0.1s linear;
 }
@@ -561,12 +560,10 @@ h2 {
         flex: 1;
         background: #4f6b86;
         list-style: none;
-        font-family: "Open Sans", sans-serif;
     }
 
     .navigation-list-item a {
-        text-decoration: none;
-        font-size: 1em;
+        font-size: 14px;
     }
 
     .center-logo {
@@ -626,14 +623,12 @@ h2 {
     }
 
     .parallax-container {
-        background: url("../images/gdansk_2.jpg");
+        background: center url("../images/gdansk_2.jpg") no-repeat;
         min-height: 400px;
         width: 100%;
         position: relative;
         opacity: 0.7;
-        background-position: center;
         background-size: cover;
-        background-repeat: no-repeat;
         background-attachment: fixed;
     }
 }
