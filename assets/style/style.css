@@ -16,7 +16,7 @@ body {
     height: 100%;
 }
 
-.section-features, .section-add-info, .section-form {
+.section-features, .section-add-info, .section-form, .section-team {
     padding: 2% 2% 7% 2%;
     margin-left: 2%;
     margin-right: 2%;
@@ -585,7 +585,7 @@ body {
     position: relative;
     border-radius: 50%;
     border: 2px solid #5792ff;
-    box-shadow: 5px 5px 5px #363636
+    box-shadow: 5px 5px 5px #363636;
 }
 
 .leaflet-container .leaflet-control-attribution {
