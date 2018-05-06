@@ -200,7 +200,7 @@ h2 {
     padding-top: 6em;
     background: #7395AE;
     text-align: center;
-    color: #fff;
+    color: #fefefe;
     overflow: hidden;
     font-family: "Lato Light", serif;
 }
@@ -261,12 +261,12 @@ h2 {
 }
 
 ::placeholder {
-    color: #fff;
+    color: #fefefe;
 }
 
 .form-data:hover::-webkit-input-placeholder {
     transition: 0.5s;
-    color: #fff;
+    color: #fefefe;
     opacity: .2
 }
 
@@ -288,9 +288,9 @@ h2 {
     margin: 15px auto;
     font-size: 20px;
     padding: 15px;
-    border: 1px solid #fff;
+    border: 1px solid #fefefe;
     background: none;
-    color: #fff;
+    color: #fefefe;
     width: 12em;
     outline: none;
     box-shadow: 3px 3px #5f5f5f;
@@ -566,7 +566,7 @@ h2 {
 
     .navigation-list-item a {
         text-decoration: none;
-        font-size: 1.5vh;
+        font-size: 1em;
     }
 
     .center-logo {
