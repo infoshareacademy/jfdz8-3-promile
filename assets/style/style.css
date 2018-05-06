@@ -10,12 +10,7 @@ body {
     line-height: 1.4;
 }
 
-h2 {
-    text-align: center;
-    padding: 25px;
-}
-
-.main-container {
+.main__container {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -123,17 +118,17 @@ h2 {
 }
 
 @keyframes triangle-animation{
-    0%   {padding-top:30px; padding-right: 30px; margin-bottom: 0px; margin-right: 0px;}
+    0%   {padding-top:30px; padding-right: 30px; margin-bottom: 0; margin-right: 0;}
 
-    30%  {padding-top:30px; padding-right: 30px; margin-top: 50px; margin-right: 0px;}
+    30%  {padding-top:30px; padding-right: 30px; margin-top: 50px; margin-right: 0;}
 
-    50%  {padding-top:30px; padding-right: 30px; margin-top: 35px; margin-right: 0px;}
+    50%  {padding-top:30px; padding-right: 30px; margin-top: 35px; margin-right: 0;}
 
-    70%  {padding-top:30px; padding-right: 30px; margin-top: 50px; margin-right: 0px;}
+    70%  {padding-top:30px; padding-right: 30px; margin-top: 50px; margin-right: 0;}
 
-    90% {padding-top:30px; padding-right: 30px; margin-bottom: 0px; margin-right: 0px;}
+    90% {padding-top:30px; padding-right: 30px; margin-bottom: 0; margin-right: 0;}
 
-    100% {padding-top:30px; padding-right: 30px; margin-bottom: 0px; margin-right: 0px;}
+    100% {padding-top:30px; padding-right: 30px; margin-bottom: 0; margin-right: 0;}
 
 }
 
@@ -312,13 +307,13 @@ h2 {
     height: 100%;
 }
 
-.features-item {
+.features__item {
     padding: 1%;
     width: 100%;
     text-align: center;
 }
 
-.features-icon-container {
+.features__icon-container {
     padding-top: 3%;
     padding-bottom: 1%;
     display: flex;
@@ -332,16 +327,16 @@ h2 {
     font-size: 1.25em;
 }
 
-.section-features__header, .add-info__header {
+.features__header, .add-info__header {
     padding-bottom: 5%;
     font-size: 42px;
     }
 
-.features-item-header {
+.features__item-header {
     font-size: 1.5rem;
 }
 
-.features-item-header, .section-features__header, .add-info__header {
+.features__item-header, .features__header, .add-info__header {
     font-weight: 700;
     text-align: center;
 }
@@ -380,12 +375,90 @@ h2 {
     margin-bottom: 20px;
 }
 
-.img-container {
+.add-info__img-container {
     margin-bottom: 30px;
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+.team-info{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.team-text-container{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.team-photo{
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member{
+    width: 100%;
+    text-align: center;
+    margin: 50px 40px;
+    padding: 50px 0;
+    filter: grayscale(80%);
+}
+
+.team-member h2{
+    font-size: 2em;
+}
+
+
+.team-member-container h1{
+    font-size: 1em;
+    padding: 25px;
+}
+
+.team-member-container h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #5EA3FF;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.team-member-container a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+.icon-social{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #5EA3FF;
+}
+
+.team-member-container{
+    opacity: 0;
+}
+
+.team-member:hover .team-member-container{
+    opacity: 1;
+    transition: 1s;
+}
+
+.team-member:hover{
+    background: #f3f1f8;
+    border-radius: 50px;
+    box-shadow: 1px 1px 2px black, 0 0 25px #5EA3FF, 0 0 5px #4661ff;
+    filter: grayscale(0%);
+    transition: 1s;
 }
 
 .footer {
@@ -524,6 +597,11 @@ h2 {
     top: 33%;
 }
 
+.fa-facebook, .fa-linkedin, .fa-twitter-square {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
 @media screen and (min-width: 968px) {
     .hamburger-container {
         display: none;
@@ -586,7 +664,7 @@ h2 {
     .add-info__item {
         display: flex;
     }
-    .img-container {
+    .add-info__img-container {
         flex-grow: 1;
         display: flex;
         align-items: center;
@@ -615,100 +693,6 @@ h2 {
     }
 }
 
-.team-info{
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.team-text-container{
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.team-photo{
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.team-member{
-    width: 100%;
-    margin-left: 40px;
-    margin-right: 40px;
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    filter: grayscale(80%);
-}
-
-.team-member h2{
-    font-size: 2em;
-}
-
-.fa-facebook{
-    margin-left: 14px;
-    margin-right: 14px;
-}
-
-.fa-linkedin{
-    margin-left: 14px;
-    margin-right: 14px;
-}
-
-.fa-twitter-square{
-    margin-left: 14px;
-    margin-right: 14px;
-}
-
-.team-member-container h1{
-    font-size: 1em;
-    padding: 25px;
-}
-
-.team-member-container h2{
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #FFFFFF;
-    background: #5EA3FF;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.team-member-container a{
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #000000;
-    font-size: 1.5em;
-}
-
-.icon-social{
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid #5EA3FF;
-}
-
-.team-member-container{
-    opacity: 0;
-}
-
-.team-member:hover .team-member-container{
-    opacity: 1;
-    transition: 1s;
-}
-
-.team-member:hover{
-    background: #f3f1f8;
-    border-radius: 50px;
-    box-shadow: 1px 1px 2px black, 0 0 25px #5EA3FF, 0 0 5px #4661ff;
-    filter: grayscale(0%);
-    transition: 1s;
-}
 
 @media (max-width:1024px) {
     .team-info{
@@ -721,8 +705,8 @@ h2 {
     }
 
     .team-member{
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 0;
+        margin-right: 0;
         filter: grayscale(0%);
     }
 }
