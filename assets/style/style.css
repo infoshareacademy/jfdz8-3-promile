@@ -154,7 +154,7 @@ h2 {
 .navigation-list-item.hover {
     padding: 10px;
     flex: 1;
-    background: #2F527F;
+    background: #4f6b86;
     list-style: none;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
@@ -185,11 +185,11 @@ h2 {
 .hamburger-container {
     text-align: center;
     font-size: 2em;
-    background-color: #2F527F;
+    background-color: #4f6b86;
 }
 
 .hamburger {
-    color: #ABCFFF;
+    color: #B1A296;
 }
 
 .hamburger:hover {
@@ -197,12 +197,12 @@ h2 {
 }
 
 .form {
-    padding-top: 50px;
-    background: #89A6CC;
+    padding-top: 6em;
+    background: #7395AE;
     text-align: center;
-    color: #454545;
+    color: #fefefe;
     overflow: hidden;
-    font-family: "Libre Baskerville", serif;
+    font-family: "Lato Light", serif;
 }
 
 .form__icon {
@@ -221,7 +221,7 @@ h2 {
 
 .form--animate {
     transition: transform 1.5s ease-in-out;
-    transform: rotate(360deg) scale(1.2);
+    transform: rotate(360deg) scale(1.1);
 }
 
 .typewrite {
@@ -257,16 +257,16 @@ h2 {
     text-align: center;
     width: 12em;
     outline: none;
-    caret-color: rgba(0,0,0,0);
+    caret-color: transparent;
 }
 
 ::placeholder {
-    color: #454545;
+    color: #fefefe;
 }
 
 .form-data:hover::-webkit-input-placeholder {
     transition: 0.5s;
-    color: #000;
+    color: #fefefe;
     opacity: .2
 }
 
@@ -286,23 +286,41 @@ h2 {
 
 .submit, .show_inputs {
     margin: 15px auto;
-    display: block;
-    background: #bfc5df;
     font-size: 20px;
     padding: 15px;
-    border: none;
+    border: 1px solid #fefefe;
+    background: none;
+    color: #fefefe;
+    width: 12em;
     outline: none;
-    border-radius: 5%;
-    transition: 0.1s linear;
     box-shadow: 3px 3px #5f5f5f;
+    position: relative;
+    z-index: 1;
 }
 
-.submit, .show_inputs:hover {
-    background: #d1d8d8;
+.show_inputs:after, .submit:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #4f6b86;
+    z-index: -1;
+    transition: width 0.3s ease-in-out;
 }
 
-.submit, .show_inputs:active {
+.show_inputs:hover:after, .submit:hover:after {
+    width:100%;
+}
+
+.submit:active, .show_inputs:active {
     transform: translateY(6px);
+}
+
+.submit:focus, .show_inputs:focus {
+    outline:none
 }
 
 .section-features {
@@ -368,7 +386,7 @@ h2 {
 }
 
 .add-info__item h4 {
-    color: #5EA3FF;;
+    color: #7395AE;;
     font-weight: 700;
     font-size: 1.5em;
     padding-bottom: 5px;
@@ -389,7 +407,7 @@ h2 {
 
 .footer {
     display: block;
-    background: #89A6CC;
+    background: #7395AE;
     color: #FFF;
     width: 100%;
     height: 100%;
@@ -439,10 +457,12 @@ h2 {
 .footer-map {
     height: 280px;
     width: 280px;
-    background-color: #a6b9cd;
+    background-color: #4f6b86;
+    border: 10px solid black;
     padding: 2%;
     border-radius: 100%;
 }
+
 .footer-additional {
     flex-direction: column;
     justify-content: center;
@@ -459,7 +479,7 @@ h2 {
     height: 150%;
     color: #fff;
     text-align: center;
-    background: #2F527F;
+    background: #4f6b86;
 }
 
 /* ICONS */
@@ -502,7 +522,7 @@ h2 {
     100% {opacity: 0.5}
 }
 .fa-map, .fa-map-marker-alt, .fa-bell, .fa-child, .fa-calendar-alt, .fa-comment-alt {
-    color: #5EA3FF;
+    color: #4f6b86;
 }
 
 #mapid {
@@ -510,7 +530,7 @@ h2 {
     min-width: 160px;
     position: relative;
     border-radius: 50%;
-    border: 2px solid #5792ff;
+    border: 2px solid #4f6b86;
     box-shadow: 5px 5px 5px #363636
 }
 
@@ -539,14 +559,14 @@ h2 {
 
     .navigation-list-item {
         flex: 1;
-        background: #2F527F;
+        background: #4f6b86;
         list-style: none;
         font-family: "Open Sans", sans-serif;
     }
 
     .navigation-list-item a {
         text-decoration: none;
-        font-size: 1.5vh;
+        font-size: 1em;
     }
 
     .center-logo {
