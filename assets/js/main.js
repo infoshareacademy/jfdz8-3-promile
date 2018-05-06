@@ -7,7 +7,6 @@ $(function() {
     var $show_input = $(".show_inputs");
     var $form_inputs = $(".form__inputs");
 
-
     function scrollPage(event) {
         event.preventDefault();
         var scrollDuration = 1400;
@@ -26,7 +25,7 @@ $(function() {
     }
 
     $(window).on('scroll', (function () {
-            if ($(window).scrollTop() >= $('#anchor-form').offset().top - 150) {
+            if ($(window).scrollTop() >= $('#anchor-form').offset().top - 250) {
                 $(window).scrollTop();
                 $icon.addClass('form--animate');
                     setTimeout(function() {
