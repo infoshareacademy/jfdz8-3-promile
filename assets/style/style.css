@@ -464,15 +464,14 @@ h2 {
 }
 
 .footer-additional {
-    display: flex;
     flex-direction: column;
-
+    justify-content: center;
 }
 
 .footer-social {
     color: #a6b9cd;
     padding-top: 10px;
-    align-self: left;
+    align-self: center;
 }
 
 .copy-info {
