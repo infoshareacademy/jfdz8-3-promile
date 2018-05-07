@@ -16,7 +16,7 @@ body {
 }
 
 .section-features, .section-add-info, .section-form, .section-team {
-    padding: 2% 2% 7% 2%;
+    padding: 5% 2%;
     margin-left: 2%;
     margin-right: 2%;
     height: 100%;
@@ -55,9 +55,9 @@ body {
 
 .hero__button--signup:hover{
     opacity: 0.8;
-    background: #2F527F;
+    background: #4f6b86;
     color: #fefefe;
-    border: 4px solid #2F527F;
+    border: 4px solid #4f6b86;
 }
 
 .hero__content{
@@ -146,7 +146,7 @@ body {
 
 .navigation-list-item.hover:hover {
     background: #fefefe;
-    color: #2F527F;
+    color: #4f6b86;
     font-weight: bold;
 }
 
@@ -161,7 +161,7 @@ body {
 }
 
 .navigation-list-item:hover a {
-    color: #2F527F;
+    color: #4f6b86;
     font-weight: bold;
 }
 
@@ -342,6 +342,14 @@ body {
     font-size: 42px;
     }
 
+.features__header::after, .add-info__header::after {
+    content: "";
+    display: block;
+    margin: 20px auto;
+    width: 45%;
+    border: 1px solid #4f6b86;
+}
+
 .features__item-header {
     font-size: 1.5rem;
 }
@@ -474,7 +482,7 @@ body {
 .footer {
     display: block;
     background: #7395AE;
-    color: #FFF;
+    color: #fefefe;
     width: 100%;
     height: 100%;
     padding: 2%;
@@ -492,7 +500,7 @@ body {
 .footer-header {
     font-size: 20px;
     font-weight: bold;
-    border-bottom: 2px solid #FFF;
+    border-bottom: 2px solid #fefefe;
     padding-bottom: 3px;
     margin-bottom: 10px;
 }
@@ -504,12 +512,12 @@ body {
 .footer-index-list-item a {
     text-decoration: none;
     font-size: 1em;
-    color: #FFF
+    color: #fefefe
 }
 
 .footer-index-list-item a:hover {
     font-weight: bold;
-    color: #2F527F;
+    color: #4f6b86;
 }
 
 .footer-address {
@@ -543,7 +551,7 @@ body {
 .copy-info {
     font-size: 0.8em;
     height: 150%;
-    color: #fff;
+    color: #fefefe;
     text-align: center;
     background: #4f6b86;
 }
