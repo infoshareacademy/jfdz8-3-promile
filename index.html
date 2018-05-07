@@ -30,72 +30,76 @@
                 </div>
                 <ul class="navigation-list">
                     <li class="navigation-list-item hover"><a href="#anchor-home">Strona główna</a></li>
-                    <li class="navigation-list-item hover"><a href="#features">Nasza aplikacja</a></li>
-                    <li class="navigation-list-item hover"><a href="#add-info">Dodatkowe informacje</a></li>
-                    <li class="navigation-list-item"><img src="assets/LOGO1.png" class="center-logo" alt="page logo"></li>
+                    <li class="navigation-list-item hover"><a href="#anchor-features">Nasza aplikacja</a></li>
+                    <li class="navigation-list-item hover"><a href="#anchor-additional">Dodatkowe informacje</a></li>
+                    <li class="navigation-list-item"><img src="assets/images/LOGO1.png" class="center-logo" alt="page logo"></li>
                     <li class="navigation-list-item hover"><a href="#anchor-form">Zgłoś się</a></li>
-                    <li class="navigation-list-item hover"><a href="#team">Zespół</a></li>
+                    <li class="navigation-list-item hover"><a href="#anchor-team">Zespół</a></li>
                     <li class="navigation-list-item hover"><a href="#anchor-contact">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
         <div class="hero">
-            <div class="hero-content">
-                <div class="hero-title">
-                    <h1>3vent city - enjoy 3city</h1>
-                    <h2>Najlepsza wyszukiwarka wydarzeń w trójmieście...</h2>
+            <div class="hero__content">
+                <div>
+                    <h1 class="hero__main-title"><span>We got <span class="hero__it">it</span></span></h1>
+                    <h2><span>Najlepsza wyszukiwarka wydarzeń w Trójmieście!</span></h2>
                 </div>
-                    <a href="#anchor-form" class="hero-button">Zapisz się</a>
-            </div>
-            <div class="triangle-container">
-                <div class="triangle down"></div>
+                <div class="hero__button">
+                    <a class="hero__button--signup" href="#anchor-form" >Zapisz się!</a>
+                </div>
+                <div class="triangle__container">
+                    <a href="#anchor-form">
+                        <div class="triangle"></div>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
-    <main class="main-container">
-        <section class="section-features" id="features">
-            <div class="section-features__header">
-                <h2 class="section-features__header">Poszerz swoje możliwości</h2>
+    <main class="main__container">
+        <section class="section-features" id="anchor-features">
+            <div class="features__header">
+                <h2>Poszerz swoje możliwości</h2>
             </div>
             <div class="features-item__container">
-                <div class="features-item">
-                    <div class="features-icon-container">
+                <div class="features__item">
+                    <div class="features__icon-container">
                         <span class="fab fa-js fa-8x"></span>
                     </div>
-                    <h3 class="features-item-header">Najlepsze wydarzenia</h3>
+                    <h3 class="features__item-header">Najlepsze wydarzenia</h3>
                     <div class="features-item__description">
                         <span>
                             Bo te najgorsze znajdziesz gdzieś indziej.
                         </span>
                     </div>
                 </div>
-                <div class="features-item">
-                    <div class="features-icon-container">
+                <div class="features__item">
+                    <div class="features__icon-container">
                         <span class="fab fa-react fa-8x"></span>
                     </div>
-                    <h3 class="features-item-header">Mapa wydarzeń</h3>
+                    <h3 class="features__item-header">Mapa wydarzeń</h3>
                     <div class="features-item__description">
                         <span>
                             <q>Jeżeli nie wiesz, dokąd chcesz iść, nie ma znaczenia, którą drogą pójdziesz...</q>
                         </span>
                     </div>
                 </div>
-                <div class="features-item">
-                    <div class="features-icon-container">
+                <div class="features__item">
+                    <div class="features__icon-container">
                         <span class="fab fa-angular fa-8x"></span>
                     </div>
-                    <h3 class="features-item-header">Kalendarz wydarzeń</h3>
+                    <h3 class="features__item-header">Kalendarz wydarzeń</h3>
                     <div class="features-item__description">
                         <span>
                             Wiadomo, pamięć już nie taka jak kiedyś! A najgorzej to zapomnieć wypić...
                         </span>
                     </div>
                 </div>
-                <div class="features-item">
-                    <div class="features-icon-container">
+                <div class="features__item">
+                    <div class="features__icon-container">
                         <span class="fab fa-node-js fa-8x"></span>
                     </div>
-                    <h3 class="features-item-header">Dodawaj nowe wydarzenia</h3>
+                    <h3 class="features__item-header">Dodawaj nowe wydarzenia</h3>
                     <div class="features-item__description">
                         <span>
                             Wiesz coś o czymś? Podziel się tym dodając wydarzenie.
@@ -104,14 +108,14 @@
                 </div>
             </div>
         </section>
-        <section class="section-add-info" id="add-info">
+        <section class="section-add-info" id="anchor-additional">
             <div class="add-info__header">
                 <h2>Nie uwierzysz, ale znajdziesz u nas również:</h2>
             </div>
             <div class="add-info__container">
                 <div class="add-info__column">
                     <div class="add-info__item">
-                        <div class="img-container">
+                        <div class="add-info__img-container">
                             <span class="far fa-map fa-5x"></span>
                         </div>
                         <div class="add-info__box">
@@ -123,7 +127,7 @@
                         </div>
                     </div>
                     <div class="add-info__item">
-                        <div class="img-container">
+                        <div class="add-info__img-container">
                             <span class="fas fa-map-marker-alt fa-5x"></span>
                         </div>
                         <div class="add-info__box">
@@ -135,7 +139,7 @@
                         </div>
                     </div>
                     <div class="add-info__item">
-                        <div class="img-container">
+                        <div class="add-info__img-container">
                         <span class="far fa-bell fa-5x"></span>
                         </div>
                         <div class="add-info__box">
@@ -150,7 +154,7 @@
                 </div>
                 <div class="add-info__column">
                     <div class="add-info__item">
-                        <div class="img-container">
+                        <div class="add-info__img-container">
                             <span class="fas fa-child fa-5x"></span>
                         </div>
                         <div class="add-info__box">
@@ -163,7 +167,7 @@
                         </div>
                     </div>
                     <div class="add-info__item">
-                        <div class="img-container">
+                        <div class="add-info__img-container">
                             <span class="far fa-calendar-alt fa-5x"></span>
                         </div>
                         <div class="add-info__box">
@@ -175,7 +179,7 @@
                         </div>
                     </div>
                     <div class="add-info__item">
-                        <div class="img-container">
+                        <div class="add-info__img-container">
                             <span class="far fa-comment-alt fa-5x"></span>
                         </div>
                         <div class="add-info__box">
@@ -196,7 +200,7 @@
             <div class="form">
                 <h2>Zapisz się na premierę aplikacji!</h2>
                 <div class="form__icon">
-                    <span><span class="far fa-envelope fa-6x"></span></span>
+                    <span><span class="fas fa-envelope fa-6x"></span></span>
                 </div>
                 <div class="form__info">
                     <form action="https://formspree.io/m.muszy@gmail.com" method="POST">
@@ -212,7 +216,7 @@
                 </div>
             </div>
         </section>
-        <section class="team">
+        <section class="section-team" id="anchor-team">
             <div class="team-text-container">
                 <h2 class="team-text">Poznaj zespół</h2>
             </div>
@@ -268,10 +272,10 @@
             <h4 class="footer-header">Jeszcze raz?</h4>
             <ul class="footer-index-list">
                 <li class="footer-index-list-item"><a href="#anchor-home">Strona główna</a></li>
-                <li class="footer-index-list-item"><a href="#features">Nasza aplikacja</a></li>
-                <li class="footer-index-list-item"><a href="#add-info">Dodatkowe informacje</a></li>
+                <li class="footer-index-list-item"><a href="#anchor-features">Nasza aplikacja</a></li>
+                <li class="footer-index-list-item"><a href="#anchor-additional">Dodatkowe informacje</a></li>
                 <li class="footer-index-list-item"><a href="#anchor-form">Zgłoś się</a></li>
-                <li class="footer-index-list-item"><a href="#team">Zespół</a></li>
+                <li class="footer-index-list-item"><a href="#anchor-team">Zespół</a></li>
                 <li class="footer-index-list-item"><a href="#anchor-contact">Kontakt</a></li>
             </ul>
         </div>
@@ -310,7 +314,7 @@
         </div>
 
         <div class="copy-info">
-            <p>Copyright <span class="far fa-copyright"></span> TresPromiles 2018</p>
+            <p>Copyright <span class="far fa-copyright"></span>InfoShare Academy/TresPromiles 2018</p>
         </div>
     </footer>
 
