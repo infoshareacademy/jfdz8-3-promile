@@ -157,7 +157,7 @@ body {
 .navigation-list-item a {
     color: #fefefe;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 14px;
 }
 
 .navigation-list-item:hover a {
@@ -635,7 +635,7 @@ body {
     }
 
     .navigation-list-item a {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .center-logo {
@@ -726,7 +726,6 @@ body {
         margin: 3em auto;
         font-size: 20px;
     }
-
 }
 
 
@@ -746,4 +745,5 @@ body {
         filter: grayscale(0%);
     }
 }
+
 
