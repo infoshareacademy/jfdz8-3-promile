@@ -17,9 +17,9 @@ body {
 
 
 .section-features, .section-add-info, .section-form, .section-team {
-    padding: 5% 2%;
-    margin-left: 2%;
-    margin-right: 2%;
+    padding: 5em 2em;
+    margin-left: 2em;
+    margin-right: 2em;
     height: 100%;
 }
 
@@ -347,7 +347,7 @@ body {
 }
 
 .features__header, .add-info__header, .team__header {
-    padding-bottom: 5%;
+    padding-bottom: 1em;
     font-size: 42px;
     color: #4f6b86
     }
@@ -362,6 +362,7 @@ body {
 
 .features__item-header {
     font-size: 1.5rem;
+    color: #4f6b86;
 }
 
 .features__item-header, .features__header, .add-info__header {
