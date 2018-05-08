@@ -255,7 +255,7 @@ body {
     opacity: .2
 }
 
-.form-data:focus {
+.form-data:focus, .form-data[type=text]:valid  {
     border-bottom: 2px solid #111111;
     width: 60%;
 }
@@ -264,9 +264,8 @@ body {
     color:transparent;
 }
 
-.form-data[type=text]:valid {
-    border-bottom: 2px solid #111111;
-    width: 12em;
+.form-data:invalid {
+    outline: none;
 }
 
 .submit, .show_inputs {
@@ -406,7 +405,6 @@ body {
     justify-content: center;
 }
 
-
 .team-info{
     display: flex;
     flex-direction: row;
@@ -438,7 +436,6 @@ body {
 .team-member h2{
     font-size: 2em;
 }
-
 
 .team-member-container h1{
     font-size: 1em;
