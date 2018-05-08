@@ -590,7 +590,6 @@ h2 {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    filter: grayscale(80%);
 }
 
 .team__member h2{
@@ -741,6 +740,7 @@ h2 {
 
     .team__member{
         margin: 20px 40px;
+        filter: grayscale(80%);
     }
 
     .team__member-container{
