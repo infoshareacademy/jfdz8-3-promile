@@ -75,20 +75,23 @@ body {
 }
 
 .hero__content h1{
-    font-size: 72px;
-    letter-spacing: 0.2em;
+    font-size: 48px;
+    letter-spacing: 0.1em;
 }
 
 .hero__content h2{
-    font-size: 36px;
-    letter-spacing: 0.2em;
+    font-size: 24px;
+    letter-spacing: 0.1em;
     opacity: 0.85;
+
 }
 
 .hero__it {
+    display: inline-block;
+    margin-top: 10px;
     color: #7395AE;
     border: 4px solid #7395AE;
-    padding: 10px 0 10px 10px;
+    padding: 10px 8px 10px 12px;
     text-align: center;
 }
 
@@ -630,6 +633,22 @@ body {
 @media screen and (min-width: 968px) {
     .hamburger-container {
         display: none;
+    }
+
+    .hero__content h1{
+        font-size: 72px;
+        letter-spacing: 0.2em;
+    }
+
+    .hero__content h2{
+        font-size: 36px;
+        letter-spacing: 0.2em;
+    }
+
+    .hero__it {
+        display: inline;
+        padding: 10px 5px 10px 15px;
+
     }
 
     .navigation-list {
