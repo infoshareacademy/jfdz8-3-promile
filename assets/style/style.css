@@ -208,18 +208,6 @@ body {
     transform: rotate(360deg) scale(1.1);
 }
 
-.typewrite {
-    margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(100, end);
-}
-
-@keyframes typing {
-    from {width: 0}
-    to {width: 100%}
-}
-
 .form h2 {
     padding: 0;
     font-size: 2em;
@@ -228,6 +216,18 @@ body {
 .form h3 {
     font-size: 1em;
     padding: 0.5em;
+}
+
+.typewrite {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(80) 1 normal both;
+}
+
+@keyframes typing {
+    from {width: 0}
+    to {width: 100%}
 }
 
 .form-data {
@@ -239,7 +239,7 @@ body {
     background: none;
     transition: 0.4s ease-in-out;
     text-align: center;
-    width: 7em;
+    width: 40%;
     outline: none;
     caret-color: transparent;
     font-size: 1em;
@@ -257,7 +257,7 @@ body {
 
 .form-data:focus {
     border-bottom: 2px solid #111111;
-    width: 12em;
+    width: 60%;
 }
 
 .form-data:focus::-webkit-input-placeholder {
@@ -275,11 +275,15 @@ body {
     border: 1px solid #fefefe;
     background: none;
     color: #fefefe;
-    width: 12em;
+    width: 30%;
     outline: none;
     box-shadow: 3px 3px #5f5f5f;
     position: relative;
     z-index: 1;
+}
+
+.submit {
+    width: 55%;
 }
 
 .show_inputs:after, .submit:after {
@@ -300,7 +304,7 @@ body {
 }
 
 .show_inputs:hover:after, .submit:hover:after {
-    width:100%;
+    width:99%;
 }
 
 .submit:active, .show_inputs:active {
@@ -734,6 +738,10 @@ body {
     .submit, .show_inputs {
         margin: 3em auto;
         font-size: 20px;
+    }
+
+    .submit {
+        width: 35%;
     }
 }
 
