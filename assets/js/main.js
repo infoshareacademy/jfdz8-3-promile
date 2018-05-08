@@ -14,7 +14,7 @@ $(function() {
         $page.animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, scrollDuration);
-        if ($(window).width() < 968) {
+        if ($navigationList.is(":visible") && $(window).width() < 968) {
             toggleMenu(event)
         }
     }

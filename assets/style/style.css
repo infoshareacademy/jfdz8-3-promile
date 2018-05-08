@@ -15,6 +15,7 @@ body {
     height: 100%;
 }
 
+
 .section-features, .section-add-info, .section-form, .section-team {
     padding: 5% 2%;
     margin-left: 2%;
@@ -157,7 +158,7 @@ body {
 .navigation-list-item a {
     color: #fefefe;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 14px;
 }
 
 .navigation-list-item:hover a {
@@ -185,7 +186,7 @@ body {
     text-align: center;
     color: #fefefe;
     overflow: hidden;
-    font-family: "Lato Light", serif;
+    font-family: "Lato Light", sans-serif;
 }
 
 .form__icon {
@@ -221,27 +222,27 @@ body {
 
 .form h2 {
     padding: 0;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .form h3 {
-    font-size: 2em;
+    font-size: 1em;
     padding: 0.5em;
 }
 
 .form-data {
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 5px;
     border: none;
     border-bottom: 2px solid #515151;
     background: none;
     transition: 0.4s ease-in-out;
     text-align: center;
-    width: 12em;
+    width: 7em;
     outline: none;
     caret-color: transparent;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 ::placeholder {
@@ -256,7 +257,7 @@ body {
 
 .form-data:focus {
     border-bottom: 2px solid #111111;
-    width: 18em;
+    width: 12em;
 }
 
 .form-data:focus::-webkit-input-placeholder {
@@ -265,11 +266,11 @@ body {
 
 .form-data[type=text]:valid {
     border-bottom: 2px solid #111111;
-    width: 18em;
+    width: 12em;
 }
 
 .submit, .show_inputs {
-    font-size: 20px;
+    font-size: 15px;
     padding: 15px;
     border: 1px solid #fefefe;
     background: none;
@@ -295,7 +296,7 @@ body {
 }
 
 .show_inputs, .submit {
-    margin: 3em auto;
+    margin: 2em auto;
 }
 
 .show_inputs:hover:after, .submit:hover:after {
@@ -623,8 +624,6 @@ body {
 }
 
 @media screen and (min-width: 968px) {
-
-
     .hamburger-container {
         display: none;
     }
@@ -645,7 +644,7 @@ body {
     }
 
     .navigation-list-item a {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .center-logo {
@@ -713,6 +712,29 @@ body {
         background-size: cover;
         background-attachment: fixed;
     }
+
+    .form-data {
+        font-size: 2em;
+        width: 12em;
+        margin: 20px auto;
+    }
+
+    .form h2 {
+        font-size: 3em;
+    }
+
+    .form h3 {
+        font-size: 2em;
+    }
+
+    .form-data:focus,.form-data[type=text]:valid  {
+        width: 18em;
+    }
+
+    .submit, .show_inputs {
+        margin: 3em auto;
+        font-size: 20px;
+    }
 }
 
 
@@ -732,3 +754,5 @@ body {
         filter: grayscale(0%);
     }
 }
+
+
