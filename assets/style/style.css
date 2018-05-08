@@ -15,8 +15,9 @@ body {
     height: 100%;
 }
 
+
 .section-features, .section-add-info, .section-form, .section-team {
-    padding: 2% 2% 7% 2%;
+    padding: 5% 2%;
     margin-left: 2%;
     margin-right: 2%;
     height: 100%;
@@ -55,9 +56,9 @@ body {
 
 .hero__button--signup:hover{
     opacity: 0.8;
-    background: #2F527F;
+    background: #4f6b86;
     color: #fefefe;
-    border: 4px solid #2F527F;
+    border: 4px solid #4f6b86;
 }
 
 .hero__content{
@@ -146,7 +147,7 @@ body {
 
 .navigation-list-item.hover:hover {
     background: #fefefe;
-    color: #2F527F;
+    color: #4f6b86;
     font-weight: bold;
 }
 
@@ -157,11 +158,11 @@ body {
 .navigation-list-item a {
     color: #fefefe;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 14px;
 }
 
 .navigation-list-item:hover a {
-    color: #2F527F;
+    color: #4f6b86;
     font-weight: bold;
 }
 
@@ -185,7 +186,7 @@ body {
     text-align: center;
     color: #fefefe;
     overflow: hidden;
-    font-family: "Lato Light", serif;
+    font-family: "Lato Light", sans-serif;
 }
 
 .form__icon {
@@ -221,27 +222,27 @@ body {
 
 .form h2 {
     padding: 0;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .form h3 {
-    font-size: 2em;
+    font-size: 1em;
     padding: 0.5em;
 }
 
 .form-data {
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 5px;
     border: none;
     border-bottom: 2px solid #515151;
     background: none;
     transition: 0.4s ease-in-out;
     text-align: center;
-    width: 12em;
+    width: 7em;
     outline: none;
     caret-color: transparent;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 ::placeholder {
@@ -256,7 +257,7 @@ body {
 
 .form-data:focus {
     border-bottom: 2px solid #111111;
-    width: 18em;
+    width: 12em;
 }
 
 .form-data:focus::-webkit-input-placeholder {
@@ -265,11 +266,11 @@ body {
 
 .form-data[type=text]:valid {
     border-bottom: 2px solid #111111;
-    width: 18em;
+    width: 12em;
 }
 
 .submit, .show_inputs {
-    font-size: 20px;
+    font-size: 15px;
     padding: 15px;
     border: 1px solid #fefefe;
     background: none;
@@ -295,7 +296,7 @@ body {
 }
 
 .show_inputs, .submit {
-    margin: 3em auto;
+    margin: 2em auto;
 }
 
 .show_inputs:hover:after, .submit:hover:after {
@@ -341,6 +342,14 @@ body {
     padding-bottom: 5%;
     font-size: 42px;
     }
+
+.features__header::after, .add-info__header::after {
+    content: "";
+    display: block;
+    margin: 20px auto;
+    width: 45%;
+    border: 1px solid #4f6b86;
+}
 
 .features__item-header {
     font-size: 1.5rem;
@@ -474,7 +483,7 @@ body {
 .footer {
     display: block;
     background: #7395AE;
-    color: #FFF;
+    color: #fefefe;
     width: 100%;
     height: 100%;
     padding: 2%;
@@ -492,7 +501,7 @@ body {
 .footer-header {
     font-size: 20px;
     font-weight: bold;
-    border-bottom: 2px solid #FFF;
+    border-bottom: 2px solid #fefefe;
     padding-bottom: 3px;
     margin-bottom: 10px;
 }
@@ -504,12 +513,12 @@ body {
 .footer-index-list-item a {
     text-decoration: none;
     font-size: 1em;
-    color: #FFF
+    color: #fefefe
 }
 
 .footer-index-list-item a:hover {
     font-weight: bold;
-    color: #2F527F;
+    color: #4f6b86;
 }
 
 .footer-address {
@@ -543,7 +552,7 @@ body {
 .copy-info {
     font-size: 0.8em;
     height: 150%;
-    color: #fff;
+    color: #fefefe;
     text-align: center;
     background: #4f6b86;
 }
@@ -615,8 +624,6 @@ body {
 }
 
 @media screen and (min-width: 968px) {
-
-
     .hamburger-container {
         display: none;
     }
@@ -637,7 +644,7 @@ body {
     }
 
     .navigation-list-item a {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .center-logo {
@@ -705,6 +712,29 @@ body {
         background-size: cover;
         background-attachment: fixed;
     }
+
+    .form-data {
+        font-size: 2em;
+        width: 12em;
+        margin: 20px auto;
+    }
+
+    .form h2 {
+        font-size: 3em;
+    }
+
+    .form h3 {
+        font-size: 2em;
+    }
+
+    .form-data:focus,.form-data[type=text]:valid  {
+        width: 18em;
+    }
+
+    .submit, .show_inputs {
+        margin: 3em auto;
+        font-size: 20px;
+    }
 }
 
 
@@ -724,3 +754,5 @@ body {
         filter: grayscale(0%);
     }
 }
+
+
