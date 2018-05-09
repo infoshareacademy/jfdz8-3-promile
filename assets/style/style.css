@@ -553,7 +553,7 @@ body {
 .team__info-container{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -579,7 +579,7 @@ body {
 
 .team__member{
     width: 100%;
-    margin: 40px 20px;
+    margin: 30px 0px;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -771,6 +771,7 @@ body {
 
     .team__member{
         filter: grayscale(80%);
+        margin: 30px 20px;
     }
 
     .team__member:hover .team__member-container{
