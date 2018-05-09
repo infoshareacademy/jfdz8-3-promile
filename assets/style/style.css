@@ -412,82 +412,6 @@ body {
     justify-content: center;
 }
 
-.team-info{
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.team__text-container{
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.team-photo{
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.team-member{
-    width: 100%;
-    text-align: center;
-    margin: 50px 40px;
-    padding: 50px 0;
-    filter: grayscale(80%);
-}
-
-.team-member h2{
-    font-size: 2em;
-}
-
-.team-member-container h1{
-    font-size: 1em;
-    padding: 25px;
-}
-
-.team-member-container h2{
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #FFFFFF;
-    background: #5EA3FF;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.team-member-container a{
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #000000;
-    font-size: 1.5em;
-}
-
-.icon-social{
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid #5EA3FF;
-}
-
-.team-member-container{
-    opacity: 0;
-}
-
-.team-member:hover .team-member-container{
-    opacity: 1;
-    transition: 1s;
-}
-
-.team-member:hover{
-    background: #f3f1f8;
-    border-radius: 50px;
-    box-shadow: 1px 1px 2px black, 0 0 25px #5EA3FF, 0 0 5px #4661ff;
-    filter: grayscale(0%);
-    transition: 1s;
-}
-
 .footer {
     display: block;
     background: #7395AE;
@@ -582,12 +506,12 @@ body {
     color: #67d60c;
 }
 
-.fa-facebook-square, .fa-linkedin, .fa-instagram  {
+.fa-facebook-square, .fa-linkedin, .fa-instagram, .fa-github-square {
     color: #4f6b86;
     opacity: 0.3;
 }
 
-.fa-facebook-square:hover, .fa-linkedin:hover, .fa-instagram:hover   {
+.fa-facebook-square:hover, .fa-linkedin:hover, .fa-instagram:hover, .fa-github-square:hover {
     animation: blink 2s infinite;
 }
 
@@ -626,10 +550,80 @@ body {
     top: 33%;
 }
 
-.fa-facebook, .fa-linkedin, .fa-twitter-square {
+.team__info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.team__header{
+    text-align: center;
+}
+
+.team__header-container{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.team__img{
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 200px;
+    height: auto;
+    filter: grayscale(0%);
+}
+
+.team__member{
+    width: 100%;
+    margin: 30px 0px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.team__member h2{
+    font-size: 1em;
+}
+
+.fa-linkedin, .fa-github-square{
     margin-left: 14px;
     margin-right: 14px;
 }
+
+.team__member-container h1{
+    font-size: 0.8em;
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+.team__member-container h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #5EA3FF;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0px;
+}
+
+.team__member-container a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 1em;
+}
+
+.team__icons-container{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #5EA3FF;
+}
+
+
 
 @media screen and (min-width: 968px) {
     .hamburger-container {
@@ -763,24 +757,33 @@ body {
     .submit {
         width: 35%;
     }
-}
 
-
-@media (max-width:1024px) {
-    .team-info{
-        flex-direction: column;
-        width: 100%;
+    .team__info-container{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 0 auto;
     }
 
-    .team-member-container{
+    .team__member-container{
+        opacity: 0;
+    }
+
+    .team__member{
+        filter: grayscale(80%);
+        margin: 30px 20px;
+    }
+
+    .team__member:hover .team__member-container{
         opacity: 1;
+        transition: 1s;
     }
 
-    .team-member{
-        margin-left: 0;
-        margin-right: 0;
+    .team__member:hover {
+        background: #f3f1f8;
+        border-radius: 50px;
+        box-shadow: 1px 1px 2px black, 0 0 25px #5EA3FF, 0 0 5px #4661ff;
         filter: grayscale(0%);
+        transition: 1s;
     }
 }
-
-
