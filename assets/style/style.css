@@ -83,7 +83,6 @@ body {
     font-size: 24px;
     letter-spacing: 0.1em;
     opacity: 0.85;
-
 }
 
 .hero__it {
@@ -115,14 +114,13 @@ body {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     cursor: pointer
-
 }
 
 @keyframes triangle-animation{
     0%   {padding-top:30px; padding-right: 30px; margin-bottom: -50px; margin-right: 0;}
     25%  {padding-top:30px; padding-right: 30px; margin-bottom: -85px; margin-right: 0;}
     50%  {padding-top:30px; padding-right: 30px; margin-bottom: -50px; margin-right: 0;}
-    75% {padding-top:30px; padding-right: 30px; margin-bottom: -85px; margin-right: 0;}
+    75%  {padding-top:30px; padding-right: 30px; margin-bottom: -85px; margin-right: 0;}
     100% {padding-top:30px; padding-right: 30px; margin-bottom: -50px; margin-right: 0;}
 }
 
@@ -164,6 +162,7 @@ body {
     color: #fefefe;
     text-decoration: none;
     font-size: 14px;
+    display: block;
 }
 
 .navigation-list-item:hover a {
@@ -301,10 +300,12 @@ body {
     background: #4f6b86;
     z-index: -1;
     transition: width 0.3s ease-in-out;
+    border-radius: 10px;
 }
 
 .show_inputs, .submit {
     margin: 2em auto;
+    border-radius: 10px;
 }
 
 .show_inputs:hover:after, .submit:hover:after {
@@ -516,8 +517,8 @@ body {
 }
 
 @keyframes blink {
-    0%   { opacity: 0.5}
-    10%  { opacity: 0.6}
+    0%  { opacity: 0.5}
+    10% { opacity: 0.6}
     20% { opacity: 0.7}
     30% {opacity: 0.8}
     40% {opacity: 0.9}
@@ -528,6 +529,7 @@ body {
     90% {opacity: 0.6}
     100% {opacity: 0.5}
 }
+
 .fa-map, .fa-map-marker-alt, .fa-bell, .fa-child, .fa-calendar-alt, .fa-comment-alt {
     color: #4f6b86;
 }
@@ -579,7 +581,7 @@ body {
 
 .team__member{
     width: 100%;
-    margin: 30px 0px;
+    margin: 30px 0;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -597,7 +599,7 @@ body {
 .team__member-container h1{
     font-size: 0.8em;
     padding: 5px;
-    margin: 10px 0px;
+    margin: 10px 0;
 }
 
 .team__member-container h2{
@@ -607,7 +609,7 @@ body {
     background: #5EA3FF;
     width: 80%;
     margin: 0 auto;
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 .team__member-container a{
@@ -622,8 +624,6 @@ body {
     padding-top: 10px;
     border-top: 1px solid #5EA3FF;
 }
-
-
 
 @media screen and (min-width: 968px) {
     .hamburger-container {
@@ -722,13 +722,12 @@ body {
     }
 
     .parallax-container {
-        background: center url("../images/gdansk_2.jpg") no-repeat;
+        background: center no-repeat fixed url("../images/gdansk_2.jpg") ;
         min-height: 400px;
         width: 100%;
         position: relative;
         opacity: 0.7;
         background-size: cover;
-        background-attachment: fixed;
     }
 
     .form-data {
