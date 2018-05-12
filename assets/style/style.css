@@ -384,7 +384,6 @@ body {
 
 .add-info__item {
     font-size: 1em;
-    padding: 3.5%;
     justify-content: center;
 }
 
@@ -401,7 +400,6 @@ body {
 }
 
 .add-info__box {
-    padding: 2em 2em;
     margin-bottom: 20px;
 }
 
@@ -693,13 +691,14 @@ body {
     }
 
     .add-info__box {
-        padding: 1em 1em;
+        padding: 2em 2em;
         height: 100%;
         width: 80%;
     }
 
     .add-info__item {
         display: flex;
+        padding: 3.5%;
     }
     .add-info__img-container {
         flex-grow: 1;
