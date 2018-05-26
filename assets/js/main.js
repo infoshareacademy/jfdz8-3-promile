@@ -7,6 +7,20 @@ $(function() {
     var $show_input = $(".show_inputs");
     var $form_inputs = $(".form__inputs");
 
+    var home = document.getElementById('anchor-home');
+    var features = document.getElementById('anchor-features');
+    var additional = document.getElementById('anchor-additional');
+    var form = document.getElementById('anchor-form');
+    var team = document.getElementById('anchor-team');
+    var contact = document.getElementById('anchor-contact');
+    var anchors = document.querySelectorAll('[id^="anchor"]');
+    var navi = document.querySelectorAll('li.hover');
+    const position = [];
+
+    for (var i = 0; i < anchors.length; i++) {
+        position.push(anchors[i].getBoundingClientRect().top)
+    }
+
     function scrollPage(event) {
         event.preventDefault();
         var scrollDuration = 1400;
@@ -43,6 +57,17 @@ $(function() {
     $(document).on('click', 'a[href^="#"]', scrollPage);
     $hamburger.on('click', toggleMenu);
     $show_input.on('click', showInputs);
+
+    window.onscroll = function() {
+        var scrollDist = window.pageYOffset;
+
+        for (var i = 0; i < anchors.length; i++) {
+            if (position[i] <= scrollDist) {
+                navi[i].classList.remove('highlight');
+                navi[i].classList.add('highlight');
+            }
+        }
+    };
 
     /* Map Script */
 
