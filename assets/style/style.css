@@ -177,6 +177,11 @@ body {
     font-weight: bold;
 }
 
+.highlight a {
+    color: #4f6b86;
+    font-weight: bold;
+}
+
 .center-logo {
     display: none;
 }

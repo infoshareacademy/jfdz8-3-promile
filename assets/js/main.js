@@ -14,6 +14,7 @@ $(function() {
     var team = document.getElementById('anchor-team');
     var contact = document.getElementById('anchor-contact');
     var anchors = document.querySelectorAll('[id^="anchor"]');
+
     var navi = document.querySelectorAll('li.hover');
     const position = [];
 
@@ -52,7 +53,7 @@ $(function() {
     function showInputs() {
         $form_inputs.slideToggle();
         $(this).remove();
-}
+    }
 
     $(document).on('click', 'a[href^="#"]', scrollPage);
     $hamburger.on('click', toggleMenu);
@@ -62,8 +63,11 @@ $(function() {
         var scrollDist = window.pageYOffset;
 
         for (var i = 0; i < anchors.length; i++) {
-            if (position[i] <= scrollDist) {
-                navi[i].classList.remove('highlight');
+            console.log(scrollDist, position[i]);
+            if (position[i] <= scrollDist ) {
+                navi.forEach(function (n) {
+                    n.classList.remove('highlight')
+                });
                 navi[i].classList.add('highlight');
             }
         }
