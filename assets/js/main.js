@@ -8,24 +8,28 @@ $(function() {
     var $form_inputs = $(".form__inputs");
 
     var anchors = document.querySelectorAll('[id^="anchor"]');
-    var navi = document.querySelectorAll('li.hover');
-    const sectionPosition = [];
+    var naviElement = document.querySelectorAll('li.hover');
+    var naviBar = document.querySelector('.navigation');
+    let sectionPosition = [];
+    let naviBarH = naviBar.offsetHeight;
 
     function takePosition() {
         for (var i = 0; i < anchors.length; i++) {
-            sectionPosition.push(anchors[i].getBoundingClientRect().top)
+            sectionPosition.push(anchors[i].offsetTop)
         }
         return sectionPosition
     }
 
     function navHighlight() {
+        takePosition();
         var scrollDist = window.pageYOffset;
+        console.log(sectionPosition, scrollDist);
         for (var i = 0; i < anchors.length; i++) {
-            if (takePosition()[i] <= scrollDist) {
-                navi.forEach(function(n) {
+            if (sectionPosition[i] - naviBarH <= scrollDist) {
+                naviElement.forEach(function(n) {
                     n.classList.remove('highlight')
                 });
-                navi[i].classList.add('highlight');
+                naviElement[i].classList.add('highlight');
             }
         }
     };
@@ -67,7 +71,6 @@ $(function() {
     $hamburger.on('click', toggleMenu);
     $show_input.on('click', showInputs);
     window.addEventListener('scroll', navHighlight);
-
     /* Map Script */
 
     var mymap = L.map('mapid').setView([54.40315833, 18.56952222], 16);
