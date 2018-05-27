@@ -7,6 +7,7 @@ $(function() {
     var $show_input = $(".show_inputs");
     var $form_inputs = $(".form__inputs");
 
+    var body = document.body;
     var anchors = document.querySelectorAll('[id^="anchor"]');
     var naviElement = document.querySelectorAll('li.hover');
     var naviBar = document.querySelector('.navigation');
@@ -14,6 +15,7 @@ $(function() {
     let naviBarH = naviBar.offsetHeight;
 
     function takePosition() {
+
         for (var i = 0; i < anchors.length; i++) {
             sectionPosition.push(anchors[i].offsetTop)
         }
@@ -25,11 +27,17 @@ $(function() {
         var scrollDist = window.pageYOffset;
         console.log(sectionPosition, scrollDist);
         for (var i = 0; i < anchors.length; i++) {
-            if (sectionPosition[i] - naviBarH <= scrollDist) {
+            if (sectionPosition[i] - naviBarH <= scrollDist &&
+                scrollDist !== body.offsetHeight + window.innerHeight) {
                 naviElement.forEach(function(n) {
                     n.classList.remove('highlight')
                 });
                 naviElement[i].classList.add('highlight');
+            } else if (window.innerHeight + scrollDist >= body.offsetHeight) {
+                naviElement.forEach(function(n) {
+                    n.classList.remove('highlight')
+                });
+                naviElement[5].classList.add('highlight')
             }
         }
     };
