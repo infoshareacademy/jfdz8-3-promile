@@ -14,4 +14,21 @@ window.onload = function() {
     link.setAttribute('title', 'Zamknij');
     link.innerHTML = 'x';
     container.appendChild(link);
+
+
+    function clickHandler(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            e.returnValue = false;
+        }
+        document.body.removeChild(container)
+    }
+    if (link.addEventListener) {
+        link.addEventListener('click', clickHandler);
+    } else {
+        link.attachEvent('onclick', clickHandler);
+    }
+    return true;
+};
 };
