@@ -8,12 +8,12 @@ window.onload = function() {
         ' z nich współpracujące z nami firmy badawcze oraz reklamowe. Jeżeli wyrażasz zgodę na zapisywanie informacji' +
         ' zawartej w cookies kliknij na &bdquo;x&rdquo; w prawym górnym rogu tej informacji. Jeśli nie wyrażasz zgody,' +
         ' ustawienia dotyczące plików cookies możesz zmienić w swojej przeglądarce.</p>'
-    document.body.appendChild(container);
+
 
     link.setAttribute('href','#');
     link.setAttribute('title', 'Zamknij');
     link.innerHTML = 'x';
-    container.appendChild(link);
+
 
 
     function clickHandler(e) {
@@ -29,6 +29,8 @@ window.onload = function() {
     } else {
         link.attachEvent('onclick', clickHandler);
     }
+
+    container.appendChild(link);
+    document.body.appendChild(container);
     return true;
-};
 };
