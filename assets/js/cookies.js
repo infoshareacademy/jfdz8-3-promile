@@ -9,4 +9,9 @@ window.onload = function() {
         ' zawartej w cookies kliknij na &bdquo;x&rdquo; w prawym górnym rogu tej informacji. Jeśli nie wyrażasz zgody,' +
         ' ustawienia dotyczące plików cookies możesz zmienić w swojej przeglądarce.</p>'
     document.body.appendChild(container);
+
+    link.setAttribute('href','#');
+    link.setAttribute('title', 'Zamknij');
+    link.innerHTML = 'x';
+    container.appendChild(link);
 };
