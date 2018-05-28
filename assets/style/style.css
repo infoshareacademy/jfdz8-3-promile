@@ -639,7 +639,53 @@ body {
     border-top: 1px solid #5EA3FF;
 }
 
+#cookieinfo {
+    position: fixed;
+    font-size: 12px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #7395AE;
+    padding: 20px;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
 
+#cookieinfo h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #cdd7da;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    margin-bottom: 7px;
+}
+
+#cookieinfo p {
+    color: #fefefe;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+}
+
+#cookieinfo a {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #fefefe;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4f6b86;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+#cookieinfo a:hover {
+    background-color: #4f6b86;
+    opacity: 0.75;
+
+}
 
 @media screen and (min-width: 968px) {
     .hamburger-container {
@@ -802,4 +848,5 @@ body {
         filter: grayscale(0%);
         transition: 1s;
     }
+
 }
