@@ -14,22 +14,12 @@ window.onload = function() {
     link.setAttribute('title', 'Zamknij');
     link.innerHTML = 'x';
 
-
-
     function clickHandler(e) {
-        if (e.preventDefault) {
-            e.preventDefault();
-        } else {
-            e.returnValue = false;
-        }
+        e.preventDefault();
         document.body.removeChild(container)
     }
-    if (link.addEventListener) {
-        link.addEventListener('click', clickHandler);
-    } else {
-        link.attachEvent('onclick', clickHandler);
-    }
 
+    link.addEventListener('click', clickHandler);
     container.appendChild(link);
     document.body.appendChild(container);
     return true;
