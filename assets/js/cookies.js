@@ -10,7 +10,7 @@ window.onload = function() {
         ' ustawienia dotyczące plików cookies możesz zmienić w swojej przeglądarce.</p>'
 
 
-    link.setAttribute('href','#');
+    link.setAttribute('href','');
     link.setAttribute('title', 'Zamknij');
     link.innerHTML = 'x';
 
@@ -22,5 +22,4 @@ window.onload = function() {
     link.addEventListener('click', clickHandler);
     container.appendChild(link);
     document.body.appendChild(container);
-    return true;
 };
