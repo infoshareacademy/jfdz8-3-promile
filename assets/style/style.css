@@ -802,4 +802,12 @@ body {
         filter: grayscale(0%);
         transition: 1s;
     }
+
+    #cookieinfo {
+        position: fixed;
+        font-size: 12px;
+        background-color: #4f6b86;
+        opacity: 0.5;
+        padding: 10px;
+    }
 }
