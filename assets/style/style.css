@@ -37,7 +37,7 @@ body {
     height: 100%;
 }
 
-.dot {
+.image_dot {
     cursor: pointer;
     height: 1em;
     width: 1em;
@@ -55,19 +55,37 @@ body {
     top: 30%;
 }
 
-.left {
-    left: 5%
+.left{
+    left: 5%;
+    animation: left 6s infinite;
 }
 
 .right {
-    right: 5%
+    right: 5%;
+    animation: right 6s infinite;
+}
+
+@keyframes left {
+    0% {left: 5%}
+    25% {left: 3%}
+    50% {left: 5%}
+    75% {left: 3%}
+    100% {left: 5%;}
+}
+
+@keyframes right {
+    0% {right: 5%}
+    25% {right: 3%}
+    50% {right: 5%}
+    75% {right: 3%}
+    100% {right: 5%}
 }
 
 @keyframes bg-change{
-    0% {background-image: url("../images/gdansk.jpg");}
-    33% {background-image: url("../images/sopot2.png");}
-    66% {background-image: url("../images/gdynia.jpg");}
-    100% {background-image: url("../images/gdansk.jpg");}
+    0% {background-image: url("../images/slideshow_photo/gdansk.jpg");}
+    33% {background-image: url("../images/slideshow_photo/sopot2.png");}
+    66% {background-image: url("../images/slideshow_photo/gdynia.jpg");}
+    100% {background-image: url("../images/slideshow_photo/gdansk.jpg");}
 }
 
 .hero__button {
@@ -140,8 +158,6 @@ body {
     display: inline-block;
     margin-top: 20px;
     animation: triangle-animation 4s infinite;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
     text-shadow: 1px 1px 2px #0a0a0a;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
