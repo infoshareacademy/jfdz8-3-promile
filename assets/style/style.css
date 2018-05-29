@@ -59,6 +59,10 @@ body {
     box-shadow: 1px 2px #4f6b86;
 }
 
+.image_dot_active {
+    background-color: #f4be41;
+}
+
 .left, .right {
     font-size: 2em;
     color: #fefefe;

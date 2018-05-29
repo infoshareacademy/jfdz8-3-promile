@@ -1,6 +1,6 @@
 const heroImg = document.querySelector('.hero__image');
 const heroDots = document.querySelector('.hero__dots');
-const heroDot = document.getElementsByClassName('image_dot');
+let heroDot = document.getElementsByClassName('image_dot');
 let leftButton = document.querySelector('.left_arrow');
 let rightButton = document.querySelector('.right_arrow');
 const imgLocations = ['assets/images/slideshow_photo/gdansk.jpg',
@@ -19,6 +19,9 @@ createDots();
 let sliderNum = 0;
 
 function imgChange(x) {
+    for (var i = 0; i < heroDot.length; i++) {
+        heroDot[i].classList.remove("image_dot_active")
+    }
     if (x > 0) {
         if (sliderNum === imgLocations.length - 1) {
             sliderNum = 0;
@@ -36,7 +39,10 @@ function imgChange(x) {
             heroImg.src = imgLocations[sliderNum];
         }
     }
-    console.log(sliderNum);
+    for(var i = 0; i < heroDot.length; i++) {
+        heroDot[sliderNum].classList.add("image_dot_active");
+    }
+
 }
 
 rightButton.addEventListener('click', function() {
