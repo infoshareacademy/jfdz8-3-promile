@@ -647,7 +647,7 @@ body {
     right: 0;
     background-color: #7395AE;
     padding: 20px;
-    z-index: 10;
+    z-index: 1000;
 }
 
 #cookieinfo h6 {
@@ -684,6 +684,17 @@ body {
     background-color: #4f6b86;
     opacity: 0.75;
 }
+
+#cookiemonster {
+    bottom: 0;
+    height: 200px;
+    width: 140px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: 1000;
+    background: url("../images/cookie-fella.jpg")
+}
+
 
 @media screen and (min-width: 968px) {
     .hamburger-container {
