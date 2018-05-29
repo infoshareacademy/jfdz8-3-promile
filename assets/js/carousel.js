@@ -12,7 +12,9 @@ function createDots() {
         const spanDot = document.createElement('span');
         spanDot.classList = "image_dot";
         heroDots.appendChild(spanDot)
+
     }
+    heroDot[0].classList.add("image_dot_active")
 }
 
 createDots();
