@@ -31,8 +31,19 @@ body {
     animation: bg-change 15s infinite;
 }
 
+.hero__image {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+/*.fadeImg {*/
+    /*opacity: 0.7;*/
+/*}*/
+
 .hero__dots {
-    margin: 4em;
+    margin: 3em;
     white-space: nowrap;
     height: 100%;
 }
@@ -43,9 +54,9 @@ body {
     width: 1em;
     margin: 0 4%;
     background-color: #fefefe;
-    border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+    box-shadow: 1px 2px #4f6b86;
 }
 
 .left, .right {
@@ -53,6 +64,7 @@ body {
     color: #fefefe;
     position: absolute;
     top: 30%;
+    cursor: pointer;
 }
 
 .left{
@@ -65,28 +77,28 @@ body {
     animation: right 6s infinite;
 }
 
-@keyframes left {
-    0% {left: 5%}
-    25% {left: 3%}
-    50% {left: 5%}
-    75% {left: 3%}
-    100% {left: 5%;}
-}
+/*@keyframes left {*/
+    /*0% {left: 5%}*/
+    /*25% {left: 4%}*/
+    /*50% {left: 5%}*/
+    /*75% {left: 4%}*/
+    /*100% {left: 5%;}*/
+/*}*/
 
-@keyframes right {
-    0% {right: 5%}
-    25% {right: 3%}
-    50% {right: 5%}
-    75% {right: 3%}
-    100% {right: 5%}
-}
+/*@keyframes right {*/
+    /*0% {right: 5%}*/
+    /*25% {right: 4%}*/
+    /*50% {right: 5%}*/
+    /*75% {right: 4%}*/
+    /*100% {right: 5%}*/
+/*}*/
 
-@keyframes bg-change{
-    0% {background-image: url("../images/slideshow_photo/gdansk.jpg");}
-    33% {background-image: url("../images/slideshow_photo/sopot2.png");}
-    66% {background-image: url("../images/slideshow_photo/gdynia.jpg");}
-    100% {background-image: url("../images/slideshow_photo/gdansk.jpg");}
-}
+/*@keyframes bg-change{*/
+    /*0% {background-image: url("../images/slideshow_photo/gdansk.jpg");}*/
+    /*33% {background-image: url("../images/slideshow_photo/sopot2.png");}*/
+    /*66% {background-image: url("../images/slideshow_photo/gdynia.jpg");}*/
+    /*100% {background-image: url("../images/slideshow_photo/gdansk.jpg");}*/
+/*}*/
 
 .hero__button {
     background: transparent;
