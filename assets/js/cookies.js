@@ -1,7 +1,7 @@
 
 window.onload = function() {
-    var container = document.createElement('div'), link = document.createElement('a');
-    var cookiemonster = document.createElement('img');
+    var container = document.createElement('div'), link = document.createElement('a'),
+        cookiemonster = document.createElement('img');
 
     container.setAttribute('id', 'cookieinfo');
     container.setAttribute('class', 'cookie-notification');
@@ -16,7 +16,6 @@ window.onload = function() {
     link.innerHTML = 'x';
 
     cookiemonster.setAttribute('id','cookiemonster');
-
 
     function clickHandler(e) {
         e.preventDefault();
