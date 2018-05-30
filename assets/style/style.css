@@ -695,6 +695,40 @@ body {
     background: url("../images/cookie-fella.jpg")
 }
 
+#cookiebubble {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: #fefefe;
+    border: 8px solid #4f6b86;
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px #888;
+    left: 150px;
+}
+
+#cookiebubble:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    top: 100px;
+    border: 25px solid;
+    border-color: #4f6b86 transparent transparent #4f6b86;
+}
+
+#cookiebubble:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 38px;
+    top: 100px;
+    border: 15px solid;
+    border-color: #fefefe transparent transparent #fefefe;
+}
 
 @media screen and (min-width: 968px) {
     .hamburger-container {
