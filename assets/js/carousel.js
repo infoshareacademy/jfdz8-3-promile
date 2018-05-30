@@ -28,8 +28,6 @@ function clearClass() {
     }
 }
 
-
-
 let sliderNum = 0;
 let sliderInterval = setInterval(nextImg, 3000);
 
@@ -46,7 +44,6 @@ function imgChange(x) {
     sliderNum = (x + imgLocations.length) % imgLocations.length;
     heroImg.src = imgLocations[sliderNum];
     addClass()
-
 }
 
 function pauseSlideShow() {
