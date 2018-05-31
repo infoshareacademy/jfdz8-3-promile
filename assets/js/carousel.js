@@ -11,6 +11,7 @@ function createDots() {
     for(var i =0; i < imgLocations.length; i++) {
         const spanDot = document.createElement('span');
         spanDot.classList = "image_dot";
+        spanDot.setAttribute("id", i);
         heroDots.appendChild(spanDot)
     }
     heroDot[0].classList.add("image_dot_active")
@@ -77,12 +78,15 @@ leftButton.addEventListener('click', function() {
 
 heroDots.addEventListener("click", function() {
     for (var i = 0; i < heroDot.length; i++) {
-        (function(index){
-            heroDot[i].onclick = function(){
-                specImg(index); pauseSlideShow();
-            }
-        })(i);
+        heroDot[i].addEventListener("click", function(e) {
+            specImg(e.target.id); pauseSlideShow()
+        })
     }
 });
+
+
+
+
+
 
 
