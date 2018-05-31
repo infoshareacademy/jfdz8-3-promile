@@ -639,8 +639,26 @@ body {
     border-top: 1px solid #5EA3FF;
 }
 
-#cookieinfo {
+#cookies {
+    display: flex;
+    flex-direction: column;
     position: fixed;
+    z-index: 1000;
+}
+
+.monster-container {
+    display: flex;
+    flex-direction: row;
+    margin:0;
+    padding: 0;
+    width: 340px;
+    height: 300px;
+    flex-grow: 1;
+    align-items: baseline;
+}
+
+#cookieinfo {
+    position: relative;
     font-size: 12px;
     left: 0;
     bottom: 0;
@@ -686,13 +704,13 @@ body {
 }
 
 #cookiemonster {
+    left: 0;
     bottom: 0;
     height: 200px;
     width: 140px;
-    transform: translate(-50%,-50%);
-    position: absolute;
     z-index: 1000;
-    background: url("../images/cookie-fella.jpg")
+    background: url("../images/cookie-fella.jpg");
+    align-self: flex-end;
 }
 
 #cookiebubble {
