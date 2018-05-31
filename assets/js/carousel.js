@@ -1,4 +1,5 @@
 const heroImg = document.querySelector('.hero__image');
+const heroSection = document.querySelector('.hero');
 const heroDots = document.querySelector('.hero__dots');
 let heroDot = document.getElementsByClassName('image_dot');
 let leftButton = document.querySelector('.left_arrow');
@@ -29,20 +30,27 @@ function clearClass() {
 }
 
 let sliderNum = 0;
-let sliderInterval = setInterval(nextImg, 3000);
+let sliderInterval = setInterval(nextImg,3000);
 
 function nextImg() {
-    imgChange(sliderNum + 1)
+    imgChange(sliderNum + 1);
 }
 
 function prevImg() {
     imgChange(sliderNum - 1)
 }
 
+function removeFade() {
+    heroImg.classList.remove("fade")
+}
+
 function imgChange(x) {
     clearClass();
+    heroImg.classList.remove("fade");
+    heroImg.offsetHeight;
     sliderNum = (x + imgLocations.length) % imgLocations.length;
     heroImg.src = imgLocations[sliderNum];
+    heroImg.classList.add("fade");
     addClass()
 }
 

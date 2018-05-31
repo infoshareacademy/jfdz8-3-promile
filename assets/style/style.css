@@ -34,15 +34,20 @@ body {
 .hero__image {
     width: 100%;
     height: 100%;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-    animation: bg-change 15s infinite;
     object-fit: cover;
+    animation-name: none;
+
 }
 
-.fadeEff {
-    opacity: 0;
+@keyframes fade {
+    from {opacity: 0.7}
+    to {opacity: 1}
 }
+
+.hero__image.fade {
+    animation: fade 1s ease-in;
+}
+
 
 .hero__dots {
     position: absolute;
