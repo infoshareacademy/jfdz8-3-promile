@@ -76,13 +76,17 @@ leftButton.addEventListener('click', function() {
     prevImg(); pauseSlideShow();
 });
 
-heroDots.addEventListener("click", function() {
+function dotEventAdd() {
     for (var i = 0; i < heroDot.length; i++) {
         heroDot[i].addEventListener("click", function(e) {
             specImg(e.target.id); pauseSlideShow()
         })
     }
-});
+}
+
+dotEventAdd();
+
+
 
 
 
