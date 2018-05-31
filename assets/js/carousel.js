@@ -54,16 +54,6 @@ function pauseSlideShow() {
     clearInterval(sliderInterval);
 }
 
-function specImg(index) {
-    clearClass();
-    heroImg.classList.remove("fade");
-    heroImg.offsetHeight;
-    sliderNum = index;
-    heroImg.src = imgLocations[index];
-    heroImg.classList.add("fade");
-    addClass();
-}
-
 rightButton.addEventListener('click', function() {
     nextImg(); pauseSlideShow();
 });
@@ -74,7 +64,7 @@ leftButton.addEventListener('click', function() {
 function dotEventAdd() {
     for (var i = 0; i < heroDot.length; i++) {
         heroDot[i].addEventListener("click", function(e) {
-            specImg(e.target.id); pauseSlideShow()
+            imgChange(e.target.id); pauseSlideShow()
         })
     }
 }
