@@ -6,6 +6,7 @@ window.onload = function() {
 
     container.setAttribute('id','cookies');
     monster_container.setAttribute('id','monster-container');
+
     notification.setAttribute('id', 'cookieinfo');
     notification.setAttribute('class', 'cookie-notification');
     notification.innerHTML = '<h6>Ta strona wykorzystuje pliki cookie</h6><p>Używamy informacji zapisanych za pomocą' +
@@ -18,7 +19,6 @@ window.onload = function() {
     link.setAttribute('title', 'Zamknij');
     link.innerHTML = 'x';
 
-
     cookiemonster.setAttribute('id','cookiemonster');
     cookiebubble.setAttribute('id','cookiebubble');
 
@@ -29,9 +29,12 @@ window.onload = function() {
     }
 
     link.addEventListener('click', clickHandler);
+    container.appendChild(monster_container);
+    container.appendChild(notification);
     notification.appendChild(link);
-    notification.appendChild(cookiemonster);
-    document.body.appendChild(notification);
+    monster_container.appendChild(cookiemonster);
+    monster_container.appendChild(cookiebubble);
+    document.body.appendChild(container);
 
     function monsterMove() {
         var element = document.getElementById('cookiemonster');
