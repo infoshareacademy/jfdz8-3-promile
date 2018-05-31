@@ -643,21 +643,22 @@ body {
     display: flex;
     flex-direction: column;
     position: fixed;
-    z-index: 1000;
+    z-index: 1200;
 }
 
-.monster-container {
+#monster-container {
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
     margin:0;
     padding: 0;
     width: 340px;
     height: 300px;
-    flex-grow: 1;
     align-items: baseline;
 }
 
 #cookieinfo {
+    flex-grow: 1;
     position: relative;
     font-size: 12px;
     left: 0;
@@ -665,7 +666,6 @@ body {
     right: 0;
     background-color: #7395AE;
     padding: 20px;
-    z-index: 1000;
 }
 
 #cookieinfo h6 {
