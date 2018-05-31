@@ -712,16 +712,37 @@ body {
     border-top: 1px solid #5EA3FF;
 }
 
-#cookieinfo {
+#cookies {
+    display: flex;
+    flex-direction: column;
     position: fixed;
+    z-index: 1200;
+    font-size: 12px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#monster-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin:0;
+    padding: 0;
+    width: 340px;
+    height: 300px;
+    align-items: baseline;
+}
+
+#cookieinfo {
+    flex-grow: 1;
+    position: relative;
     font-size: 12px;
     left: 0;
     bottom: 0;
     right: 0;
     background-color: #7395AE;
     padding: 20px;
-    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
 }
 
 #cookieinfo h6 {
@@ -757,7 +778,54 @@ body {
 #cookieinfo a:hover {
     background-color: #4f6b86;
     opacity: 0.75;
+}
 
+#cookiemonster {
+    left: 0;
+    bottom: 0;
+    height: 200px;
+    width: 140px;
+    z-index: 1000;
+    background: url("../images/cookie-fella.jpg");
+    align-self: flex-end;
+}
+
+#cookiebubble {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    background-color: #fefefe;
+    border: 8px solid #4f6b86;
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px #888;
+
+}
+
+#cookiebubble:before {
+    content: ' ';
+    margin-top: -15px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    top: 100px;
+    border: 25px solid;
+    border-color: #4f6b86 transparent transparent #4f6b86;
+}
+
+#cookiebubble:after {
+    content: ' ';
+    margin-top: -17.5px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 38px;
+    top: 100px;
+    border: 15px solid;
+    border-color: #fefefe transparent transparent #fefefe;
 }
 
 @media screen and (min-width: 968px) {
