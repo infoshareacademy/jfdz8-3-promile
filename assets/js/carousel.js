@@ -58,11 +58,31 @@ function pauseSlideShow() {
     clearInterval(sliderInterval);
 }
 
+function specImg(index) {
+    clearClass();
+    heroImg.classList.remove("fade");
+    heroImg.offsetHeight;
+    sliderNum = index;
+    heroImg.src = imgLocations[index];
+    heroImg.classList.add("fade");
+    addClass();
+}
+
 rightButton.addEventListener('click', function() {
     nextImg(); pauseSlideShow();
 });
 leftButton.addEventListener('click', function() {
     prevImg(); pauseSlideShow();
+});
+
+heroDots.addEventListener("click", function() {
+    for (var i = 0; i < heroDot.length; i++) {
+        (function(index){
+            heroDot[i].onclick = function(){
+                specImg(index); pauseSlideShow();
+            }
+        })(i);
+    }
 });
 
 
