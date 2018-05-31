@@ -1,5 +1,4 @@
 const heroImg = document.querySelector('.hero__image');
-const heroSection = document.querySelector('.hero');
 const heroDots = document.querySelector('.hero__dots');
 let heroDot = document.getElementsByClassName('image_dot');
 let leftButton = document.querySelector('.left_arrow');
@@ -39,10 +38,6 @@ function nextImg() {
 
 function prevImg() {
     imgChange(sliderNum - 1)
-}
-
-function removeFade() {
-    heroImg.classList.remove("fade")
 }
 
 function imgChange(x) {
