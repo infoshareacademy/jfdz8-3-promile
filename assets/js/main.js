@@ -11,11 +11,10 @@ $(function() {
     var anchors = document.querySelectorAll('[id^="anchor"]');
     var naviElement = document.querySelectorAll('li.hover');
     var naviBar = document.querySelector('.navigation');
-    let sectionPosition = [];
     let naviBarH = naviBar.offsetHeight;
 
     function takePosition() {
-
+        let sectionPosition = [];
         for (var i = 0; i < anchors.length; i++) {
             sectionPosition.push(anchors[i].offsetTop)
         }
@@ -25,9 +24,8 @@ $(function() {
     function navHighlight() {
         takePosition();
         var scrollDist = window.pageYOffset;
-        console.log(sectionPosition, scrollDist);
         for (var i = 0; i < anchors.length; i++) {
-            if (sectionPosition[i] - naviBarH <= scrollDist &&
+            if (takePosition()[i] - naviBarH <= scrollDist &&
                 scrollDist !== body.offsetHeight + window.innerHeight) {
                 naviElement.forEach(function(n) {
                     n.classList.remove('highlight')
