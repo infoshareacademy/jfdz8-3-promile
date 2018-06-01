@@ -90,29 +90,6 @@ body {
     animation: right 6s infinite;
 }
 
-/*@keyframes left {*/
-    /*0% {left: 5%}*/
-    /*25% {left: 4%}*/
-    /*50% {left: 5%}*/
-    /*75% {left: 4%}*/
-    /*100% {left: 5%;}*/
-/*}*/
-
-/*@keyframes right {*/
-    /*0% {right: 5%}*/
-    /*25% {right: 4%}*/
-    /*50% {right: 5%}*/
-    /*75% {right: 4%}*/
-    /*100% {right: 5%}*/
-/*}*/
-
-/*@keyframes bg-change{*/
-    /*0% {background-image: url("../images/slideshow_photo/gdansk.jpg");}*/
-    /*33% {background-image: url("../images/slideshow_photo/sopot2.png");}*/
-    /*66% {background-image: url("../images/slideshow_photo/gdynia.jpg");}*/
-    /*100% {background-image: url("../images/slideshow_photo/gdansk.jpg");}*/
-/*}*/
-
 .hero__button {
     background: transparent;
     margin-top: 160px;
@@ -197,7 +174,7 @@ body {
     100% {padding-top:30px; padding-right: 30px; margin-bottom: -50px; margin-right: 0;}
 }
 
-.topbar{
+.topbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -220,11 +197,6 @@ body {
     text-transform: uppercase;
     transition: 0.1s linear;
 }
-
-/*.highlight {*/
-    /*background: #fefefe;*/
-    /*font-weight: bold;*/
-/*}*/
 
 .navigation-list-item.hover:hover {
     background: #fefefe;
