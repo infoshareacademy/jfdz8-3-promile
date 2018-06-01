@@ -781,8 +781,7 @@ body {
 }
 
 #cookiemonster {
-    left: 0;
-    bottom: 0;
+    position: relative;
     height: 200px;
     width: 140px;
     z-index: 1000;
@@ -801,7 +800,6 @@ body {
     border: 8px solid #4f6b86;
     border-radius: 30px;
     box-shadow: 2px 2px 4px #888;
-
 }
 
 #cookiebubble:before {
