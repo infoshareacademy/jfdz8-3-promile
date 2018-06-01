@@ -36,12 +36,12 @@ window.onload = function() {
     document.body.appendChild(container);
 
     function monsterMove() {
-        var element = document.getElementById('monster_container');
-        var position = -250;
-        var starter = setInterval(movement, 5);
+        var element = document.getElementById('cookies');
+        var position = -1500;
+        var starter = setInterval(movement, 1);
 
         function movement() {
-            return (position ===50 ? clearInterval(starter):(position++, element.style.left=position + 'px'));
+            return (position ===0 ? clearInterval(starter):(position++, element.style.left=position + 'px'));
         }
     }
     return monsterMove();
