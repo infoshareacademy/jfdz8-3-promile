@@ -42,8 +42,8 @@ window.onload = function() {
         var starter = setInterval(movement, 1);
 
         function movement() {
-            return (position ===0 ? clearInterval(starter):(position++, element.style.left=position + 'px',
-                element2.style.left = position +'px'))
+            return (position ===0 ? clearInterval(starter):(position++, element.style.bottom=position + 'px',
+                element2.style.bottom = position +'px'))
         }
     }
     return monsterMove();
