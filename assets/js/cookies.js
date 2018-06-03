@@ -20,7 +20,7 @@ window.onload = function() {
 
     cookiemonster.setAttribute('id','cookiemonster');
     cookiebubble.setAttribute('id','cookiebubble');
-    cookiebubble.innerHTML = 'Do you want some?';
+    cookiebubble.innerHTML = 'Do you want some cookies?';
 
     function clickHandler(e) {
         e.preventDefault();
@@ -36,12 +36,14 @@ window.onload = function() {
     document.body.appendChild(container);
 
     function monsterMove() {
-        var element = document.getElementById('monster_container');
-        var position = -250;
-        var starter = setInterval(movement, 5);
+        var element = document.getElementById('cookiemonster');
+        var element2 = document.getElementById('cookiebubble');
+        var position = -500;
+        var starter = setInterval(movement, 1);
 
         function movement() {
-            return (position ===50 ? clearInterval(starter):(position++, element.style.left=position + 'px'));
+            return (position ===0 ? clearInterval(starter):(position++, element.style.bottom=position + 'px',
+                element2.style.bottom = position +'px'))
         }
     }
     return monsterMove();
