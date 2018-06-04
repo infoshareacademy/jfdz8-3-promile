@@ -1,4 +1,4 @@
-const heroImg = document.querySelector('.hero__image');
+const heroImg = document.querySelectorAll('.hero__image');
 const heroDots = document.querySelector('.hero__dots');
 let heroDot = document.getElementsByClassName('image_dot');
 let leftButton = document.querySelector('.left_arrow');
@@ -6,6 +6,7 @@ let rightButton = document.querySelector('.right_arrow');
 const imgLocations = ['assets/images/slideshow_photo/gdansk.jpg',
                       'assets/images/slideshow_photo/gdynia.jpg',
                       'assets/images/slideshow_photo/sopot2.png',];
+
 function createDots() {
     for(var i =0; i < imgLocations.length; i++) {
         const spanDot = document.createElement('span');
@@ -29,6 +30,12 @@ function clearClass() {
     }
 }
 
+function clearImage() {
+    for (let i = 0; i < heroImg.length; i++) {
+        heroImg[i].classList.remove('visible');
+    }
+}
+
 let sliderNum = 0;
 let sliderInterval = setInterval(nextImg,3000);
 
@@ -42,13 +49,13 @@ function prevImg() {
 
 function imgChange(x) {
     clearClass();
-    heroImg.classList.remove("fade");
-    heroImg.offsetHeight;
-    sliderNum = (x + imgLocations.length) % imgLocations.length;
-    heroImg.src = imgLocations[sliderNum];
-    heroImg.classList.add("fade");
-    addClass()
-}
+    clearImage();
+    sliderNum = (x + heroImg.length) % heroImg.length;
+    heroImg[sliderNum].classList.add('visible');
+    addClass();
+    console.log(sliderNum)
+    }
+
 
 function pauseSlideShow() {
     clearInterval(sliderInterval);
@@ -64,7 +71,7 @@ leftButton.addEventListener('click', function() {
 function dotEventAdd() {
     for (var i = 0; i < heroDot.length; i++) {
         heroDot[i].addEventListener("click", function(e) {
-            imgChange(e.target.id); pauseSlideShow()
+            imgChange(e.target.id); pauseSlideShow();
         })
     }
 }
