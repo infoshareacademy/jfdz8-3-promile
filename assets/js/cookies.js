@@ -2,7 +2,7 @@
     window.onload = function() {
         if (!localStorage.getItem('tres-promiles-cookies')) {
             var notification = document.createElement('div'), link = document.createElement('a'),
-                cookiemonster = document.createElement('img'), cookiebubble = document.createElement('p'),
+                cookiemonster = document.createElement('div'), cookiebubble = document.createElement('p'),
                 container = document.createElement('div'), monster_container = document.createElement('div');
 
             container.setAttribute('id','cookies');
