@@ -41,7 +41,7 @@
                 var element = document.getElementById('cookiemonster');
                 var element2 = document.getElementById('cookiebubble');
                 var position = -500;
-                var starter = setInterval(movement, 1);
+                var starter = setInterval(movement, 8);
 
                 function movement() {
                     return (position ===0 ? clearInterval(starter):(position++, element.style.bottom=position + 'px',
