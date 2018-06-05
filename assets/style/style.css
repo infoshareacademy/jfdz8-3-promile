@@ -756,7 +756,8 @@ body {
     position: relative;
     height: 200px;
     width: 140px;
-    background: url("../images/cookie-fella.jpg");
+    background: url("../images/cookie-fella.png");
+    border: 0 !important;
     align-self: flex-end;
 }
 

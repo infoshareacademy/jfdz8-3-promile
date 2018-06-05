@@ -44,7 +44,7 @@
                 var starter = setInterval(movement, 1);
 
                 function movement() {
-                    return (position ===0 ? clearInterval(starter):(position++, element.style.bottom=position + 'px',
+                    return (position ===-30 ? clearInterval(starter):(position++, element.style.bottom=position + 'px',
                         element2.style.bottom = position +'px'))
                 }
             }
