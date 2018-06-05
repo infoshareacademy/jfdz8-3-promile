@@ -752,8 +752,10 @@ body {
     position: relative;
     height: 200px;
     width: 140px;
-    background: url("../images/cookie-fella.jpg");
+    background: url("../images/cookie-fella.png");
+    border-style: none;
     align-self: flex-end;
+    left: 12.5%;
 }
 
 #cookiebubble {
