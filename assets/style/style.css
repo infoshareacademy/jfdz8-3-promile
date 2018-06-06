@@ -15,7 +15,6 @@ body {
     height: 100%;
 }
 
-
 .section-features, .section-add-info, .section-form, .section-team {
     padding: 5em 2em;
     margin-left: 2em;
@@ -28,7 +27,6 @@ body {
     height: 960px;
     background: no-repeat center;
     background-size: cover;
-    /*animation: bg-change 15s infinite;*/
 }
 
 .hero__image {
@@ -36,7 +34,6 @@ body {
     height: 100%;
     object-fit: cover;
     animation-name: none;
-
 }
 
 @keyframes fade {
@@ -47,7 +44,6 @@ body {
 .hero__image.fade {
     animation: fade 1s ease;
 }
-
 
 .hero__dots {
     position: absolute;
@@ -124,6 +120,7 @@ body {
     color: #fefefe;
     font-weight: 900;
     text-shadow: 1px 2px #4f6b86;
+    -webkit-backface-visibility: hidden;
 }
 
 .hero__content h1{
@@ -217,7 +214,6 @@ body {
 
 .highlight {
     background: #fefefe;
-    opacity: 0.5;
     color: #4f6b86;
     font-weight: bold;
 }
