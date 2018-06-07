@@ -796,6 +796,7 @@ body {
 }
 
 .bounce-up {
+    opacity: 0;
     -moz-transition: all 700ms ease-out;
     -webkit-transition: all 700ms ease-out;
     -o-transition: all 700ms ease-out;
@@ -811,6 +812,7 @@ body {
 }
 
 .bounce-up.in-view {
+    opacity: 1;
     -moz-transform: translate3d(0px, 0px, 0px);
     -webkit-transform: translate3d(0px, 0px, 0px);
     -o-transform: translate(0px, 0px);
