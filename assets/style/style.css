@@ -820,6 +820,50 @@ body {
     transform: translate3d(0px, 0px, 0px);
 }
 
+.animation-element.slide-left {
+    opacity: 0;
+    -moz-transition: all 2000ms linear;
+    -webkit-transition: all 2000ms linear;
+    -o-transition: all 2000ms linear;
+    transition: all 2000ms linear;
+    -moz-transform: translate3d(-50px, 0px, 0px);
+    -webkit-transform: translate3d(-50px, 0px, 0px);
+    -o-transform: translate(-50px, 0px);
+    -ms-transform: translate(-50px, 0px);
+    transform: translate3d(-50px, 0px, 0px);
+}
+
+.animation-element.slide-left.in-view {
+    opacity: 1;
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.animation-element.slide-right {
+    opacity: 0;
+    -moz-transition: all 2000ms linear;
+    -webkit-transition: all 2000ms linear;
+    -o-transition: all 2000ms linear;
+    transition: all 2000ms linear;
+    -moz-transform: translate3d(50px, 0px, 0px);
+    -webkit-transform: translate3d(50px, 0px, 0px);
+    -o-transform: translate(50px, 0px);
+    -ms-transform: translate(50px, 0px);
+    transform: translate3d(50px, 0px, 0px);
+}
+
+.animation-element.slide-right.in-view {
+    opacity: 1;
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+}
+
 @media screen and (min-width: 968px) {
     .hamburger-container {
         display: none;
