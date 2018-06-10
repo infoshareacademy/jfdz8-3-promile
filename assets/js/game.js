@@ -2,12 +2,6 @@ var player = "X";
 var score;
 var board = createBoard(10, 10);
 
-function generateBoard() {
-    var boardCell = document.createElement('div');
-    document.body.appendChild(boardCell);
-    boardCell.setAttribute("class", "cell")
-}
-
 function createBoard(x, y) {
     return Array(x).fill(0).map(function(element) {
         return Array(y).fill('');
@@ -39,27 +33,17 @@ var moves = {
     ArrowDown: function() {
       playerPosition.y += 1
   }
-
-
-
 };
 
 
-// function setCurrentPosition(x, y) {
-//    return board[x][y] = player
-// }
-//
-// setCurrentPosition(1,1);
-
 window.addEventListener('keydown', function(event) {
     pressedKey = event.code;
+    moves[pressedKey](playerPosition);
     update();
 });
 
-
 function update() {
     var board = createBoard(10, 10);
-    moves[pressedKey](playerPosition);
     board[playerPosition.y][playerPosition.x] = player;
     console.table(board)
 }
