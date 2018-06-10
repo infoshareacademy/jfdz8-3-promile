@@ -19,18 +19,31 @@ var playerPosition = {
     y: 0
 };
 
-// function setCurrentPosition() {
-//     board[playerPosition.x][playerPosition.y] = player;
-// }
-// setCurrentPosition();
+function setStartingPosition() {
+    var board = createBoard(10, 10);
+    board[playerPosition.x][playerPosition.y] = player;
+    console.table(board)
+}
+setStartingPosition();
 
 var moves = {
-  ArrowRight: function() {
+    ArrowRight: function() {
       playerPosition.x += 1
+  },
+    ArrowLeft: function() {
+      playerPosition.x -= 1
+  },
+    ArrowUp: function() {
+      playerPosition.y -= 1
+  },
+    ArrowDown: function() {
+      playerPosition.y += 1
   }
+
+
+
 };
 
-moves.ArrowRight(playerPosition);
 
 // function setCurrentPosition(x, y) {
 //    return board[x][y] = player
@@ -38,16 +51,16 @@ moves.ArrowRight(playerPosition);
 //
 // setCurrentPosition(1,1);
 
-// window.addEventListener('keydown', function(event) {
-//     pressedKey = event.code
-// });
-
+window.addEventListener('keydown', function(event) {
+    pressedKey = event.code;
+    update();
+});
 
 
 function update() {
     var board = createBoard(10, 10);
+    moves[pressedKey](playerPosition);
     board[playerPosition.y][playerPosition.x] = player;
     console.table(board)
 }
-
 
