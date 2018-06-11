@@ -23,16 +23,16 @@ setStartingPosition();
 var moves = {
     ArrowRight: function() {
       playerPosition.x += 1
-},
-ArrowLeft: function() {
-    playerPosition.x -= 1
-},
-ArrowUp: function() {
-    playerPosition.y -= 1
-},
-ArrowDown: function() {
-    playerPosition.y += 1
-}
+    },
+    ArrowLeft: function() {
+        playerPosition.x -= 1
+    },
+    ArrowUp: function() {
+        playerPosition.y -= 1
+    },
+    ArrowDown: function() {
+        playerPosition.y += 1
+    }
 };
 
 window.addEventListener('keydown', function(event) {
@@ -43,7 +43,6 @@ window.addEventListener('keydown', function(event) {
 
 function update() {
     var board = createBoard(10, 10);
-    console.log(playerPosition);
     board[playerPosition.y][playerPosition.x] = player;
     console.table(board)
 }
