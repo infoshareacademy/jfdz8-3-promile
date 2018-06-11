@@ -23,28 +23,38 @@ setStartingPosition();
 var moves = {
     ArrowRight: function() {
       playerPosition.x += 1
-  },
-    ArrowLeft: function() {
-      playerPosition.x -= 1
-  },
-    ArrowUp: function() {
-      playerPosition.y -= 1
-  },
-    ArrowDown: function() {
-      playerPosition.y += 1
-  }
+},
+ArrowLeft: function() {
+    playerPosition.x -= 1
+},
+ArrowUp: function() {
+    playerPosition.y -= 1
+},
+ArrowDown: function() {
+    playerPosition.y += 1
+}
 };
-
 
 window.addEventListener('keydown', function(event) {
     pressedKey = event.code;
     moves[pressedKey](playerPosition);
-    update();
+    collision();
 });
 
 function update() {
     var board = createBoard(10, 10);
+    console.log(playerPosition);
     board[playerPosition.y][playerPosition.x] = player;
     console.table(board)
+}
+
+function collision() {
+    if (inBoard(playerPosition.x) && inBoard(playerPosition.y)) {
+        update();
+    }
+}
+
+function inBoard(position) {
+    return position >= 0 && position <= board.length - 1
 }
 
