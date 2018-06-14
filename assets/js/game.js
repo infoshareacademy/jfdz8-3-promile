@@ -16,9 +16,9 @@ var playerPosition = {
 
 
 var smallDot = {
-    x: Math.floor(Math.random() * board.length),
-    y: Math.floor(Math.random() * board.length)
-}
+    x: Math.floor(Math.random() * (board.length-1)),
+    y: Math.floor(Math.random() * (board.length-1))
+};
 
 function setStartingPosition() {
     var board = createBoard(10, 10);
@@ -44,7 +44,7 @@ var moves = {
 
 setInterval(function () {
     collision(playerPosition)
-}, 1000);
+}, 1500);
 
 window.addEventListener('keydown', function (event) {
     var newPosition = Object.assign({}, playerPosition);
@@ -54,16 +54,21 @@ window.addEventListener('keydown', function (event) {
 });
 
 function update(pos) {
+    console.log(playerPosition,smallDot);
     var board = createBoard(10, 10);
     playerPosition = pos;
-    board[playerPosition.y][playerPosition.x] = player;
-    board[smallDot.x][smallDot.y] = toCollect;
+    board[pos.y][pos.x] = player;
+    board[smallDot.y][smallDot.x] = toCollect;
     console.table(board)
+
 }
 
 function collision(playerPosition) {
-    if (inBoard(playerPosition.x) && inBoard(playerPosition.y)) {
+    if ((inBoard(playerPosition.x) && inBoard(playerPosition.y))) {
         update(playerPosition);
+        if (smallDot.x === playerPosition.x){
+            smallDot.x = Math.floor(Math.random() * (board.length-1))
+        }
     }
 }
 
