@@ -66,8 +66,9 @@ function update(pos) {
 function collision(playerPosition) {
     if ((inBoard(playerPosition.x) && inBoard(playerPosition.y))) {
         update(playerPosition);
-        if (smallDot.x === playerPosition.x){
+        if (smallDot.x === playerPosition.x && smallDot.y === playerPosition.y ){
             smallDot.x = Math.floor(Math.random() * (board.length-1))
+            smallDot.y = Math.floor(Math.random() * (board.length-1))
         }
     }
 }
