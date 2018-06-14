@@ -1,6 +1,7 @@
 var player = "X";
 var toCollect = "P";
-var score;
+var score = 0;
+
 var board = createBoard(10, 10);
 
 function createBoard(x, y) {
@@ -69,6 +70,8 @@ function collision(playerPosition) {
         if (smallDot.x === playerPosition.x && smallDot.y === playerPosition.y ){
             smallDot.x = Math.floor(Math.random() * (board.length-1))
             smallDot.y = Math.floor(Math.random() * (board.length-1))
+            score++
+            console.log(score)
         }
     }
 }
