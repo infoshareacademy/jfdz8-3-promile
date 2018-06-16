@@ -75,7 +75,7 @@ var moves = {
 };
 
 setInterval(function () {
-    update(playerPosition)
+    collision(playerPosition)
 }, 1500);
 
 window.addEventListener('keydown', function (event) {
