@@ -1,8 +1,27 @@
 var player = "X";
 var toCollect = "P";
+var wall = "O";
 var score = 0;
-
 var board = createBoard(10, 10);
+var playerPosition = {
+    x: 0,
+    y: 0
+};
+
+var boardAlt = [
+    '  OO O OO ',
+    'O  O O    ',
+    ' O O   OO ',
+    '       O  ',
+    'OO    O OO',
+    '   O      ',
+    'O  O   O O',
+    '   O   O  ',
+    '  O  O    ',
+    'O O      O'
+];
+
+var walls = [];
 
 function createBoard(x, y) {
     return Array(x).fill(0).map(function(element) {
@@ -10,11 +29,22 @@ function createBoard(x, y) {
     })
 }
 
-var playerPosition = {
-    x: 0,
-    y: 0
-};
+function createWallsCoords() {
+    for (var i = 0; i < 10; i++) {
+        wallX = Math.floor(Math.random() * (board.length-1));
+        wallY = Math.floor(Math.random() * (board.length-1));
+        walls.push({x: wallX, y: wallY});
+    }
+}
 
+createWallsCoords();
+
+function showWalls() {
+    for (var i = 0; i < walls.length; i++) {
+        board[walls[i].y][walls[i].x] = wall;
+    }
+    console.table(board)
+}
 
 var smallDot = {
     x: Math.floor(Math.random() * (board.length-1)),
@@ -24,6 +54,7 @@ var smallDot = {
 function setStartingPosition() {
     var board = createBoard(10, 10);
     board[playerPosition.x][playerPosition.y] = player;
+    showWalls();
     console.table(board)
 }
 setStartingPosition();
@@ -44,7 +75,7 @@ var moves = {
 };
 
 setInterval(function () {
-    collision(playerPosition)
+    update(playerPosition)
 }, 1500);
 
 window.addEventListener('keydown', function (event) {
@@ -55,22 +86,23 @@ window.addEventListener('keydown', function (event) {
 });
 
 function update(pos) {
-    console.log(playerPosition,smallDot);
     var board = createBoard(10, 10);
     playerPosition = pos;
     board[pos.y][pos.x] = player;
     board[smallDot.y][smallDot.x] = toCollect;
+    for (var i = 0; i < walls.length; i++) {
+        board[walls[i].y][walls[i].x] = wall;
+    }
     console.table(board)
-
 }
 
 function collision(playerPosition) {
     if ((inBoard(playerPosition.x) && inBoard(playerPosition.y))) {
         update(playerPosition);
         if (smallDot.x === playerPosition.x && smallDot.y === playerPosition.y ){
-            smallDot.x = Math.floor(Math.random() * (board.length-1))
-            smallDot.y = Math.floor(Math.random() * (board.length-1))
-            score++
+            smallDot.x = Math.floor(Math.random() * (board.length-1));
+            smallDot.y = Math.floor(Math.random() * (board.length-1));
+            score++;
             console.log(score)
         }
     }
