@@ -7,39 +7,6 @@ $(function() {
     var $show_input = $(".show_inputs");
     var $form_inputs = $(".form__inputs");
 
-    var body = document.body;
-    var anchors = document.querySelectorAll('[id^="anchor"]');
-    var naviElement = document.querySelectorAll('li.hover');
-    var naviBar = document.querySelector('.navigation');
-    let naviBarH = naviBar.offsetHeight;
-
-    function takePosition() {
-        let sectionPosition = [];
-        for (var i = 0; i < anchors.length; i++) {
-            sectionPosition.push(anchors[i].offsetTop)
-        }
-        return sectionPosition
-    }
-
-    function navHighlight() {
-        takePosition();
-        var scrollDist = window.pageYOffset;
-        for (var i = 0; i < anchors.length; i++) {
-            if (takePosition()[i] - naviBarH <= scrollDist &&
-                scrollDist !== body.offsetHeight + window.innerHeight) {
-                naviElement.forEach(function(n) {
-                    n.classList.remove('highlight')
-                });
-                naviElement[i].classList.add('highlight');
-            } else if (window.innerHeight + scrollDist >= body.offsetHeight) {
-                naviElement.forEach(function(n) {
-                    n.classList.remove('highlight')
-                });
-                naviElement[5].classList.add('highlight')
-            }
-        }
-    };
-
     function scrollPage(event) {
         event.preventDefault();
         var scrollDuration = 1400;
@@ -76,7 +43,7 @@ $(function() {
     $(document).on('click', 'a[href^="#"]', scrollPage);
     $hamburger.on('click', toggleMenu);
     $show_input.on('click', showInputs);
-    window.addEventListener('scroll', navHighlight);
+
     /* Map Script */
 
     var mymap = L.map('mapid').setView([54.40315833, 18.56952222], 16);
