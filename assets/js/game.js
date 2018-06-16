@@ -8,19 +8,6 @@ var playerPosition = {
     y: 0
 };
 
-var boardAlt = [
-    '  OO O OO ',
-    'O  O O    ',
-    ' O O   OO ',
-    '       O  ',
-    'OO    O OO',
-    '   O      ',
-    'O  O   O O',
-    '   O   O  ',
-    '  O  O    ',
-    'O O      O'
-];
-
 var walls = [];
 
 function createBoard(x, y) {
@@ -30,7 +17,7 @@ function createBoard(x, y) {
 }
 
 function createWallsCoords() {
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 15; i++) {
         wallX = Math.floor(Math.random() * (board.length-1));
         wallY = Math.floor(Math.random() * (board.length-1));
         walls.push({x: wallX, y: wallY});
@@ -76,7 +63,7 @@ var moves = {
 
 setInterval(function () {
     collision(playerPosition)
-}, 1500);
+}, 10500);
 
 window.addEventListener('keydown', function (event) {
     var newPosition = Object.assign({}, playerPosition);
@@ -97,7 +84,7 @@ function update(pos) {
 }
 
 function collision(playerPosition) {
-    if ((inBoard(playerPosition.x) && inBoard(playerPosition.y))) {
+    if ((inBoard(playerPosition.x) && inBoard(playerPosition.y)) && !wallCollision(playerPosition)) {
         update(playerPosition);
         if (smallDot.x === playerPosition.x && smallDot.y === playerPosition.y ){
             smallDot.x = Math.floor(Math.random() * (board.length-1));
@@ -111,3 +98,17 @@ function collision(playerPosition) {
 function inBoard(playerPosition) {
     return playerPosition >= 0 && playerPosition <= board.length - 1
 }
+
+function wallCollision(playerPosition) {
+    let wallColl;
+    for (var i = 0; i < walls.length; i++) {
+        if ((playerPosition.x === walls[i].x) && (playerPosition.y === walls[i].y)) {
+            wallColl = true;
+        } else {
+            wallColl = false;
+        }
+    }
+    return wallColl;
+}
+
+
