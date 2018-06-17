@@ -91,18 +91,15 @@ window.addEventListener('keydown', function (event) {
 
 function update(pos) {
     clearPacman();
-    console.log(playerPosition);
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
     console.table(gameBoard)
-
 }
 
 function collision(playerPosition) {
     if ((inBoard(playerPosition.x) && inBoard(playerPosition.y)) ) {
         if (wallCollision(playerPosition) === false) {
             update(playerPosition);
-            collectElement(playerPosition)
         }
     }
 }
@@ -119,6 +116,8 @@ function clearPacman() {
             }
         }
     }
+    collectElement(playerPosition)
+
 }
 
 function wallCollision(pos) {
@@ -133,16 +132,10 @@ function wallCollision(pos) {
 }
 
 function collectElement(pos) {
-    console.log(pos.x, pos.y)
-    var bylemTu = gameBoard[pos.y][pos.x]
     if (gameBoard[pos.y][pos.x] === 1) {
         gameBoard[pos.y][pos.x] = 4;
-    }
-    console.log(gameBoard[pos.y][pos.x])
-
+        }
 }
-
-
 
 
 
