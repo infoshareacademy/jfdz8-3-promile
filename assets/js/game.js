@@ -57,25 +57,14 @@ function createElement() {
 
 setInterval(function () {
   displayBoard()
-}, 1000);
+}, 250);
 
 function emptyBoard(node) {
   while (node.firstChild) {
     node.removeChild(node.firstChild)
   }
 }
-//
-//
-// var smallDot = {
-//     x: Math.floor(Math.random() * (gameBoard.length-1)),
-//     y: Math.floor(Math.random() * (gameBoard.length-1))
-// };
-//
-// function setStartingPosition() {
-//     gameBoard[playerPosition.x][playerPosition.y] = player;
-// }
-// setStartingPosition();
-//
+
 var moves = {
     ArrowRight: function(playerPosition) {
       playerPosition.x += 1
@@ -99,28 +88,23 @@ window.addEventListener('keydown', function (event) {
 });
 
 function update(pos) {
-    clearPacman()
+    clearPacman();
     console.log(playerPosition);
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
 
-    // gameBoard[smallDot.y][smallDot.x] = toCollect;
 }
 
 function collision(playerPosition) {
     if ((inBoard(playerPosition.x) && inBoard(playerPosition.y)) ) {
-        update(playerPosition);
-        // if (smallDot.x === playerPosition.x && smallDot.y === playerPosition.y ){
-        //     smallDot.x = Math.floor(Math.random() * (gameBoard.length-1));
-        //     smallDot.y = Math.floor(Math.random() * (gameBoard.length-1));
-        //     score++;
-        //     console.log(score)
-        // }
+        if (wallCollision(playerPosition) === false) {
+            update(playerPosition);
+        }
     }
 }
 
 function inBoard(playerPosition) {
-    return playerPosition >= 0 && playerPosition <= gameBoard.length - 1
+    return playerPosition >= 1 && playerPosition <= gameBoard.length - 2
 }
 
 function clearPacman() {
@@ -130,6 +114,17 @@ function clearPacman() {
                 gameBoard[i][j] = 1;
             }
         }
+    }
+}
+
+function wallCollision(pos) {
+    for (var i = 0; i < gameBoard.length; i++) {
+        for (var j = 0; j < gameBoard[i].length; j++) {
+            if (gameBoard[pos.y][pos.x] === 0) {
+                return true
+            }
+        }
+        return false
     }
 }
 
