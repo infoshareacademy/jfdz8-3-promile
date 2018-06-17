@@ -42,6 +42,7 @@ window.addEventListener('keydown', function (event) {
     pressedKey = event.code;
     moves[pressedKey](newPosition);
     collision(newPosition);
+    wallCollision(newPosition);
 });
 
 function createBoard(x, y) {
@@ -78,24 +79,27 @@ function update(pos) {
 
 function collision(playerPosition) {
     if ((inBoard(playerPosition.x) &&
-            inBoard(playerPosition.y)) &&
-            !wallCollision(playerPosition.x) &&
-            !wallCollision(playerPosition.y))
+            inBoard(playerPosition.y)
+        ))
     {
-        updateScore(playerPosition)
-        update(playerPosition);
+        updateScore(playerPosition);
+        if (wallCollision(playerPosition) === false) {
+            update(playerPosition);
+        }
+
     }
 }
 
 function wallCollision(playerPosition) {
-    let wallColl;
     for (var i = 0; i < walls.length; i++) {
-        wallColl = (playerPosition.x === walls[i].x) && (playerPosition.y === walls[i].y);
-        return false;
+        board[walls[i].y][walls[i].x] = wall;
+        if (playerPosition.x === walls[i].x &&
+            playerPosition.y === walls[i].y) {
+            return true
+         }
     }
-    return wallColl;
+    return false
 }
-
 
 function updateScore(playerPosition){
     if (smallDot.x === playerPosition.x &&
