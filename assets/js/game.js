@@ -32,14 +32,16 @@ function displayBoard() {
   for (var i = 0; i < gameBoard.length; i++) {
     output += "<div class='row'>";
     for (var j = 0; j < gameBoard[i].length; j++) {
-      if (gameBoard[i][j] == 0) {
+      if (gameBoard[i][j] === 0) {
         output += "<div class='wall'></div>";
-      } else if (gameBoard[i][j] == 1) {
+      } else if (gameBoard[i][j] === 1) {
         output += "<div class='coin'></div>";
       } else if (gameBoard[i][j] === 2) {
         output += "<div class='pacman'></div>";
       } else if (gameBoard[i][j] === 3) {
         output += "<div class='element'></div>";
+      } else if (gameBoard[i][j] === 4) {
+          output += "<div class='collected'></div>";
       }
   }
     output += "</div>"
@@ -92,6 +94,7 @@ function update(pos) {
     console.log(playerPosition);
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
+    collectElement(playerPosition)
 
 }
 
@@ -126,6 +129,16 @@ function wallCollision(pos) {
         }
         return false
     }
+}
+
+function collectElement(pos) {
+    console.log(pos.x, pos.y)
+    var bylemTu = gameBoard[pos.y][pos.x]
+    if (gameBoard[pos.y][pos.x] === 1) {
+        gameBoard[pos.y][pos.x] = 4;
+    }
+    console.log(gameBoard[pos.y][pos.x])
+
 }
 
 

@@ -33,3 +33,8 @@
     flex: 1;
     background: green;
 }
+
+.collected {
+    flex: 1;
+    background: white;
+}
