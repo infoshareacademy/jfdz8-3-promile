@@ -1,7 +1,9 @@
-var player = document.getElementsByClassName('pacman');
+var player = 2;
 var toCollect = document.getElementsByClassName('element');
 var body = document.querySelector('body');
 var score = 0;
+var gameDiv = document.getElementById('gameboard');
+
 var playerPosition = {
     x: 1,
     y: 1
@@ -97,26 +99,38 @@ window.addEventListener('keydown', function (event) {
 });
 
 function update(pos) {
-  console.log(playerPosition);
+    clearPacman()
+    console.log(playerPosition);
     playerPosition = pos;
-    gameBoard[pos.y][pos.x] = pos.classList.add('pacnan');
-    gameBoard[smallDot.y][smallDot.x] = toCollect;
+    gameBoard[pos.y][pos.x] = 2;
+
+    // gameBoard[smallDot.y][smallDot.x] = toCollect;
 }
 
 function collision(playerPosition) {
     if ((inBoard(playerPosition.x) && inBoard(playerPosition.y)) ) {
         update(playerPosition);
-        if (smallDot.x === playerPosition.x && smallDot.y === playerPosition.y ){
-            smallDot.x = Math.floor(Math.random() * (gameBoard.length-1));
-            smallDot.y = Math.floor(Math.random() * (gameBoard.length-1));
-            score++;
-            console.log(score)
-        }
+        // if (smallDot.x === playerPosition.x && smallDot.y === playerPosition.y ){
+        //     smallDot.x = Math.floor(Math.random() * (gameBoard.length-1));
+        //     smallDot.y = Math.floor(Math.random() * (gameBoard.length-1));
+        //     score++;
+        //     console.log(score)
+        // }
     }
 }
 
 function inBoard(playerPosition) {
     return playerPosition >= 0 && playerPosition <= gameBoard.length - 1
+}
+
+function clearPacman() {
+    for (var i = 0; i < gameBoard.length; i++) {
+        for (var j = 0; j < gameBoard[i].length; j++) {
+            if (gameBoard[i][j] === 2) {
+                gameBoard[i][j] = 1;
+            }
+        }
+    }
 }
 
 
