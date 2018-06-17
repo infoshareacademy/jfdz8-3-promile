@@ -38,9 +38,8 @@ $(function() {
                 naviElement[5].classList.add('highlight')
             }
         }
-    };
-
-    function scrollPage(event) {
+    }
+  function scrollPage(event) {
         event.preventDefault();
         var scrollDuration = 1400;
 

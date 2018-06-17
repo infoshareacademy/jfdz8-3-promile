@@ -1,9 +1,6 @@
-var player = 2;
 var toCollect = document.getElementsByClassName('element');
 var body = document.querySelector('body');
-var score = 0;
 var gameDiv = document.getElementById('gameboard');
-
 var playerPosition = {
     x: 1,
     y: 1
@@ -50,7 +47,6 @@ function displayBoard() {
   gameDiv.innerHTML = output;
 }
 
-
 function createElement() {
   var newDiv = document.createElement('div');
   newDiv.setAttribute('id', 'gameboard');
@@ -58,7 +54,8 @@ function createElement() {
 }
 
 setInterval(function () {
-  displayBoard()
+  displayBoard();
+  getScore();
 }, 250);
 
 function emptyBoard(node) {
@@ -93,7 +90,7 @@ function update(pos) {
     clearPacman();
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
-    console.table(gameBoard)
+    console.log(getScore());
 }
 
 function collision(playerPosition) {
@@ -117,7 +114,6 @@ function clearPacman() {
         }
     }
     collectElement(playerPosition)
-
 }
 
 function wallCollision(pos) {
@@ -132,10 +128,28 @@ function wallCollision(pos) {
 }
 
 function collectElement(pos) {
-    if (gameBoard[pos.y][pos.x] === 1) {
-        gameBoard[pos.y][pos.x] = 4;
-        }
+  if (gameBoard[pos.y][pos.x] === 1) {
+    gameBoard[pos.y][pos.x] = 4;
+   }
 }
+
+function getScore() {
+  var score = 0;
+  for (var i = 0; i < gameBoard.length; i++) {
+    for (var j = 0; j < gameBoard[i].length; j++) {
+      if (gameBoard[i][j] === 4) {
+        score++
+      }
+    }
+  }
+  return score;
+}
+
+
+
+
+
+
 
 
 
