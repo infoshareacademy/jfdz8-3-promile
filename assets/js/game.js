@@ -1,6 +1,7 @@
 var toCollect = document.getElementsByClassName('element');
 var body = document.querySelector('body');
 var gameDiv = document.getElementById('gameboard');
+var score;
 var playerPosition = {
     x: 1,
     y: 1
@@ -90,7 +91,8 @@ function update(pos) {
     clearPacman();
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
-    console.log(getScore());
+    getScore();
+    console.log(score)
 }
 
 function collision(playerPosition) {
@@ -134,7 +136,7 @@ function collectElement(pos) {
 }
 
 function getScore() {
-  var score = 0;
+  score = 0;
   for (var i = 0; i < gameBoard.length; i++) {
     for (var j = 0; j < gameBoard[i].length; j++) {
       if (gameBoard[i][j] === 4) {
@@ -144,6 +146,7 @@ function getScore() {
   }
   return score;
 }
+
 
 
 
