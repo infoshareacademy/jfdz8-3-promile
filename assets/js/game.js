@@ -94,7 +94,7 @@ function update(pos) {
     console.log(playerPosition);
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
-    collectElement(playerPosition)
+    console.table(gameBoard)
 
 }
 
@@ -102,6 +102,7 @@ function collision(playerPosition) {
     if ((inBoard(playerPosition.x) && inBoard(playerPosition.y)) ) {
         if (wallCollision(playerPosition) === false) {
             update(playerPosition);
+            collectElement(playerPosition)
         }
     }
 }
