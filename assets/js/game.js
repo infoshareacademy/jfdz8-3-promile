@@ -1,51 +1,79 @@
-var player = "X";
-var toCollect = "P";
-var wall = "O";
+var player = document.getElementsByClassName('pacman');
+var toCollect = document.getElementsByClassName('element');
+var body = document.querySelector('body');
 var score = 0;
-var board = createBoard(10, 10);
 var playerPosition = {
-    x: 0,
-    y: 0
+    x: 1,
+    y: 1
 };
 
-var walls = [];
+var gameBoard = [
+  [0,0,0,0,0,0,0,0,0,0,0],
+  [0,2,1,1,1,1,1,1,1,3,0],
+  [0,1,0,1,0,1,0,1,0,1,0],
+  [0,1,1,1,1,1,1,1,1,1,0],
+  [0,1,0,1,0,1,0,1,0,1,0],
+  [0,1,1,1,1,1,1,1,1,1,0],
+  [0,1,0,1,0,1,0,1,0,1,0],
+  [0,1,1,1,1,1,1,1,1,1,0],
+  [0,1,0,1,0,1,0,1,0,1,0],
+  [0,1,1,1,1,1,1,1,1,1,0],
+  [0,0,0,0,0,0,0,0,0,0,0]
+];
 
-function createBoard(x, y) {
-    return Array(x).fill(0).map(function(element) {
-        return Array(y).fill('');
-    })
+var output = '';
+
+function displayBoard() {
+  output = '';
+  emptyBoard(body);
+  createElement();
+  for (var i = 0; i < gameBoard.length; i++) {
+    output += "<div class='row'>";
+    for (var j = 0; j < gameBoard[i].length; j++) {
+      if (gameBoard[i][j] == 0) {
+        output += "<div class='wall'></div>";
+      } else if (gameBoard[i][j] == 1) {
+        output += "<div class='coin'></div>";
+      } else if (gameBoard[i][j] === 2) {
+        output += "<div class='pacman'></div>";
+      } else if (gameBoard[i][j] === 3) {
+        output += "<div class='element'></div>";
+      }
+  }
+    output += "</div>"
+  }
+  var gameDiv = document.getElementById('gameboard');
+  gameDiv.innerHTML = output;
 }
 
-function createWallsCoords() {
-    for (var i = 0; i < 15; i++) {
-        wallX = Math.floor(Math.random() * (board.length-1));
-        wallY = Math.floor(Math.random() * (board.length-1));
-        walls.push({x: wallX, y: wallY});
-    }
+
+function createElement() {
+  var newDiv = document.createElement('div');
+  newDiv.setAttribute('id', 'gameboard');
+  body.appendChild(newDiv)
 }
 
-createWallsCoords();
+setInterval(function () {
+  displayBoard()
+}, 1000);
 
-function showWalls() {
-    for (var i = 0; i < walls.length; i++) {
-        board[walls[i].y][walls[i].x] = wall;
-    }
-    console.table(board)
+function emptyBoard(node) {
+  while (node.firstChild) {
+    node.removeChild(node.firstChild)
+  }
 }
-
-var smallDot = {
-    x: Math.floor(Math.random() * (board.length-1)),
-    y: Math.floor(Math.random() * (board.length-1))
-};
-
-function setStartingPosition() {
-    var board = createBoard(10, 10);
-    board[playerPosition.x][playerPosition.y] = player;
-    showWalls();
-    console.table(board)
-}
-setStartingPosition();
-
+//
+//
+// var smallDot = {
+//     x: Math.floor(Math.random() * (gameBoard.length-1)),
+//     y: Math.floor(Math.random() * (gameBoard.length-1))
+// };
+//
+// function setStartingPosition() {
+//     gameBoard[playerPosition.x][playerPosition.y] = player;
+// }
+// setStartingPosition();
+//
 var moves = {
     ArrowRight: function(playerPosition) {
       playerPosition.x += 1
@@ -61,10 +89,6 @@ var moves = {
     }
 };
 
-setInterval(function () {
-    collision(playerPosition)
-}, 10500);
-
 window.addEventListener('keydown', function (event) {
     var newPosition = Object.assign({}, playerPosition);
     pressedKey = event.code;
@@ -73,22 +97,18 @@ window.addEventListener('keydown', function (event) {
 });
 
 function update(pos) {
-    var board = createBoard(10, 10);
+  console.log(playerPosition);
     playerPosition = pos;
-    board[pos.y][pos.x] = player;
-    board[smallDot.y][smallDot.x] = toCollect;
-    for (var i = 0; i < walls.length; i++) {
-        board[walls[i].y][walls[i].x] = wall;
-    }
-    console.table(board)
+    gameBoard[pos.y][pos.x] = pos.classList.add('pacnan');
+    gameBoard[smallDot.y][smallDot.x] = toCollect;
 }
 
 function collision(playerPosition) {
-    if ((inBoard(playerPosition.x) && inBoard(playerPosition.y)) && !wallCollision(playerPosition)) {
+    if ((inBoard(playerPosition.x) && inBoard(playerPosition.y)) ) {
         update(playerPosition);
         if (smallDot.x === playerPosition.x && smallDot.y === playerPosition.y ){
-            smallDot.x = Math.floor(Math.random() * (board.length-1));
-            smallDot.y = Math.floor(Math.random() * (board.length-1));
+            smallDot.x = Math.floor(Math.random() * (gameBoard.length-1));
+            smallDot.y = Math.floor(Math.random() * (gameBoard.length-1));
             score++;
             console.log(score)
         }
@@ -96,19 +116,11 @@ function collision(playerPosition) {
 }
 
 function inBoard(playerPosition) {
-    return playerPosition >= 0 && playerPosition <= board.length - 1
+    return playerPosition >= 0 && playerPosition <= gameBoard.length - 1
 }
 
-function wallCollision(playerPosition) {
-    let wallColl;
-    for (var i = 0; i < walls.length; i++) {
-        if ((playerPosition.x === walls[i].x) && (playerPosition.y === walls[i].y)) {
-            wallColl = true;
-        } else {
-            wallColl = false;
-        }
-    }
-    return wallColl;
-}
+
+
+
 
 
