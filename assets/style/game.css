@@ -2,7 +2,10 @@
     box-sizing: border-box;
 }
 
-.row
+.flex-item {
+    flex: 1;
+}
+
 .wall {
     height: 50px;
     width: 50px;
@@ -14,27 +17,22 @@
 }
 
 .wall {
-    flex: 1;
     background: gray;
     border: 1px solid red;
 }
 
 .coin {
-    flex: 1;
     background: yellow;
 }
 
 .pacman {
-    flex: 1;
     background: red;
 }
 
 .element {
-    flex: 1;
     background: green;
 }
 
 .collected {
-    flex: 1;
     background: white;
 }

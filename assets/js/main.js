@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     var $navigationList = $('.navigation-list');
     var $hamburger = $('.hamburger');
     var $page = $('html, body');
@@ -27,19 +27,20 @@ $(function() {
         for (var i = 0; i < anchors.length; i++) {
             if (takePosition()[i] - naviBarH <= scrollDist &&
                 scrollDist !== body.offsetHeight + window.innerHeight) {
-                naviElement.forEach(function(n) {
+                naviElement.forEach(function (n) {
                     n.classList.remove('highlight')
                 });
                 naviElement[i].classList.add('highlight');
             } else if (window.innerHeight + scrollDist >= body.offsetHeight) {
-                naviElement.forEach(function(n) {
+                naviElement.forEach(function (n) {
                     n.classList.remove('highlight')
                 });
                 naviElement[5].classList.add('highlight')
             }
         }
     }
-  function scrollPage(event) {
+
+    function scrollPage(event) {
         event.preventDefault();
         var scrollDuration = 1400;
 
@@ -56,11 +57,11 @@ $(function() {
         $navigationList.slideToggle();
     }
 
-    $(window).on('scroll', (function() {
+    $(window).on('scroll', (function () {
         if ($(window).scrollTop() >= $('#anchor-form').offset().top - 250) {
             $(window).scrollTop();
             $icon.addClass('form--animate');
-            setTimeout(function() {
+            setTimeout(function () {
                 $txt_form.html('* Dbamy o Twoje dane lepiej niż Facebook');
                 $txt_form.addClass('typewrite');
             }, 2000)
@@ -76,6 +77,7 @@ $(function() {
     $hamburger.on('click', toggleMenu);
     $show_input.on('click', showInputs);
     window.addEventListener('scroll', navHighlight);
+
     /* Map Script */
 
     var mymap = L.map('mapid').setView([54.40315833, 18.56952222], 16);
