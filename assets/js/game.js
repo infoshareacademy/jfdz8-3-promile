@@ -160,14 +160,3 @@ function addFlexClass() {
         (rowItem).map(x => x.classList.add('flex-item'))
     }
 }
-
-
-
-
-
-
-
-
-
-
-
