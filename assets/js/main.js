@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     var $navigationList = $('.navigation-list');
     var $hamburger = $('.hamburger');
     var $page = $('html, body');
@@ -6,6 +6,38 @@ $(function() {
     var $txt_form = $('.form__hidden');
     var $show_input = $(".show_inputs");
     var $form_inputs = $(".form__inputs");
+    var body = document.body;
+    var anchors = document.querySelectorAll('[id^="anchor"]');
+    var naviElement = document.querySelectorAll('li.hover');
+    var naviBar = document.querySelector('.navigation');
+    let naviBarH = naviBar.offsetHeight;
+
+    function takePosition() {
+        let sectionPosition = [];
+        for (var i = 0; i < anchors.length; i++) {
+            sectionPosition.push(anchors[i].offsetTop)
+        }
+        return sectionPosition
+    }
+
+    function navHighlight() {
+        takePosition();
+        var scrollDist = window.pageYOffset;
+        for (var i = 0; i < anchors.length; i++) {
+            if (takePosition()[i] - naviBarH <= scrollDist &&
+                scrollDist !== body.offsetHeight + window.innerHeight) {
+                naviElement.forEach(function (n) {
+                    n.classList.remove('highlight')
+                });
+                naviElement[i].classList.add('highlight');
+            } else if (window.innerHeight + scrollDist >= body.offsetHeight) {
+                naviElement.forEach(function (n) {
+                    n.classList.remove('highlight')
+                });
+                naviElement[5].classList.add('highlight')
+            }
+        }
+    }
 
     function scrollPage(event) {
         event.preventDefault();
@@ -24,11 +56,13 @@ $(function() {
         $navigationList.slideToggle();
     }
 
-    $(window).on('scroll', (function() {
+    var timeoutId;
+    $(window).on('scroll', (function () {
         if ($(window).scrollTop() >= $('#anchor-form').offset().top - 250) {
             $(window).scrollTop();
             $icon.addClass('form--animate');
-            setTimeout(function() {
+            clearInterval(timeoutId);
+            timeoutId = setTimeout(function () {
                 $txt_form.html('* Dbamy o Twoje dane lepiej niż Facebook');
                 $txt_form.addClass('typewrite');
             }, 2000)
@@ -43,6 +77,8 @@ $(function() {
     $(document).on('click', 'a[href^="#"]', scrollPage);
     $hamburger.on('click', toggleMenu);
     $show_input.on('click', showInputs);
+
+    window.addEventListener('scroll', navHighlight);
 
     /* Map Script */
 

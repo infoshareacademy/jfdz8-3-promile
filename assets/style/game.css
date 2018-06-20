@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.wall {
+    height: 50px;
+    width: 50px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.wall {
+    background: gray;
+    border: 1px solid red;
+}
+
+.coin {
+    background: yellow;
+}
+
+.pacman {
+    background: red;
+}
+
+.element {
+    background: green;
+}
+
+.collected {
+    background: white;
+}
