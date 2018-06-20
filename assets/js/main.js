@@ -57,11 +57,13 @@ $(function () {
         $navigationList.slideToggle();
     }
 
+    var timeoutId;
     $(window).on('scroll', (function () {
         if ($(window).scrollTop() >= $('#anchor-form').offset().top - 250) {
             $(window).scrollTop();
             $icon.addClass('form--animate');
-            setTimeout(function () {
+            clearInterval(timeoutId);
+            timeoutId = setTimeout(function () {
                 $txt_form.html('* Dbamy o Twoje dane lepiej niż Facebook');
                 $txt_form.addClass('typewrite');
             }, 2000)
