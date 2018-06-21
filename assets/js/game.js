@@ -161,6 +161,7 @@ function setTimer(seconds) {
     timerInterval = setInterval(function(){
         var timeLeft = Math.round((endTimer - Date.now()) / 1000);
             if (timeLeft <= 0) {
+                timeLeft=0;
                 clearInterval(timerInterval);
             }
         displayTimer(timeLeft);
@@ -168,12 +169,16 @@ function setTimer(seconds) {
 
 }
 
+setTimer(60);
+
 function displayTimer(seconds) {
     var gameTimer = document.createElement('div');
     gameTimer.setAttribute('id', 'game-timer');
     body.appendChild(gameTimer);
+    gameTimer.innerHTML = seconds;
     console.log(seconds)
 }
+
 
 function addFlexClass() {
     var row = document.querySelectorAll('.row');
