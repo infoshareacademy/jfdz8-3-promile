@@ -2,10 +2,12 @@ var body = document.querySelector('body');
 var output = '';
 var score;
 var timerInterval;
+
 var playerPosition = {
     x: 1,
     y: 1
 };
+
 
 var gameBoard = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -162,19 +164,26 @@ function addFlexClass() {
     }
 }
 
+
+
 function setTimer(seconds) {
     var startTimer = Date.now();
     var endTimer = startTimer + seconds * 1000;
-
+    displayTimer(seconds);
     timerInterval = setInterval(function(){
-        var timeLeft = Math.round(endTimer - startTimer / 1000);
+        var timeLeft = Math.round((endTimer - Date.now()) / 1000);
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
             }
-        displayTimer(seconds);
+        displayTimer(timeLeft);
     }, 1000)
+
 }
 
 function displayTimer(seconds) {
-
+    var gameTimer = document.createElement('div');
+    gameTimer.setAttribute('id', 'game-timer');
+    body.appendChild(gameTimer);
+    console.log(seconds)
 }
+

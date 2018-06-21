@@ -38,3 +38,12 @@
     flex: 1;
     background: white;
 }
+
+#game-timer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    color: red;
+    font-weight: bold;
+}
