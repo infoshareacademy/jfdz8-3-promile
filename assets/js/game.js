@@ -8,7 +8,6 @@ var playerPosition = {
     y: 1
 };
 
-
 var gameBoard = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 2, 1, 1, 1, 1, 1, 1, 1, 3, 0],
@@ -155,17 +154,6 @@ function emptyBoard(node) {
         node.removeChild(node.firstChild)
     }
 }
-
-function addFlexClass() {
-    var row = document.querySelectorAll('.row');
-    for (var i = 0; i < row.length; i++) {
-        var rowItem = Array.prototype.slice.call(row[i].childNodes);
-        (rowItem).map(x => x.classList.add('flex-item'))
-    }
-}
-
-
-
 function setTimer(seconds) {
     var startTimer = Date.now();
     var endTimer = startTimer + seconds * 1000;
@@ -187,3 +175,10 @@ function displayTimer(seconds) {
     console.log(seconds)
 }
 
+function addFlexClass() {
+    var row = document.querySelectorAll('.row');
+    for (var i = 0; i < row.length; i++) {
+        var rowItem = Array.prototype.slice.call(row[i].childNodes);
+        (rowItem).map(x => x.classList.add('flex-item'))
+    }
+}
