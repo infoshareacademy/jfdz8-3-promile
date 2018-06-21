@@ -1,5 +1,7 @@
 var gameArea = document.querySelector('#gameArea');
 var controlPanel = document.querySelector('#controlPanel');
+var scoreBoard = document.querySelector('#scoreboard');
+
 var output = '';
 var score;
 var timerInterval;
@@ -151,9 +153,8 @@ function getScore() {
 }
 
 function displayScore() {
-    var scoreBoard = document.createElement('div');
-    scoreBoard.setAttribute('id','scoreboard');
-    controlPanel.appendChild(scoreBoard);
+    var scoreBoard = document.querySelector('#scoreboard');
+    scoreBoard.innerHTML = '';
     scoreBoard.innerHTML = getScore()
 }
 
@@ -187,10 +188,6 @@ function addFlexClass() {
 }
 
 function displayTimer(seconds) {
-    controlPanel.innerHTML = '';
-    var gameTimer = document.createElement('div');
-    gameTimer.setAttribute('id', 'game-timer');
-    controlPanel.appendChild(gameTimer);
+    var gameTimer = document.querySelector('#game-timer');
     gameTimer.innerHTML = seconds;
-    console.log(seconds)
 }
