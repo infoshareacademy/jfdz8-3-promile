@@ -1,4 +1,5 @@
-var body = document.querySelector('body');
+var gameArea = document.querySelector('#gameArea');
+var controlPanel = document.querySelector('#controlPanel');
 var output = '';
 var score;
 var timerInterval;
@@ -51,7 +52,7 @@ window.addEventListener('keydown', function (event) {
 
 function displayBoard() {
     output = '';
-    emptyBoard(body);
+    emptyBoard(gameArea);
     createElement();
     for (var i = 0; i < gameBoard.length; i++) {
         output += "<div class='row'>";
@@ -134,7 +135,7 @@ function collectElement(pos) {
 function createElement() {
     var newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'gameboard');
-    body.appendChild(newDiv)
+    gameArea.appendChild(newDiv)
 }
 
 function getScore() {
@@ -166,15 +167,15 @@ function setTimer(seconds) {
             }
         displayTimer(timeLeft);
     }, 1000)
-
 }
 
 setTimer(60);
 
 function displayTimer(seconds) {
+    controlPanel.innerHTML = '';
     var gameTimer = document.createElement('div');
     gameTimer.setAttribute('id', 'game-timer');
-    body.appendChild(gameTimer);
+    controlPanel.appendChild(gameTimer);
     gameTimer.innerHTML = seconds;
     console.log(seconds)
 }
