@@ -1,7 +1,4 @@
 var gameArea = document.querySelector('#gameArea');
-var controlPanel = document.querySelector('#controlPanel');
-var scoreBoard = document.querySelector('#scoreboard');
-
 var output = '';
 var score;
 var timerInterval;
@@ -11,9 +8,14 @@ var playerPosition = {
     y: 1
 };
 
+var skillPosition = {
+    x: 9,
+    y: 9
+};
+
 var gameBoard = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 2, 1, 1, 1, 1, 1, 1, 1, 3, 0],
+    [0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
@@ -76,6 +78,8 @@ function displayBoard() {
                 case 4:
                     output += "<div class='collected'></div>";
                     break;
+                case 5:
+                    output += "<div class='ghost'></div>";
                 default:
                     break;
             }
@@ -191,3 +195,45 @@ function displayTimer(seconds) {
     var gameTimer = document.querySelector('#game-timer');
     gameTimer.innerHTML = seconds;
 }
+
+// Random skill generate
+
+function randomPos() {
+    var randomNumY = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
+    var randomNumX = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
+    updatePos(randomNumY, randomNumX)
+}
+
+function updatePos(y ,x) {
+    skillPosition.y = y;
+    skillPosition.x = x;
+    if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2) {
+        randomPos()
+    } else {
+        clearSkill()
+    }
+}
+
+function insertSkill() {
+    gameBoard[skillPosition.y][skillPosition.x] = 5;
+}
+
+function clearSkill() {
+    var prevValue = gameBoard[skillPosition.y][skillPosition.x];
+    for (var i = 0; i < gameBoard.length; i++) {
+        for (var j = 0; j < gameBoard[i].length; j++) {
+            if (gameBoard[i][j] === 5) {
+                gameBoard[i][j] = prevValue ;
+            }
+        }
+    }
+    insertSkill()
+}
+
+var skillRandom = setInterval(function() {
+    randomPos();
+}, 5000);
+
+
+
+

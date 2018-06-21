@@ -37,6 +37,10 @@
     background: white;
 }
 
+.ghost {
+    background: #ff2cf5;
+}
+
 #game-timer {
     position: absolute;
     left: 0;
