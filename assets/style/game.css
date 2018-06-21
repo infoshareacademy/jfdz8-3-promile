@@ -45,3 +45,12 @@
     color: red;
     font-weight: bold;
 }
+
+#scoreboard {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    color: red;
+    font-weight: bold;
+}

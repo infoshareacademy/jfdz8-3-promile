@@ -41,6 +41,7 @@ var moves = {
 var gameRender = setInterval(function () {
     displayBoard();
     getScore();
+    displayScore();
 }, 250);
 
 window.addEventListener('keydown', function (event) {
@@ -89,7 +90,6 @@ function update(pos) {
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
     getScore();
-    console.log(score)
 }
 
 function collision(playerPosition) {
@@ -150,6 +150,17 @@ function getScore() {
     return score;
 }
 
+function displayScore() {
+    controlPanel = '';
+    var scoreBoard = document.createElement('div');
+    scoreBoard.setAttribute('id','scoreboard');
+    controlPanel.appendChild(scoreBoard);
+    scoreBoard.innerHTML=(getScore())
+}
+
+displayScore()
+
+
 function emptyBoard(node) {
     while (node.firstChild) {
         node.removeChild(node.firstChild)
@@ -171,14 +182,6 @@ function setTimer(seconds) {
 
 setTimer(60);
 
-function displayTimer(seconds) {
-    controlPanel.innerHTML = '';
-    var gameTimer = document.createElement('div');
-    gameTimer.setAttribute('id', 'game-timer');
-    controlPanel.appendChild(gameTimer);
-    gameTimer.innerHTML = seconds;
-    console.log(seconds)
-}
 
 
 function addFlexClass() {
@@ -187,4 +190,13 @@ function addFlexClass() {
         var rowItem = Array.prototype.slice.call(row[i].childNodes);
         (rowItem).map(x => x.classList.add('flex-item'))
     }
+}
+
+function displayTimer(seconds) {
+    controlPanel.innerHTML = '';
+    var gameTimer = document.createElement('div');
+    gameTimer.setAttribute('id', 'game-timer');
+    controlPanel.appendChild(gameTimer);
+    gameTimer.innerHTML = seconds;
+    console.log(seconds)
 }
