@@ -151,15 +151,11 @@ function getScore() {
 }
 
 function displayScore() {
-    controlPanel = '';
     var scoreBoard = document.createElement('div');
     scoreBoard.setAttribute('id','scoreboard');
     controlPanel.appendChild(scoreBoard);
-    scoreBoard.innerHTML=(getScore())
+    scoreBoard.innerHTML = getScore()
 }
-
-displayScore()
-
 
 function emptyBoard(node) {
     while (node.firstChild) {
@@ -181,8 +177,6 @@ function setTimer(seconds) {
 }
 
 setTimer(60);
-
-
 
 function addFlexClass() {
     var row = document.querySelectorAll('.row');
