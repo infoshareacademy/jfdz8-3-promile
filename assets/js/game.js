@@ -2,7 +2,7 @@ var gameArea = document.querySelector('#gameArea');
 var output = '';
 var timerInterval;
 var score = 0;
-
+var randomElementInterval = 5000;
 var playerPosition = {
     x: 1,
     y: 1
@@ -46,11 +46,15 @@ var gameRender = setInterval(function () {
     displayBoard();
 }, 250);
 
+var showSkillAtRandomPosition = setInterval(function() {
+    randomPos();
+},randomElementInterval);
+
+
 window.addEventListener('keydown', function (event) {
     var newPosition = Object.assign({}, playerPosition);
     pressedKey = event.code;
     moves[pressedKey](newPosition);
-
     collision(newPosition);
 
 });
@@ -141,7 +145,8 @@ function collectElement(pos) {
 function pointCollection(playerPos, elementPos) {
     if (playerPos.y === elementPos.y && playerPos.x === elementPos.x) {
         score += 50;
-        displayScore()
+        displayScore();
+        randomPos();
     } else if (gameBoard[playerPos.y][playerPos.x] === 1) {
         score += 1;
         displayScore()
@@ -153,16 +158,6 @@ function createElement() {
     newDiv.setAttribute('id', 'gameboard');
     gameArea.appendChild(newDiv)
 }
-//
-// function getScore() {
-//     for (var i = 0; i < gameBoard.length; i++) {
-//         for (var j = 0; j < gameBoard[i].length; j++) {
-//             if (gameBoard[i][j] === 4) {
-//                 score++
-//             }
-//         }
-//     }
-// }
 
 function displayScore() {
     var scoreBoard = document.querySelector('#scoreboard');
@@ -206,6 +201,12 @@ function displayTimer(seconds) {
 
 // Random skill generate
 
+function randomNums() {
+    var randomNumY = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
+    var randomNumX = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
+    return [randomNumY, randomNumX]
+}
+
 function randomPos() {
     var randomNumY = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
     var randomNumX = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
@@ -238,9 +239,31 @@ function clearSkill() {
     insertSkill()
 }
 
-var skillRandom = setInterval(function() {
-    randomPos();
+// Random obstacle generate
+
+var randomObstacle = setInterval(function() {
+    obstacleCoords()
 }, 5000);
+
+function obstacleCoords() {
+    var obstacleY = randomNums()[1];
+    var obstacleX = randomNums()[0];
+    if (gameBoard[obstacleY][obstacleX] === 2 || gameBoard[obstacleY][obstacleX] === 0) {
+        obstacleCoords();
+    } else {
+        insertObstacle(obstacleY, obstacleX)
+    }
+}
+
+function insertObstacle(y, x) {
+    gameBoard[y][x] = 0;
+}
+
+
+
+
+
+
 
 
 
