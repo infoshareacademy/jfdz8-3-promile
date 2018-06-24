@@ -51,7 +51,6 @@ window.addEventListener('keydown', function (event) {
     pressedKey = event.code;
     moves[pressedKey](newPosition);
 
-    collectSkill(playerPosition, skillPosition);
     collision(newPosition);
 
 });
@@ -99,6 +98,7 @@ function update(pos) {
 }
 
 function collision(playerPosition) {
+    pointCollection(playerPosition, skillPosition);
     if ((inBoard(playerPosition.x) && inBoard(playerPosition.y))) {
         if (wallCollision(playerPosition) === false) {
             update(playerPosition);
@@ -135,25 +135,18 @@ function wallCollision(pos) {
 function collectElement(pos) {
     if (gameBoard[pos.y][pos.x] === 1) {
         gameBoard[pos.y][pos.x] = 4;
-        score++
-        displayScore()
     }
 }
 
-function collectSkill(player, skill) {
-    if (player.y === skill.y && player.x === skill.x) {
+function pointCollection(playerPos, elementPos) {
+    if (playerPos.y === elementPos.y && playerPos.x === elementPos.x) {
         score += 50;
         displayScore()
+    } else if (gameBoard[playerPos.y][playerPos.x] === 1) {
+        score += 1;
+        displayScore()
     }
 }
-
-// function collectCoin(pos) {
-//     if (gameBoard[pos.y][pos.x] === 1) {
-//         score +=1;
-//         displayScore()
-//     }
-// }
-
 
 function createElement() {
     var newDiv = document.createElement('div');
