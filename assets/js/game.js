@@ -1,8 +1,15 @@
 var gameArea = document.querySelector('#gameArea');
+var startButton = document.querySelector('#play-button');
+var resetButton = document.querySelector('#reset-button');
 var output = '';
 var timerInterval;
 var score = 0;
-var randomElementInterval = 2000;
+var randomElementInterval = 4000;
+var randomObstacleInterval = 7000;
+var gameRenderInterval = 250;
+var gameRender;
+var randomObstacle;
+var showSkillAtRandomPosition;
 var playerPosition = {
     x: 1,
     y: 1
@@ -42,13 +49,6 @@ var moves = {
     }
 };
 
-var gameRender = setInterval(function () {
-    displayBoard();
-}, 250);
-
-var showSkillAtRandomPosition = setInterval(function() {
-    randomPos();
-},randomElementInterval);
 
 
 window.addEventListener('keydown', function (event) {
@@ -56,7 +56,6 @@ window.addEventListener('keydown', function (event) {
     pressedKey = event.code;
     moves[pressedKey](newPosition);
     collision(newPosition);
-
 });
 
 function displayBoard() {
@@ -94,6 +93,8 @@ function displayBoard() {
     gameDiv.innerHTML = output;
     addFlexClass()
 }
+
+displayBoard();
 
 function update(pos) {
     clearPacman();
@@ -178,8 +179,6 @@ function setTimer(seconds) {
     }, 1000)
 }
 
-setTimer(60);
-
 function addFlexClass() {
     var row = document.querySelectorAll('.row');
     for (var i = 0; i < row.length; i++) {
@@ -229,10 +228,6 @@ function clearSkill() {
 
 // Random obstacle generate
 
-var randomObstacle = setInterval(function() {
-    obstacleCoords()
-}, 5000);
-
 function obstacleCoords() {
     var obstacleY = randomNums()[1];
     var obstacleX = randomNums()[0];
@@ -246,6 +241,25 @@ function obstacleCoords() {
 function insertObstacle(y, x) {
     gameBoard[y][x] = 0;
 }
+
+startButton.addEventListener('click', function() {
+    startGame();
+});
+
+function startGame() {
+    gameRender = setInterval(function () {
+        displayBoard();
+    }, gameRenderInterval);
+    randomObstacle = setInterval(function() {
+        obstacleCoords()
+    }, randomObstacleInterval);
+    showSkillAtRandomPosition = setInterval(function() {
+        randomPos();
+    },randomElementInterval);
+    setTimer(60)
+}
+
+
 
 
 
