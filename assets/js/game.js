@@ -43,7 +43,6 @@ var moves = {
 };
 
 var gameRender = setInterval(function () {
-
     displayBoard();
 }, 250);
 
@@ -51,6 +50,7 @@ window.addEventListener('keydown', function (event) {
     var newPosition = Object.assign({}, playerPosition);
     pressedKey = event.code;
     moves[pressedKey](newPosition);
+
     collectSkill(playerPosition, skillPosition);
     collision(newPosition);
 
@@ -146,7 +146,7 @@ function collectSkill(player, skill) {
         displayScore()
     }
 }
-//
+
 // function collectCoin(pos) {
 //     if (gameBoard[pos.y][pos.x] === 1) {
 //         score +=1;
@@ -160,6 +160,16 @@ function createElement() {
     newDiv.setAttribute('id', 'gameboard');
     gameArea.appendChild(newDiv)
 }
+//
+// function getScore() {
+//     for (var i = 0; i < gameBoard.length; i++) {
+//         for (var j = 0; j < gameBoard[i].length; j++) {
+//             if (gameBoard[i][j] === 4) {
+//                 score++
+//             }
+//         }
+//     }
+// }
 
 function displayScore() {
     var scoreBoard = document.querySelector('#scoreboard');
