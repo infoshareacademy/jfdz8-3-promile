@@ -247,6 +247,8 @@ startButton.addEventListener('click', function() {
 });
 
 function startGame() {
+    score = 0;
+    displayScore();
     gameRender = setInterval(function () {
         displayBoard();
     }, gameRenderInterval);
