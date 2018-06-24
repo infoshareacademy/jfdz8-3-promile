@@ -1,7 +1,7 @@
 var gameArea = document.querySelector('#gameArea');
 var output = '';
-var score;
 var timerInterval;
+var score = 0;
 
 var playerPosition = {
     x: 1,
@@ -43,16 +43,17 @@ var moves = {
 };
 
 var gameRender = setInterval(function () {
+
     displayBoard();
-    getScore();
-    displayScore();
 }, 250);
 
 window.addEventListener('keydown', function (event) {
     var newPosition = Object.assign({}, playerPosition);
     pressedKey = event.code;
     moves[pressedKey](newPosition);
+    collectSkill(playerPosition, skillPosition);
     collision(newPosition);
+
 });
 
 function displayBoard() {
@@ -95,7 +96,6 @@ function update(pos) {
     clearPacman();
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
-    getScore();
 }
 
 function collision(playerPosition) {
@@ -118,7 +118,7 @@ function clearPacman() {
             }
         }
     }
-    collectElement(playerPosition)
+    collectElement(playerPosition);
 }
 
 function wallCollision(pos) {
@@ -135,8 +135,25 @@ function wallCollision(pos) {
 function collectElement(pos) {
     if (gameBoard[pos.y][pos.x] === 1) {
         gameBoard[pos.y][pos.x] = 4;
+        score++
+        displayScore()
     }
 }
+
+function collectSkill(player, skill) {
+    if (player.y === skill.y && player.x === skill.x) {
+        score += 50;
+        displayScore()
+    }
+}
+//
+// function collectCoin(pos) {
+//     if (gameBoard[pos.y][pos.x] === 1) {
+//         score +=1;
+//         displayScore()
+//     }
+// }
+
 
 function createElement() {
     var newDiv = document.createElement('div');
@@ -144,22 +161,10 @@ function createElement() {
     gameArea.appendChild(newDiv)
 }
 
-function getScore() {
-    score = 0;
-    for (var i = 0; i < gameBoard.length; i++) {
-        for (var j = 0; j < gameBoard[i].length; j++) {
-            if (gameBoard[i][j] === 4) {
-                score++
-            }
-        }
-    }
-    return score;
-}
-
 function displayScore() {
     var scoreBoard = document.querySelector('#scoreboard');
     scoreBoard.innerHTML = '';
-    scoreBoard.innerHTML = getScore()
+    scoreBoard.innerHTML = score;
 }
 
 function emptyBoard(node) {
