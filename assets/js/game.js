@@ -49,8 +49,6 @@ var moves = {
     }
 };
 
-
-
 window.addEventListener('keydown', function (event) {
     var newPosition = Object.assign({}, playerPosition);
     pressedKey = event.code;
@@ -165,6 +163,7 @@ function emptyBoard(node) {
         node.removeChild(node.firstChild)
     }
 }
+
 function setTimer(seconds) {
     var startTimer = Date.now();
     var endTimer = startTimer + seconds * 1000;
@@ -248,6 +247,9 @@ startButton.addEventListener('click', function() {
 
 function startGame() {
     score = 0;
+    displayBoard();
+    clearInterval(timerInterval);
+    clearInterval(randomObstacleInterval);
     displayScore();
     gameRender = setInterval(function () {
         displayBoard();
@@ -260,6 +262,7 @@ function startGame() {
     },randomElementInterval);
     setTimer(60)
 }
+
 
 
 
