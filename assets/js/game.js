@@ -119,4 +119,3 @@ setInterval(function () {
 function inBoard(playerPosition) {
     return playerPosition >= 0 && playerPosition <= board.length - 1
 }
-
