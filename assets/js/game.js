@@ -115,14 +115,8 @@ function inBoard(playerPosition) {
 }
 
 function clearPacman() {
-    for (var i = 0; i < gameBoard.length; i++) {
-        for (var j = 0; j < gameBoard[i].length; j++) {
-            if (gameBoard[i][j] === 2) {
-                gameBoard[i][j] = 1;
-            }
-        }
-    }
-    collectElement(playerPosition);
+    gameBoard = gameBoard.map(row => row.map(column => (column === 2 ? 1 : column)));
+    collectElement(playerPosition)
 }
 
 function wallCollision(pos) {
