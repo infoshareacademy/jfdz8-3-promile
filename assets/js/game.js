@@ -2,7 +2,7 @@ var gameArea = document.querySelector('#gameArea');
 var output = '';
 var timerInterval;
 var score = 0;
-var randomElementInterval = 5000;
+var randomElementInterval = 2000;
 var playerPosition = {
     x: 1,
     y: 1
@@ -223,13 +223,7 @@ function insertSkill() {
 
 function clearSkill() {
     var prevValue = gameBoard[skillPosition.y][skillPosition.x];
-    for (var i = 0; i < gameBoard.length; i++) {
-        for (var j = 0; j < gameBoard[i].length; j++) {
-            if (gameBoard[i][j] === 5) {
-                gameBoard[i][j] = prevValue ;
-            }
-        }
-    }
+    gameBoard = gameBoard.map(row => row.map(column => (column === 5 ? prevValue : column)));
     insertSkill()
 }
 
