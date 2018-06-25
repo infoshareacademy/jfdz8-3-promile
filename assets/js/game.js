@@ -1,6 +1,7 @@
 var gameArea = document.querySelector('#gameArea');
 var startButton = document.querySelector('#play-button');
 var resetButton = document.querySelector('#reset-button');
+var gameTimer = document.querySelector('#game-timer');
 var output = '';
 var timerInterval;
 var score = 0;
@@ -94,7 +95,7 @@ function displayBoard() {
     addFlexClass()
 }
 
-displayBoard(gameBoard);
+displayBoard();
 
 function update(pos) {
     clearPacman();
@@ -189,7 +190,6 @@ function addFlexClass() {
 }
 
 function displayTimer(seconds) {
-    var gameTimer = document.querySelector('#game-timer');
     gameTimer.innerHTML = seconds;
 }
 
@@ -202,9 +202,9 @@ function randomNums() {
 }
 
 function randomPos() {
-    var randomNumY = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
-    var randomNumX = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
-    updatePos(randomNumY, randomNumX)
+    var elementPosY  = randomNums()[0];
+    var elementPosX = randomNums()[1];
+    updatePos(elementPosY, elementPosX)
 }
 
 function updatePos(y ,x) {
@@ -243,9 +243,7 @@ function insertObstacle(y, x) {
     gameBoard[y][x] = 0;
 }
 
-startButton.addEventListener('click', function() {
-    startGame();
-});
+startButton.addEventListener('click', startGame);
 
 function startGame() {
     score = 0;
@@ -274,6 +272,14 @@ function clearEvents() {
     skillPosition.y = 9;
 }
 
+resetButton.addEventListener('click', resetGame);
+
+function resetGame() {
+    clearEvents();
+    score = 'SCORE';
+    displayScore();
+    gameTimer.innerHTML = 'TIMER'
+}
 
 
 
