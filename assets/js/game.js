@@ -266,7 +266,8 @@ function startGame() {
 function clearEvents() {
     gameBoard = clearGameBoard;
     clearInterval(timerInterval);
-    clearInterval(randomObstacleInterval);
+    clearInterval(randomObstacle);
+    clearInterval(showSkillAtRandomPosition);
     playerPosition.x = 1;
     playerPosition.y = 1;
     skillPosition.x = 9;
