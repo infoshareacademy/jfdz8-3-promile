@@ -34,6 +34,8 @@ var gameBoard = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
+var clearGameBoard = [...gameBoard];
+
 var moves = {
     ArrowRight: function (playerPosition) {
         playerPosition.x += 1
@@ -92,7 +94,7 @@ function displayBoard() {
     addFlexClass()
 }
 
-displayBoard();
+displayBoard(gameBoard);
 
 function update(pos) {
     clearPacman();
@@ -247,9 +249,7 @@ startButton.addEventListener('click', function() {
 
 function startGame() {
     score = 0;
-    displayBoard();
-    clearInterval(timerInterval);
-    clearInterval(randomObstacleInterval);
+    clearEvents();
     displayScore();
     gameRender = setInterval(function () {
         displayBoard();
@@ -263,13 +263,15 @@ function startGame() {
     setTimer(60)
 }
 
-
-
-
-
-
-
-
+function clearEvents() {
+    gameBoard = clearGameBoard;
+    clearInterval(timerInterval);
+    clearInterval(randomObstacleInterval);
+    playerPosition.x = 1;
+    playerPosition.y = 1;
+    skillPosition.x = 9;
+    skillPosition.y = 9;
+}
 
 
 
