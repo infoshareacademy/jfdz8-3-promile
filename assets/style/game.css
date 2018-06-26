@@ -2,6 +2,27 @@
     box-sizing: border-box;
 }
 
+#controlPanel {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    border: 5px solid #379685;
+}
+
+.control-item {
+    flex: 1;
+    background: #bed2a2;
+    min-height: 100px;
+}
+
+button {
+    margin: 5%;
+    padding: 15px;
+    background: #363636;
+    width: 100px;
+    color: #fefefe;
+}
+
 .flex-item {
     flex: 1;
 }
@@ -35,4 +56,22 @@
 
 .collected {
     background: white;
+}
+
+.ghost {
+    background: #ff2cf5;
+}
+
+#game-timer {
+    font-weight: bold;
+    background: #4f6b86;
+    line-height: 100px;
+    font-size: 4em;
+}
+
+#scoreboard {
+    background: #a6b9cd;
+    font-weight: bold;
+    line-height: 100px;
+    font-size: 4em;
 }

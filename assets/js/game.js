@@ -1,14 +1,30 @@
-var body = document.querySelector('body');
+var gameArea = document.querySelector('#gameArea');
+var startButton = document.querySelector('#play-button');
+var resetButton = document.querySelector('#reset-button');
+var gameTimer = document.querySelector('#game-timer');
 var output = '';
-var score;
+var timerInterval;
+var score = 0;
+var randomElementInterval = 4000;
+var randomObstacleInterval = 7000;
+var gameRenderInterval = 250;
+var gameRender;
+var randomObstacle;
+var showSkillAtRandomPosition;
+
 var playerPosition = {
     x: 1,
     y: 1
 };
 
+var skillPosition = {
+    x: 9,
+    y: 9
+};
+
 var gameBoard = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 2, 1, 1, 1, 1, 1, 1, 1, 3, 0],
+    [0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
@@ -19,6 +35,8 @@ var gameBoard = [
     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
+
+var clearGameBoard = [...gameBoard];
 
 var moves = {
     ArrowRight: function (playerPosition) {
@@ -35,11 +53,6 @@ var moves = {
     }
 };
 
-var gameRender = setInterval(function () {
-    displayBoard();
-    getScore();
-}, 250);
-
 window.addEventListener('keydown', function (event) {
     var newPosition = Object.assign({}, playerPosition);
     pressedKey = event.code;
@@ -47,9 +60,12 @@ window.addEventListener('keydown', function (event) {
     collision(newPosition);
 });
 
+startButton.addEventListener('click', startGame);
+resetButton.addEventListener('click', resetGame);
+
 function displayBoard() {
     output = '';
-    emptyBoard(body);
+    emptyBoard(gameArea);
     createElement();
     for (var i = 0; i < gameBoard.length; i++) {
         output += "<div class='row'>";
@@ -70,6 +86,8 @@ function displayBoard() {
                 case 4:
                     output += "<div class='collected'></div>";
                     break;
+                case 5:
+                    output += "<div class='ghost'></div>";
                 default:
                     break;
             }
@@ -81,15 +99,16 @@ function displayBoard() {
     addFlexClass()
 }
 
+displayBoard();
+
 function update(pos) {
     clearPacman();
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
-    getScore();
-    console.log(score)
 }
 
 function collision(playerPosition) {
+    pointCollection(playerPosition, skillPosition);
     if ((inBoard(playerPosition.x) && inBoard(playerPosition.y))) {
         if (wallCollision(playerPosition) === false) {
             update(playerPosition);
@@ -102,13 +121,7 @@ function inBoard(playerPosition) {
 }
 
 function clearPacman() {
-    for (var i = 0; i < gameBoard.length; i++) {
-        for (var j = 0; j < gameBoard[i].length; j++) {
-            if (gameBoard[i][j] === 2) {
-                gameBoard[i][j] = 1;
-            }
-        }
-    }
+    gameBoard = gameBoard.map(row => row.map(column => (column === 2 ? 1 : column)));
     collectElement(playerPosition)
 }
 
@@ -129,28 +142,47 @@ function collectElement(pos) {
     }
 }
 
+function pointCollection(playerPos, elementPos) {
+    if (playerPos.y === elementPos.y && playerPos.x === elementPos.x) {
+        score += 50;
+        displayScore();
+        randomPos();
+    } else if (gameBoard[playerPos.y][playerPos.x] === 1) {
+        score += 1;
+        displayScore()
+    }
+}
+
 function createElement() {
     var newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'gameboard');
-    body.appendChild(newDiv)
+    gameArea.appendChild(newDiv)
 }
 
-function getScore() {
-    score = 0;
-    for (var i = 0; i < gameBoard.length; i++) {
-        for (var j = 0; j < gameBoard[i].length; j++) {
-            if (gameBoard[i][j] === 4) {
-                score++
-            }
-        }
-    }
-    return score;
+function displayScore() {
+    var scoreBoard = document.querySelector('#scoreboard');
+    scoreBoard.innerHTML = '';
+    scoreBoard.innerHTML = score;
 }
 
 function emptyBoard(node) {
     while (node.firstChild) {
         node.removeChild(node.firstChild)
     }
+}
+
+function setTimer(seconds) {
+    var startTimer = Date.now();
+    var endTimer = startTimer + seconds * 1000;
+    displayTimer(seconds);
+    timerInterval = setInterval(function(){
+        var timeLeft = Math.round((endTimer - Date.now()) / 1000);
+            if (timeLeft <= 0) {
+                timeLeft=0;
+                clearInterval(timerInterval);
+            }
+        displayTimer(timeLeft);
+    }, 1000)
 }
 
 function addFlexClass() {
@@ -160,3 +192,97 @@ function addFlexClass() {
         (rowItem).map(x => x.classList.add('flex-item'))
     }
 }
+
+function displayTimer(seconds) {
+    gameTimer.innerHTML = seconds;
+}
+
+// Random skill generate
+
+function randomNums() {
+    var randomNumY = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
+    var randomNumX = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
+    return [randomNumY, randomNumX]
+}
+
+function randomPos() {
+    var elementPosY  = randomNums()[0];
+    var elementPosX = randomNums()[1];
+    updatePos(elementPosY, elementPosX)
+}
+
+function updatePos(y ,x) {
+    skillPosition.y = y;
+    skillPosition.x = x;
+    if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2) {
+        randomPos()
+    } else {
+        clearSkill()
+    }
+}
+
+function insertSkill() {
+    gameBoard[skillPosition.y][skillPosition.x] = 5;
+}
+
+function clearSkill() {
+    var prevValue = gameBoard[skillPosition.y][skillPosition.x];
+    gameBoard = gameBoard.map(row => row.map(column => (column === 5 ? prevValue : column)));
+    insertSkill()
+}
+
+// Random obstacle generate
+
+function obstacleCoords() {
+    var obstacleY = randomNums()[1];
+    var obstacleX = randomNums()[0];
+    if (gameBoard[obstacleY][obstacleX] === 2 || gameBoard[obstacleY][obstacleX] === 0) {
+        obstacleCoords();
+    } else {
+        insertObstacle(obstacleY, obstacleX)
+    }
+}
+
+function insertObstacle(y, x) {
+    gameBoard[y][x] = 0;
+}
+
+
+function startGame() {
+    score = 0;
+    clearEvents();
+    displayScore();
+    gameRender = setInterval(function () {
+        displayBoard();
+    }, gameRenderInterval);
+    randomObstacle = setInterval(function() {
+        obstacleCoords()
+    }, randomObstacleInterval);
+    showSkillAtRandomPosition = setInterval(function() {
+        randomPos();
+    },randomElementInterval);
+    setTimer(60)
+}
+
+function clearEvents() {
+    gameBoard = clearGameBoard;
+    clearInterval(timerInterval);
+    clearInterval(randomObstacle);
+    clearInterval(showSkillAtRandomPosition);
+    playerPosition.x = 1;
+    playerPosition.y = 1;
+    skillPosition.x = 9;
+    skillPosition.y = 9;
+}
+
+
+function resetGame() {
+    clearEvents();
+    score = 'SCORE';
+    displayScore();
+    gameTimer.innerHTML = 'TIMER'
+}
+
+
+
+
