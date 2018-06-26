@@ -12,6 +12,11 @@ var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
 
+var enemyPosition = {
+    x: 9,
+    y: 1
+}
+
 var playerPosition = {
     x: 1,
     y: 1
@@ -88,6 +93,9 @@ function displayBoard() {
                     break;
                 case 5:
                     output += "<div class='ghost'></div>";
+                    break;
+                case 6:
+                    output += "<div class='enemy'></div>";
                 default:
                     break;
             }
@@ -231,6 +239,11 @@ function clearSkill() {
     insertSkill()
 }
 
+function generateEnemy() {
+    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+}
+generateEnemy()
+
 // Random obstacle generate
 
 function obstacleCoords() {
@@ -246,7 +259,6 @@ function obstacleCoords() {
 function insertObstacle(y, x) {
     gameBoard[y][x] = 0;
 }
-
 
 function startGame() {
     score = 0;

@@ -62,6 +62,10 @@ button {
     background: #ff2cf5;
 }
 
+.enemy {
+    background: cyan;
+}
+
 #game-timer {
     font-weight: bold;
     background: #4f6b86;
