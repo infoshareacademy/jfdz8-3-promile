@@ -249,23 +249,23 @@ generateEnemy();
 
 function getDirection() {
     direction = Math.floor(Math.random()*4)+1;
-    return direction
+    randomDirectionMovement(direction);
+    enemyCollision(enemyPosition)
 }
 
-function randomDirectionMovement(element) {
-    console.log(direction)
+function randomDirectionMovement(direction) {
     switch(direction) {
         case 1:
-            element.x += 1;
+            enemyPosition.x += 1;
             break;
         case 2:
-            element.x -= 1;
+            enemyPosition.x -= 1;
             break;
         case 3:
-            element.y += 1;
+            enemyPosition.y += 1;
             break;
         case 4:
-            element.y -= 1;
+            enemyPosition.y -= 1;
             break;
         default:
     }
@@ -273,25 +273,14 @@ function randomDirectionMovement(element) {
 
 function enemyCollision(element) {
     if ((inBoard(element.x) && inBoard(element.y))) {
-        console.log('hjahah')
         if (wallCollision(element) === false) {
-            console.log('huehuehue')
-            randomDirectionMovement(enemyPosition)
-            console.log('done')
-            // getDirection()
+            randomDirectionMovement(enemyPosition);
+            console.log(enemyPosition)
         }
     } else {
-        getDirection()
-        enemyCollision(enemyPosition)
-        console.log(getDirection())
-        console.log(enemyCollision(enemyPosition)===true)
+        getDirection();
     }
 }
-
-function clearEnemy() {
-
-}
-
 
 // Random obstacle generate
 
@@ -323,9 +312,9 @@ function startGame() {
         randomPos();
     },randomElementInterval);
     enemyMovement = setInterval(function(){
-        getDirection()
-        enemyCollision(enemyPosition)
-    }, 1000)
+        getDirection();
+
+    }, 1000);
     setTimer(60)
 }
 
