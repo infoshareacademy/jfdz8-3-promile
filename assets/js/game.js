@@ -275,7 +275,8 @@ function enemyCollision(element) {
     if ((inBoard(element.x) && inBoard(element.y))) {
         if (wallCollision(element) === false) {
             randomDirectionMovement(enemyPosition);
-            console.log(enemyPosition)
+            movement()
+
         }
     } else {
         getDirection();
@@ -335,6 +336,16 @@ function resetGame() {
     score = 'SCORE';
     displayScore();
     gameTimer.innerHTML = 'TIMER'
+}
+
+
+function movement() {
+    clearEnemy();
+    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+}
+function clearEnemy() {
+    var prevValue = gameBoard[enemyPosition.y][enemyPosition.x];
+    gameBoard = gameBoard.map(row => row.map(column => (column === 6 ? prevValue : column)));
 }
 
 
