@@ -11,6 +11,7 @@ var gameRenderInterval = 250;
 var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
+var enemyMovement;
 
 var enemyPosition = {
     x: 9,
@@ -244,6 +245,34 @@ function generateEnemy() {
 }
 generateEnemy()
 
+function setDirection() {
+    return Math.floor(Math.random()*4)+1
+}
+
+function randomDirectionMovement() {
+    var direction = setDirection();
+    switch(direction) {
+        case 1:
+            enemyPosition.x += 1;
+            break;
+        case 2:
+            enemyPosition.x -= 1;
+            break;
+        case 3:
+            enemyPosition.y += 1;
+            break;
+        case 4:
+            enemyPosition.y -= 1;
+            break;
+        default:
+    }
+}
+
+function clearEnemy() {
+
+}
+
+
 // Random obstacle generate
 
 function obstacleCoords() {
@@ -273,6 +302,10 @@ function startGame() {
     showSkillAtRandomPosition = setInterval(function() {
         randomPos();
     },randomElementInterval);
+    enemyMovement = setInterval(function() {
+        randomDirectionMovement()
+    }, gameRenderInterval);
+
     setTimer(60)
 }
 
