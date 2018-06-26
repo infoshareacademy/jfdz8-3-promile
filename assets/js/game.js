@@ -12,6 +12,8 @@ var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
+var getEnemyMovement;
+var direction;
 
 var enemyPosition = {
     x: 9,
@@ -243,28 +245,46 @@ function clearSkill() {
 function generateEnemy() {
     gameBoard[enemyPosition.y][enemyPosition.x] = 6;
 }
-generateEnemy()
+generateEnemy();
 
-function setDirection() {
-    return Math.floor(Math.random()*4)+1
+function getDirection() {
+    direction = Math.floor(Math.random()*4)+1;
+    return direction
 }
 
-function randomDirectionMovement() {
-    var direction = setDirection();
+function randomDirectionMovement(element) {
+    console.log(direction)
     switch(direction) {
         case 1:
-            enemyPosition.x += 1;
+            element.x += 1;
             break;
         case 2:
-            enemyPosition.x -= 1;
+            element.x -= 1;
             break;
         case 3:
-            enemyPosition.y += 1;
+            element.y += 1;
             break;
         case 4:
-            enemyPosition.y -= 1;
+            element.y -= 1;
             break;
         default:
+    }
+}
+
+function enemyCollision(element) {
+    if ((inBoard(element.x) && inBoard(element.y))) {
+        console.log('hjahah')
+        if (wallCollision(element) === false) {
+            console.log('huehuehue')
+            randomDirectionMovement(enemyPosition)
+            console.log('done')
+            // getDirection()
+        }
+    } else {
+        getDirection()
+        enemyCollision(enemyPosition)
+        console.log(getDirection())
+        console.log(enemyCollision(enemyPosition)===true)
     }
 }
 
@@ -302,10 +322,10 @@ function startGame() {
     showSkillAtRandomPosition = setInterval(function() {
         randomPos();
     },randomElementInterval);
-    enemyMovement = setInterval(function() {
-        randomDirectionMovement()
-    }, gameRenderInterval);
-
+    enemyMovement = setInterval(function(){
+        getDirection()
+        enemyCollision(enemyPosition)
+    }, 1000)
     setTimer(60)
 }
 
