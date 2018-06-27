@@ -7,12 +7,11 @@ var timerInterval;
 var score = 0;
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
-var gameRenderInterval = 250;
+var gameRenderInterval = 16;
 var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
-var getEnemyMovement;
 var direction;
 
 var enemyPosition = {
@@ -116,6 +115,8 @@ function update(pos) {
     clearPacman();
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
+    console.log(playerPosition, enemyPosition);
+    playerEnemyCollision(playerPosition, enemyPosition)
 }
 
 function collision(playerPosition) {
@@ -128,7 +129,7 @@ function collision(playerPosition) {
 }
 
 function inBoard(playerPosition) {
-    return playerPosition >= 1 && playerPosition <= gameBoard.length - 2
+    return playerPosition >= 1 && playerPosition <= gameBoard.length - 1
 }
 
 function clearPacman() {
@@ -189,8 +190,9 @@ function setTimer(seconds) {
     timerInterval = setInterval(function(){
         var timeLeft = Math.round((endTimer - Date.now()) / 1000);
             if (timeLeft <= 0) {
-                timeLeft=0;
+                timeLeft = 0;
                 clearInterval(timerInterval);
+                resetGame();
             }
         displayTimer(timeLeft);
     }, 1000)
@@ -225,7 +227,7 @@ function randomPos() {
 function updatePos(y ,x) {
     skillPosition.y = y;
     skillPosition.x = x;
-    if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2) {
+    if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2 || gameBoard[y][x] === 6) {
         randomPos()
     } else {
         clearSkill()
@@ -276,7 +278,6 @@ function enemyCollision(element) {
         if (wallCollision(element) === false) {
             randomDirectionMovement(enemyPosition);
             movement()
-
         }
     } else {
         getDirection();
@@ -314,9 +315,8 @@ function startGame() {
     },randomElementInterval);
     enemyMovement = setInterval(function(){
         getDirection();
-
-    }, 1000);
-    setTimer(60)
+    }, 5000);
+    setTimer(30)
 }
 
 function clearEvents() {
@@ -324,12 +324,12 @@ function clearEvents() {
     clearInterval(timerInterval);
     clearInterval(randomObstacle);
     clearInterval(showSkillAtRandomPosition);
+    clearInterval(enemyMovement);
     playerPosition.x = 1;
     playerPosition.y = 1;
     skillPosition.x = 9;
     skillPosition.y = 9;
 }
-
 
 function resetGame() {
     clearEvents();
@@ -337,7 +337,6 @@ function resetGame() {
     displayScore();
     gameTimer.innerHTML = 'TIMER'
 }
-
 
 function movement() {
     clearEnemy();
@@ -348,6 +347,11 @@ function clearEnemy() {
     gameBoard = gameBoard.map(row => row.map(column => (column === 6 ? prevValue : column)));
 }
 
-
-
+function playerEnemyCollision(player, enemy) {
+    if (player.y === enemy.y && player.x === enemy.x) {
+        setTimeout(function () {
+            alert('GAME OVER')
+        }, 50);
+    }
+}
 
