@@ -5,19 +5,22 @@ var gameTimer = document.querySelector('#game-timer');
 var output = '';
 var timerInterval;
 var score = 0;
+var highscore = [];
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
+var enemyInterval = 1000;
 var gameRenderInterval = 16;
 var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
 var direction;
+var getHighscores;
 
 var enemyPosition = {
     x: 9,
     y: 1
-}
+};
 
 var playerPosition = {
     x: 1,
@@ -115,7 +118,6 @@ function update(pos) {
     clearPacman();
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
-    console.log(playerPosition, enemyPosition);
     playerEnemyCollision(playerPosition, enemyPosition)
 }
 
@@ -315,7 +317,7 @@ function startGame() {
     },randomElementInterval);
     enemyMovement = setInterval(function(){
         getDirection();
-    }, 5000);
+    }, enemyInterval);
     setTimer(30)
 }
 
@@ -333,6 +335,7 @@ function clearEvents() {
 
 function resetGame() {
     clearEvents();
+    getHighscore();
     score = 'SCORE';
     displayScore();
     gameTimer.innerHTML = 'TIMER'
@@ -349,9 +352,20 @@ function clearEnemy() {
 
 function playerEnemyCollision(player, enemy) {
     if (player.y === enemy.y && player.x === enemy.x) {
-        setTimeout(function () {
-            alert('GAME OVER')
-        }, 50);
+        resetGame()
     }
 }
+
+function getHighscore() {
+    highscore.push(score);
+    highscore.sort((a,b) => a-b);
+    highscore.map(x => x.toString());
+    localStorage.setItem('highscores', highscore);
+    refreshHighscores();
+}
+
+function refreshHighscores() {
+    getHighscores = localStorage.getItem('highscores').split(',').map(x => parseInt(x));
+}
+
 
