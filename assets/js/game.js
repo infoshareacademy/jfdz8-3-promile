@@ -8,8 +8,9 @@ var score = 0;
 var highscore = [];
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
-var enemyInterval = 1000;
+var enemyInterval = 750;
 var gameRenderInterval = 16;
+var gameDuration = 30;
 var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
@@ -118,7 +119,6 @@ function update(pos) {
     clearPacman();
     playerPosition = pos;
     gameBoard[pos.y][pos.x] = 2;
-    playerEnemyCollision(playerPosition, enemyPosition)
 }
 
 function collision(playerPosition) {
@@ -131,7 +131,7 @@ function collision(playerPosition) {
 }
 
 function inBoard(playerPosition) {
-    return playerPosition >= 1 && playerPosition <= gameBoard.length - 1
+    return playerPosition >= 1 && playerPosition <= gameBoard.length - 2
 }
 
 function clearPacman() {
@@ -249,12 +249,12 @@ function clearSkill() {
 function generateEnemy() {
     gameBoard[enemyPosition.y][enemyPosition.x] = 6;
 }
+
 generateEnemy();
 
 function getDirection() {
     direction = Math.floor(Math.random()*4)+1;
     randomDirectionMovement(direction);
-    enemyCollision(enemyPosition)
 }
 
 function randomDirectionMovement(direction) {
@@ -273,18 +273,16 @@ function randomDirectionMovement(direction) {
             break;
         default:
     }
+    enemyCollision(enemyPosition);
 }
 
 function enemyCollision(element) {
-    if ((inBoard(element.x) && inBoard(element.y))) {
-        if (wallCollision(element) === false) {
-            randomDirectionMovement(enemyPosition);
-            movement()
+    if ((inBoard(element.x) && inBoard(element.y)) && (wallCollision(element) === false)) {
+            movement();
+        } else {
+            getDirection();
         }
-    } else {
-        getDirection();
     }
-}
 
 // Random obstacle generate
 
@@ -303,11 +301,13 @@ function insertObstacle(y, x) {
 }
 
 function startGame() {
+    resetGame();
     score = 0;
     clearEvents();
     displayScore();
     gameRender = setInterval(function () {
         displayBoard();
+        playerEnemyCollision(playerPosition, enemyPosition);
     }, gameRenderInterval);
     randomObstacle = setInterval(function() {
         obstacleCoords()
@@ -318,7 +318,7 @@ function startGame() {
     enemyMovement = setInterval(function(){
         getDirection();
     }, enemyInterval);
-    setTimer(30)
+    setTimer(gameDuration)
 }
 
 function clearEvents() {
@@ -331,6 +331,8 @@ function clearEvents() {
     playerPosition.y = 1;
     skillPosition.x = 9;
     skillPosition.y = 9;
+    enemyPosition.x = 9;
+    enemyPosition.y = 1;
 }
 
 function resetGame() {
