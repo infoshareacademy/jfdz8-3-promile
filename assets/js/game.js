@@ -8,7 +8,7 @@ var score = 0;
 var highscore = [];
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
-var enemyInterval = 750;
+var enemyInterval = 150;
 var gameRenderInterval = 16;
 var gameDuration = 30;
 var gameRender;
@@ -254,7 +254,7 @@ generateEnemy();
 
 function getDirection() {
     direction = Math.floor(Math.random()*4)+1;
-    randomDirectionMovement(direction);
+    return direction;
 }
 
 function randomDirectionMovement(direction) {
@@ -278,7 +278,7 @@ function randomDirectionMovement(direction) {
 
 function enemyCollision(element) {
     if ((inBoard(element.x) && inBoard(element.y)) && (wallCollision(element) === false)) {
-            movement();
+        movement()
         } else {
             getDirection();
         }
@@ -317,6 +317,7 @@ function startGame() {
     },randomElementInterval);
     enemyMovement = setInterval(function(){
         getDirection();
+        randomDirectionMovement(direction)
     }, enemyInterval);
     setTimer(gameDuration)
 }
