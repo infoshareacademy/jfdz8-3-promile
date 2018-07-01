@@ -5,8 +5,7 @@ var gameTimer = document.querySelector('#game-timer');
 var output = '';
 var timerInterval;
 var score = 0;
-// highscore jest tablicą - sugerowałbym nazwać to `highscores`
-var highscore = [];
+var highscores = [];
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
 var enemyInterval = 150;
@@ -338,7 +337,7 @@ function clearEvents() {
 
 function resetGame() {
     clearEvents();
-    getHighscore();
+    updateHighscores();
     score = 'SCORE';
     displayScore();
     gameTimer.innerHTML = 'TIMER'
@@ -359,12 +358,11 @@ function playerEnemyCollision(player, enemy) {
     }
 }
 
-// Ta funkcja nazywa się getHighscore, ale niczego nie zwraca.
-function getHighscore() {
-    highscore.push(score);
-    highscore.sort((a,b) => a-b);
-    highscore.map(x => x.toString());
-    localStorage.setItem('highscores', highscore);
+function updateHighscores() {
+    highscores.push(score);
+    highscores.sort((a,b) => a-b);
+    highscores.map(x => x.toString());
+    localStorage.setItem('highscores', highscores);
 }
 
 
