@@ -75,7 +75,7 @@ resetButton.addEventListener('click', resetGame);
 
 function displayBoard() {
     output = '';
-    emptyBoard(gameArea);
+    removeNodeContent(gameArea);
     createGameboard();
     for (var i = 0; i < gameBoard.length; i++) {
         output += "<div class='row'>";
@@ -178,7 +178,7 @@ function displayScore() {
     scoreBoard.innerHTML = score;
 }
 
-function emptyBoard(node) {
+function removeNodeContent(node) {
     while (node.firstChild) {
         node.removeChild(node.firstChild)
     }
