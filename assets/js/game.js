@@ -76,7 +76,7 @@ resetButton.addEventListener('click', resetGame);
 function displayBoard() {
     output = '';
     emptyBoard(gameArea);
-    createElement();
+    createGameboard();
     for (var i = 0; i < gameBoard.length; i++) {
         output += "<div class='row'>";
         for (var j = 0; j < gameBoard[i].length; j++) {
@@ -166,7 +166,7 @@ function pointCollection(playerPos, elementPos) {
     }
 }
 
-function createElement() {
+function createGameboard() {
     var newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'gameboard');
     gameArea.appendChild(newDiv)
