@@ -188,13 +188,13 @@ function setTimer(seconds) {
     var startTimer = Date.now();
     var endTimer = startTimer + seconds * 1000;
     displayTimer(seconds);
-    timerInterval = setInterval(function(){
+    timerInterval = setInterval(function () {
         var timeLeft = Math.round((endTimer - Date.now()) / 1000);
-            if (timeLeft <= 0) {
-                timeLeft = 0;
-                clearInterval(timerInterval);
-                resetGame();
-            }
+        if (timeLeft <= 0) {
+            timeLeft = 0;
+            clearInterval(timerInterval);
+            resetGame();
+        }
         displayTimer(timeLeft);
     }, 1000)
 }
@@ -220,12 +220,12 @@ function randomNums() {
 }
 
 function randomPos() {
-    var elementPosY  = randomNums()[0];
+    var elementPosY = randomNums()[0];
     var elementPosX = randomNums()[1];
     updatePos(elementPosY, elementPosX)
 }
 
-function updatePos(y ,x) {
+function updatePos(y, x) {
     skillPosition.y = y;
     skillPosition.x = x;
     if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2 || gameBoard[y][x] === 6) {
@@ -252,12 +252,12 @@ function generateEnemy() {
 generateEnemy();
 
 function getDirection() {
-    direction = Math.floor(Math.random()*4)+1;
+    direction = Math.floor(Math.random() * 4) + 1;
     return direction;
 }
 
 function randomDirectionMovement(direction) {
-    switch(direction) {
+    switch (direction) {
         case 1:
             enemyPosition.x += 1;
             break;
@@ -278,10 +278,10 @@ function randomDirectionMovement(direction) {
 function enemyCollision(element) {
     if ((inBoard(element.x) && inBoard(element.y)) && (wallCollision(element) === false)) {
         movement()
-        } else {
-            getDirection();
-        }
+    } else {
+        getDirection();
     }
+}
 
 // Random obstacle generate
 
@@ -308,13 +308,13 @@ function startGame() {
         displayBoard();
         playerEnemyCollision(playerPosition, enemyPosition);
     }, gameRenderInterval);
-    randomObstacle = setInterval(function() {
+    randomObstacle = setInterval(function () {
         obstacleCoords()
     }, randomObstacleInterval);
-    showSkillAtRandomPosition = setInterval(function() {
+    showSkillAtRandomPosition = setInterval(function () {
         randomPos();
-    },randomElementInterval);
-    enemyMovement = setInterval(function(){
+    }, randomElementInterval);
+    enemyMovement = setInterval(function () {
         getDirection();
         randomDirectionMovement(direction)
     }, enemyInterval);
@@ -341,6 +341,15 @@ function resetGame() {
     score = 'SCORE';
     displayScore();
     gameTimer.innerHTML = 'TIMER'
+
+
+    function updateHighscores() {
+        highscores.push(score);
+        highscores.sort((a, b) => a - b);
+
+        // TODO we save highscores in localStorage but we do not have a logic for loading it after page reload
+        localStorage.setItem('highscores', highscores);
+    }
 }
 
 function movement() {
@@ -358,14 +367,7 @@ function playerEnemyCollision(player, enemy) {
     }
 }
 
-// Funkcja updateHighscores jest używana tylko w jednym miejscu, więc postaram się ją umieścić bliżej punktu użycia, żeby nie błądzić po całym pliku w celu zrozumienia co się dzieje)
-function updateHighscores() {
-    highscores.push(score);
-    highscores.sort((a,b) => a-b);
 
-    // TODO we save highscores in localStorage but we do not have a logic for loading it after page reload
-    localStorage.setItem('highscores', highscores);
-}
 
 
 
