@@ -156,7 +156,7 @@ function collectElement(pos) {
 }
 
 function pointCollection(playerPos, elementPos) {
-    if (playerPos.y === elementPos.y && playerPos.x === elementPos.x) {
+    if (positionsAreEqual(playerPos, elementPos)) {
         score += 50;
         displayScore();
         randomPos();
@@ -362,9 +362,13 @@ function clearEnemy() {
 }
 
 function playerEnemyCollision(player, enemy) {
-    if (player.y === enemy.y && player.x === enemy.x) {
+    if (positionsAreEqual(player, enemy)) {
         resetGame()
     }
+}
+
+function positionsAreEqual(a, b) {
+    return a.x === b.x && a.y === b.y
 }
 
 
