@@ -365,6 +365,9 @@ function getHighscore() {
     highscore.sort((a,b) => a-b);
     highscore.map(x => x.toString());
     localStorage.setItem('highscores', highscore);
+
+    // zmienna getHighscores nie jest nigdzie używana
+    // poniższa linia wyciąga dane z localStorage ale nic z nimi dalej nie robi - pozbędę się jej
     getHighscores = localStorage.getItem('highscores').split(',').map(x => parseInt(x));
 }
 
