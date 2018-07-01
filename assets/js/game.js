@@ -359,6 +359,9 @@ function playerEnemyCollision(player, enemy) {
     }
 }
 
+// Ta funkcja nazywa się getHighscore, ale niczego nie zwraca.
+// Gdy przeanalizujemy to, co robi, okazuje się, że bazuje na zmiennych globalnych,
+// zmienia je, a później wywołuje refreshHighscores(), które z kolei robi jedną rzecz.
 function getHighscore() {
     highscore.push(score);
     highscore.sort((a,b) => a-b);
@@ -367,6 +370,7 @@ function getHighscore() {
     refreshHighscores();
 }
 
+// Ta funkcja też miesza w globalnym scope
 function refreshHighscores() {
     getHighscores = localStorage.getItem('highscores').split(',').map(x => parseInt(x));
 }
