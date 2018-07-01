@@ -358,6 +358,7 @@ function playerEnemyCollision(player, enemy) {
     }
 }
 
+// Funkcja updateHighscores jest używana tylko w jednym miejscu, więc postaram się ją umieścić bliżej punktu użycia, żeby nie błądzić po całym pliku w celu zrozumienia co się dzieje)
 function updateHighscores() {
     highscores.push(score);
     highscores.sort((a,b) => a-b);
