@@ -112,6 +112,7 @@ function displayBoard() {
     addFlexClass()
 }
 
+generateEnemy();
 displayBoard();
 
 function update(pos) {
@@ -248,8 +249,6 @@ function clearSkill() {
 function generateEnemy() {
     gameBoard[enemyPosition.y][enemyPosition.x] = 6;
 }
-
-generateEnemy();
 
 function getDirection() {
     direction = Math.floor(Math.random() * 4) + 1;
