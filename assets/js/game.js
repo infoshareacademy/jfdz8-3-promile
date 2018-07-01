@@ -46,7 +46,7 @@ var gameBoard = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
-var clearGameBoard = [...gameBoard];
+var clearGameBoard = cloneGameBoard(gameBoard);
 
 var moves = {
     ArrowRight: function (playerPosition) {
@@ -72,6 +72,10 @@ window.addEventListener('keydown', function (event) {
 
 startButton.addEventListener('click', startGame);
 resetButton.addEventListener('click', resetGame);
+
+function cloneGameBoard(board) {
+    return board.map(x => x.map(y => y))
+}
 
 function displayBoard() {
     output = '';
@@ -321,7 +325,7 @@ function startGame() {
 }
 
 function clearEvents() {
-    gameBoard = clearGameBoard;
+    gameBoard = cloneGameBoard(clearGameBoard);
     clearInterval(timerInterval);
     clearInterval(randomObstacle);
     clearInterval(showSkillAtRandomPosition);
