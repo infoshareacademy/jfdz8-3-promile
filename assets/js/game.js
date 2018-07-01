@@ -361,7 +361,7 @@ function playerEnemyCollision(player, enemy) {
 function updateHighscores() {
     highscores.push(score);
     highscores.sort((a,b) => a-b);
-    highscores.map(x => x.toString());
+    highscores.map(x => x.toString()); // ładne mapowanie, ale niczego nie zapisuje - map zwraca nową tablicę, której nie wrzucacie do żadnej zmiennej, więc wynik operacji przepada; skoro to niczego nie zmiania - usuwam
     localStorage.setItem('highscores', highscores);
 }
 
