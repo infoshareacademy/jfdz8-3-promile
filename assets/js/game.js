@@ -306,7 +306,7 @@ function startGame() {
     displayScore();
     gameRender = setInterval(function () {
         displayBoard();
-        playerEnemyCollision(playerPosition, enemyPosition);
+        handlePlayerEnemyCollision(playerPosition, enemyPosition);
     }, gameRenderInterval);
     randomObstacle = setInterval(function () {
         obstacleCoords()
@@ -361,7 +361,7 @@ function clearEnemy() {
     gameBoard = gameBoard.map(row => row.map(column => (column === 6 ? prevValue : column)));
 }
 
-function playerEnemyCollision(player, enemy) {
+function handlePlayerEnemyCollision(player, enemy) {
     if (positionsAreEqual(player, enemy)) {
         resetGame()
     }
