@@ -253,35 +253,42 @@ function generateEnemy() {
     gameBoard[enemyPosition.y][enemyPosition.x] = 6;
 }
 
-function getDirection() {
+function getRandomDirection() {
     return Math.floor(Math.random() * 4) + 1;
 }
 
-function randomDirectionMovement(direction) {
+function randomDirectionMovement() {
+    var direction = getRandomDirection();
+    var enemyPositionCandidate = {
+        x: enemyPosition.x,
+        y: enemyPosition.y
+    }
     switch (direction) {
         case 1:
-            enemyPosition.x += 1;
+            enemyPositionCandidate.x += 1;
             break;
         case 2:
-            enemyPosition.x -= 1;
+            enemyPositionCandidate.x -= 1;
             break;
         case 3:
-            enemyPosition.y += 1;
+            enemyPositionCandidate.y += 1;
             break;
         case 4:
-            enemyPosition.y -= 1;
+            enemyPositionCandidate.y -= 1;
             break;
         default:
     }
-    enemyCollision(enemyPosition);
+    if (enemyCanMoveIntoPosition(enemyPositionCandidate, gameBoard)) {
+        enemyPosition.x = enemyPositionCandidate.x
+        enemyPosition.y = enemyPositionCandidate.y
+        movement();
+    } else {
+        randomDirectionMovement();
+    }
 }
 
-function enemyCollision(element) {
-    if (positionIsWithinBoard(element, gameBoard) && (wallCollision(element) === false)) {
-        movement()
-    } else {
-        getDirection();
-    }
+function enemyCanMoveIntoPosition(position, gameBoard) {
+    return positionIsWithinBoard(position, gameBoard) && wallCollision(position) === false
 }
 
 // Random obstacle generate
@@ -316,8 +323,7 @@ function startGame() {
         randomPos();
     }, randomElementInterval);
     enemyMovement = setInterval(function () {
-        var direction = getDirection();
-        randomDirectionMovement(direction)
+        randomDirectionMovement()
     }, enemyInterval);
     setTimer(gameDuration)
 }
