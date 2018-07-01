@@ -122,15 +122,15 @@ function update(pos) {
 
 function collision(playerPosition) {
     pointCollection(playerPosition, skillPosition);
-    if ((inBoard(playerPosition.x) && inBoard(playerPosition.y))) {
+    if ((positionIsWithinBoard(playerPosition))) {
         if (wallCollision(playerPosition) === false) {
             update(playerPosition);
         }
     }
 }
 
-function inBoard(playerPosition) {
-    return playerPosition >= 1 && playerPosition <= gameBoard.length - 2
+function positionIsWithinBoard(position, board) {
+    return board[position.y] !== undefined && board[position.y][position.x] !== undefined
 }
 
 function clearPacman() {
@@ -276,7 +276,7 @@ function randomDirectionMovement(direction) {
 }
 
 function enemyCollision(element) {
-    if ((inBoard(element.x) && inBoard(element.y)) && (wallCollision(element) === false)) {
+    if ((positionIsWithinBoard(element)) && (wallCollision(element) === false)) {
         movement()
     } else {
         getDirection();
