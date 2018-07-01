@@ -122,7 +122,7 @@ function update(pos) {
 
 function collision(playerPosition) {
     pointCollection(playerPosition, skillPosition);
-    if ((positionIsWithinBoard(playerPosition))) {
+    if ((positionIsWithinBoard(playerPosition, gameBoard))) {
         if (wallCollision(playerPosition) === false) {
             update(playerPosition);
         }
@@ -276,7 +276,7 @@ function randomDirectionMovement(direction) {
 }
 
 function enemyCollision(element) {
-    if ((positionIsWithinBoard(element)) && (wallCollision(element) === false)) {
+    if (positionIsWithinBoard(element, gameBoard) && (wallCollision(element) === false)) {
         movement()
     } else {
         getDirection();
