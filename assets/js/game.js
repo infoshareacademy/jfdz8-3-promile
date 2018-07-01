@@ -15,7 +15,6 @@ var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
-var direction;
 
 var enemyPosition = {
     x: 9,
@@ -255,8 +254,7 @@ function generateEnemy() {
 }
 
 function getDirection() {
-    direction = Math.floor(Math.random() * 4) + 1;
-    return direction;
+    return Math.floor(Math.random() * 4) + 1;
 }
 
 function randomDirectionMovement(direction) {
@@ -318,7 +316,7 @@ function startGame() {
         randomPos();
     }, randomElementInterval);
     enemyMovement = setInterval(function () {
-        getDirection();
+        var direction = getDirection();
         randomDirectionMovement(direction)
     }, enemyInterval);
     setTimer(gameDuration)
@@ -357,7 +355,7 @@ function resetGame() {
 
 function movement() {
     clearEnemy();
-    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+    gameBoard[enemyPosition.y][enemyPosition.x] = 6; 
 }
 function clearEnemy() {
     var prevValue = gameBoard[enemyPosition.y][enemyPosition.x];
