@@ -15,6 +15,8 @@ var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
+var storedHighscore;
+var highscoreRanking;
 
 var enemyPosition = {
     x: 9,
@@ -116,6 +118,7 @@ function displayBoard() {
 }
 
 generateEnemy();
+getHighscoreFromLocalStorage();
 displayBoard();
 
 function update(pos) {
@@ -345,23 +348,41 @@ function clearEvents() {
 function resetGame() {
     clearEvents();
     updateHighscores();
-    score = 'SCORE';
+    score = '0';
     displayScore();
-    gameTimer.innerHTML = 'TIMER'
-
+    gameTimer.innerHTML = '0';
 
     function updateHighscores() {
-        highscores.push(score);
-        highscores.sort((a, b) => a - b);
+        if(score !== '0') {
+            highscores.push(score);
+            highscores.sort((a, b) => a - b);
+            localStorage.setItem('highscores', highscores);
+            highscoreRanking = storedHighscore.concat(highscores)
+        }
+    }
+}
 
-        // TODO we save highscores in localStorage but we do not have a logic for loading it after page reload
+function getHighscoreFromLocalStorage () {
+    if (!localStorage.getItem('highscores')) {
         localStorage.setItem('highscores', highscores);
+    } else {
+        storedHighscore =+ localStorage.getItem('highscores');
+    }
+}
+
+function addOrNot(score) {
+    if (score >= highscores[highscores.length - 1] && num !== 0) {
+        highscores[highscores.length - 1] = num;
+        highscores.sort((a,b) => b - a);
+        return highscores
+    } else {
+        return false
     }
 }
 
 function movement() {
     clearEnemy();
-    gameBoard[enemyPosition.y][enemyPosition.x] = 6; 
+    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
 }
 function clearEnemy() {
     var prevValue = gameBoard[enemyPosition.y][enemyPosition.x];
@@ -377,8 +398,4 @@ function handlePlayerEnemyCollision(player, enemy) {
 function positionsAreEqual(a, b) {
     return a.x === b.x && a.y === b.y
 }
-
-
-
-
 
