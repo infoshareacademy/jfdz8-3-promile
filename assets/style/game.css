@@ -79,15 +79,22 @@ button {
     line-height: 100px;
     font-size: 4em;
 }
-.highscore-container {
+
+#highscore-container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+h1 {
+    text-align: center;
+    margin: 50px auto;
+}
+
 #highscore-ranking {
     border: 1px solid black;
     height: 250px;
-    width: 175px;
+    width: 250px;
     line-height: 1.4;
 }
