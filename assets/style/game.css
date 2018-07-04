@@ -94,7 +94,7 @@ h1 {
 
 #highscore-ranking {
     border: 1px solid black;
-    height: 250px;
+    height: auto;
     width: 250px;
     line-height: 1.4;
 }

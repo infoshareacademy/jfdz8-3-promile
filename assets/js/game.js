@@ -5,7 +5,7 @@ var gameTimer = document.querySelector('#game-timer');
 var output = '';
 var timerInterval;
 var score = 0;
-var highscores = [];
+var highscores;
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
 var enemyInterval = 150;
@@ -15,8 +15,6 @@ var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
-var storedHighscore;
-var highscoreRanking;
 
 var enemyPosition = {
     x: 9,
@@ -118,8 +116,8 @@ function displayBoard() {
 }
 
 generateEnemy();
-getHighscoreFromLocalStorage();
 displayBoard();
+getHighscoreFromLocalStorage();
 
 function update(pos) {
     clearPacman();
@@ -348,36 +346,36 @@ function clearEvents() {
 function resetGame() {
     clearEvents();
     updateHighscores();
-    score = '0';
+    score = 0;
     displayScore();
     gameTimer.innerHTML = '0';
 
     function updateHighscores() {
-        if(score !== '0') {
-            highscores.push(score);
-            highscores.sort((a, b) => a - b);
+        if(score !== 0) {
+            let storedHighscores = localStorage.getItem('highscores');
+            storedHighscores = storedHighscores.split(",").map(Number).filter(score => score !== 0);
+            highscores = [...storedHighscores, score];
+            highscores.sort((a, b) => b - a);
             localStorage.setItem('highscores', highscores);
-            highscoreRanking = storedHighscore.concat(highscores)
+            putHighscoresInDOM(highscores)
         }
     }
 }
 
 function getHighscoreFromLocalStorage () {
     if (!localStorage.getItem('highscores')) {
-        localStorage.setItem('highscores', highscores);
-    } else {
-        storedHighscore =+ localStorage.getItem('highscores');
+        localStorage.setItem('highscores', []);
     }
 }
 
-function addOrNot(score) {
-    if (score >= highscores[highscores.length - 1] && num !== 0) {
-        highscores[highscores.length - 1] = num;
-        highscores.sort((a,b) => b - a);
-        return highscores
-    } else {
-        return false
-    }
+function putHighscoresInDOM(array) {
+    const highscoreRanking = document.querySelector('#highscore-ranking');
+    removeNodeContent(highscoreRanking);
+    array.forEach(function (element) {
+        let newScore = document.createElement('p');
+        newScore.innerHTML = element;
+        highscoreRanking.appendChild(newScore)
+    })
 }
 
 function movement() {
