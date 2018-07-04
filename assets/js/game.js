@@ -282,8 +282,8 @@ function randomDirectionMovement() {
         default:
     }
     if (enemyCanMoveIntoPosition(enemyPositionCandidate, gameBoard)) {
-        enemyPosition.x = enemyPositionCandidate.x
-        enemyPosition.y = enemyPositionCandidate.y
+        enemyPosition.x = enemyPositionCandidate.x;
+        enemyPosition.y = enemyPositionCandidate.y;
         movement();
     } else {
         randomDirectionMovement();
@@ -354,18 +354,16 @@ function resetGame() {
 
     function updateHighscores() {
         if(score !== 0) {
-            // let storedHighscores = localStorage.getItem('highscores');
-            // storedHighscores = storedHighscores.split(",").map(Number).filter(score => score !== 0);
             highscores = [...getFromLocalStorage(), score];
             highscores.sort((a, b) => b - a);
-            let highscoresToStore = validateHighscoreContent(highscores);
+            var highscoresToStore = validateHighscoreContent(highscores);
             putHighscoresInDOM(highscoresToStore)
         }
     }
 }
 
 function getFromLocalStorage() {
-    let storedHighscores = localStorage.getItem('highscores');
+    var storedHighscores = localStorage.getItem('highscores');
     storedHighscores = storedHighscores.split(",").map(Number).filter(score => score !== 0);
     return storedHighscores;
 }
@@ -373,23 +371,21 @@ function getFromLocalStorage() {
 function checkLocalStorage () {
     if (!localStorage.getItem('highscores')) {
         localStorage.setItem('highscores', highscores);
-    } else {
-
     }
 }
 
 function putHighscoresInDOM(array) {
-    const highscoreRanking = document.querySelector('#highscore-ranking');
+    var highscoreRanking = document.querySelector('#highscore-ranking');
     removeNodeContent(highscoreRanking);
     array.forEach(function (element) {
-        let newScore = document.createElement('p');
+        var newScore = document.createElement('p');
         newScore.innerHTML = element;
         highscoreRanking.appendChild(newScore)
     })
 }
 
 function validateHighscoreContent (highscoreArray) {
-    let newHighscores = [...highscoreArray];
+    var newHighscores = [...highscoreArray];
     newHighscores = newHighscores.slice(0, highscoresNumber);
     localStorage.setItem('highscores', newHighscores);
     return newHighscores
