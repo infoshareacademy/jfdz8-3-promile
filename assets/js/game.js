@@ -5,7 +5,8 @@ var gameTimer = document.querySelector('#game-timer');
 var output = '';
 var timerInterval;
 var score = 0;
-var highscores;
+var highscores = [];
+var highscoresNumber = 5;
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
 var enemyInterval = 150;
@@ -356,15 +357,15 @@ function resetGame() {
             storedHighscores = storedHighscores.split(",").map(Number).filter(score => score !== 0);
             highscores = [...storedHighscores, score];
             highscores.sort((a, b) => b - a);
-            localStorage.setItem('highscores', highscores);
-            putHighscoresInDOM(highscores)
+            let highscoresToStore = validateHighscoreContent(highscores);
+            putHighscoresInDOM(highscoresToStore)
         }
     }
 }
 
 function getHighscoreFromLocalStorage () {
     if (!localStorage.getItem('highscores')) {
-        localStorage.setItem('highscores', []);
+        localStorage.setItem('highscores', highscores);
     }
 }
 
@@ -376,6 +377,13 @@ function putHighscoresInDOM(array) {
         newScore.innerHTML = element;
         highscoreRanking.appendChild(newScore)
     })
+}
+
+function validateHighscoreContent (highscoreArray) {
+    let newHighscores = [...highscoreArray];
+    newHighscores = newHighscores.slice(0, highscoresNumber);
+    localStorage.setItem('highscores', newHighscores);
+    return newHighscores
 }
 
 function movement() {

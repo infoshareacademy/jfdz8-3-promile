@@ -93,6 +93,7 @@ h1 {
 }
 
 #highscore-ranking {
+    text-align: center;
     border: 1px solid black;
     height: auto;
     width: 250px;
