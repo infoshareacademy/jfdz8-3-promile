@@ -119,6 +119,7 @@ function displayBoard() {
 generateEnemy();
 displayBoard();
 getHighscoreFromLocalStorage();
+putHighscoresInDOM(getFromLocalStorage())
 
 function update(pos) {
     clearPacman();
@@ -353,9 +354,9 @@ function resetGame() {
 
     function updateHighscores() {
         if(score !== 0) {
-            let storedHighscores = localStorage.getItem('highscores');
-            storedHighscores = storedHighscores.split(",").map(Number).filter(score => score !== 0);
-            highscores = [...storedHighscores, score];
+            // let storedHighscores = localStorage.getItem('highscores');
+            // storedHighscores = storedHighscores.split(",").map(Number).filter(score => score !== 0);
+            highscores = [...getFromLocalStorage(), score];
             highscores.sort((a, b) => b - a);
             let highscoresToStore = validateHighscoreContent(highscores);
             putHighscoresInDOM(highscoresToStore)
@@ -363,9 +364,17 @@ function resetGame() {
     }
 }
 
+function getFromLocalStorage() {
+    let storedHighscores = localStorage.getItem('highscores');
+    storedHighscores = storedHighscores.split(",").map(Number).filter(score => score !== 0);
+    return storedHighscores;
+}
+
 function getHighscoreFromLocalStorage () {
     if (!localStorage.getItem('highscores')) {
         localStorage.setItem('highscores', highscores);
+    } else {
+
     }
 }
 
