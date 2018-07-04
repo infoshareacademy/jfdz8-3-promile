@@ -118,8 +118,8 @@ function displayBoard() {
 
 generateEnemy();
 displayBoard();
-getHighscoreFromLocalStorage();
-putHighscoresInDOM(getFromLocalStorage())
+checkLocalStorage();
+putHighscoresInDOM(getFromLocalStorage());
 
 function update(pos) {
     clearPacman();
@@ -370,7 +370,7 @@ function getFromLocalStorage() {
     return storedHighscores;
 }
 
-function getHighscoreFromLocalStorage () {
+function checkLocalStorage () {
     if (!localStorage.getItem('highscores')) {
         localStorage.setItem('highscores', highscores);
     } else {
