@@ -64,8 +64,8 @@ window.addEventListener('keydown', function (event) {
 });
 
 selectedDifficulty.addEventListener('change', function(e) {
-    clearGameBoard = cloneGameBoard(gameBoard);
     gameBoard = modes[e.target.value];
+    clearGameBoard = cloneGameBoard(gameBoard);
     displayBoard(gameBoard);
 
 });
