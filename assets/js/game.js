@@ -358,7 +358,7 @@ function startGame() {
     clearEvents();
     displayScore();
     gameRender = setInterval(function () {
-        displayBoard();
+        displayBoard(gameBoard);
         handlePlayerEnemyCollision(playerPosition, enemyPosition);
     }, gameRenderInterval);
     randomObstacle = setInterval(function () {
