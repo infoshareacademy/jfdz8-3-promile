@@ -16,6 +16,7 @@ var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
+let activePlay = false;
 
 var enemyPosition = {
     x: 9,
@@ -64,10 +65,12 @@ var moves = {
 };
 
 window.addEventListener('keydown', function (event) {
-    var newPosition = Object.assign({}, playerPosition);
-    pressedKey = event.code;
-    moves[pressedKey](newPosition);
-    collision(newPosition);
+    if (activePlay) {
+        var newPosition = Object.assign({}, playerPosition);
+        pressedKey = event.code;
+        moves[pressedKey](newPosition);
+        collision(newPosition);
+    }
 });
 
 startButton.addEventListener('click', startGame);
@@ -312,6 +315,7 @@ function insertObstacle(y, x) {
 
 function startGame() {
     resetGame();
+    activePlay = true;
     score = 0;
     clearEvents();
     displayScore();
@@ -346,6 +350,7 @@ function clearEvents() {
 }
 
 function resetGame() {
+    activePlay = false;
     clearEvents();
     updateHighscores();
     score = 0;
