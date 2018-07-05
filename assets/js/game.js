@@ -17,6 +17,7 @@ var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
 let activePlay = false;
+var selectedDifficulty
 
 var enemyPosition = {
     x: 9,
@@ -68,9 +69,9 @@ var mediumMode = [
     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
-
-var gameBoard = mediumMode;
 var hardMode = []
+
+var gameBoard;
 
 var clearGameBoard = cloneGameBoard(gameBoard);
 
@@ -340,6 +341,9 @@ function insertObstacle(y, x) {
 
 function startGame() {
     resetGame();
+    selectedDifficulty = document.getElementById('difficultyLevels').value;
+    console.log(selectedDifficulty);
+    gameBoard = selectedDifficulty;
     activePlay = true;
     score = 0;
     clearEvents();
