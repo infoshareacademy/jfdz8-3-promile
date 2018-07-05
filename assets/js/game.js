@@ -2,6 +2,9 @@ var gameArea = document.querySelector('#gameArea');
 var startButton = document.querySelector('#play-button');
 var resetButton = document.querySelector('#reset-button');
 var gameTimer = document.querySelector('#game-timer');
+var selectedDifficulty = document.getElementById('difficultyLevels');
+gameBoard = selectedDifficulty;
+
 var output = '';
 var timerInterval;
 var score = 0;
@@ -17,9 +20,6 @@ var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
 var activePlay = false;
-var selectedDifficulty = document.getElementById('difficultyLevels');
-gameBoard = selectedDifficulty;
-
 var enemyPosition = {
     x: 9,
     y: 1
@@ -36,9 +36,7 @@ var skillPosition = {
 };
 
 var gameBoard = modes.easyMode;
-
 var clearGameBoard = cloneGameBoard(gameBoard);
-
 var moves = {
     ArrowRight: function (playerPosition) {
         playerPosition.x += 1
@@ -67,8 +65,8 @@ selectedDifficulty.addEventListener('change', function(e) {
     gameBoard = modes[e.target.value];
     clearGameBoard = cloneGameBoard(gameBoard);
     displayBoard(gameBoard);
-
 });
+
 startButton.addEventListener('click', startGame);
 resetButton.addEventListener('click', resetGame);
 
@@ -115,8 +113,8 @@ function displayBoard(mode) {
     addFlexClass()
 }
 
-generateEnemy();
 displayBoard(modes.easyMode);
+generateEnemy();
 checkLocalStorage();
 putHighscoresInDOM(getFromLocalStorage());
 
@@ -410,4 +408,3 @@ function handlePlayerEnemyCollision(player, enemy) {
 function positionsAreEqual(a, b) {
     return a.x === b.x && a.y === b.y
 }
-
