@@ -2,15 +2,24 @@ var gameArea = document.querySelector('#gameArea');
 var startButton = document.querySelector('#play-button');
 var resetButton = document.querySelector('#reset-button');
 var gameTimer = document.querySelector('#game-timer');
+var selectedDifficulty = document.getElementById('difficultyLevels');
+gameBoard = selectedDifficulty;
+
 var output = '';
 var timerInterval;
 var score = 0;
+var highscores = [];
+var highscoresNumber = 5;
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
-var gameRenderInterval = 250;
+var enemyInterval = 250;
+var gameRenderInterval = 16;
+var gameDuration = 30;
 var gameRender;
 var randomObstacle;
 var showSkillAtRandomPosition;
+var enemyMovement;
+var activePlay = false;
 
 var playerPosition = {
     x: 1,
@@ -22,22 +31,14 @@ var skillPosition = {
     y: 9
 };
 
-var gameBoard = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
-    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
-    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
-    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
-    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-];
+var gameBoard = modes.easyMode;
 
-var clearGameBoard = [...gameBoard];
+var enemyPosition = {
+    x: gameBoard.length -2,
+    y: gameBoard.length -2
+};
 
+var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
     ArrowRight: function (playerPosition) {
         playerPosition.x += 1
@@ -54,23 +55,44 @@ var moves = {
 };
 
 window.addEventListener('keydown', function (event) {
-    var newPosition = Object.assign({}, playerPosition);
-    pressedKey = event.code;
-    moves[pressedKey](newPosition);
-    collision(newPosition);
+    if (event.code === 'ArrowDown') {
+        event.preventDefault()
+        return false;
+    } else {
+        return true
+    }
+})
+
+window.addEventListener('keydown', function (event) {
+    if (activePlay) {
+        var newPosition = Object.assign({}, playerPosition);
+        pressedKey = event.code;
+        moves[pressedKey](newPosition);
+        collision(newPosition);
+    }
+});
+
+selectedDifficulty.addEventListener('change', function(e) {
+    gameBoard = modes[e.target.value];
+    clearGameBoard = cloneGameBoard(gameBoard);
+    displayBoard(gameBoard);
 });
 
 startButton.addEventListener('click', startGame);
 resetButton.addEventListener('click', resetGame);
 
-function displayBoard() {
+function cloneGameBoard(board) {
+    return board.map(x => x.map(y => y))
+}
+
+function displayBoard(mode) {
     output = '';
-    emptyBoard(gameArea);
-    createElement();
-    for (var i = 0; i < gameBoard.length; i++) {
+    removeNodeContent(gameArea);
+    createGameboard();
+    for (var i = 0; i < mode.length; i++) {
         output += "<div class='row'>";
-        for (var j = 0; j < gameBoard[i].length; j++) {
-            switch (gameBoard[i][j]) {
+        for (var j = 0; j < mode[i].length; j++) {
+            switch (mode[i][j]) {
                 case 0:
                     output += "<div class='wall'></div>";
                     break;
@@ -88,6 +110,9 @@ function displayBoard() {
                     break;
                 case 5:
                     output += "<div class='ghost'></div>";
+                    break;
+                case 6:
+                    output += "<div class='enemy'></div>";
                 default:
                     break;
             }
@@ -99,7 +124,10 @@ function displayBoard() {
     addFlexClass()
 }
 
-displayBoard();
+displayBoard(modes.easyMode);
+generateEnemy();
+checkLocalStorage();
+putHighscoresInDOM(getFromLocalStorage());
 
 function update(pos) {
     clearPacman();
@@ -109,15 +137,15 @@ function update(pos) {
 
 function collision(playerPosition) {
     pointCollection(playerPosition, skillPosition);
-    if ((inBoard(playerPosition.x) && inBoard(playerPosition.y))) {
+    if ((positionIsWithinBoard(playerPosition, gameBoard))) {
         if (wallCollision(playerPosition) === false) {
             update(playerPosition);
         }
     }
 }
 
-function inBoard(playerPosition) {
-    return playerPosition >= 1 && playerPosition <= gameBoard.length - 2
+function positionIsWithinBoard(position, board) {
+    return board[position.y] !== undefined && board[position.y][position.x] !== undefined
 }
 
 function clearPacman() {
@@ -143,7 +171,7 @@ function collectElement(pos) {
 }
 
 function pointCollection(playerPos, elementPos) {
-    if (playerPos.y === elementPos.y && playerPos.x === elementPos.x) {
+    if (positionsAreEqual(playerPos, elementPos)) {
         score += 50;
         displayScore();
         randomPos();
@@ -153,7 +181,7 @@ function pointCollection(playerPos, elementPos) {
     }
 }
 
-function createElement() {
+function createGameboard() {
     var newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'gameboard');
     gameArea.appendChild(newDiv)
@@ -165,7 +193,7 @@ function displayScore() {
     scoreBoard.innerHTML = score;
 }
 
-function emptyBoard(node) {
+function removeNodeContent(node) {
     while (node.firstChild) {
         node.removeChild(node.firstChild)
     }
@@ -175,12 +203,13 @@ function setTimer(seconds) {
     var startTimer = Date.now();
     var endTimer = startTimer + seconds * 1000;
     displayTimer(seconds);
-    timerInterval = setInterval(function(){
+    timerInterval = setInterval(function () {
         var timeLeft = Math.round((endTimer - Date.now()) / 1000);
-            if (timeLeft <= 0) {
-                timeLeft=0;
-                clearInterval(timerInterval);
-            }
+        if (timeLeft <= 0) {
+            timeLeft = 0;
+            clearInterval(timerInterval);
+            resetGame();
+        }
         displayTimer(timeLeft);
     }, 1000)
 }
@@ -206,15 +235,15 @@ function randomNums() {
 }
 
 function randomPos() {
-    var elementPosY  = randomNums()[0];
+    var elementPosY = randomNums()[0];
     var elementPosX = randomNums()[1];
     updatePos(elementPosY, elementPosX)
 }
 
-function updatePos(y ,x) {
+function updatePos(y, x) {
     skillPosition.y = y;
     skillPosition.x = x;
-    if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2) {
+    if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2 || gameBoard[y][x] === 6) {
         randomPos()
     } else {
         clearSkill()
@@ -229,6 +258,48 @@ function clearSkill() {
     var prevValue = gameBoard[skillPosition.y][skillPosition.x];
     gameBoard = gameBoard.map(row => row.map(column => (column === 5 ? prevValue : column)));
     insertSkill()
+}
+
+function generateEnemy() {
+    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+}
+
+function getRandomDirection() {
+    return Math.floor(Math.random() * 4) + 1;
+}
+
+function randomDirectionMovement() {
+    var direction = getRandomDirection();
+    var enemyPositionCandidate = {
+        x: enemyPosition.x,
+        y: enemyPosition.y
+    }
+    switch (direction) {
+        case 1:
+            enemyPositionCandidate.x += 1;
+            break;
+        case 2:
+            enemyPositionCandidate.x -= 1;
+            break;
+        case 3:
+            enemyPositionCandidate.y += 1;
+            break;
+        case 4:
+            enemyPositionCandidate.y -= 1;
+            break;
+        default:
+    }
+    if (enemyCanMoveIntoPosition(enemyPositionCandidate, gameBoard)) {
+        enemyPosition.x = enemyPositionCandidate.x;
+        enemyPosition.y = enemyPositionCandidate.y;
+        movement();
+    } else {
+        randomDirectionMovement();
+    }
+}
+
+function enemyCanMoveIntoPosition(position, gameBoard) {
+    return positionIsWithinBoard(position, gameBoard) && wallCollision(position) === false
 }
 
 // Random obstacle generate
@@ -247,42 +318,104 @@ function insertObstacle(y, x) {
     gameBoard[y][x] = 0;
 }
 
-
 function startGame() {
+    resetGame();
+    activePlay = true;
     score = 0;
     clearEvents();
     displayScore();
     gameRender = setInterval(function () {
-        displayBoard();
+        displayBoard(gameBoard);
+        handlePlayerEnemyCollision(playerPosition, enemyPosition);
     }, gameRenderInterval);
-    randomObstacle = setInterval(function() {
+    randomObstacle = setInterval(function () {
         obstacleCoords()
     }, randomObstacleInterval);
-    showSkillAtRandomPosition = setInterval(function() {
+    showSkillAtRandomPosition = setInterval(function () {
         randomPos();
-    },randomElementInterval);
-    setTimer(60)
+    }, randomElementInterval);
+    enemyMovement = setInterval(function () {
+        randomDirectionMovement()
+    }, enemyInterval);
+    setTimer(gameDuration)
 }
 
 function clearEvents() {
-    gameBoard = clearGameBoard;
+    gameBoard = cloneGameBoard(clearGameBoard);
     clearInterval(timerInterval);
     clearInterval(randomObstacle);
     clearInterval(showSkillAtRandomPosition);
+    clearInterval(enemyMovement);
     playerPosition.x = 1;
     playerPosition.y = 1;
     skillPosition.x = 9;
     skillPosition.y = 9;
+    enemyPosition.x = gameBoard.length -2;
+    enemyPosition.y = gameBoard.length -2;
 }
-
 
 function resetGame() {
+    activePlay = false;
     clearEvents();
-    score = 'SCORE';
+    updateHighscores();
+    score = 0;
     displayScore();
-    gameTimer.innerHTML = 'TIMER'
+    gameTimer.innerHTML = '0';
+
+    function updateHighscores() {
+        if(score !== 0) {
+            highscores = [...getFromLocalStorage(), score];
+            highscores.sort((a, b) => b - a);
+            var highscoresToStore = validateHighscoreContent(highscores);
+            putHighscoresInDOM(highscoresToStore)
+        }
+    }
 }
 
+function getFromLocalStorage() {
+    var storedHighscores = localStorage.getItem('highscores');
+    storedHighscores = storedHighscores.split(",").map(Number).filter(score => score !== 0);
+    return storedHighscores;
+}
 
+function checkLocalStorage () {
+    if (!localStorage.getItem('highscores')) {
+        localStorage.setItem('highscores', highscores);
+    }
+}
 
+function putHighscoresInDOM(array) {
+    var highscoreRanking = document.querySelector('#highscore-ranking');
+    removeNodeContent(highscoreRanking);
+    array.forEach(function (element) {
+        var newScore = document.createElement('p');
+        newScore.innerHTML = element;
+        highscoreRanking.appendChild(newScore)
+    })
+}
 
+function validateHighscoreContent (highscoreArray) {
+    var newHighscores = [...highscoreArray];
+    newHighscores = newHighscores.slice(0, highscoresNumber);
+    localStorage.setItem('highscores', newHighscores);
+    return newHighscores
+}
+
+function movement() {
+    clearEnemy();
+    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+}
+function clearEnemy() {
+    var prevValue = gameBoard[enemyPosition.y][enemyPosition.x];
+    gameBoard = gameBoard.map(row => row.map(column => (column === 6 ? prevValue : column)));
+}
+
+function handlePlayerEnemyCollision(player, enemy) {
+    if (positionsAreEqual(player, enemy)) {
+        resetGame()
+    }
+}
+
+function positionsAreEqual(a, b) {
+    return a.x === b.x && a.y === b.y
+}
