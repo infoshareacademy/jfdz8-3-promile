@@ -6,31 +6,46 @@
     <link rel="stylesheet" href="assets/style/game.css">
 </head>
 <body>
-<div id="gameArea"></div>
-<div id="controlPanel">
-    <div class="control-item" id="scoreboard">SCORE</div>
-    <div class="control-item" id="control-buttons">
-
-        <button id="play-button" type="button">PLAY</button>
-        <button id="reset-button" type="button">RESET</button>
-
+<div class="startScreen">
+    <div class="logo__container">
+        <img src="assets/images/LOGO1.png" alt="logo" class="logo__image">
     </div>
-    <div class="control-item" id="game-timer">TIMER</div>
-</div>
-<div id='difficulty'>
-    <select id="difficultyLevels">
-        <option value="easyMode">Easy</option>
-        <option value="mediumMode">Medium</option>
-        <option value="hardMode">Hard</option>
-    </select>
-</div>
-<h1>Ranking:</h1>
-<div id="highscore-container">
-
-    <div id="highscore-ranking">
-
+    <div class="header__container">
+        <h1>pacman like game</h1>
+    </div>
+    <div class="buttons__container">
+        <span class="play"><p>play</p></span>
+        <span class="intructions"><p>instructions</p></span>
     </div>
 </div>
+<div class="gameContainer">
+    <div id="gameArea"></div>
+    <div id="controlPanel">
+        <div class="control-item" id="scoreboard">SCORE</div>
+        <div class="control-item" id="control-buttons">
+
+            <button id="play-button" type="button">PLAY</button>
+            <button id="reset-button" type="button">RESET</button>
+
+        </div>
+        <div class="control-item" id="game-timer">TIMER</div>
+    </div>
+    <div id='difficulty'>
+        <select id="difficultyLevels">
+            <option value="easyMode">Easy</option>
+            <option value="mediumMode">Medium</option>
+            <option value="hardMode">Hard</option>
+        </select>
+    </div>
+    <h1>Ranking:</h1>
+    <div id="highscore-container">
+
+        <div id="highscore-ranking">
+
+        </div>
+    </div>
+</div>
+<script src="assets/js/gameLayout.js"></script>
 <script src="assets/js/gameboards.js"></script>
 <script src="assets/js/game.js"></script>
 </body>

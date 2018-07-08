@@ -9,6 +9,59 @@
     border: 5px solid #379685;
 }
 
+.startScreen{
+    height: 600px;
+    width: 600px;
+    background: #5EA3FF;
+    margin: 0 auto;
+}
+
+.in-view {
+    display: none;
+}
+
+.logo__image{
+    height: 200px;
+    width: 200px;
+    margin: 50px 200px;
+}
+
+.play, .intructions{
+    width: 200px;
+    height: 50px;
+    color: #fefefe;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #fefefe;
+    border-radius: 20px;
+}
+
+.intructions:hover{
+    background: #fefefe;
+    color: #5EA3FF;
+    border: 1px solid #61DBFB;
+}
+
+.play:hover{
+    background: #fefefe;
+    color: #5EA3FF;
+    border: 1px solid #61DBFB;
+}
+
+.buttons__container{
+    display: flex;
+}
+
+.header__container h1 {
+    text-transform: uppercase;
+    color: #f3f1f8;
+}
+
+.gameContainer{
+    display: none;
+}
+
 .control-item {
     flex: 1;
     background: #bed2a2;
