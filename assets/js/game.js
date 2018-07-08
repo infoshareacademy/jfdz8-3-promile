@@ -20,10 +20,6 @@ var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
 var activePlay = false;
-var enemyPosition = {
-    x: 9,
-    y: 1
-};
 
 var playerPosition = {
     x: 1,
@@ -36,6 +32,12 @@ var skillPosition = {
 };
 
 var gameBoard = modes.easyMode;
+
+var enemyPosition = {
+    x: gameBoard.length -2,
+    y: gameBoard.length -2
+};
+
 var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
     ArrowRight: function (playerPosition) {
@@ -339,8 +341,8 @@ function clearEvents() {
     playerPosition.y = 1;
     skillPosition.x = 9;
     skillPosition.y = 9;
-    enemyPosition.x = 9;
-    enemyPosition.y = 1;
+    enemyPosition.x = gameBoard.length -2;
+    enemyPosition.y = gameBoard.length -2;
 }
 
 function resetGame() {
