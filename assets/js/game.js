@@ -12,7 +12,7 @@ var highscores = [];
 var highscoresNumber = 5;
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
-var enemyInterval = 150;
+var enemyInterval = 250;
 var gameRenderInterval = 16;
 var gameDuration = 30;
 var gameRender;
