@@ -172,12 +172,26 @@ function collectElement(pos) {
 
 function pointCollection(playerPos, elementPos) {
     if (positionsAreEqual(playerPos, elementPos)) {
-        score += 50;
+        getCollectiblePointAmount ()
         displayScore();
         randomPos();
     } else if (gameBoard[playerPos.y][playerPos.x] === 1) {
         score += 1;
         displayScore()
+    }
+}
+
+function getCollectiblePointAmount () {
+    var decidePointAmount = randomizeCollectibleElement();
+    if (decidePointAmount === 0) {
+        score += 10
+        console.log('gimme10')
+    } else if (decidePointAmount === 1) {
+        score += 25
+        console.log('gimme25')
+    } else {
+        score += 50
+        console.log('gimme50')
     }
 }
 
