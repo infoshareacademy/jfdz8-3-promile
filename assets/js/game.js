@@ -55,6 +55,15 @@ var moves = {
 };
 
 window.addEventListener('keydown', function (event) {
+    if (event.code === 'ArrowDown') {
+        event.preventDefault()
+        return false;
+    } else {
+        return true
+    }
+})
+
+window.addEventListener('keydown', function (event) {
     if (activePlay) {
         var newPosition = Object.assign({}, playerPosition);
         pressedKey = event.code;
