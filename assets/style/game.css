@@ -27,9 +27,14 @@ button {
     flex: 1;
 }
 
+#gameArea {
+    width: 640px;
+    height: 480px;
+}
+
 .wall {
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
 }
 
 .row {
@@ -39,7 +44,6 @@ button {
 
 .wall {
     background: gray;
-    border: 1px solid red;
 }
 
 .coin {
