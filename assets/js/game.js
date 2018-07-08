@@ -264,12 +264,12 @@ function generateEnemy() {
     gameBoard[enemyPosition.y][enemyPosition.x] = 6;
 }
 
-function getRandomDirection() {
-    return Math.floor(Math.random() * 4) + 1;
+function getRandomNumber(multiplier) {
+    return Math.floor(Math.random() * multiplier) + 1;
 }
 
 function randomDirectionMovement() {
-    var direction = getRandomDirection();
+    var direction = getRandomNumber(4);
     var enemyPositionCandidate = {
         x: enemyPosition.x,
         y: enemyPosition.y
@@ -332,6 +332,7 @@ function startGame() {
         obstacleCoords()
     }, randomObstacleInterval);
     showSkillAtRandomPosition = setInterval(function () {
+        displayRandomizedCollectible ()
         randomPos();
     }, randomElementInterval);
     enemyMovement = setInterval(function () {
@@ -418,4 +419,30 @@ function handlePlayerEnemyCollision(player, enemy) {
 
 function positionsAreEqual(a, b) {
     return a.x === b.x && a.y === b.y
+}
+
+function randomizeCollectibleElement () {
+    if (getRandomNumber(100) >= 50) {
+        return 0;
+    } else if (getRandomNumber(100) <= 50 && getRandomNumber(100) >=10) {
+        return 1;
+    } else {
+        return 2;
+    }
+}
+
+function displayRandomizedCollectible () {
+    var randomCollectible = randomizeCollectibleElement();
+    switch (randomCollectible) {
+        case 0:
+            console.log('ha')
+            break;
+        case 1:
+            console.log('haha')
+            break;
+        case 2:
+            console.log('hahaha')
+            break;
+        default:
+    }
 }
