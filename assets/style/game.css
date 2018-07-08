@@ -62,6 +62,10 @@ button {
     background: #ff2cf5;
 }
 
+.enemy {
+    background: cyan;
+}
+
 #game-timer {
     font-weight: bold;
     background: #4f6b86;
@@ -74,4 +78,24 @@ button {
     font-weight: bold;
     line-height: 100px;
     font-size: 4em;
+}
+
+#highscore-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#highscore-ranking {
+    text-align: center;
+    border: 1px solid black;
+    height: auto;
+    width: 250px;
+    line-height: 1.4;
 }
