@@ -62,10 +62,17 @@ button {
     background: white;
 }
 
-.ghost {
-    background: #ff2cf5;
+.ghostPinky {
+    background: pink;
 }
 
+.ghostBluey {
+    background: blue;
+}
+
+.ghostGreeny {
+    background: green;
+}
 .enemy {
     background: cyan;
 }
