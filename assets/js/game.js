@@ -109,10 +109,17 @@ function displayBoard(mode) {
                     output += "<div class='collected'></div>";
                     break;
                 case 5:
-                    output += "<div class='ghost'></div>";
+                    output += "<div class='ghostPinky'></div>";
                     break;
                 case 6:
                     output += "<div class='enemy'></div>";
+                    break;
+                case 7:
+                    output += "<div class='ghostGreeny'></div>"
+                    break;
+                case 8:
+                    output += "<div class='ghostBluey'></div>";
+                    break;
                 default:
                     break;
             }
@@ -265,12 +272,19 @@ function updatePos(y, x) {
 }
 
 function insertSkill() {
-    gameBoard[skillPosition.y][skillPosition.x] = 5;
+    var randomlyChosenElement = displayRandomizedCollectible ()
+    gameBoard[skillPosition.y][skillPosition.x] = randomlyChosenElement;
 }
 
 function clearSkill() {
     var prevValue = gameBoard[skillPosition.y][skillPosition.x];
-    gameBoard = gameBoard.map(row => row.map(column => (column === 5 ? prevValue : column)));
+    gameBoard = gameBoard.map(row => row.map(function (column) {
+        if (column === 5 || column === 7 || column === 8) {
+            return prevValue
+        } else {
+            return column
+        }
+}))
     insertSkill()
 }
 
@@ -346,7 +360,6 @@ function startGame() {
         obstacleCoords()
     }, randomObstacleInterval);
     showSkillAtRandomPosition = setInterval(function () {
-        displayRandomizedCollectible ()
         randomPos();
     }, randomElementInterval);
     enemyMovement = setInterval(function () {
@@ -446,17 +459,15 @@ function randomizeCollectibleElement () {
 }
 
 function displayRandomizedCollectible () {
+
     var randomCollectible = randomizeCollectibleElement();
     switch (randomCollectible) {
         case 0:
-            console.log('ha')
-            break;
+            return 5;
         case 1:
-            console.log('haha')
-            break;
+            return 7;
         case 2:
-            console.log('hahaha')
-            break;
+            return 8;
         default:
     }
 }
