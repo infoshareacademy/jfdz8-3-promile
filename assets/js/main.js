@@ -6,7 +6,6 @@ $(function () {
     var $txt_form = $('.form__hidden');
     var $show_input = $(".show_inputs");
     var $form_inputs = $(".form__inputs");
-
     var body = document.body;
     var anchors = document.querySelectorAll('[id^="anchor"]');
     var naviElement = document.querySelectorAll('li.hover');
@@ -78,6 +77,7 @@ $(function () {
     $(document).on('click', 'a[href^="#"]', scrollPage);
     $hamburger.on('click', toggleMenu);
     $show_input.on('click', showInputs);
+
     window.addEventListener('scroll', navHighlight);
 
     /* Map Script */
