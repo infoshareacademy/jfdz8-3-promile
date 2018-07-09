@@ -189,16 +189,15 @@ function pointCollection(playerPos, elementPos) {
 }
 
 function getCollectiblePointAmount () {
-    var decidePointAmount = randomizeCollectibleElement();
-    if (decidePointAmount === 0) {
-        score += 10
+    if (gameBoard[skillPosition.y][skillPosition.x] === 5) {
+        score += 10;
         console.log('gimme10')
-    } else if (decidePointAmount === 1) {
-        score += 25
-        console.log('gimme25')
-    } else {
-        score += 50
+    } else if (gameBoard[skillPosition.y][skillPosition.x] === 7) {
+        score += 50;
         console.log('gimme50')
+    } else {
+        score += 100;
+        console.log('gimme100')
     }
 }
 
@@ -459,7 +458,6 @@ function randomizeCollectibleElement () {
 }
 
 function displayRandomizedCollectible () {
-
     var randomCollectible = randomizeCollectibleElement();
     switch (randomCollectible) {
         case 0:
