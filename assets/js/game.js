@@ -72,6 +72,7 @@ window.addEventListener('keydown', function (event) {
 });
 
 selectedDifficulty.addEventListener('change', function(e) {
+    clearEvents();
     gameBoard = modes[e.target.value];
     clearGameBoard = cloneGameBoard(gameBoard);
     displayBoard(gameBoard);
@@ -178,6 +179,7 @@ function collectElement(pos) {
 
 function pointCollection(playerPos, elementPos) {
     if (positionsAreEqual(playerPos, elementPos)) {
+        clearInterval(randomElementInterval);
         getCollectiblePointAmount ();
         displayScore();
         randomPos();
@@ -189,10 +191,16 @@ function pointCollection(playerPos, elementPos) {
 
 function getCollectiblePointAmount () {
     if (gameBoard[skillPosition.y][skillPosition.x] === 5) {
+        clearInterval(showSkillAtRandomPosition);
+        setSkillInterval();
         score += 10;
     } else if (gameBoard[skillPosition.y][skillPosition.x] === 7) {
+        clearInterval(showSkillAtRandomPosition);
+        setSkillInterval();
         score += 50;
     } else {
+        clearInterval(showSkillAtRandomPosition);
+        setSkillInterval();
         score += 100;
     }
 }
@@ -267,7 +275,7 @@ function updatePos(y, x) {
 }
 
 function insertSkill() {
-    var randomlyChosenElement = displayRandomizedCollectible ()
+    var randomlyChosenElement = displayRandomizedCollectible ();
     gameBoard[skillPosition.y][skillPosition.x] = randomlyChosenElement;
 }
 
@@ -279,7 +287,7 @@ function clearSkill() {
         } else {
             return column
         }
-}))
+}));
     insertSkill()
 }
 
@@ -296,7 +304,7 @@ function randomDirectionMovement() {
     var enemyPositionCandidate = {
         x: enemyPosition.x,
         y: enemyPosition.y
-    }
+    };
     switch (direction) {
         case 1:
             enemyPositionCandidate.x += 1;
@@ -354,9 +362,7 @@ function startGame() {
     randomObstacle = setInterval(function () {
         obstacleCoords()
     }, randomObstacleInterval);
-    showSkillAtRandomPosition = setInterval(function () {
-        randomPos();
-    }, randomElementInterval);
+    setSkillInterval();
     enemyMovement = setInterval(function () {
         randomDirectionMovement()
     }, enemyInterval);
@@ -465,3 +471,10 @@ function displayRandomizedCollectible () {
         default:
     }
 }
+
+function setSkillInterval() {
+    showSkillAtRandomPosition = setInterval(function () {
+        randomPos();
+    }, randomElementInterval);
+}
+
