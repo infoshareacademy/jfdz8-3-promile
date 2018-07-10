@@ -4,7 +4,6 @@ var resetButton = document.querySelector('#reset-button');
 var gameTimer = document.querySelector('#game-timer');
 var selectedDifficulty = document.getElementById('difficultyLevels');
 gameBoard = selectedDifficulty;
-
 var output = '';
 var timerInterval;
 var score = 0;
@@ -31,12 +30,12 @@ var skillPosition = {
     y: 9
 };
 
-var gameBoard = modes.easyMode;
-
 var enemyPosition = {
     x: gameBoard.length -2,
     y: gameBoard.length -2
 };
+
+var gameBoard = modes.easyMode;
 
 var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
@@ -56,12 +55,12 @@ var moves = {
 
 window.addEventListener('keydown', function (event) {
     if (event.code === 'ArrowDown') {
-        event.preventDefault()
+        event.preventDefault();
         return false;
     } else {
         return true
     }
-})
+});
 
 window.addEventListener('keydown', function (event) {
     if (activePlay) {
@@ -115,7 +114,7 @@ function displayBoard(mode) {
                     output += "<div class='enemy'></div>";
                     break;
                 case 7:
-                    output += "<div class='ghostGreeny'></div>"
+                    output += "<div class='ghostGreeny'></div>";
                     break;
                 case 8:
                     output += "<div class='ghostBluey'></div>";
@@ -179,7 +178,7 @@ function collectElement(pos) {
 
 function pointCollection(playerPos, elementPos) {
     if (positionsAreEqual(playerPos, elementPos)) {
-        getCollectiblePointAmount ()
+        getCollectiblePointAmount ();
         displayScore();
         randomPos();
     } else if (gameBoard[playerPos.y][playerPos.x] === 1) {
@@ -191,13 +190,10 @@ function pointCollection(playerPos, elementPos) {
 function getCollectiblePointAmount () {
     if (gameBoard[skillPosition.y][skillPosition.x] === 5) {
         score += 10;
-        console.log('gimme10')
     } else if (gameBoard[skillPosition.y][skillPosition.x] === 7) {
         score += 50;
-        console.log('gimme50')
     } else {
         score += 100;
-        console.log('gimme100')
     }
 }
 
