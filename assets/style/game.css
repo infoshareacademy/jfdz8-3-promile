@@ -2,18 +2,7 @@
     box-sizing: border-box;
 }
 
-#controlPanel {
-    margin-top: 50px;
-    text-align: center;
-    display: flex;
-    border: 5px solid #379685;
-}
 
-.control-item {
-    flex: 1;
-    background: #bed2a2;
-    min-height: 100px;
-}
 
 button {
     margin: 5%;
@@ -28,8 +17,67 @@ button {
 }
 
 #gameArea {
+    margin: 0 auto;
     width: 640px;
     height: 480px;
+}
+
+#controlPanel {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    border: 5px solid #379685;
+}
+
+#scoreboard {
+    background: #a6b9cd;
+    font-weight: bold;
+    line-height: 100px;
+    font-size: 4em;
+}
+
+#game-timer {
+    font-weight: bold;
+    background: #4f6b86;
+    line-height: 100px;
+    font-size: 4em;
+}
+
+.control-item {
+    flex: 1;
+    background: #bed2a2;
+    min-height: 100px;
+}
+
+#difficulty {
+    text-align: center;
+}
+
+#difficultyLevels {
+    display: inline-block;
+    width: 200px;
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+#highscore-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#highscore-ranking {
+    text-align: center;
+    border: 1px solid black;
+    height: auto;
+    width: 250px;
+    line-height: 1.4;
 }
 
 .wall {
@@ -75,38 +123,4 @@ button {
 }
 .enemy {
     background: cyan;
-}
-
-#game-timer {
-    font-weight: bold;
-    background: #4f6b86;
-    line-height: 100px;
-    font-size: 4em;
-}
-
-#scoreboard {
-    background: #a6b9cd;
-    font-weight: bold;
-    line-height: 100px;
-    font-size: 4em;
-}
-
-#highscore-container {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h1 {
-    text-align: center;
-    margin: 50px auto;
-}
-
-#highscore-ranking {
-    text-align: center;
-    border: 1px solid black;
-    height: auto;
-    width: 250px;
-    line-height: 1.4;
 }
