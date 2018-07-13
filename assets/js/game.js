@@ -4,7 +4,6 @@ var resetButton = document.querySelector('#reset-button');
 var gameTimer = document.querySelector('#game-timer');
 var selectedDifficulty = document.getElementById('difficultyLevels');
 gameBoard = selectedDifficulty;
-
 var output = '';
 var timerInterval;
 var score = 0;
@@ -12,7 +11,7 @@ var highscores = [];
 var highscoresNumber = 5;
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
-var enemyInterval = 150;
+var enemyInterval = 250;
 var gameRenderInterval = 16;
 var gameDuration = 30;
 var gameRender;
@@ -20,10 +19,6 @@ var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
 var activePlay = false;
-var enemyPosition = {
-    x: 9,
-    y: 1
-};
 
 var playerPosition = {
     x: 1,
@@ -35,7 +30,13 @@ var skillPosition = {
     y: 9
 };
 
+var enemyPosition = {
+    x: gameBoard.length -2,
+    y: gameBoard.length -2
+};
+
 var gameBoard = modes.easyMode;
+
 var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
     ArrowRight: function (playerPosition) {
@@ -53,6 +54,15 @@ var moves = {
 };
 
 window.addEventListener('keydown', function (event) {
+    if (event.code === 'ArrowDown') {
+        event.preventDefault();
+        return false;
+    } else {
+        return true
+    }
+});
+
+window.addEventListener('keydown', function (event) {
     if (activePlay) {
         var newPosition = Object.assign({}, playerPosition);
         pressedKey = event.code;
@@ -62,6 +72,7 @@ window.addEventListener('keydown', function (event) {
 });
 
 selectedDifficulty.addEventListener('change', function(e) {
+    clearEvents();
     gameBoard = modes[e.target.value];
     clearGameBoard = cloneGameBoard(gameBoard);
     displayBoard(gameBoard);
@@ -98,10 +109,17 @@ function displayBoard(mode) {
                     output += "<div class='collected'></div>";
                     break;
                 case 5:
-                    output += "<div class='ghost'></div>";
+                    output += "<div class='ghostPinky'></div>";
                     break;
                 case 6:
                     output += "<div class='enemy'></div>";
+                    break;
+                case 7:
+                    output += "<div class='ghostGreeny'></div>";
+                    break;
+                case 8:
+                    output += "<div class='ghostBluey'></div>";
+                    break;
                 default:
                     break;
             }
@@ -161,12 +179,29 @@ function collectElement(pos) {
 
 function pointCollection(playerPos, elementPos) {
     if (positionsAreEqual(playerPos, elementPos)) {
-        score += 50;
+        clearInterval(randomElementInterval);
+        getCollectiblePointAmount ();
         displayScore();
         randomPos();
     } else if (gameBoard[playerPos.y][playerPos.x] === 1) {
         score += 1;
         displayScore()
+    }
+}
+
+function getCollectiblePointAmount () {
+    if (gameBoard[skillPosition.y][skillPosition.x] === 5) {
+        clearInterval(showSkillAtRandomPosition);
+        setSkillInterval();
+        score += 10;
+    } else if (gameBoard[skillPosition.y][skillPosition.x] === 7) {
+        clearInterval(showSkillAtRandomPosition);
+        setSkillInterval();
+        score += 50;
+    } else {
+        clearInterval(showSkillAtRandomPosition);
+        setSkillInterval();
+        score += 100;
     }
 }
 
@@ -240,12 +275,19 @@ function updatePos(y, x) {
 }
 
 function insertSkill() {
-    gameBoard[skillPosition.y][skillPosition.x] = 5;
+    var randomlyChosenElement = displayRandomizedCollectible ();
+    gameBoard[skillPosition.y][skillPosition.x] = randomlyChosenElement;
 }
 
 function clearSkill() {
     var prevValue = gameBoard[skillPosition.y][skillPosition.x];
-    gameBoard = gameBoard.map(row => row.map(column => (column === 5 ? prevValue : column)));
+    gameBoard = gameBoard.map(row => row.map(function (column) {
+        if (column === 5 || column === 7 || column === 8) {
+            return prevValue
+        } else {
+            return column
+        }
+}));
     insertSkill()
 }
 
@@ -253,16 +295,16 @@ function generateEnemy() {
     gameBoard[enemyPosition.y][enemyPosition.x] = 6;
 }
 
-function getRandomDirection() {
-    return Math.floor(Math.random() * 4) + 1;
+function getRandomNumber(multiplier) {
+    return Math.floor(Math.random() * multiplier) + 1;
 }
 
 function randomDirectionMovement() {
-    var direction = getRandomDirection();
+    var direction = getRandomNumber(4);
     var enemyPositionCandidate = {
         x: enemyPosition.x,
         y: enemyPosition.y
-    }
+    };
     switch (direction) {
         case 1:
             enemyPositionCandidate.x += 1;
@@ -320,9 +362,7 @@ function startGame() {
     randomObstacle = setInterval(function () {
         obstacleCoords()
     }, randomObstacleInterval);
-    showSkillAtRandomPosition = setInterval(function () {
-        randomPos();
-    }, randomElementInterval);
+    setSkillInterval();
     enemyMovement = setInterval(function () {
         randomDirectionMovement()
     }, enemyInterval);
@@ -339,8 +379,8 @@ function clearEvents() {
     playerPosition.y = 1;
     skillPosition.x = 9;
     skillPosition.y = 9;
-    enemyPosition.x = 9;
-    enemyPosition.y = 1;
+    enemyPosition.x = gameBoard.length -2;
+    enemyPosition.y = gameBoard.length -2;
 }
 
 function resetGame() {
@@ -408,3 +448,33 @@ function handlePlayerEnemyCollision(player, enemy) {
 function positionsAreEqual(a, b) {
     return a.x === b.x && a.y === b.y
 }
+
+function randomizeCollectibleElement () {
+    if (getRandomNumber(100) >= 50) {
+        return 0;
+    } else if (getRandomNumber(100) <= 50 && getRandomNumber(100) >=10) {
+        return 1;
+    } else {
+        return 2;
+    }
+}
+
+function displayRandomizedCollectible () {
+    var randomCollectible = randomizeCollectibleElement();
+    switch (randomCollectible) {
+        case 0:
+            return 5;
+        case 1:
+            return 7;
+        case 2:
+            return 8;
+        default:
+    }
+}
+
+function setSkillInterval() {
+    showSkillAtRandomPosition = setInterval(function () {
+        randomPos();
+    }, randomElementInterval);
+}
+
