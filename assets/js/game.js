@@ -19,6 +19,7 @@ var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
 var activePlay = false;
+var additionalTime = 0;
 
 var playerPosition = {
     x: 1,
@@ -194,15 +195,23 @@ function getCollectiblePointAmount () {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 10;
+        additionalTime += 1
     } else if (gameBoard[skillPosition.y][skillPosition.x] === 7) {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 50;
+        additionalTime += 2
     } else {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 100;
+        additionalTime += 3
     }
+    return true
+}
+
+if (getCollectiblePointAmount === true) {
+    console.log('ha')
 }
 
 function createGameboard() {
@@ -227,15 +236,23 @@ function setTimer(seconds) {
     var startTimer = Date.now();
     var endTimer = startTimer + seconds * 1000;
     displayTimer(seconds);
+    console.log(seconds)
     timerInterval = setInterval(function () {
-        var timeLeft = Math.round((endTimer - Date.now()) / 1000);
+        var timeLeft = additionalTime + Math.round((endTimer - Date.now()) / 1000);
+        console.log(additionalTime)
         if (timeLeft <= 0) {
             timeLeft = 0;
             clearInterval(timerInterval);
             resetGame();
         }
         displayTimer(timeLeft);
+        console.log(timeLeft)
     }, 1000)
+}
+
+
+function displayTimer(seconds) {
+    gameTimer.innerHTML = seconds;
 }
 
 function addFlexClass() {
@@ -245,11 +262,6 @@ function addFlexClass() {
         (rowItem).map(x => x.classList.add('flex-item'))
     }
 }
-
-function displayTimer(seconds) {
-    gameTimer.innerHTML = seconds;
-}
-
 // Random skill generate
 
 function randomNums() {
