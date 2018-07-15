@@ -200,12 +200,12 @@ function getCollectiblePointAmount () {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 50;
-        additionalTime += 2
+        additionalTime += 1
     } else {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 100;
-        additionalTime += 3
+        additionalTime += 1
     }
 }
 
