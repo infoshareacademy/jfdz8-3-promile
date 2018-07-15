@@ -26,7 +26,7 @@
                 <li class="navigation-list-item hover"><a href="#anchor-home">Strona główna</a></li>
                 <li class="navigation-list-item hover"><a href="#anchor-features">Nasza aplikacja</a></li>
                 <li class="navigation-list-item hover"><a href="#anchor-additional">Dodatkowe informacje</a></li>
-                <li class="navigation-list-item"><a href="#anchor-home">
+                <li class="navigation-list-item"><a href="#anchor-home" class="anchor-link">
                     <img src="assets/images/LOGO1.png" class="center-logo" alt="page logo"/></a></li>
                 <li class="navigation-list-item hover"><a href="#anchor-form">Zgłoś się</a></li>
                 <li class="navigation-list-item hover"><a href="#anchor-team">Zespół</a></li>
@@ -208,11 +208,13 @@
                 <form action="https://formspree.io/m.muszy@gmail.com" method="POST">
                     <h3>Czekaj na sygnał! Otrzymasz tylko jednego maila!</h3>
                     <h4 class="form__hidden">&nbsp&nbsp&nbsp</h4>
+
                     <button type="button" class="show_inputs">Zgłoś się</button>
                     <div class="form__inputs">
                         <input class="form-data" type="text" placeholder="Twoje imię" name="name" required>
                         <input class="form-data" type="text" placeholder="Twój email" name="_replyto" required>
-                        <button class="submit" value="Send"><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie
+                        <input type="hidden" name="_next" value="http://www.3-promile.jfdz8.is-academy.pl/game.html"/>
+                        <button class="submit" value="Send" ><span class="fas fa-paper-plane"></span> Wyślij zgłoszenie
                         </button>
                     </div>
                 </form>
@@ -341,7 +343,8 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/cookies.js"></script>
 <script src="assets/js/carousel.js"></script>
-<script src="assets/js/animate_photos.js"></script>
+<script src="assets/js/animatePhotos.js"></script>
 <script src="assets/js/navbarHighlight.js"></script>
+<script src="assets/js/formSubmit.js"></script>
 </body>
 </html>
