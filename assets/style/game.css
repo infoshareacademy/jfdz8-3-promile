@@ -29,13 +29,6 @@ button {
     border: 5px solid #379685;
 }
 
-#scoreboard {
-    background: #a6b9cd;
-    font-weight: bold;
-    line-height: 100px;
-    font-size: 4em;
-}
-
 #game-timer {
     font-weight: bold;
     background: #4f6b86;
@@ -47,6 +40,23 @@ button {
     flex: 1;
     background: #bed2a2;
     min-height: 100px;
+}
+
+.score-panel {
+    font-size: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    background: #a6b9cd;
+    flex-direction: row;
+}
+
+.score-item {
+    flex-basis: calc(50% - 10px);
+}
+
+.score-item:nth-child(2n) {
+    text-align: right;
 }
 
 #difficulty {
