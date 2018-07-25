@@ -390,11 +390,10 @@ function clearEvents() {
 }
 
 function resetGame() {
-    var lastScore = score;
     activePlay = false;
     clearEvents();
     updateHighscores();
-    displayLastScore(lastScore);
+    displayLastScore();
     score = 0;
     displayScore();
     gameTimer.innerHTML = '0';
