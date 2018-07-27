@@ -35,7 +35,7 @@ var enemyPosition = {
     y: gameBoard.length -2
 };
 
-var gameBoard = modes.intro;
+var gameBoard = modes.easyMode;
 
 var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
@@ -131,7 +131,7 @@ function displayBoard(mode) {
     addFlexClass()
 }
 
-displayBoard(modes.intro);
+displayBoard(modes.easyMode);
 generateEnemy();
 checkLocalStorage();
 putHighscoresInDOM(getFromLocalStorage());
