@@ -14,27 +14,26 @@
             <div id="highscore-ranking"> </div>
         </div>
         <div class="flex-item score-panel">
-            <div class="score-item ">
-                <div class="score-item">SCORE</div>
-                <div class="score-item" id="scoreboard"></div>
-                <div class="score-item">LAST SCORE</div>
-                <div class="score-item" id="last-score"></div>
-            </div>
+            <div class="score-item">SCORE</div>
+            <div class="score-item" id="scoreboard"></div>
+            <div class="score-item">LAST SCORE</div>
+            <div class="score-item" id="last-score"></div>
         </div>
     </div>
 </div>
 <div class="panel">
-
     <div class="flex-item timer" id="game-timer">TIMER</div>
     <div class="flex-item control-panel">
-        <button id="play-button" type="button">PLAY</button>
-        <button id="reset-button" type="button">RESET</button>
-        <select id="difficultyLevels">
+        <button class="control-item" id="play-button" type="button">PLAY</button>
+        <button class="control-item" id="reset-button" type="button">RESET</button>
+        <select class="control-item" id="difficultyLevels">
+            <optgroup label = "Choose One">
             <option value="easyMode">Easy</option>
             <option selected="selected" value="mediumMode">Medium</option>
             <option value="hardMode">Hard</option>
         </select>
     </div>
+    <div class="flex-item credits">CREDITS</div>
 </div>
 
 <script src="assets/js/gameboards.js"></script>

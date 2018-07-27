@@ -19,7 +19,7 @@
     background: gray;
     display: flex;
     flex-direction: column;
-    height: 425px;
+    height: 595px;
 }
 
 #highscore-container {
@@ -47,48 +47,46 @@
 }
 
 .control-panel {
-    flex-grow: 4;
+    flex-grow: 3;
     background: green;
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+}
+
+.control-item {
+    margin: 5%;
+    flex: 1;
+    display: inline-block;
 }
 
 button {
-    margin: 5%;
     padding: 15px;
-    background: #363636;
-    width: 100px;
+    background: #835e66;
+    width: 75px;
     color: #fefefe;
+    border-radius: 15px;
 }
 
 .timer {
     text-align: center;
-}
-
-.control-item {
-    flex: 1;
-    background: #bed2a2;
-    min-height: 100px;
+    line-height: 150px;
+    font-size: 3em;
 }
 
 .score-item:nth-child(2n) {
     text-align: right;
 }
 
-#difficulty {
-    text-align: center;
-}
-
 #difficultyLevels {
     display: inline-block;
-    width: 200px;
     font-size: 2em;
-    margin-top: 50px;
 }
 
 h1 {
     text-align: center;
-    margin: 50px auto;
+    margin: 25px auto;
 }
-
 
 .wall {
     height: 35px;
