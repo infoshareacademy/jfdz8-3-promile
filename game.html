@@ -6,34 +6,37 @@
     <link rel="stylesheet" href="assets/style/game.css">
 </head>
 <body>
-<div id="gameArea"></div>
-<div id="controlPanel">
-    <div class="control-item score-panel">
-        <div class="score-item">SCORE</div>
-        <div class="score-item" id="scoreboard"></div>
-        <div class="score-item">LAST SCORE</div>
-        <div class="score-item" id="last-score"></div>
+<div class="mainWindow">
+    <div class="flex-item" id="gameArea"></div>
+    <div class="flex-item scores-container">
+        <div class="flex-item" id="highscore-container">
+            <h1>Ranking:</h1>
+            <div id="highscore-ranking"> </div>
+        </div>
+        <div class="flex-item score-panel">
+            <div class="score-item ">
+                <div class="score-item">SCORE</div>
+                <div class="score-item" id="scoreboard"></div>
+                <div class="score-item">LAST SCORE</div>
+                <div class="score-item" id="last-score"></div>
+            </div>
+        </div>
     </div>
-    <div class="control-item" id="control-buttons">
+</div>
+<div class="panel">
+
+    <div class="flex-item timer" id="game-timer">TIMER</div>
+    <div class="flex-item control-panel">
         <button id="play-button" type="button">PLAY</button>
         <button id="reset-button" type="button">RESET</button>
-    </div>
-    <div class="control-item" id="game-timer">TIMER</div>
-</div>
-<div id='difficulty'>
-    <select id="difficultyLevels">
-        <option value="easyMode">Easy</option>
-        <option value="mediumMode">Medium</option>
-        <option value="hardMode">Hard</option>
-    </select>
-</div>
-<h1>Ranking:</h1>
-<div id="highscore-container">
-
-    <div id="highscore-ranking">
-
+        <select id="difficultyLevels">
+            <option value="easyMode">Easy</option>
+            <option selected="selected" value="mediumMode">Medium</option>
+            <option value="hardMode">Hard</option>
+        </select>
     </div>
 </div>
+
 <script src="assets/js/gameboards.js"></script>
 <script src="assets/js/game.js"></script>
 </body>

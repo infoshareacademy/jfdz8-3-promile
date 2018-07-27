@@ -1,15 +1,8 @@
 * {
     box-sizing: border-box;
 }
-
-
-
-button {
-    margin: 5%;
-    padding: 15px;
-    background: #363636;
-    width: 100px;
-    color: #fefefe;
+.mainWindow, .panel {
+    display: flex;
 }
 
 .flex-item {
@@ -17,33 +10,26 @@ button {
 }
 
 #gameArea {
-    margin: 0 auto;
-    width: 640px;
-    height: 480px;
+    flex-grow: 4;
+    width: 800px;
+    height: 600px;
 }
 
-#controlPanel {
-    margin-top: 50px;
-    text-align: center;
+.scores-container {
+    background: gray;
     display: flex;
-    border: 5px solid #379685;
+    flex-direction: column;
+    height: 425px;
 }
 
-#game-timer {
-    font-weight: bold;
-    background: #4f6b86;
-    line-height: 100px;
-    font-size: 4em;
-}
-
-.control-item {
-    flex: 1;
-    background: #bed2a2;
-    min-height: 100px;
+#highscore-container {
+    text-align: center;
+    border: 1px solid black;
+    line-height: 1.4;
 }
 
 .score-panel {
-    font-size: 2em;
+    font-size: 1em;
     display: flex;
     flex-wrap: wrap;
     text-align: left;
@@ -53,6 +39,34 @@ button {
 
 .score-item {
     flex-basis: calc(50% - 10px);
+}
+
+.panel {
+    height: 150px;
+    background: chocolate;
+}
+
+.control-panel {
+    flex-grow: 4;
+    background: green;
+}
+
+button {
+    margin: 5%;
+    padding: 15px;
+    background: #363636;
+    width: 100px;
+    color: #fefefe;
+}
+
+.timer {
+    text-align: center;
+}
+
+.control-item {
+    flex: 1;
+    background: #bed2a2;
+    min-height: 100px;
 }
 
 .score-item:nth-child(2n) {
@@ -70,29 +84,15 @@ button {
     margin-top: 50px;
 }
 
-#highscore-container {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 h1 {
     text-align: center;
     margin: 50px auto;
 }
 
-#highscore-ranking {
-    text-align: center;
-    border: 1px solid black;
-    height: auto;
-    width: 250px;
-    line-height: 1.4;
-}
 
 .wall {
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
 }
 
 .row {
