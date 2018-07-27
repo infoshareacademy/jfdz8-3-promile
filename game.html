@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Pacman Like Game</title>
     <link rel="stylesheet" href="assets/style/game.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
 <div class="startScreen">
@@ -16,6 +17,13 @@
     <div class="buttons__container">
         <span class="play button">play</span>
         <span class="instructions button">instructions</span>
+    </div>
+    <div id='difficulty'>
+        <select id="difficultyLevels">
+            <option value="easyMode">Easy</option>
+            <option value="mediumMode">Medium</option>
+            <option value="hardMode">Hard</option>
+        </select>
     </div>
     <div class="instructions__container">
         <div>
@@ -47,30 +55,19 @@
     </div>
 </div>
 <div class="gameContainer">
-    <div id="gameArea"></div>
     <div id="controlPanel">
-        <div class="control-item" id="scoreboard">SCORE</div>
-        <div class="control-item" id="control-buttons">
-
-            <button id="play-button" type="button">PLAY</button>
-            <button id="reset-button" type="button">RESET</button>
-
-        </div>
-        <div class="control-item" id="game-timer">TIMER</div>
+        <span class="control-item" id="scoreboard">SCORE</span>
+        <span class="control-item" id="game-timer">TIMER</span>
     </div>
-    <div id='difficulty'>
-        <select id="difficultyLevels">
-            <option value="easyMode">Easy</option>
-            <option value="mediumMode">Medium</option>
-            <option value="hardMode">Hard</option>
-        </select>
+    <div id="gameArea"></div>
+    <div class="control-item" id="control-buttons">
+        <button id="play-button" type="button">PLAY</button>
+        <button id="reset-button" type="button">RESET</button>
+        <button id="menu-button" type="button">GO BACK</button>
     </div>
-    <h1>Ranking:</h1>
     <div id="highscore-container">
-
-        <div id="highscore-ranking">
-
-        </div>
+        <h1>Ranking:</h1>
+        <div id="highscore-ranking"></div>
     </div>
 </div>
 <script src="assets/js/gameLayout.js"></script>
