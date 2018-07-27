@@ -7,7 +7,8 @@ var instructions = document.querySelector(".instructions__container");
 var gameContainer = document.querySelector(".gameContainer");
 var startScreen = document.querySelector(".startScreen");
 var chooseLevel = document.querySelector(".chooseLevel");
-var levelButton = document.querySelectorAll(".level");
+var levelButton = document.querySelector(".level");
+var cityBackground = document.querySelector(".wall");
 
 
 playButton.addEventListener('click', function () {
@@ -31,10 +32,22 @@ instructionsBackButton.addEventListener('click', function () {
     instructions.style.display = 'none';
 });
 
-levelButton.addEventListener('click', function () {
-    gameContainer.style.display = 'block';
-    chooseLevel.style.display = 'none';
-});
+// levelButton.addEventListener('click', function () {
+//     gameContainer.style.display = 'block';
+//     chooseLevel.style.display = 'none';
+// });
 
 
-
+    var random = Math.floor(Math.random() * 10) + 1;
+    var images = [
+        "url('../images/city_background/1.png')",
+        "url('../images/city_background/2.png')",
+        "url('../images/city_background/3.png')",
+        "url('../images/city_background/4.png')",
+        "url('../images/city_background/5.png')",
+        "url('../images/city_background/6.png')",
+        "url('../images/city_background/7.png')",
+        "url('../images/city_background/8.png')",
+        "url('../images/city_background/9.png')",
+        "url('../images/city_background/10.png')"];
+    cityBackground.style.backgroundImage = images[random];
