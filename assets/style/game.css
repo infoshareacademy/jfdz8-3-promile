@@ -88,9 +88,9 @@ h1 {
     margin: 25px auto;
 }
 
-.wall {
-    height: 35px;
+.game-element {
     width: 35px;
+    height: 35px;
 }
 
 .row {
