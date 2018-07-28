@@ -52,6 +52,10 @@
     color: #f3f1f8;
 }
 
+.instructions__container {
+    display: none;
+}
+
 .flex-item {
     flex: 1;
 }

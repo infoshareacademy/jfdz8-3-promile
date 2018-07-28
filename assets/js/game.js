@@ -1,6 +1,8 @@
 var gameArea = document.querySelector('#gameArea');
 var gameWindow = document.querySelector('.gameWindow');
 var startScreen = document.querySelector('.startScreen');
+var showInstruction = document.querySelector('.instructions');
+var instructions = document.querySelector(".instructions__container");
 var startButton = document.querySelector('#play-button');
 var resetButton = document.querySelector('#reset-button');
 var gameTimer = document.querySelector('#game-timer');
@@ -78,6 +80,11 @@ goToGameButton.addEventListener('click', function() {
     startScreen.style.display = 'none';
     gameWindow.style.display = 'unset';
 });
+
+showInstruction.addEventListener('click', function () {
+    instructions.style.display === 'block' ? instructions.style.display = 'none' : instructions.style.display = 'block';
+});
+
 
 selectedDifficulty.addEventListener('change', function(e) {
     clearEvents();
