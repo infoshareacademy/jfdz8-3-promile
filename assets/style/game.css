@@ -140,6 +140,8 @@ h1 {
 .game-element {
     flex: 1;
     height: 45px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .row {
@@ -152,11 +154,12 @@ h1 {
 }
 
 .coin {
-    background: yellow;
+    background-image: url("../images/game/others/coin.png");
 }
 
 .pacman {
-    background: red;
+    background-image: url("../images/game/others/player.png");
+
 }
 
 .element {
@@ -167,19 +170,18 @@ h1 {
     background: white;
 }
 
-.ghostPinky {
-    background: pink;
+.skill-html {
+    background-image: url("../images/game/skills/html.png");
 }
 
-.ghostBluey {
-    background: blue;
+.skill-css {
+    background-image: url("../images/game/skills/css.png");
 }
 
-.ghostGreeny {
-    background: green;
+.skill-js {
+    background-image: url("../images/game/skills/javascript.png");
+
 }
 .enemy {
     background-image: url("../images/game/others/opponent.png");
-    object-fit: contain;
-    background-size: cover;
 }

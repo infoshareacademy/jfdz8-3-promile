@@ -123,16 +123,16 @@ function displayBoard(mode) {
                     output += "<div class='collected'></div>";
                     break;
                 case 5:
-                    output += "<div class='ghostPinky'></div>";
+                    output += "<div class='skill-html'></div>";
                     break;
                 case 6:
-                    output += "<div class='enemy'></div>";
+                    output += "<div class='skill-css'></div>";
                     break;
                 case 7:
-                    output += "<div class='ghostGreeny'></div>";
+                    output += "<div class='skill-js'></div>";
                     break;
                 case 8:
-                    output += "<div class='ghostBluey'></div>";
+                    output += "<div class='enemy'></div>";
                     break;
                 default:
                     break;
@@ -208,7 +208,7 @@ function getCollectiblePointAmount () {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 10;
-    } else if (gameBoard[skillPosition.y][skillPosition.x] === 7) {
+    } else if (gameBoard[skillPosition.y][skillPosition.x] === 6) {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 50;
@@ -302,7 +302,7 @@ function insertSkill() {
 function clearSkill() {
     var prevValue = gameBoard[skillPosition.y][skillPosition.x];
     gameBoard = gameBoard.map(row => row.map(function (column) {
-        if (column === 5 || column === 7 || column === 8) {
+        if (column === 5 || column === 6 || column === 7) {
             return prevValue
         } else {
             return column
@@ -312,7 +312,7 @@ function clearSkill() {
 }
 
 function generateEnemy() {
-    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+    gameBoard[enemyPosition.y][enemyPosition.x] = 8;
 }
 
 function getRandomNumber(multiplier) {
@@ -453,11 +453,11 @@ function validateHighscoreContent (highscoreArray) {
 
 function movement() {
     clearEnemy();
-    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+    gameBoard[enemyPosition.y][enemyPosition.x] = 8;
 }
 function clearEnemy() {
     var prevValue = gameBoard[enemyPosition.y][enemyPosition.x];
-    gameBoard = gameBoard.map(row => row.map(column => (column === 6 ? prevValue : column)));
+    gameBoard = gameBoard.map(row => row.map(column => (column === 8 ? prevValue : column)));
 }
 
 function handlePlayerEnemyCollision(player, enemy) {
@@ -486,9 +486,9 @@ function displayRandomizedCollectible () {
         case 0:
             return 5;
         case 1:
-            return 7;
+            return 6;
         case 2:
-            return 8;
+            return 7;
         default:
     }
 }
