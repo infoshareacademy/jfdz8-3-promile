@@ -93,6 +93,28 @@ body {
     color: #f3f1f8;
 }
 
+#difficulty h1{
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-family: 'Press Start 2P', cursive;
+    color: #f3f1f8;
+}
+
+#difficulty{
+    text-align: center;
+    margin-top: 60px;
+}
+
+#difficultyLevels{
+    margin-top: 20px;
+    padding-left: 20px;
+    height: 40px;
+    width: 150px;
+    font-family: 'Press Start 2P', cursive;
+    background: #B7D5FF;
+    color: #368BFF;
+}
+
 .chooseLevel__header-container h1 {
     text-transform: uppercase;
     color: #f3f1f8;
@@ -127,7 +149,8 @@ button {
 
 .wall {
     height: 70px;
-    background: gray;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .row {
@@ -136,11 +159,15 @@ button {
 }
 
 .coin {
-    background: yellow;
+    background-image: url("../images/coin.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .pacman {
-    background: red;
+    background-image: url("../images/3C_pixel.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .element {
@@ -148,7 +175,7 @@ button {
 }
 
 .collected {
-    background: white;
+    background: #333334;
 }
 
 .ghost {
@@ -156,7 +183,9 @@ button {
 }
 
 .enemy {
-    background: cyan;
+    background-image: url("../images/opponent.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #game-timer {
@@ -216,7 +245,4 @@ h1 {
     margin: 30px auto;
     border-radius: 20px 20px 0px 0px;
     text-align: center;
-}
-
-
 }
