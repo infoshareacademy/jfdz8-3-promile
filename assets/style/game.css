@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
 }
 .mainWindow, .panel {
     display: flex;
@@ -92,7 +93,9 @@
 
 .panel {
     height: 150px;
-    background: chocolate;
+    background: #4f6b86;
+    border-radius: 20px;
+    opacity: 0.6;
 }
 
 .control-panel {
@@ -121,6 +124,7 @@ button {
     text-align: center;
     line-height: 150px;
     font-size: 3em;
+    font-weight: bold;
 }
 
 .score-item:nth-child(2n) {
@@ -143,7 +147,6 @@ h1 {
     background: center;
     background-size: 75% 75%;
     background-repeat: no-repeat;
-
 }
 
 .row {
