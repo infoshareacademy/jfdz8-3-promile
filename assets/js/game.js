@@ -221,6 +221,12 @@ function displayScore() {
     scoreBoard.innerHTML = score;
 }
 
+function displayLastScore() {
+    var lastScore = score;
+    var lastScoreContainer = document.querySelector('#last-score');
+    lastScore !== 0 ? lastScoreContainer.innerHTML = lastScore : false;
+}
+
 function removeNodeContent(node) {
     while (node.firstChild) {
         node.removeChild(node.firstChild)
@@ -394,6 +400,7 @@ function resetGame() {
     activePlay = false;
     clearEvents();
     updateHighscores();
+    displayLastScore();
     score = 0;
     displayScore();
     gameTimer.innerHTML = '0';
