@@ -179,5 +179,7 @@ h1 {
     background: green;
 }
 .enemy {
-    background: #c922ff;
+    background-image: url("../images/game/others/opponent.png");
+    object-fit: contain;
+    background-size: cover;
 }

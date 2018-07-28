@@ -85,7 +85,6 @@ showInstruction.addEventListener('click', function () {
     instructions.style.display === 'block' ? instructions.style.display = 'none' : instructions.style.display = 'block';
 });
 
-
 selectedDifficulty.addEventListener('change', function(e) {
     clearEvents();
     gameBoard = modes[e.target.value];
