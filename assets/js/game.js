@@ -1,8 +1,11 @@
 var gameArea = document.querySelector('#gameArea');
+var gameWindow = document.querySelector('.gameWindow');
+var startScreen = document.querySelector('.startScreen');
 var startButton = document.querySelector('#play-button');
 var resetButton = document.querySelector('#reset-button');
 var gameTimer = document.querySelector('#game-timer');
 var selectedDifficulty = document.getElementById('difficultyLevels');
+var goToGameButton = document.querySelector('.play');
 gameBoard = selectedDifficulty;
 var output = '';
 var timerInterval;
@@ -69,6 +72,11 @@ window.addEventListener('keydown', function (event) {
         moves[pressedKey](newPosition);
         collision(newPosition);
     }
+});
+
+goToGameButton.addEventListener('click', function() {
+    startScreen.style.display = 'none';
+    gameWindow.style.display = 'unset';
 });
 
 selectedDifficulty.addEventListener('change', function(e) {

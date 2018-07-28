@@ -5,6 +5,53 @@
     display: flex;
 }
 
+.gameWindow {
+    display: none;
+}
+
+.startScreen{
+    height: 800px;
+    width: 800px;
+    background: #5EA3FF;
+    margin: 0 auto;
+}
+
+.logo__image{
+    height: 200px;
+    width: 200px;
+    margin: 80px 300px;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    color: #fefefe;
+    margin: 0 auto;
+    padding-top: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    border: 1px solid #fefefe;
+    border-radius: 20px;
+}
+
+.button:hover{
+    background: #fefefe;
+    color: #5EA3FF;
+    border: 1px solid #61DBFB;
+}
+
+.buttons__container{
+    margin: 40px;
+    display: flex;
+}
+
+.header__container h1 {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    color: #f3f1f8;
+}
+
 .flex-item {
     flex: 1;
 }

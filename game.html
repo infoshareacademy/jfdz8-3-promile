@@ -6,34 +6,50 @@
     <link rel="stylesheet" href="assets/style/game.css">
 </head>
 <body>
-<div class="mainWindow">
-    <div class="flex-item" id="gameArea"></div>
-    <div class="flex-item scores-container">
-        <div class="flex-item" id="highscore-container">
-            <h1>Ranking:</h1>
-            <div id="highscore-ranking"> </div>
+<div class="startScreen">
+    <div class="logo__container">
+        <img src="assets/images/LOGO1.png" alt="logo" class="logo__image">
+    </div>
+    <div class="header__container">
+        <h1>pacman like game</h1>
+    </div>
+    <div class="buttons__container">
+        <span class="play button">play</span>
+        <span class="instructions button">instructions</span>
+    </div>
+    <div class="instructions__container">
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi asperiores aspernatur,
+            deleniti dicta doloremque harum inventore ipsum iure minima obcaecati optio quaerat quis sapiente sint
+            tempora ut veniam vitae?
         </div>
-        <div class="flex-item score-panel">
-            <div class="score-item">SCORE</div>
-            <div class="score-item" id="scoreboard"></div>
-            <div class="score-item">LAST SCORE</div>
-            <div class="score-item" id="last-score"></div>
-        </div>
+        <span class="back button">back</span>
     </div>
 </div>
-<div class="panel">
-    <div class="flex-item timer" id="game-timer">TIMER</div>
-    <div class="flex-item control-panel">
-        <button class="control-item" id="play-button" type="button">PLAY</button>
-        <button class="control-item" id="reset-button" type="button">RESET</button>
-        <select class="control-item" id="difficultyLevels">
-            <option selected="selected">Choose Difficulty</option>
-            <option value="easyMode">Easy</option>
-            <option value="mediumMode">Medium</option>
-            <option value="hardMode">Hard</option>
-        </select>
+<div class="gameWindow">
+    <div class="mainWindow">
+        <div class="flex-item" id="gameArea"></div>
+        <div class="flex-item scores-container">
+            <div class="flex-item" id="highscore-container">
+                <h1>Ranking:</h1>
+                <div id="highscore-ranking"> </div>
+            </div>
+            <div class="flex-item score-panel">
+                <div class="score-item">SCORE</div>
+                <div class="score-item" id="scoreboard"></div>
+                <div class="score-item">LAST SCORE</div>
+                <div class="score-item" id="last-score"></div>
+            </div>
+        </div>
     </div>
-    <div class="flex-item credits">CREDITS</div>
+    <div class="panel">
+        <div class="flex-item timer" id="game-timer">TIMER</div>
+        <div class="flex-item control-panel">
+            <button class="control-item" id="play-button" type="button">PLAY</button>
+            <button class="control-item" id="reset-button" type="button">RESET</button>
+        </div>
+        <div class="flex-item credits">CREDITS</div>
+    </div>
 </div>
 
 <script src="assets/js/gameboards.js"></script>
