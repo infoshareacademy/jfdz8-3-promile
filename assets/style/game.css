@@ -11,7 +11,7 @@
 }
 
 .startScreen{
-    height: 800px;
+    height: 920px;
     width: 800px;
     background: #5EA3FF;
     margin: 0 auto;
@@ -32,7 +32,7 @@
     text-align: center;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
-    border: 1px solid #fefefe;
+    border: 3px solid #fefefe;
     border-radius: 20px;
 }
 
@@ -44,6 +44,7 @@
 
 .buttons__container{
     margin: 40px;
+    line-height: 1.4;
     display: flex;
 }
 
@@ -55,6 +56,9 @@
 
 .instructions__container {
     display: none;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #fff;
 }
 
 .flex-item {
@@ -192,4 +196,18 @@ h1 {
 }
 .enemy {
     background-image: url("../images/game/others/opponent.png");
+}
+
+.instructions-description {
+    padding: 20px;
+}
+
+.instructions-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.instructions-points {
+    line-height: 3;
+    padding: 10px 20px;
 }
