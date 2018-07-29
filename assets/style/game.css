@@ -1,9 +1,14 @@
 * {
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    line-height: 1.4;
 }
+
 .mainWindow, .panel {
     display: flex;
+    max-width: 1366px;
+    margin: 0 auto;
 }
 
 .gameWindow {
@@ -49,7 +54,6 @@
 }
 
 .header__container h1 {
-    text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
     color: #f3f1f8;
 }
@@ -75,32 +79,44 @@
     background: gray;
     display: flex;
     flex-direction: column;
-    height: 595px;
+    height: 585px;
 }
 
 #highscore-container {
     text-align: center;
     border: 1px solid black;
     line-height: 1.4;
+    padding: 10px;
+}
+
+.highscore-header {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .score-panel {
+    text-align: center;
     font-size: 1em;
     display: flex;
-    flex-wrap: wrap;
-    text-align: left;
     background: #a6b9cd;
-    flex-direction: row;
+    flex-direction: column;
+    height: 325px;
 }
 
 .score-item {
     flex-basis: calc(50% - 10px);
+    padding-top: 10px;
+}
+
+.score-panel__number {
+    text-align: center;
+    font-size: 32px;
+    padding: 0;
 }
 
 .panel {
     height: 150px;
     background: #4f6b86;
-    border-radius: 20px;
     opacity: 0.6;
 }
 
@@ -133,13 +149,9 @@ button {
     font-weight: bold;
 }
 
-.score-item:nth-child(2n) {
-    text-align: right;
-}
-
 #difficultyLevels {
     display: inline-block;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 h1 {
@@ -161,7 +173,7 @@ h1 {
 
 .wall {
     background: #454e86;
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 .coin {
@@ -210,4 +222,24 @@ h1 {
 .instructions-points {
     line-height: 3;
     padding: 10px 20px;
+}
+
+.credits {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.credits-header {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.credits-text {
+    margin-top: 20px;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }

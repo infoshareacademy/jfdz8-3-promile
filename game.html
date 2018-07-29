@@ -42,14 +42,14 @@
         <div class="flex-item" id="gameArea"></div>
         <div class="flex-item scores-container">
             <div class="flex-item" id="highscore-container">
-                <h1>Ranking:</h1>
+                <span class="highscore-header">Ranking:</span>
                 <div id="highscore-ranking"> </div>
             </div>
             <div class="flex-item score-panel">
-                <div class="score-item">SCORE</div>
-                <div class="score-item" id="scoreboard"></div>
-                <div class="score-item">LAST SCORE</div>
-                <div class="score-item" id="last-score"></div>
+                <div class="score-item uppercase">Score</div>
+                <div class="score-item score-panel__number" id="scoreboard"></div>
+                <div class="score-item uppercase">Last score</div>
+                <div class="score-item score-panel__number" id="last-score"></div>
             </div>
         </div>
     </div>
@@ -65,7 +65,10 @@
                     <option value="hardMode">Hard</option>
             </select>
         </div>
-        <div class="flex-item credits">CREDITS</div>
+        <div class="flex-item credits">
+            <span class="credits-header uppercase">Credits:</span>
+            <p class="credits-text">Michał Muszyński<br/>Bartosz Zawada<br/>Bartosz Frąckiewicz</p>
+        </div>
     </div>
 </div>
 
