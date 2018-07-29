@@ -13,7 +13,7 @@ var output = '';
 var timerInterval;
 var score = 0;
 var highscores = [];
-var highscoresNumber = 5;
+var highscoresNumber = 10;
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
 var enemyInterval = 250;
