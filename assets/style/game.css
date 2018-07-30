@@ -47,7 +47,6 @@
     border-right: 5px inset rgba(255,255,255,.5);
     border-top: 5px inset rgba(255,255,255,.5);
     background: #4f6b86;
-    overflow: auto;
 }
 
 .button:hover{
