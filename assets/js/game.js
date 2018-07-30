@@ -77,8 +77,19 @@ window.addEventListener('keydown', function (event) {
 });
 
 goToGameButton.addEventListener('click', function() {
-    startScreen.style.display = 'none';
-    gameWindow.style.display = 'block';
+    if(screen.width > 968) {
+        startScreen.style.display = 'none';
+        gameWindow.style.display = 'block';
+    } else {
+        console.log('basuadsd')
+        var youShallNotPass = document.createElement('div');
+        var notPassText = document.createElement('p');
+        startScreen.style.display = 'none';
+        youShallNotPass.classList.add('no-pasaran');
+        notPassText.innerHTML="Zainwestuj w większy ekran, bo nie przejdziesz....";
+        youShallNotPass.appendChild(notPassText);
+        document.body.appendChild(youShallNotPass)
+    }
 });
 
 showInstruction.addEventListener('click', function () {
