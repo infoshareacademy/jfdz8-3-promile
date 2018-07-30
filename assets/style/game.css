@@ -26,9 +26,9 @@
 }
 
 .logo__image{
-    height: 200px;
-    width: 200px;
-    margin: 80px 300px;
+    max-height: 200px;
+    max-width: 200px;
+    margin-top: 1%;
 }
 
 .button {
@@ -36,7 +36,7 @@
     min-width: 150px;
     max-height: 50px;
     color: #d6e7f7;
-    margin: 0 5%;
+    margin: 1% auto;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
@@ -47,6 +47,7 @@
     border-right: 5px inset rgba(255,255,255,.5);
     border-top: 5px inset rgba(255,255,255,.5);
     background: #4f6b86;
+    overflow: auto;
 }
 
 .button:hover{
