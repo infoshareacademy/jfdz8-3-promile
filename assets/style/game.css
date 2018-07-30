@@ -16,10 +16,13 @@
 }
 
 .startScreen{
-    height: 920px;
-    width: 800px;
+    height: 100vh;
     background: #d6e7f7;
     margin: 0 auto;
+}
+
+.logo__container {
+    text-align: center;
 }
 
 .logo__image{
@@ -29,11 +32,11 @@
 }
 
 .button {
+    padding: 15px;
     min-width: 150px;
     max-height: 50px;
-    line-height: 45px;
     color: #d6e7f7;
-    margin: 0 auto;
+    margin: 0 5%;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
@@ -51,9 +54,14 @@
 }
 
 .buttons__container{
-    margin: 40px;
+    margin-top: 5%;
     line-height: 1.4;
-    display: flex;
+    text-align: center;
+}
+
+.buttons__container > span {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .header__container h1 {
@@ -169,7 +177,7 @@ h1 {
 }
 
 .wall {
-    background: #454e86;
+    background: #4f6b86;
     opacity: 0.85;
 }
 
