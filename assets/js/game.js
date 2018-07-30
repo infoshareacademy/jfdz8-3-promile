@@ -78,7 +78,7 @@ window.addEventListener('keydown', function (event) {
 
 goToGameButton.addEventListener('click', function() {
     startScreen.style.display = 'none';
-    gameWindow.style.display = 'unset';
+    gameWindow.style.display = 'block';
 });
 
 showInstruction.addEventListener('click', function () {
