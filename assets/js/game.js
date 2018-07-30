@@ -40,7 +40,7 @@ var enemyPosition = {
     y: gameBoard.length -2
 };
 
-var gameBoard = modes.intro;
+var gameBoard = modes.mediumMode;
 
 var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
@@ -81,7 +81,6 @@ goToGameButton.addEventListener('click', function() {
         startScreen.style.display = 'none';
         gameWindow.style.display = 'block';
     } else {
-        console.log('basuadsd')
         var youShallNotPass = document.createElement('div');
         var notPassText = document.createElement('p');
         startScreen.style.display = 'none';
