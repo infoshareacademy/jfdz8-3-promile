@@ -32,6 +32,8 @@
 }
 
 .button {
+    line-height: 1;
+    display: inline-block;
     padding: 15px;
     min-width: 150px;
     max-height: 50px;
@@ -108,6 +110,11 @@
     padding-top: 20px;
 }
 
+#highscore-ranking > p:first-child {
+    color: #a6b9cd;
+    font-weight: bolder;
+}
+
 .score-panel {
     text-align: center;
     font-size: 1em;
@@ -168,7 +175,7 @@ h1 {
     flex: 1;
     height: 45px;
     background: center no-repeat;
-    background-size: 100% 100%;
+    background-size: 65% 100%;
 }
 
 .row {
@@ -177,8 +184,9 @@ h1 {
 }
 
 .wall {
-    background: #4f6b86;
-    opacity: 0.85;
+    background: url("../images/639173848-612x612.jpg");
+    background-size: 100% 100%;
+    opacity: 0.75;
 }
 
 .coin {
@@ -209,10 +217,11 @@ h1 {
 
 .skill-js {
     background-image: url("../images/game/skills/javascript.png");
-
 }
+
 .enemy {
-    background-image: url("../images/game/others/opponent.png");
+    background-image: url("../images/LOGO1_fire.png");
+    background-size: 53% 100%;
 }
 
 .instructions-description {
@@ -233,20 +242,35 @@ h1 {
 .credits {
     text-align: center;
     padding: 10px 0;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .credits-header {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 18px;
-
 }
 
 .credits-text {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .uppercase {
     text-transform: uppercase;
 }
+
+.no-pasaran {
+    text-align: center;
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+}
+
+.no-pasaran > p {
+    position: absolute;
+    color:red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
