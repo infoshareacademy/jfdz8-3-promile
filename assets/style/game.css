@@ -71,8 +71,8 @@
 
 #gameArea {
     flex-grow: 4;
-    background: url("../images/game/others/bg-city.jpg") no-repeat;
-    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("../images/game/others/bg-city.jpg") no-repeat;
+    background-size: 100% 100%;
 }
 
 .scores-container {
@@ -177,7 +177,7 @@ h1 {
 }
 
 .coin {
-    background-image: url("../images/game/others/coin.png");
+    background-image: url("../images/game/others/coin2.png");
     background-size: 50% 50%;
 }
 
