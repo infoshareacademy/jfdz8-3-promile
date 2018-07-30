@@ -44,10 +44,6 @@
     font-family: 'Press Start 2P', cursive;
     cursor: pointer;
     text-shadow: 0 0 5px #000;
-    border-bottom: 5px inset rgba(0,0,0,.5);
-    border-left: 5px inset rgba(0,0,0,.5);
-    border-right: 5px inset rgba(255,255,255,.5);
-    border-top: 5px inset rgba(255,255,255,.5);
     background: #4f6b86;
 }
 
@@ -140,6 +136,13 @@
     background: #4f6b86;
 }
 
+.border-style {
+    border-bottom: 5px inset rgba(0,0,0,.5);
+    border-left: 5px inset rgba(0,0,0,.5);
+    border-right: 5px inset rgba(255,255,255,.5);
+    border-top: 5px inset rgba(255,255,255,.5);
+}
+
 .control-panel {
     flex-grow: 3;
     background: #a6b9cd;
@@ -184,7 +187,7 @@ h1 {
 }
 
 .wall {
-    background: url("../images/639173848-612x612.jpg");
+    background: url("../images/game/others/wall.png");
     background-size: 100% 100%;
     opacity: 0.75;
 }
