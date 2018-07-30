@@ -1,15 +1,79 @@
 * {
     box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    line-height: 1.4;
 }
 
+.mainWindow, .panel {
+    display: flex;
+    max-width: 1366px;
+    margin: 0 auto;
+}
 
+.gameWindow {
+    display: none;
+}
 
-button {
-    margin: 5%;
+.startScreen{
+    min-height: 100vh;
+    background: #d6e7f7;
+    margin: 0 auto;
+}
+
+.logo__container {
+    text-align: center;
+}
+
+.logo__image{
+    max-height: 200px;
+    max-width: 200px;
+    margin-top: 1%;
+}
+
+.button {
     padding: 15px;
-    background: #363636;
-    width: 100px;
-    color: #fefefe;
+    min-width: 150px;
+    max-height: 50px;
+    color: #d6e7f7;
+    margin: 1% auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    text-shadow: 0 0 5px #000;
+    border-bottom: 5px inset rgba(0,0,0,.5);
+    border-left: 5px inset rgba(0,0,0,.5);
+    border-right: 5px inset rgba(255,255,255,.5);
+    border-top: 5px inset rgba(255,255,255,.5);
+    background: #4f6b86;
+}
+
+.button:hover{
+    background: #6888a3;
+}
+
+.buttons__container{
+    margin-top: 5%;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.buttons__container > span {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.header__container h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: #4f6b86;
+}
+
+.instructions__container {
+    display: none;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #4f6b86;
 }
 
 .flex-item {
@@ -17,82 +81,94 @@ button {
 }
 
 #gameArea {
-    margin: 0 auto;
-    width: 640px;
-    height: 480px;
+    flex-grow: 4;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("../images/game/others/bg-city.jpg") no-repeat;
+    background-size: 100% 100%;
 }
 
-#controlPanel {
-    margin-top: 50px;
-    text-align: center;
-    display: flex;
-    border: 5px solid #379685;
-}
-
-#game-timer {
-    font-weight: bold;
+.scores-container {
     background: #4f6b86;
-    line-height: 100px;
-    font-size: 4em;
+    display: flex;
+    flex-direction: column;
+    height: 585px;
 }
 
-.control-item {
-    flex: 1;
-    background: #bed2a2;
-    min-height: 100px;
+#highscore-container {
+    text-align: center;
+    line-height: 1.4;
+    padding: 10px;
+}
+
+.highscore-header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#highscore-ranking {
+    padding-top: 20px;
 }
 
 .score-panel {
-    font-size: 2em;
+    text-align: center;
+    font-size: 1em;
     display: flex;
-    flex-wrap: wrap;
-    text-align: left;
     background: #a6b9cd;
-    flex-direction: row;
+    flex-direction: column;
+    height: 325px;
 }
 
 .score-item {
     flex-basis: calc(50% - 10px);
+    padding-top: 10px;
 }
 
-.score-item:nth-child(2n) {
-    text-align: right;
-}
-
-#difficulty {
+.score-panel__number {
     text-align: center;
+    font-size: 32px;
+    padding: 0;
+}
+
+.panel {
+    height: 150px;
+    background: #4f6b86;
+}
+
+.control-panel {
+    flex-grow: 3;
+    background: #a6b9cd;
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+}
+
+.control-item {
+    margin: 5%;
+    flex: 1;
+    display: inline-block;
+}
+
+.timer {
+    text-align: center;
+    line-height: 150px;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 #difficultyLevels {
     display: inline-block;
-    width: 200px;
-    font-size: 2em;
-    margin-top: 50px;
-}
-
-#highscore-container {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.5em;
 }
 
 h1 {
     text-align: center;
-    margin: 50px auto;
+    margin: 25px auto;
 }
 
-#highscore-ranking {
-    text-align: center;
-    border: 1px solid black;
-    height: auto;
-    width: 250px;
-    line-height: 1.4;
-}
-
-.wall {
-    height: 25px;
-    width: 25px;
+.game-element {
+    flex: 1;
+    height: 45px;
+    background: center no-repeat;
+    background-size: 100% 100%;
 }
 
 .row {
@@ -101,15 +177,17 @@ h1 {
 }
 
 .wall {
-    background: gray;
+    background: #4f6b86;
+    opacity: 0.85;
 }
 
 .coin {
-    background: yellow;
+    background-image: url("../images/game/others/coin.png");
+    background-size: 50% 50%;
 }
 
 .pacman {
-    background: red;
+    background-image: url("../images/game/others/player.png");
 }
 
 .element {
@@ -118,19 +196,57 @@ h1 {
 
 .collected {
     background: white;
+    opacity: 0;
 }
 
-.ghostPinky {
-    background: pink;
+.skill-html {
+    background-image: url("../images/game/skills/html.png");
 }
 
-.ghostBluey {
-    background: blue;
+.skill-css {
+    background-image: url("../images/game/skills/css.png");
 }
 
-.ghostGreeny {
-    background: green;
+.skill-js {
+    background-image: url("../images/game/skills/javascript.png");
+
 }
 .enemy {
-    background: cyan;
+    background-image: url("../images/game/others/opponent.png");
+}
+
+.instructions-description {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.instructions-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.instructions-points {
+    line-height: 3;
+    padding: 10px 20px;
+}
+
+.credits {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.credits-header {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.credits-text {
+    margin-top: 20px;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }

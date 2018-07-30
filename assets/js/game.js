@@ -1,14 +1,19 @@
 var gameArea = document.querySelector('#gameArea');
+var gameWindow = document.querySelector('.gameWindow');
+var startScreen = document.querySelector('.startScreen');
+var showInstruction = document.querySelector('.instructions');
+var instructions = document.querySelector(".instructions__container");
 var startButton = document.querySelector('#play-button');
 var resetButton = document.querySelector('#reset-button');
 var gameTimer = document.querySelector('#game-timer');
 var selectedDifficulty = document.getElementById('difficultyLevels');
+var goToGameButton = document.querySelector('.play');
 gameBoard = selectedDifficulty;
 var output = '';
 var timerInterval;
 var score = 0;
 var highscores = [];
-var highscoresNumber = 5;
+var highscoresNumber = 10;
 var randomElementInterval = 4000;
 var randomObstacleInterval = 7000;
 var enemyInterval = 250;
@@ -36,7 +41,7 @@ var enemyPosition = {
     y: gameBoard.length -2
 };
 
-var gameBoard = modes.easyMode;
+var gameBoard = modes.intro;
 
 var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
@@ -70,6 +75,15 @@ window.addEventListener('keydown', function (event) {
         moves[pressedKey](newPosition);
         collision(newPosition);
     }
+});
+
+goToGameButton.addEventListener('click', function() {
+    startScreen.style.display = 'none';
+    gameWindow.style.display = 'block';
+});
+
+showInstruction.addEventListener('click', function () {
+    instructions.style.display === 'block' ? instructions.style.display = 'none' : instructions.style.display = 'block';
 });
 
 selectedDifficulty.addEventListener('change', function(e) {
@@ -110,16 +124,16 @@ function displayBoard(mode) {
                     output += "<div class='collected'></div>";
                     break;
                 case 5:
-                    output += "<div class='ghostPinky'></div>";
+                    output += "<div class='skill-html'></div>";
                     break;
                 case 6:
-                    output += "<div class='enemy'></div>";
+                    output += "<div class='skill-css'></div>";
                     break;
                 case 7:
-                    output += "<div class='ghostGreeny'></div>";
+                    output += "<div class='skill-js'></div>";
                     break;
                 case 8:
-                    output += "<div class='ghostBluey'></div>";
+                    output += "<div class='enemy'></div>";
                     break;
                 default:
                     break;
@@ -132,7 +146,7 @@ function displayBoard(mode) {
     addFlexClass()
 }
 
-displayBoard(modes.easyMode);
+displayBoard(modes.mediumMode);
 generateEnemy();
 checkLocalStorage();
 putHighscoresInDOM(getFromLocalStorage());
@@ -195,8 +209,8 @@ function getCollectiblePointAmount () {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 10;
-        additionalTime += 1
-    } else if (gameBoard[skillPosition.y][skillPosition.x] === 7) {
+        additionalTime += 1;
+    } else if (gameBoard[skillPosition.y][skillPosition.x] === 6) {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 50;
@@ -260,7 +274,7 @@ function addFlexClass() {
     var row = document.querySelectorAll('.row');
     for (var i = 0; i < row.length; i++) {
         var rowItem = Array.prototype.slice.call(row[i].childNodes);
-        (rowItem).map(x => x.classList.add('flex-item'))
+        (rowItem).map(x => x.classList.add('game-element'))
     }
 }
 // Random skill generate
@@ -295,7 +309,7 @@ function insertSkill() {
 function clearSkill() {
     var prevValue = gameBoard[skillPosition.y][skillPosition.x];
     gameBoard = gameBoard.map(row => row.map(function (column) {
-        if (column === 5 || column === 7 || column === 8) {
+        if (column === 5 || column === 6 || column === 7) {
             return prevValue
         } else {
             return column
@@ -305,7 +319,7 @@ function clearSkill() {
 }
 
 function generateEnemy() {
-    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+    gameBoard[enemyPosition.y][enemyPosition.x] = 8;
 }
 
 function getRandomNumber(multiplier) {
@@ -447,11 +461,11 @@ function validateHighscoreContent (highscoreArray) {
 
 function movement() {
     clearEnemy();
-    gameBoard[enemyPosition.y][enemyPosition.x] = 6;
+    gameBoard[enemyPosition.y][enemyPosition.x] = 8;
 }
 function clearEnemy() {
     var prevValue = gameBoard[enemyPosition.y][enemyPosition.x];
-    gameBoard = gameBoard.map(row => row.map(column => (column === 6 ? prevValue : column)));
+    gameBoard = gameBoard.map(row => row.map(column => (column === 8 ? prevValue : column)));
 }
 
 function handlePlayerEnemyCollision(player, enemy) {
@@ -480,9 +494,9 @@ function displayRandomizedCollectible () {
         case 0:
             return 5;
         case 1:
-            return 7;
+            return 6;
         case 2:
-            return 8;
+            return 7;
         default:
     }
 }
