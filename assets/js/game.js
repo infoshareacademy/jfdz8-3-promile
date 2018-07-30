@@ -24,6 +24,7 @@ var randomObstacle;
 var showSkillAtRandomPosition;
 var enemyMovement;
 var activePlay = false;
+var down = false;
 
 var playerPosition = {
     x: 1,
@@ -68,12 +69,17 @@ window.addEventListener('keydown', function (event) {
 });
 
 window.addEventListener('keydown', function (event) {
-    if (activePlay) {
+    if (activePlay && !down) {
+        down = true;
         var newPosition = Object.assign({}, playerPosition);
         pressedKey = event.code;
         moves[pressedKey](newPosition);
         collision(newPosition);
-    }
+    };
+});
+
+window.addEventListener('keyup', function() {
+    down = false;
 });
 
 goToGameButton.addEventListener('click', function() {
