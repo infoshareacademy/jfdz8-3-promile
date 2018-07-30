@@ -366,6 +366,7 @@ function startGame() {
     resetGame();
     activePlay = true;
     score = 0;
+    additionalTime = 0;
     clearEvents();
     displayScore();
     gameRender = setInterval(function () {
