@@ -16,7 +16,7 @@
 }
 
 .startScreen{
-    height: 100vh;
+    min-height: 100vh;
     background: #d6e7f7;
     margin: 0 auto;
 }
@@ -216,6 +216,7 @@ h1 {
 }
 
 .instructions-description {
+    margin-top: 20px;
     padding: 20px;
 }
 
