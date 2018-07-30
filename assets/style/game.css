@@ -39,6 +39,8 @@
     font-family: 'Press Start 2P', cursive;
     border: 3px solid #fefefe;
     border-radius: 20px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #000;
 }
 
 .button:hover{
@@ -177,7 +179,7 @@ h1 {
 }
 
 .coin {
-    background-image: url("../images/game/others/coin2.png");
+    background-image: url("../images/game/others/coin.png");
     background-size: 50% 50%;
 }
 
