@@ -41,7 +41,7 @@ var enemyPosition = {
     y: gameBoard.length -2
 };
 
-var gameBoard = modes.intro;
+var gameBoard = modes.mediumMode;
 
 var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
