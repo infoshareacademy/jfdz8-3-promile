@@ -75,7 +75,7 @@ window.addEventListener('keydown', function (event) {
         pressedKey = event.code;
         moves[pressedKey](newPosition);
         collision(newPosition);
-    };
+    }
 });
 
 window.addEventListener('keyup', function() {
@@ -87,7 +87,6 @@ goToGameButton.addEventListener('click', function() {
         startScreen.style.display = 'none';
         gameWindow.style.display = 'block';
     } else {
-        console.log('basuadsd')
         var youShallNotPass = document.createElement('div');
         var notPassText = document.createElement('p');
         startScreen.style.display = 'none';
@@ -134,21 +133,18 @@ function displayBoard(mode) {
                     output += "<div class='pacman'></div>";
                     break;
                 case 3:
-                    output += "<div class='element'></div>";
-                    break;
-                case 4:
                     output += "<div class='collected'></div>";
                     break;
-                case 5:
+                case 4:
                     output += "<div class='skill-html'></div>";
                     break;
-                case 6:
+                case 5:
                     output += "<div class='skill-css'></div>";
                     break;
-                case 7:
+                case 6:
                     output += "<div class='skill-js'></div>";
                     break;
-                case 8:
+                case 7:
                     output += "<div class='enemy'></div>";
                     break;
                 default:
@@ -204,7 +200,7 @@ function wallCollision(pos) {
 
 function collectElement(pos) {
     if (gameBoard[pos.y][pos.x] === 1) {
-        gameBoard[pos.y][pos.x] = 4;
+        gameBoard[pos.y][pos.x] = 3;
     }
 }
 
@@ -221,11 +217,11 @@ function pointCollection(playerPos, elementPos) {
 }
 
 function getCollectiblePointAmount () {
-    if (gameBoard[skillPosition.y][skillPosition.x] === 5) {
+    if (gameBoard[skillPosition.y][skillPosition.x] === 4) {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 10;
-    } else if (gameBoard[skillPosition.y][skillPosition.x] === 6) {
+    } else if (gameBoard[skillPosition.y][skillPosition.x] === 5) {
         clearInterval(showSkillAtRandomPosition);
         setSkillInterval();
         score += 50;
@@ -304,7 +300,7 @@ function randomPos() {
 function updatePos(y, x) {
     skillPosition.y = y;
     skillPosition.x = x;
-    if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2 || gameBoard[y][x] === 6) {
+    if (gameBoard[y][x] === 0 || gameBoard[y][x] === 2 || gameBoard[y][x] === 7) {
         randomPos()
     } else {
         clearSkill()
@@ -319,7 +315,7 @@ function insertSkill() {
 function clearSkill() {
     var prevValue = gameBoard[skillPosition.y][skillPosition.x];
     gameBoard = gameBoard.map(row => row.map(function (column) {
-        if (column === 5 || column === 6 || column === 7) {
+        if (column === 4 || column === 5 || column === 6) {
             return prevValue
         } else {
             return column
@@ -329,7 +325,7 @@ function clearSkill() {
 }
 
 function generateEnemy() {
-    gameBoard[enemyPosition.y][enemyPosition.x] = 8;
+    gameBoard[enemyPosition.y][enemyPosition.x] = 7;
 }
 
 function getRandomNumber(multiplier) {
@@ -470,11 +466,11 @@ function validateHighscoreContent (highscoreArray) {
 
 function movement() {
     clearEnemy();
-    gameBoard[enemyPosition.y][enemyPosition.x] = 8;
+    gameBoard[enemyPosition.y][enemyPosition.x] = 7;
 }
 function clearEnemy() {
     var prevValue = gameBoard[enemyPosition.y][enemyPosition.x];
-    gameBoard = gameBoard.map(row => row.map(column => (column === 8 ? prevValue : column)));
+    gameBoard = gameBoard.map(row => row.map(column => (column === 7 ? prevValue : column)));
 }
 
 function handlePlayerEnemyCollision(player, enemy) {
@@ -501,11 +497,11 @@ function displayRandomizedCollectible () {
     var randomCollectible = randomizeCollectibleElement();
     switch (randomCollectible) {
         case 0:
-            return 5;
+            return 4;
         case 1:
-            return 6;
+            return 5;
         case 2:
-            return 7;
+            return 6;
         default:
     }
 }
@@ -515,4 +511,3 @@ function setSkillInterval() {
         randomPos();
     }, randomElementInterval);
 }
-

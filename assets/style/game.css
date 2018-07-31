@@ -201,10 +201,6 @@ h1 {
     background-image: url("../images/game/others/player.png");
 }
 
-.element {
-    background: green;
-}
-
 .collected {
     background: white;
     opacity: 0;
