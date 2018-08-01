@@ -44,17 +44,19 @@
             monster_container.appendChild(cookiebubble);
         }
 
-        function monsterMove() {
-                var element = document.getElementById('cookiemonster');
-                var element2 = document.getElementById('cookiebubble');
-                var position = -500;
-                var starter = setInterval(movement, 8);
+    function monsterMove() {
+        if (screen.width > 968) {
+            var element = document.getElementById('cookiemonster');
+            var element2 = document.getElementById('cookiebubble');
+            var position = -500;
+            var starter = setInterval(monsterMovement, 8);
 
-                function movement() {
-                    return (position === -30 ? clearInterval(starter) : (position++, element.style.bottom = position + 'px',
-                        element2.style.bottom = position + 'px'))
+                function monsterMovement() {
+                return (position === -30 ? clearInterval(starter) : (position++, element.style.bottom = position + 'px',
+                    element2.style.bottom = position + 'px'))
                 }
             }
+        }
         return monsterMove()
     }
 };
