@@ -287,7 +287,6 @@ function addFlexClass() {
         (rowItem).map(x => x.classList.add('game-element'))
     }
 }
-// Random skill generate
 
 function randomNums() {
     var randomNumY = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
@@ -369,8 +368,6 @@ function randomDirectionMovement() {
 function enemyCanMoveIntoPosition(position, gameBoard) {
     return positionIsWithinBoard(position, gameBoard) && wallCollision(position) === false
 }
-
-// Random obstacle generate
 
 function obstacleCoords() {
     var obstacleY = randomNums()[1];

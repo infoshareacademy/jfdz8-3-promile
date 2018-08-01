@@ -202,7 +202,7 @@ h1 {
 }
 
 .collected {
-    background: white;
+    background: #fff;
     opacity: 0;
 }
 
@@ -267,7 +267,7 @@ h1 {
 
 .no-pasaran > p {
     position: absolute;
-    color:red;
+    color: #F26D02;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
