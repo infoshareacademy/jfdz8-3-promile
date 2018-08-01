@@ -42,7 +42,7 @@ var enemyPosition = {
     y: gameBoard.length -2
 };
 
-var gameBoard = modes.mediumMode;
+var gameBoard = modes.intro;
 
 var clearGameBoard = cloneGameBoard(gameBoard);
 var moves = {
@@ -159,7 +159,7 @@ function displayBoard(mode) {
     addFlexClass()
 }
 
-displayBoard(modes.mediumMode);
+displayBoard(modes.intro);
 generateEnemy();
 checkLocalStorage();
 putHighscoresInDOM(getFromLocalStorage());
@@ -264,17 +264,14 @@ function setTimer(seconds) {
     var startTimer = Date.now();
     var endTimer = startTimer + seconds * 1000;
     displayTimer(seconds);
-    console.log(seconds)
     timerInterval = setInterval(function () {
         var timeLeft = additionalTime + Math.round((endTimer - Date.now()) / 1000);
-        console.log('otrzymales dodatkowe: ' + additionalTime + ' sek')
         if (timeLeft <= 0) {
             timeLeft = 0;
             clearInterval(timerInterval);
             resetGame();
         }
         displayTimer(timeLeft);
-        console.log(timeLeft)
     }, 1000)
 }
 
@@ -290,7 +287,6 @@ function addFlexClass() {
         (rowItem).map(x => x.classList.add('game-element'))
     }
 }
-// Random skill generate
 
 function randomNums() {
     var randomNumY = Math.floor(Math.random() * (gameBoard.length - 2) + 1);
@@ -372,8 +368,6 @@ function randomDirectionMovement() {
 function enemyCanMoveIntoPosition(position, gameBoard) {
     return positionIsWithinBoard(position, gameBoard) && wallCollision(position) === false
 }
-
-// Random obstacle generate
 
 function obstacleCoords() {
     var obstacleY = randomNums()[1];

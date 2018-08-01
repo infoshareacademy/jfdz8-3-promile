@@ -374,7 +374,7 @@ body {
 }
 
 .submit:focus, .show_inputs:focus {
-    outline:none
+    outline:none;
 }
 
 .section-features {
@@ -405,7 +405,8 @@ body {
 }
 
 .features__header, .add-info__header, .team__header {
-    padding-bottom: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
     font-size: 42px;
     color: #4f6b86
     }
@@ -908,7 +909,6 @@ body {
 
     .navigation-list-item {
         flex: 1;
-        /*background: #4f6b86;*/
         list-style: none;
     }
 
