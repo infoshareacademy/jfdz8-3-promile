@@ -264,17 +264,14 @@ function setTimer(seconds) {
     var startTimer = Date.now();
     var endTimer = startTimer + seconds * 1000;
     displayTimer(seconds);
-    console.log(seconds)
     timerInterval = setInterval(function () {
         var timeLeft = additionalTime + Math.round((endTimer - Date.now()) / 1000);
-        console.log('otrzymales dodatkowe: ' + additionalTime + ' sek')
         if (timeLeft <= 0) {
             timeLeft = 0;
             clearInterval(timerInterval);
             resetGame();
         }
         displayTimer(timeLeft);
-        console.log(timeLeft)
     }, 1000)
 }
 
