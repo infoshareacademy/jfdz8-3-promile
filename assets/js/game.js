@@ -84,7 +84,7 @@ window.addEventListener('keyup', function() {
 });
 
 goToGameButton.addEventListener('click', function() {
-    if(screen.width > 968) {
+    if(window.innerWidth > 968 || screen.width > 968) {
         startScreen.style.display = 'none';
         gameWindow.style.display = 'block';
     } else {
