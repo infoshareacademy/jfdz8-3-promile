@@ -3,7 +3,7 @@
     if (!localStorage.getItem('tres-promiles-cookies')) {
         var container = document.createElement('div');
         container.setAttribute('id','cookies');
-        if (screen.width > 968) {
+        if (window.innerWidth > 968 || screen.width > 968) {
             createMonster();
         }
         createCookieNotification();
