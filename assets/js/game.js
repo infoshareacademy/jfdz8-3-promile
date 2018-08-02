@@ -92,7 +92,7 @@ goToGameButton.addEventListener('click', function() {
         var notPassText = document.createElement('p');
         startScreen.style.display = 'none';
         youShallNotPass.classList.add('no-pasaran');
-        notPassText.innerHTML="Zainwestuj w większy ekran, bo nie przejdziesz....";
+        notPassText.innerHTML="Można teraz bezpiecznie kupić większy monitor";
         youShallNotPass.appendChild(notPassText);
         document.body.appendChild(youShallNotPass)
     }
