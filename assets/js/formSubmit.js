@@ -1,8 +1,8 @@
 const submitButton = document.querySelector('.submit');
 const navigationLogo = document.querySelector('.center-logo');
 const centerLogo = document.querySelector('.anchor-link');
-const newLogoSource = 'assets/images/LOGO1_fire.png';
-const normalLogoSource = 'assets/images/LOGO1.png';
+const newLogoSource = 'assets/images/page_elements/LOGO1_fire.png';
+const normalLogoSource = 'assets/images/page_elements/LOGO1.png';
 const linkToGame = 'http://www.3-promile.jfdz8.is-academy.pl/game.html';
 
 submitButton.addEventListener('click', checkLocalStorage);

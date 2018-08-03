@@ -753,7 +753,7 @@ body {
     position: relative;
     height: 160px;
     width: 285px;
-    background: url("../images/sneaky-monster.png");
+    background: url("../images/cookies/sneaky-monster.png");
     align-self: flex-end;
     left: 42.5%;
 }
@@ -974,7 +974,7 @@ body {
     }
 
     .parallax-container {
-        background: center no-repeat fixed url("../images/gdansk_2.jpg") ;
+        background: center no-repeat fixed url("../images/page_elements/parallax_gdansk.jpg") ;
         min-height: 400px;
         width: 100%;
         position: relative;

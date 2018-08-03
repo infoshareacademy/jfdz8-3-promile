@@ -84,7 +84,7 @@ window.addEventListener('keyup', function() {
 });
 
 goToGameButton.addEventListener('click', function() {
-    if(screen.width > 968) {
+    if( screen.width > 968 && window.innerWidth > 968) {
         startScreen.style.display = 'none';
         gameWindow.style.display = 'block';
     } else {
@@ -92,7 +92,7 @@ goToGameButton.addEventListener('click', function() {
         var notPassText = document.createElement('p');
         startScreen.style.display = 'none';
         youShallNotPass.classList.add('no-pasaran');
-        notPassText.innerHTML="Zainwestuj w większy ekran, bo nie przejdziesz....";
+        notPassText.innerHTML="Można teraz bezpiecznie kupić większy monitor";
         youShallNotPass.appendChild(notPassText);
         document.body.appendChild(youShallNotPass)
     }

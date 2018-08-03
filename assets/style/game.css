@@ -219,7 +219,7 @@ h1 {
 }
 
 .enemy {
-    background-image: url("../images/LOGO1_fire.png");
+    background-image: url("../images/page_elements/LOGO1_fire.png");
     background-size: 53% 100%;
 }
 
@@ -229,13 +229,15 @@ h1 {
 }
 
 .instructions-icon {
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
 }
 
 .instructions-points {
     line-height: 3;
     padding: 10px 20px;
+    background: #4f6b86;
+    color: #d6e7f7;
 }
 
 .credits {
@@ -260,9 +262,10 @@ h1 {
 
 .no-pasaran {
     text-align: center;
-    height: 100%;
+    background: black;
     font-family: 'Press Start 2P', cursive;
     font-size: 24px;
+    height: 100vh;
 }
 
 .no-pasaran > p {
