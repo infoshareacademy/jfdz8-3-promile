@@ -9,7 +9,7 @@
         createCookieNotification();
 
     function createCookieNotification() {
-        var notification = document.createElement('div'), link = document.createElement('a')
+        var notification = document.createElement('div'), link = document.createElement('a');
 
             notification.setAttribute('id', 'cookieinfo');
         notification.setAttribute('class', 'cookie-notification');

@@ -5,7 +5,7 @@ const leftButton = document.querySelector('.left_arrow');
 const rightButton = document.querySelector('.right_arrow');
 const imgLocations = ['assets/images/slideshow_photo/gdansk.jpg',
                       'assets/images/slideshow_photo/gdynia.jpg',
-                      'assets/images/slideshow_photo/sopot2.png',];
+                      'assets/images/slideshow_photo/sopot.png',];
 function createDots() {
     for(let i =0; i < imgLocations.length; i++) {
         const spanDot = document.createElement('span');
