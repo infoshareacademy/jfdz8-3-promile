@@ -701,7 +701,6 @@ body {
     padding: 0;
     width: 100%;
     height: 160px;
-    align-items: baseline;
 }
 
 #cookieinfo {
@@ -757,8 +756,6 @@ body {
     height: 160px;
     width: 285px;
     background: url("../images/cookies/sneaky-monster.png");
-    align-self: flex-end;
-    left: 42.5%;
 }
 
 #cookiebubble {
@@ -766,7 +763,6 @@ body {
     width: 200px;
     height: 100px;
     justify-content: center;
-    left: 41%;
     text-align: center;
     line-height: 85px;
     font-weight: bold;
