@@ -32,6 +32,14 @@
     border-radius: 50%;
 }
 
+.header__container{
+    text-align: center;
+}
+
+.logotype__image{
+    margin-top: 40px;
+}
+
 .button {
     line-height: 1;
     display: inline-block;
