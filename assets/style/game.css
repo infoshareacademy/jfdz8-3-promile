@@ -26,9 +26,10 @@
 }
 
 .logo__image{
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 400px;
+    max-width: 400px;
     margin-top: 1%;
+    border-radius: 20%;
 }
 
 .button {
@@ -198,7 +199,7 @@ h1 {
 }
 
 .pacman {
-    background-image: url("../images/game/others/player.png");
+    background-image: url("../images/page_elements/LOGO1.png");
 }
 
 .collected {
@@ -231,6 +232,7 @@ h1 {
 .instructions-icon {
     height: 40px;
     width: 40px;
+    margin-right: 25px;
 }
 
 .instructions-points {
@@ -239,6 +241,7 @@ h1 {
     background: #4f6b86;
     color: #d6e7f7;
 }
+
 
 .credits {
     text-align: center;
@@ -274,5 +277,10 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+
+.instructions-item {
+    display: flex;
+    align-items: center;
 }
 
