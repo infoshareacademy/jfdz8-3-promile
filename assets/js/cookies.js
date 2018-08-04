@@ -37,6 +37,7 @@
                 monster_container = document.createElement('div');
             monster_container.setAttribute('id','monster-container');
             cookiemonster.setAttribute('id','cookiemonster');
+            cookiemonster.classList.add('shake')
             cookiebubble.setAttribute('id','cookiebubble');
             cookiebubble.innerHTML = 'Do you want some cookies?';
             container.appendChild(monster_container);
@@ -52,10 +53,11 @@
             var starter = setInterval(monsterMovement, 8);
 
                 function monsterMovement() {
-                return (position === -30 ? clearInterval(starter) : (position++, element.style.bottom = position + 'px',
+                return (position === 0 ? clearInterval(starter) : (position++, element.style.bottom = position + 'px',
                     element2.style.bottom = position + 'px'))
                 }
             }
+
         }
         return monsterMove()
     }
