@@ -29,7 +29,15 @@
     max-height: 400px;
     max-width: 400px;
     margin-top: 1%;
-    border-radius: 20%;
+    border-radius: 50%;
+}
+
+.header__container{
+    text-align: center;
+}
+
+.logotype__image{
+    margin-top: 40px;
 }
 
 .button {
